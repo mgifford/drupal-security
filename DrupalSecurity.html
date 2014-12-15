@@ -591,7 +591,7 @@ md5sum ~/DrupalSecurity.pdf</p>
     <p>Record a baseline of your server that you can review,
       knowing that this is the minimum number of processes which are
       running with a clean system. Likewise record the baseline from a
-      netstat report to see what ports are open:</p>
+      <a href="https://en.wikipedia.org/wiki/Netstat">netstat</a> report to see what ports are open:</p>
         <p class="P13">ps afx</p>
     <p class="P13">netstat -l -p -n</p>
     <p>The management of ports on the network is managed
@@ -941,7 +941,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       from this is to ensure that someone is always paying attention to
       the security mailing lists for your operating system. By the time
       you hear it from the media it is probably too late. The other
-      suggestion is one that is suggested by the EFF and others which
+      suggestion is one that is suggested by the <a href="https://www.eff.org/">EFF</a> and others which
       includes implementing <a href="https://www.eff.org/deeplinks/2013/08/pushing-perfect-forward-secrecy-important-web-privacy-protection">Perfect Forward Secrecy</a> (PFS).
       Although we didn’t explicitly refer to it as this in earlier
       versions of this document, the hardened SSL configuration we
@@ -974,7 +974,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       verified SSL certificate on your production environment will be
       important as otherwise your users will be asked to verify the
       exception when accessing the HTTPS version of your site. A listing
-      of certificate authorities is available at thebottom of <a href="https://en.wikipedia.org/wiki/Certificate_authority#External_links">this Wikipedia page</a>. You can review
+      of certificate authorities is available at the bottom of <a href="https://en.wikipedia.org/wiki/Certificate_authority#External_links">this Wikipedia page</a>. You can review
       the validity of your SSL certificate through a free <a href="https://www.ssllabs.com/ssltest/">SSL
         Test constructed by SSLLabs</a> or with the following openssl
       command:</p>
@@ -1000,7 +1000,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       in Canada, many sites would need to also add /fr/user and /en/user
       . It is a best practice to secure all pages on non-production
       environments from both search engines, but especially
-      fromcrackers. The following are examples of how to do this with
+      from crackers. The following are examples of how to do this with
       mod_authz_host and also mod_rewrite: </p>
         <p class="P13">Example Apache configuration using mod_authz_host:</p>
     <p class="P13">&lt;Location ~ “/node/.*/edit”&gt;</p>
