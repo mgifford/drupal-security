@@ -63,7 +63,6 @@ li { margin-top: 3px; }
 	p.p13, .P13 { font-size:10pt; font-family:ArialMT; writing-mode:page; margin-left:1.27cm; margin-right:0cm; line-height:115%; text-align:justify ! important; text-indent:0cm; color:#666666;  margin-top: 3px; }
 	.P16 { font-size:10pt; font-family:Verdana; writing-mode:page; margin-left:1.27cm; margin-right:0cm; line-height:115%; text-align:justify ! important; text-indent:0cm; color:#666666; }
 	.P17 { font-size:11pt; font-family:ArialMT; writing-mode:page; margin-left:1.27cm; margin-right:0cm; line-height:115%; text-align:justify ! important; text-indent:0cm; }
-	.P2 { font-size:12pt; font-family:TrebuchetMS; writing-mode:page; line-height:115%; text-align:justify ! important; }
 	.P21 { font-size:12pt; font-family:TrebuchetMS; writing-mode:page; margin-left:1.27cm; margin-right:0cm; margin-top:0cm; margin-bottom:0.212cm; line-height:120%; text-align:justify ! important; text-indent:0cm; }
 	.P22 { font-size:12pt; font-family:TrebuchetMS; writing-mode:page; margin-left:0cm; margin-right:0cm; line-height:115%; text-align:justify ! important; text-indent:1.27cm; }
 	.P23 { font-size:12pt; font-family:TrebuchetMS; writing-mode:page; margin-left:0.635cm; margin-right:0cm; line-height:115%; text-align:justify ! important; text-indent:0cm; margin-top: 3px; margin-bottom: 3px; }
@@ -126,11 +125,11 @@ li { margin-top: 3px; }
 </head><body class="P13" dir="ltr" style="border-style: none; margin: 1.249cm 2.54cm; padding: 0cm; max-width: 21.59cm;">
     <h1>Drupal Security Best Practices </h1>
     <p class="P10">A Guide for Governments and Nonprofits</p>
-    <p class="P2"><strong>By <a href="http://openconcept.ca/">OpenConcept Consulting Inc.</a></strong>,
+    <p><strong>By <a href="http://openconcept.ca/">OpenConcept Consulting Inc.</a></strong>,
       originally written for for Public Safety Canada</p>
-    <p class="P2"><strong>Principal Author:</strong> <a href="mailto:mike@openconcept.ca">Mike
+    <p><strong>Principal Author:</strong> <a href="mailto:mike@openconcept.ca">Mike
         Gifford</a></p>
-    <p class="P2"><strong>Contributors:</strong> <a href="mailto:mike.mallett@openconcept.ca">Mike Mallett</a>, <a href="https://drupal.org/user/536298">Matt
+    <p><strong>Contributors:</strong> <a href="mailto:mike.mallett@openconcept.ca">Mike Mallett</a>, <a href="https://drupal.org/user/536298">Matt
 
         Parker</a>, <a href="mailto:xavier@openconcept.ca">Xavier Landreville</a>, <a href="http://www.sandelman.ottawa.on.ca/">Michael Richardson</a>, <a href="http://colans.net/">Colan
         Schwartz</a>, <a href="http://affinitybridge.com/">Mack Hardy</a>, <a href="http://spartakan.wordpress.com/">Peter
@@ -140,27 +139,27 @@ li { margin-top: 3px; }
         Hosmer</a>, <a href="http://upsitesweb.com/">Ursula Pieper</a>, <a href="https://blog.jonathanmarcil.ca/">Jonathan
 
         Marcil</a></p>
-    <p class="P2"><strong>Editor:</strong> <a href="http://streamoflight.com/">Lee
+    <p><strong>Editor:</strong> <a href="http://streamoflight.com/">Lee
         Hunter</a></p>
     <br />
     <h2>Foreword</h2>
     <br />
-    <p class="P2">This document describes best practices for setting up
+    <p>This document describes best practices for setting up
       and maintaining a Drupal site. It was initially written for the
       Government of Canada, but it is equally applicable to other
       organizations.</p>
-    <p class="P2">Drupal is a popular, open source content management
+    <p>Drupal is a popular, open source content management
       system (CMS). It has a strong security model, but like any
       application, requires adherence to best practices. Furthermore,
       Drupal is only one piece of the software that is required to run
       your site, and one needs to consider the security of the entire
       server stack. </p>
-    <p class="P2">This is not a comprehensive document, as IT security
+    <p>This is not a comprehensive document, as IT security
       is a complex field. We have tried to focus on fundamental
       principles that can improve security. For more information on web
       server security, see the links at the end of this article.<br />
     </p>
-    <p class="P2">We do not believe that there will ever be a 100%
+    <p>We do not believe that there will ever be a 100%
       secure system. There are always bugs in software and new exploits
       are being attempted all of the time. We are listing options to
       consider, but each organization will need to weigh which
@@ -170,7 +169,7 @@ li { margin-top: 3px; }
         <tr class="Table11">
           <td style="text-align: left; width: 15.431cm;" class="Table1_A1">
             <h3>Copyright</h3>
-            <p class="P2">This document is made available under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Attribution-ShareAlike</a>
+            <p>This document is made available under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Attribution-ShareAlike</a>
               Creative Commons License. Feel free to distribute this,
               but please ensure to credit this original document. </p>
           </td>
@@ -238,9 +237,9 @@ li { margin-top: 3px; }
               been actively involved in the Drupal Web Experience
               Toolkit distribution within the Government of Canada.</p>
             <p class="P9">To contact Mike, email </p>
-            <p class="P2"><a href="mailto:mike@openconcept.ca">mike@openconcept.ca</a> or
+            <p><a href="mailto:mike@openconcept.ca">mike@openconcept.ca</a> or
               telephone 1-613-686-6736.</p>
-            <p class="P2">or visit <a href="http://openconcept.ca/">http://openconcept.ca</a></p>
+            <p>or visit <a href="http://openconcept.ca/">http://openconcept.ca</a></p>
           </td>
         </tr>
       </tbody>
@@ -248,16 +247,16 @@ li { margin-top: 3px; }
     <br />
     <h2>A) Introduction</h2>
     <br />
-    <p class="P2">Drupal 7 is a leading content management system in
+    <p>Drupal 7 is a leading content management system in
       governments around the world. It has been widely adopted by
       institutions around the world that are looking to meet increasing
       demands for service, larger challenges with accessibility and
       mobile requirements, and ever smaller budgets.</p>
-    <p class="P2">With governments increasingly targeted for cyber
+    <p>With governments increasingly targeted for cyber
       attacks, it is important that they remain up to date with best
       practices so that personal information and government assets are
       protected.</p>
-    <p class="P2">This guide provides an overview of important security
+    <p>This guide provides an overview of important security
       principles, best practices for basic security; plus extra steps to
       be considered, if budget allows. Where possible we will be
       providing some detailed instructions. Managers should read
@@ -265,13 +264,13 @@ li { margin-top: 3px; }
       sections D, E, F, G, I, J and K. Drupal developers can focus on
       section H and I, but should be familiar with the impact of the
       other sections too.</p>
-    <p class="P2">It should be clear that not all of the steps outlined
+    <p>It should be clear that not all of the steps outlined
       here will need to be taken on all sites. The principles should be
       followed but not all of the security suggestions described will
       need to be followed by all organizations. Each practice or tool
       should be carefully evaluated to understand the potential costs,
       risks and benefits.</p>
-    <p class="P2">This document raises issues to consider before you
+    <p>This document raises issues to consider before you
       procure a server and when you first gain access to your server. It
       provides suggestions on what additional software you can add to
       your site which can help improve it’s security. It also highlights
@@ -285,14 +284,14 @@ li { margin-top: 3px; }
       information on building secure modules and themes, but it is also
       worth consulting the <a href="https://drupal.org/writing-secure-code">community documentation on Drupal.org</a>.
     </p>
-    <p class="P2">Because this document strongly recommends against the
+    <p>Because this document strongly recommends against the
       use of Microsoft Windows servers for Internet-facing web sites.,
       Windows security will not be addressed.</p>
-    <p class="P2">Security cannot be just a buzzword, <a href="https://www.schneier.com/essays/archives/2000/04/the_process_of_secur.html">it is a process</a>. There needs to be
+    <p>Security cannot be just a buzzword, <a href="https://www.schneier.com/essays/archives/2000/04/the_process_of_secur.html">it is a process</a>. There needs to be
       clear understanding about lines of responsibility and ultimately
       management needs to provide the budget required to ensure that
       systems can be maintained and regularly re-evaluated. </p>
-    <p class="P2">Eternal vigilance is important as those searching for
+    <p>Eternal vigilance is important as those searching for
       your vulnerabilities are working around the clock and are
       well-financed. This document will, itself, need to evolve to keep
       pace with new vulnerabilities. </p>
@@ -359,26 +358,26 @@ li { margin-top: 3px; }
     <br />
     <h2><a name="Managers">C) Security Concerns for Managers </a></h2>
     <br />
-    <p class="P2">There are many assumptions about IT security that need
+    <p>There are many assumptions about IT security that need
       to be fundamentally rethought in the era of the Internet.
       Government is struggling to come to terms with this at the same
       time as working to understand the implication of cloud-based
       services. What we can be certain of is that this field is
       accelerating and government departments need to keep up.</p>
-    <p class="P2">The first principle is to understand that time
+    <p>The first principle is to understand that time
       corrodes security and on the Internet time moves very fast. You
       can’t assume that any service you buy or develop is currently
       secure or will remain that way for long. It is critical to
       understand what investments have been made and how they are
       maintained.</p>
-    <p class="P2">Web hosting and application development are different
+    <p>Web hosting and application development are different
       fields and one cannot simply outsource security upgrades to
       someone else to do. No government server platform or private web
       hosting company can “take care” of your server security in
       isolation of the application that is running on it. Ultimately,
       someone familiar with your website and it’s content needs to be
       involved in performing upgrades.</p>
-    <p class="P2">Third party agencies are ultimately going to be
+    <p>Third party agencies are ultimately going to be
       involved, whether it the Domain Name Registrar or Content Delivery
       Network (CDN). The communications paths with these agencies needs
       to be clear and well documented. This recently happened with a
@@ -388,25 +387,25 @@ li { margin-top: 3px; }
       infrastructure. Properly documented procedures are important, as
       3rd party services can often be manipulated phony email or
       telephone requests.</p>
-    <p class="P2">It is also important to remember that one person
+    <p>It is also important to remember that one person
       working in isolation cannot be expected to be an expert in all
       aspects of Internet security. This is a vast area of expertise and
       it is changing quickly. It’s important that your security person
       has ongoing training and is engaged with both the Drupal and wider
       security communities to keep up with the latest threats,
       vulnerabilities and mitigation strategies.</p>
-    <p class="P2">Schedule time for a skilled security expert outside
+    <p>Schedule time for a skilled security expert outside
       the core team to double check the server/Drupal configuration
       every quarter. This does not have to be a consultant, but it
       should be someone outside of the website development team.</p>
-    <p class="P2">Everyone wants security to be simple, it isn’t. It’s a
+    <p>Everyone wants security to be simple, it isn’t. It’s a
       matter of determining, as an organization, how much risk you want
       to be exposed to. You can invest as much or as little on security
       as you want, but the risks are generally inversely proportional to
       resources spent on tightening your system. Security has costs as
       well as benefits. Complex systems are usually less secure because
       it costs relatively so much more to secure them.</p>
-    <p class="P2">Many organizations have policies for <a href="https://www.dhs.gov/homeland-infrastructure-threat-and-risk-analysis-center">Threat and Risk Assessments</a>.
+    <p>Many organizations have policies for <a href="https://www.dhs.gov/homeland-infrastructure-threat-and-risk-analysis-center">Threat and Risk Assessments</a>.
       However, as we’ve seen with the implementation of <a href="https://www.healthcare.gov/">Healthcare.gov</a>
       political pressures associated with large projects often push
       security concerns into a post-launch phase. It is highly
@@ -416,17 +415,17 @@ li { margin-top: 3px; }
       threats by using processes like STRIDE or DREAD. By <a href="http://www.networkmagazineindia.com/200212/security2.shtml">identifying and classifying an
         organization’s assets</a> one can begin to prioritize where to
       focus resources. </p>
-    <p class="P2">Thinking through attack vectors and limiting exposure
+    <p>Thinking through attack vectors and limiting exposure
       is really important. I’m sure that many of the sites that were
       compromised by the Shellshock bash bug in that hit in September of
       2014 simply hadn’t disabled services like Apache’s CGI module. To
       run Drupal, you simply shouldn’t need to expose bash to anyone
       other than properly authenticated Linux users. </p>
-    <p class="P2">As with most work, a great deal of security work lies
+    <p>As with most work, a great deal of security work lies
       in identifying and eliminating assumptions. Document what is done,
       and be transparent in your work so that your organization knows
       that it has the level of risk it wants to maintain.</p>
-    <p class="P2">Organizations should also consider if the software
+    <p>Organizations should also consider if the software
       that they use is properly resourced. The Internet is built on free
       software, but much of it is backed by corporations who are also
       providing services built on the expertise that they use have built
@@ -436,7 +435,7 @@ li { margin-top: 3px; }
       consider donating to project like the <a href="https://www.openssl.org/support/index.html">OpenSSL Software Foundation</a> which
       supports the security infrastructure your organization depends on.
       Likewise consider supporting organizations who contribute to <a href="https://www.drupal.org/security-team">Drupal’s security team</a>.</p>
-    <p class="P2">A great deal of security work begins before anything
+    <p>A great deal of security work begins before anything
       is installed. Properly considering security before beginning a
       server implementation is important. Addressing security issues
       later in a project makes it impossible to do a security evaluation
@@ -444,7 +443,7 @@ li { margin-top: 3px; }
       used which then become patterns that are followed long after the
       site is launched.<br />
     </p>
-    <p class="P2">Implementing and enforcing a policy of using very
+    <p>Implementing and enforcing a policy of using very
       complex passwords and <a href="http://lifehacker.com/5938565/heres-everywhere-you-should-enable-two-factor-authentication-right-now">2
         factor authentication</a> for any service that is responsible
       for delivering a critical service like email or code repositories.
@@ -456,12 +455,12 @@ li { margin-top: 3px; }
       services are often stored. Identity theft online is a huge problem
       for institutions.<br />
     </p>
-    <p class="P2">The <a href="https://www.gov.uk/service-manual/">UK’s Government Service Design Manual</a>
+    <p>The <a href="https://www.gov.uk/service-manual/">UK’s Government Service Design Manual</a>
       is an excellent resource for any large institution and it has a
       great section that applies directly to web security, <a href="https://www.gov.uk/service-manual/technology/security-as-enabler.html">Security as enabler: Using </a><a href="https://www.gov.uk/service-manual/technology/security-as-enabler.html">technological change to build secure
         services</a>. In particular I like the point that security
       shouldn’t degrade user experience. </p>
-    <p class="P2">Don’t ignore minor bugs. As <a href="http://darrenmothersele.com/blog/2014/02/20/drupal-security/">Darren Mothersele</a> mentions in his
+    <p>Don’t ignore minor bugs. As <a href="http://darrenmothersele.com/blog/2014/02/20/drupal-security/">Darren Mothersele</a> mentions in his
       blog, it is possible for a number of minor vulnerabilities to be
       chained together in a way which can become a major exploit. Sites
       as large as GitHub have been successfully targeted this way. As he
@@ -470,7 +469,7 @@ li { margin-top: 3px; }
     <br />
     <h2>D) <a name="Server_Security">Server Security</a></h2>
     <br />
-    <p class="P2">Any website is a complex ecosystem of software. Each
+    <p>Any website is a complex ecosystem of software. Each
       aspect can be tightened through proper configuration and through
       the addition of components beyond what is found in a default
       installation. This document provides some examples, but mostly
@@ -481,10 +480,10 @@ li { margin-top: 3px; }
       Principles of Security in Section B.</p>
     <br />
     <h3>1) Server Procurement</h3>
-    <p class="P2">Start server documentation with information from your
+    <p>Start server documentation with information from your
       server contract. There are often technical details and notes about
       who to contact when things go wrong.</p>
-    <p class="P2">It is important to determine that there is a strong
+    <p>It is important to determine that there is a strong
       security community behind the OS distribution you choose, and that
       you have the necessary human resources in your department to
       maintain it. Both Debian/Ubuntu and Red Hat Enterprise
@@ -497,12 +496,12 @@ li { margin-top: 3px; }
       references to one of these two groups of distributions should be
       interchangeable.Note that Ubuntu and Debian have a different
       development cycle and are not identical. </p>
-    <p class="P2">If you use a Red Hat Enterprise Linux (RHEL) system,
+    <p>If you use a Red Hat Enterprise Linux (RHEL) system,
       you will need to subscribe to their service in order to apply
       security upgrades and install the additional packages mentioned in
       this document. Before procuring a Red Hat server, check that your
       package includes a subscription.</p>
-    <p class="P2">In our opinion, distributions of Linux like SuSE
+    <p>In our opinion, distributions of Linux like SuSE
       simply do not have a critical mass of users and developers (in the
       web server space) to maintain the code and documentation required
       for a secure environment. Microsoft Windows is not a standard
@@ -510,13 +509,13 @@ li { margin-top: 3px; }
       community support is much less robust. It is very difficult to
       limit exposure on a Windows Server since there are many unneeded
       pieces of the operating system which you cannot easily uninstall.</p>
-    <p class="P2">If you are worried about the server’s physical
+    <p>If you are worried about the server’s physical
       security, you can also set up an <a href="https://wiki.archlinux.org/index.php/Disk_Encryption">encrypted partition</a> on your hard
       drive. This may introduce performance issues which might cause
       problems for your server. This document will not be covering <a href="https://help.ubuntu.com/community/EncryptedFilesystemHowto">how to set up an encrypted drive</a>
       but depending on the perceived threats, it may be worth
       implementing. </p>
-    <p class="P2">Special consideration should be taken when enabling
+    <p>Special consideration should be taken when enabling
       HTTPS for encrypted traffic on “shared host”-type environments
       (any server hosting more than 1 domain). Typically, due to the
       natureof the protocol, only one https website (domain name) could
@@ -529,7 +528,7 @@ li { margin-top: 3px; }
       certificates (also known as Unified Communications Certificates).
       These certificates contain extra fields that list other common
       names (domain names) for which that certificate is valid.</p>
-    <p class="P2">Finally, don’t get a server that comes with a server
+    <p>Finally, don’t get a server that comes with a server
       admin control panel. They promise to make managing your site
       easier but present security problems. There are a number of
       commercial packages, like cPanel or PLESK, that do make it easier
@@ -549,7 +548,7 @@ li { margin-top: 3px; }
       both for you and for those looking to hack into your system.</p>
     <br />
     <h3>2) Immediately After Receiving Root Access</h3>
-    <p class="P2">Hopefully the root password wasn’t sent via an
+    <p>Hopefully the root password wasn’t sent via an
       unencrypted email with the other login credentials. Very few
       people use <a href="https://en.wikipedia.org/wiki/GNU_Privacy_Guard">GPG to encrypt emails</a> because it is
       cumbersome, but confidential documents should be encoded/decoded
@@ -558,12 +557,12 @@ li { margin-top: 3px; }
       intercept. Minimally passwords can be sent in a separate email,
       but this provides only a slightly more obscure means to stop this
       information from being intercepted. </p>
-    <p class="P2">Most web hosts send all of the credentials together,
+    <p>Most web hosts send all of the credentials together,
       therefore, the first step after getting access is to log in and
       change the root password. Unencrypted email communications offers
       no security on the Internet and thus you must address this
       vulnerability immediately. </p>
-    <p class="P2">Update the list of available software and perform
+    <p>Update the list of available software and perform
       system software upgrades. Most web hosts will use a pre-packaged
       distribution and there will frequently be updates that need to be
       applied. Make sure you’ve got the updates and that the new
@@ -575,19 +574,19 @@ li { margin-top: 3px; }
       an administrator’s responsibility. </p>
         <p class="P13">Debian: apt-get update &amp;&amp; apt-get upgrade</p>
     <p class="P13">CentOS: yum upgrade</p>
-    <p class="P2">You will inevitably have a number of passwords to
+    <p>You will inevitably have a number of passwords to
       maintain. We recommend storing these in a new <a href="https://en.wikipedia.org/wiki/KeePass">KeePass or KeePassX Password database</a>.
       It has a nice password generator which makes it very easy to
       generate long (20+ characters) and complex passwords and store
       them immediately. If you get any other passwords supplied via
       email, reset them immediately. Your email address is also a <a href="http://drupalwatchdog.com/2/2/practical-security">point of vulnerability</a>.</p>
-    <p class="P2">The most common account that crackers try to
+    <p>The most common account that crackers try to
       compromise is the root user, so disable root logins. Furthermore,
       set up user accounts with sudo access and <a href="https://wiki.archlinux.org/index.php/SSH_Keys">use ssh keys</a> so that nobody
       accessing the site is using a password. Note: the commands listed
       here assume you are using sudo access and but we have chosen not
       to explicitly prefix them with sudo.</p>
-    <p class="P2">Protect your ssh keys by ensuring that your private
+    <p>Protect your ssh keys by ensuring that your private
       keys are <a href="https://www.ssllabs.com/downloads/SSL_TLS_Deployment_Best_Practices.pdf">password protected and using 2048-bits</a>.
       By disabling the use of passwords for ssh user logins a common
       server vulnerability is simply eliminated. When you turn off
@@ -596,9 +595,9 @@ li { margin-top: 3px; }
       attacks. There are explanations on how to <a href="http://lani78.wordpress.com/2008/08/08/generate-a-ssh-key-and-disable-password-authentication-on-ubuntu-server/">effectively disable password logins</a>
       but check that /etc/ssh/sshd_config has the text <br />
 </p>
-<p class="P2"><span class="P13">PasswordAuthentication no</span></p>
+<p><span class="P13">PasswordAuthentication no</span></p>
 <br />
-<p class="P2">Remember that when downloading important files that there
+<p>Remember that when downloading important files that there
 is a possibility that they have been tampered with. Important security
 documents often come with a <a href="http://www.electrictoolbox.com/article/linux-unix-bsd/howto-check-md5-file/">MD5</a>
 or SHA (secure hash algorithm) code which allows a user to verify that
@@ -610,30 +609,30 @@ md5sum ~/DrupalSecurity.pdf</p>
 <p class="P13">openssl sha1  ~/DrupalSecurity.pdf</p>
     <br />
     <h3>3) <a name="Create_a_baseline">Create a baseline</a></h3>
-    <p class="P2">Record a baseline of your server that you can review,
+    <p>Record a baseline of your server that you can review,
       knowing that this is the minimum number of processes which are
       running with a clean system. Likewise record the baseline from a
       netstat report to see what ports are open:</p>
         <p class="P13">ps afx</p>
     <p class="P13">netstat -l -p -n</p>
-    <p class="P2">The management of ports on the network is managed
+    <p>The management of ports on the network is managed
       through iptables. It is important to review and document them to
       see that they are properly restrictive. From the command line you
       can list them with:</p>
         <p class="P13">iptables -L -v -n</p>
-    <p class="P2">You can load/save the iptables easily using the
+    <p>You can load/save the iptables easily using the
       iptables-persistent package `apt-get install iptables-persistent`.
       With that you can simply save the existing IP tables from the
       command line:</p>
         <p class="P13">Debian: service iptables-persistent save CentOS:
       service iptables save</p>
-    <p class="P2">Record the list of installed packages on the server.
+    <p>Record the list of installed packages on the server.
       Save this information in a text file in your management code
       repository. If your server is compromised it is useful to know
       what packages were installed and running when you started:</p>
         <p class="P13">Debian: dpkg -l</p>
     <p class="P13">CentOS: yum list installed</p>
-    <p class="P2"><a name="Create_a_baseline">Install </a><a href="http://sourceforge.net/apps/trac/rkhunter/wiki/SPRKH">Rootkit Hunter</a> (RKH) to help you
+    <p><a name="Create_a_baseline">Install </a><a href="http://sourceforge.net/apps/trac/rkhunter/wiki/SPRKH">Rootkit Hunter</a> (RKH) to help you
       “detect known rootkits, malware and signal general bad security
       practices”. You can set it up to <a href="http://www.tecmint.com/install-linux-rkhunter-rootkit-hunter-in-rhel-centos-and-fedora/">send you email alerts</a>, but can also
       do manual scans.</p>
@@ -643,7 +642,7 @@ md5sum ~/DrupalSecurity.pdf</p>
     <h3>4) <a name="Limit_Access_from_Outside">Limit Access from
         Outside</a></h3>
     <br />
-    <p class="P2">In general you will want to allow traffic for port 22
+    <p>In general you will want to allow traffic for port 22
       (for known IPs), 80, 443 and reject other ports. It can also be
       useful to use firewall rules to restrict outgoing connections from
       the Apache user. The possible exception to this is drupal.org’s IP
@@ -652,11 +651,11 @@ md5sum ~/DrupalSecurity.pdf</p>
       below). You can easily see what ports are open by using a port
       scanner such as <a href="http://nmap.org/">nmap</a> from an external machine:</p>
         <p class="P13">nmap -sS SERVER_ADDRESS</p>
-    <p class="P2">We recommend running <a href="https://en.wikipedia.org/wiki/Port_scanner">periodic TCP port scans</a> on your
+    <p>We recommend running <a href="https://en.wikipedia.org/wiki/Port_scanner">periodic TCP port scans</a> on your
       server. <a href="http://mxtoolbox.com/PortScan.aspx">MXToolbox</a> offers an option to do
       this through their site, but you can also use tools like nmap
       which offers you more fine-grained controls.</p>
-    <p class="P2">Many servers come with <a href="https://en.wikipedia.org/wiki/BIND">BIND</a> on UDP port 53. This program
+    <p>Many servers come with <a href="https://en.wikipedia.org/wiki/BIND">BIND</a> on UDP port 53. This program
       can probably be removed in most instances or should be restricted
       with a firewall if required. There are some <a href="http://askubuntu.com/questions/162371/what-is-the-named-daemon-and-why-is-it-running">detailed instructions here</a> on how
       to remove it, which are particularly important if you aren’t sure
@@ -664,16 +663,16 @@ md5sum ~/DrupalSecurity.pdf</p>
       the command line:</p>
         <p class="P13">ps -Al | grep bind</p>
     <p class="P13">chkconfig | grep bind</p>
-    <p class="P2">You can obscure your SSH port by reassigning it to
+    <p>You can obscure your SSH port by reassigning it to
       other than the default (22). This might fool a lazy cracker who
       isn’t using a port scanner first, but won’t stop the serious
       folks. </p>
-    <p class="P2">One of the best ways to limit ssh access to a server
+    <p>One of the best ways to limit ssh access to a server
       is to restrict access to a handful of known subnets (ie.
       192.168.1.0/24) where administrators actually work. Don't be
       afraid to add to this list; make it easy for your people to work
       wherever they need to.Security is not the enemy. </p>
-    <p class="P2">You can also <a href="http://apple.stackexchange.com/questions/34091/how-to-restrict-remote-login-ssh-access-to-only-certain-ip-ranges">restrict who can ssh</a> into the
+    <p>You can also <a href="http://apple.stackexchange.com/questions/34091/how-to-restrict-remote-login-ssh-access-to-only-certain-ip-ranges">restrict who can ssh</a> into the
       server to a limited number of IP addresses. Be very careful when
       configuring this as you don’t want to block yourself from
       accessing the server. <a href="http://www.debian-administration.org/articles/87">Debian’s admin documentation</a> offers
@@ -682,12 +681,12 @@ md5sum ~/DrupalSecurity.pdf</p>
       22) iptables -A INPUT -p tcp -m state --state NEW --source 1.2.3.4
       --dport 22 -j ACCEPT # Deny all other SSH connections iptables -A
       INPUT -p tcp --dport 22 -j DROP</p>
-    <p class="P2">There are many ways to do this. Debian uses <a href="https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server">ufw</a>, the current release of RHEL
+    <p>There are many ways to do this. Debian uses <a href="https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server">ufw</a>, the current release of RHEL
       uses <a href="https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server">system-config-firewall-tui</a>, <a href="http://docs.saltstack.com/en/latest/topics/tutorials/firewall.html">lokkit</a> is coming along nicely and
       it looks like RHEL 7 may be shipped with <a href="https://fedoraproject.org/wiki/FirewallD">FirewallD</a> by default. Ultimately
       they all do the same thing slightly differently. Make sure you
       understand your configurations and review them regularly. </p>
-    <p class="P2">If you already have established a <a href="https://en.wikipedia.org/wiki/Virtual_private_network">virtual private network</a> (VPN) then
+    <p>If you already have established a <a href="https://en.wikipedia.org/wiki/Virtual_private_network">virtual private network</a> (VPN) then
       you can restrict SSH access to within that private network. This
       way you need to first log in to the VPN before being able to
       access the port. Leveraging an existing VPN has some additional
@@ -697,26 +696,26 @@ md5sum ~/DrupalSecurity.pdf</p>
       circumvent it. </p>
     <br />
     <h3>5) <a name="Initial_Installs">Initial Installs</a></h3>
-    <p class="P2">There are some tools to harden your Linux system. The
+    <p>There are some tools to harden your Linux system. The
       program <a href="http://olex.openlogic.com/packages/grsecurity">grsecurity</a> addresses a number of
       memory and permissions issues with the kernel. </p>
-    <p class="P2"><a href="https://help.ubuntu.com/community/BastilleLinux">BastilleLinux</a> guides the
+    <p><a href="https://help.ubuntu.com/community/BastilleLinux">BastilleLinux</a> guides the
       administrator through an interactive process to limit access on
       the server. </p>
-    <p class="P2">Mandatory Access Controls (MAC) policies can be
+    <p>Mandatory Access Controls (MAC) policies can be
       managed through programs like <a href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">SELinux</a> and <a href="https://en.wikipedia.org/wiki/AppArmor">AppArmour</a>, for high security
       environments. With Ubuntu, use AppArmour as it comes installed by
       default. While AppArmour is often considered inferior and less
       flexible than SELinux, there is no need to uninstall it.AppArmour
       may impact other security tools and should not be used in
       conjunction with SELinux. </p>
-    <p class="P2">With other distributions it is recommended to use
+    <p>With other distributions it is recommended to use
       SELinux (examples for use in <a href="https://wiki.debian.org/SELinux">Debian</a>
       and <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/">Red Hat</a>) as it’s rules were
       initially developed to meet NSA policies. </p>
         <p class="P13">Debian (not Ubuntu): apt-get install perl-tk bastille
       selinux-basics selinux-policy-default auditd</p>
-    <p class="P2">Using an host based intrusion detection system (HIDS)
+    <p>Using an host based intrusion detection system (HIDS)
       such as the <a href="http://www.security-marathon.be/?p=544">OSSEC</a> host-based intrusion
       detection system (HIDS) or <a href="http://www.phpids.org/">PHPIDS</a> (PHP-intrusion detection
       system) is a good practice. There are good how-to documents
@@ -727,12 +726,12 @@ md5sum ~/DrupalSecurity.pdf</p>
       alert you to suspicious activity (available for <a href="https://www.centos.org/docs/2/rhl-rg-en-7.2/ch-tripwire.html">CentOS</a> and <a href="http://penguinapple.blogspot.ca/2010/12/installing-configuring-and-using.html">Debian</a>). With any HIDS, you should
       make sure that secure IPs, such as your outgoing gateway is
       whitelisted.</p>
-    <p class="P2"><a href="http://www.madirish.net/428">Drupal monitoring can be set up to work
+    <p><a href="http://www.madirish.net/428">Drupal monitoring can be set up to work
         with OSSEC</a> which would be more efficient than using Drupal’s
       <a href="https://drupal.org/project/login_security">Login Security</a> module as it would
       allow you to use your existing HIDS infrastructure to alert you to
       these sorts of attacks.</p>
-    <p class="P2">Crackers will often try to use a <a href="http://en.wikipedia.org/wiki/Brute-force_attack">brute force attack</a> to guess
+    <p>Crackers will often try to use a <a href="http://en.wikipedia.org/wiki/Brute-force_attack">brute force attack</a> to guess
       usernames and passwords. Using a service like <a href="http://www.fail2ban.org/wiki/index.php/Main_Page">Fail2ban</a> can block IP addresses
       that are making an unreasonable number of login attempts. This
       won’t prevent distributed attacks, but could be used in
@@ -745,7 +744,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       out on <a href="http://stackoverflow.com/questions/14477942/how-to-enable-ddos-protection">StackOverflow</a>.</p>
         <p class="P13">Debian: apt-get install fail2ban</p>
     <p class="P13">CentOS: yum install fail2ban</p>
-    <p class="P2">Place the /etc directory under version control so that
+    <p>Place the /etc directory under version control so that
       you can easily track which configurations have changed. The
       program <a href="https://help.ubuntu.com/12.04/serverguide/etckeeper.html">etckeeper</a> automates this process
       nicely and hooks into your package manager and cron to do its work
@@ -754,7 +753,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       etckeeper init &amp;&amp; etckeeper commit "initial commit" </p>
     <p class="P13">CentOS: yum install etckeeper &amp;&amp; etckeeper
       init &amp;&amp; etckeeper commit "initial commit"</p>
-    <p class="P2">Ubuntu comes with the <a href="https://help.ubuntu.com/community/UbuntuPopularityContest">Ubuntu Popularity Contest</a> (popcon)
+    <p>Ubuntu comes with the <a href="https://help.ubuntu.com/community/UbuntuPopularityContest">Ubuntu Popularity Contest</a> (popcon)
       to gather statistics about which packages are used in the
       community. Although this is anonymous, it can be a good idea to
       remove this package so that it is not a potential weak link. This
@@ -762,7 +761,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       impacting your site’s performance.</p>
         <p class="P13">Ubuntu: dpkg --purge popularity-contest
       ubuntu-standard</p>
-    <p class="P2">You will probably want to install an opcode cache and
+    <p>You will probably want to install an opcode cache and
       <a href="http://memcached.org/">Memcache</a>
       (or <a href="http://redis.io/">Redis</a>)
       to ensure that your site is responding quickly. PHP 5.5+ now comes
@@ -772,7 +771,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       make your server more responsive by minimizing the load on the
       server and improving caching. This will help when there is an
       unexpected server load. </p>
-    <p class="P2">Aside from the performance advantages, there can be
+    <p>Aside from the performance advantages, there can be
       security improvements by caching the public display. There are
       huge security advantages to restricting access to the rendering
       logic (Drupal’s admin) so that the public is only interacting with
@@ -781,7 +780,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       mis-configured cache can easily <a href="https://speakerdeck.com/owaspmontreal/demystifying-web-cache-by-kristian-lyngstol#24%20">expose personal data to the public</a>.
       This needs to be carefully tested on sites which have private or
       confidential data. </p>
-    <p class="P2">There are a number of ways to cache the public
+    <p>There are a number of ways to cache the public
       display, including leveraging Memcache and <a href="http://wiki.nginx.org/Main">Nginx</a>
       to extend Drupal's internal page cache. One of the most powerful
       tools is <a href="https://www.varnish-cache.org/">Varnish</a> which can provide
@@ -792,14 +791,14 @@ md5sum ~/DrupalSecurity.pdf</p>
       which are required to authenticate:</p>
         <p class="P13">if (req.http.host == "example.com") { unset
       req.http.Cookie;} </p>
-    <p class="P2">If you have a site which has only a few users and
+    <p>If you have a site which has only a few users and
       doesn’t have any online forms for anonymous users then you can
       configure Varnish to simply reject all HTTP POST requests. Then in
       Apache you can whitelist the IP address you want to have access to
       login into Drupal. Matt Korostoff documented this approach in his
       <a href="http://mattkorostoff.com/article/I-survived-drupalgeddon-how-hackers-took-over-my-site">breakdown of the Drupalgeddon attacks</a>
       that affected many Drupal 7 sites. </p>
-    <p class="P2">Shared server environments provide a number of
+    <p>Shared server environments provide a number of
       security challenges. Do not expect it to be easy to securely host
       several sites on the same server with direct shell access to
       different clients. If you need to do this, it is worth
@@ -817,7 +816,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       security. </p>
     <br />
     <h3>6) <a name="Server_Maintenance">Server Maintenance</a></h3>
-    <p class="P2">Security requires constant vigilance. Someone should
+    <p>Security requires constant vigilance. Someone should
       be tasked with ensuring that the server is kept up-to-date at
       least weekly. This isn’t usually a complex task, but it does
       require that someone subscribe to the security update mailing list
@@ -826,7 +825,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       Upgrades can be done with the following commands:</p>
         <p class="P13">Debian: apt-get update &amp;&amp; apt-get upgrade </p>
     <p class="P13">CentOS: yum upgrade</p>
-    <p class="P2">It is very useful to have a service like <a href="http://www.nagios.org/documentation">Nagios</a> monitoring your production
+    <p>It is very useful to have a service like <a href="http://www.nagios.org/documentation">Nagios</a> monitoring your production
       server to alert you if any problems arise. The configuration of
       Nagios can be quite complex, but you can set it up easily enough
       on your staging server. You will need to grant access on your
@@ -836,17 +835,17 @@ md5sum ~/DrupalSecurity.pdf</p>
       presents. To get the server installed in your staging environment,
       execute the following from the command line:</p>
         <p class="P13">Debian: apt-get install nagios3 nagios-nrpe-plugin</p>
-    <p class="P2">And for each server you wish to monitor with Nagios:</p>
+    <p>And for each server you wish to monitor with Nagios:</p>
     <p class="P13">Debian: apt-get install nagios-nrpe-plugin</p>
-    <p class="P2"><a href="http://munin-monitoring.org/">Munin</a> can be run on the production
+    <p><a href="http://munin-monitoring.org/">Munin</a> can be run on the production
       environment to give you a sense of the relative load of various
       key elements over the past hour, day, week and month. This can be
       useful when debugging issues with your server. </p>
         <p class="P13">Debian: apt-get install munin munin-node</p>
-    <p class="P2">Access to this information is available through your
+    <p>Access to this information is available through your
       web server but you will want to configure your site to <a href="http://www.howtoforge.com/server_monitoring_monit_munin">ensure that this data is not publicly
         available</a>. </p>
-    <p class="P2">There are also many good reasons to use server <a href="https://en.wikipedia.org/wiki/Software_configuration_management">configuration management software</a>
+    <p>There are also many good reasons to use server <a href="https://en.wikipedia.org/wiki/Software_configuration_management">configuration management software</a>
       like <a href="http://projects.puppetlabs.com/projects/puppet">Puppet</a> or <a href="https://www.chef.io/">Chef</a>.
       Initially, it will take you a lot more time to configure it this
       way, but it will make it much easier to restore your server when
@@ -857,7 +856,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       environments. </p>
     <br />
     <h3>7) Managing Server Logs</h3>
-    <p class="P2">Your web server is a complex environment involving
+    <p>Your web server is a complex environment involving
       thousands of software projects. Most of these will store log files
       in /var/log. If log files aren’t properly rotated and compressed
       they can become unmanageably large. If your hard drive is filled
@@ -865,7 +864,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       distributions of Linux come come with <a href="http://www.cyberciti.biz/faq/how-do-i-rotate-log-files/">logrotate</a> configured such that log
       files are segmented on a regular basis and the archive is
       compressed so that space isn’t a problem. </p>
-    <p class="P2">Most Linux distributions also come with syslog built
+    <p>Most Linux distributions also come with syslog built
       in, which is critical for doing security audits. You can also
       configure it to <a href="http://www.linuxvoodoo.com/resources/howtos/syslog">send emergency messages to a remote
         machine</a>. There is a discussion in the Drupal section later
@@ -873,7 +872,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       tools to help system administrators more effectively monitor their
       log files, and regular log reviews can be an important part of
       early breach detection. </p>
-    <p class="P2">If your server is configured with a caching reverse
+    <p>If your server is configured with a caching reverse
       proxy server or a load balancer such as Varnish, Nginx or haproxy
       then you should ensure that Drupal is made aware of the actual
       REMOTE_IP. The common solution requires configuring the
@@ -897,16 +896,16 @@ md5sum ~/DrupalSecurity.pdf</p>
       array('127.0.0.1','192.168.0.2');</p>
     <p class="P13">$conf['reverse_proxy_header'] =
       'HTTP_X_FORWARDED_FOR';</p>
-    <p class="P2">Another approach to dealing with this is to simply use
+    <p>Another approach to dealing with this is to simply use
       Apache’s Reverse Proxy Add Forward (RPAF) module. As Khalid
       Baheyeldin <a href="http://2bits.com/articles/correct-client-ip-address-reverse-proxy-or-content-delivery-network-cdn.html">writes in his blog</a>, this Apache
       module can be used for both Reverse Proxy and/or a Content
       Delivery Network (CDN). </p>
         <p class="P13">Debian: apt-get install libapache2-mod-rpaf</p>
-    <p class="P2">By editing the /etc/apache2/mods-enabled/rpaf.conf,
+    <p>By editing the /etc/apache2/mods-enabled/rpaf.conf,
       set your proxy IP and restarting Apache your access.log will show
       the real client IP rather than that of your proxy.</p>
-    <p class="P2">The most important server logs to monitor are
+    <p>The most important server logs to monitor are
       Apache’s. If there is more than one site on a given server, it is
       normal for each site to have it’s own log file rather than using
       the default generic one. If you run more than one site or have
@@ -922,12 +921,12 @@ md5sum ~/DrupalSecurity.pdf</p>
     <br />
     <h2>E) Web Servers</h2>
     <br />
-    <p class="P2">All files and directories in your DocumentRoot should
+    <p>All files and directories in your DocumentRoot should
       be editable by a non-root user, and should also not be writable by
       the Apache user, except the Drupal files/ directory. Please refer
       to Drupal’s <a href="https://drupal.org/node/244924">Securing file permissions and ownership</a>
       for the complete discussion.</p>
-    <p class="P2"><a href="http://php-fpm.org/">PHP-FPM
+    <p><a href="http://php-fpm.org/">PHP-FPM
         over FastCGI</a> allows your server to have <a href="http://www.howtoforge.com/php-fpm-nginx-security-in-shared-hosting-environments-debian-ubuntu">site specific “pools” of PHP</a>. By
       giving each site unique PHP permissions you can effectively
       "sandbox" a PHP application and simplify file/folder permissions
@@ -937,7 +936,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       There are also real <a href="https://phpbestpractices.org/#serving-php">advantages to using PHP-FPM for
         managing server load</a> as Apache's mod_php isn’t very
       efficient. </p>
-    <p class="P2">Server or browser support for SSL versions 2 and 3 are
+    <p>Server or browser support for SSL versions 2 and 3 are
       not recommended. Despite this, as Google noted in their blog post
       about the <a href="http://googleonlinesecurity.blogspot.co.uk/2014/10/this-poodle-bites-exploiting-ssl-30.html">POODLE Exploit</a>, “SSL 3.0 is nearly
       18 years old, but support for it remains widespread.” Web browsers
@@ -945,7 +944,7 @@ md5sum ~/DrupalSecurity.pdf</p>
         test</a> to ensure if your browsers are vulnerable. Qualys SSL
       Labs also have a really <a href="https://www.ssllabs.com/ssltest/">great
         tool to evaluate</a> if your server is still vulnerable.</p>
-    <p class="P2">On your web server, it is good to ensure that SSL
+    <p>On your web server, it is good to ensure that SSL
       configuration permits only TLS version 1.2. unfortunately some
       common web browsers still do not support the latest version of
       TLS. Fortunately, as of <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security#Web_browsers">February 2014</a>, the latest version
@@ -954,11 +953,11 @@ md5sum ~/DrupalSecurity.pdf</p>
       key lengths 256 bits and higher. You can install <a href="https://help.ubuntu.com/community/GnuTLS">GnuTLS</a> from the command line to
       enable this:</p>
         <p class="P13">Debian: apt-get install gnutls-bin</p>
-    <p class="P2">It is also recommended to disable SSLCompression in
+    <p>It is also recommended to disable SSLCompression in
       Apache. As stated in the <a href="https://httpd.apache.org/docs/2.2/mod/mod_ssl.html#sslcompression">Apache documentation</a> “Enabling
       compression causes security issues in most setups (the so called
       CRIME attack).” This is the default for Apache version 2.4.4+.</p>
-    <p class="P2">The HeartBleed security bug has gotten a lot of
+    <p>The HeartBleed security bug has gotten a lot of
       attention lately. The primary security practice we can recommend
       from this is to ensure that someone is always paying attention to
       the security mailing lists for your operating system. By the time
@@ -968,7 +967,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       Although we didn’t explicitly refer to it as this in earlier
       versions of this document, the hardened SSL configuration we
       recommended in the fall implements this. </p>
-    <p class="P2">The duraconf configuration scripts for <a href="https://github.com/ioerror/duraconf">hardening SSL/TLS services</a> provided
+    <p>The duraconf configuration scripts for <a href="https://github.com/ioerror/duraconf">hardening SSL/TLS services</a> provided
       by Jacob Appelbaum would have protected users from the HeartBleed
       bug. In the Apache config you can <a href="https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/">set hardened SSL configurations for the
         HTTPS protocol</a> (note that we’re now using Hynek Schlawack
@@ -978,11 +977,11 @@ md5sum ~/DrupalSecurity.pdf</p>
     <p class="P13">SSLHonorCipherOrder On</p>
     <p class="P13">SSLCipherSuite
 ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS</p>
-    <p class="P2">After restarting Apache, you can check the SSL
+    <p>After restarting Apache, you can check the SSL
       information in a browser by double clicking on the lock icon in
       the address bar on https:// sites to get information on the
       encryption channel and confirm it’s using TLS. </p>
-    <p class="P2">There are other approaches like that suggested by <a href="https://raymii.org/s/tutorials/Strong_SSL_Security_On_Apache2.html">Remy van Elst</a>, but ultimately you
+    <p>There are other approaches like that suggested by <a href="https://raymii.org/s/tutorials/Strong_SSL_Security_On_Apache2.html">Remy van Elst</a>, but ultimately you
       need to test your SSL configuration through a tool like <a href="https://www.ssllabs.com/ssltest/">Qualys
         SSL Labs’ Server Test</a>. This is a free online service that
       performs a deep analysis of the configuration of any SSL web
@@ -990,7 +989,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       and do things like confirm that you are using the latest version
       of TLS and verify that you are protected from <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security#BEAST_attack">BEAST attacks</a>. You want straight
       A’s!</p>
-    <p class="P2">On your staging/development server it is fine to
+    <p>On your staging/development server it is fine to
       provide a <a href="https://en.wikipedia.org/wiki/Self-signed_certificate">self signed SSL certificate</a> to
       ensure that the traffic is encrypted. Setting up a third party
       verified SSL certificate on your production environment will be
@@ -1001,16 +1000,16 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
         Test constructed by SSLLabs</a> or with the following openssl
       command:</p>
         <p class="P13">openssl s_client -connect SERVER:443</p>
-    <p class="P2">To check a specific protocol using openssl:</p>
+    <p>To check a specific protocol using openssl:</p>
         <p class="P13">openssl s_client -connect SERVER:443 -ssl2</p>
     <p class="P13">openssl s_client -connect SERVER:443 -ssl3</p>
-    <p class="P2">Note that SSL Certificate Authorities are depreciating
+    <p>Note that SSL Certificate Authorities are depreciating
       the very popular SHA1 hashing function because of weakness in the
       algorithm. Qualys Labs recommends <a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">renewing with SHA256</a> as soon as
       possible.</p>
     <br />
     <h3>1) Restricting Access</h3>
-    <p class="P2">Another useful Apache module is <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html">mod_authz_host</a> which can restrict
+    <p>Another useful Apache module is <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html">mod_authz_host</a> which can restrict
       access to specific pages such as /user and /admin/* - this can be
       useful if your site is used just as a CMS with no user
       interaction. The example below is more appropriate for sites which
@@ -1039,7 +1038,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       !^(206\.47\.13\.64|174\.142\.104\.53|99\.241\.125\.191)$</p>
     <p class="P13"> RewriteRule ^admin/.* - [F]</p>
     <p class="P13">&lt;/IfModule&gt;</p>
-    <p class="P2">Drupal has a number of processes that can be triggered
+    <p>Drupal has a number of processes that can be triggered
       by URLs. You may wish to block some of these using Apache so that
       they simply cannot be loaded from the web browser. Common
       processes to secure are update, install and cron, tasks which can
@@ -1049,7 +1048,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       "/(install|update|cron|xmlrpc|authorize).php"</p>
     <br />
     <h3>2) Removing Code</h3>
-    <p class="P2"><a href="https://en.wikipedia.org/wiki/Common_Gateway_Interface">CGI</a>s have been used extensively in
+    <p><a href="https://en.wikipedia.org/wiki/Common_Gateway_Interface">CGI</a>s have been used extensively in
       web development and there are a great many good server executables
       that you may want to consider running. However, many CGIs that may
       be installed on a server are not actually needed and expose you to
@@ -1058,34 +1057,34 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       AddHandler cgi-script .cgi from your Apache config. You can also
       do this from the command line with:</p>
         <p class="P13">Debian: a2dismod cgi</p>
-    <p class="P2">If you don’t need it, remove it. All software is a
+    <p>If you don’t need it, remove it. All software is a
       source of potential risk, so list all Apache modules and look for
       unneeded modules. There are some <a href="https://groups.drupal.org/node/41320">good discussions</a> on drupal.org
       about which modules are necessary and which are not.</p>
         <p class="P13">Debian: apache2ctl -t -D DUMP_MODULES</p>
     <p class="P13">CentOS: apachectl -t -D DUMP_MODULES</p>
-    <p class="P2">If you are using mod_php with apache, it can be useful
+    <p>If you are using mod_php with apache, it can be useful
       to enable php5-dev for Drupal so that you can enable tools like
       PECL’s uploadprogress. However, after you’ve done that you will
       want to remove the php module that you used to build it:</p>
         <p class="P13">Debian: sudo apt-get remove php5-dev</p>
     <br />
-    <p class="P2">You can find other development packages on your server
+    <p>You can find other development packages on your server
       by:</p>
         <p class="P13">Debian: apt-cache search ".-dev"</p>
     <br />
     <h3>3) HTTP Headers</h3>
-    <p class="P2">The Australian Government has produced an impressive
+    <p>The Australian Government has produced an impressive
       report <a href="http://www.dsd.gov.au/publications/csocprotect/protecting_web_apps.htm">Information Security Advice for All
         Levels of Government</a> which is sadly a bit out-dated as it
       hasn’t been updated since early 2012. Most of that report is
       focused on content security policy, HTTP strict transport security
       and frame options. </p>
-    <p class="P2">The <a href="https://drupal.org/project/seckit">Security Kit</a> Drupal module
+    <p>The <a href="https://drupal.org/project/seckit">Security Kit</a> Drupal module
       addresses many security problems associated with HTTP headers, but
       it is good to have them addressed at the Apache layer where
       possible. </p>
-    <p class="P2">The <a href="http://www.w3.org/TR/CSP/">W3C</a> is developing a standard
+    <p>The <a href="http://www.w3.org/TR/CSP/">W3C</a> is developing a standard
       content security policy (CSP) to provide security controls which
       can mitigate attacks such as <a href="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29">Cross Site Scripting (XSS)</a>. <a href="https://developer.mozilla.org/en-US/docs/Security/CSP/Using_Content_Security_Policy">Mozilla</a> has produced a good
       description of how to write a <a href="https://www.owasp.org/index.php/Content_Security_Policy">CSP</a> and and there are many
@@ -1095,7 +1094,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
         <p class="P13">Example Apache configuration:</p>
     <p class="P13">Content-Security-Policy: default-src 'self'
       *.example.gc.ca</p>
-    <p class="P2">Your website and its visitors are going to be more
+    <p>Your website and its visitors are going to be more
       secure if you use HTTPS to ensure that all information passing
       between the web server and the browser is encrypted. There is a <a href="http://chapterthree.com/blog/why-your-site-should-be-using-https">growing movement encrypt all web
         traffic</a>, even to brochure sites. Doing so will have minor
@@ -1112,19 +1111,19 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <p class="P13"> RewriteRule ^(.*)$ https://%{HTTP_HOST}$1
       [redirect=301]</p>
     <p class="P13">&lt;/VirtualHost&gt;</p>
-    <p class="P2">This can be further enhanced by opting into the <a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">HTTP Strict Transport Security (HSTS)</a>
+    <p>This can be further enhanced by opting into the <a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">HTTP Strict Transport Security (HSTS)</a>
       enhancement which sends a special response header to the browser,
       which then prevents any communications from being sent over HTTP
       to the specified domain. </p>
         <p class="P13">Example HTTPS Apache configuration (see <a href="https://www.owasp.org/index.php/HTTP_Strict_Transport_Security#Server_Side">example</a>):</p>
     <p class="P13">Header set Strict-Transport-Security
       "max-age=16070400; includeSubDomains"</p>
-    <p class="P2">You can also submit your site to the <a href="https://www.eff.org/https-everywhere">EFF’s HTTPS Everywhere extension</a>
+    <p>You can also submit your site to the <a href="https://www.eff.org/https-everywhere">EFF’s HTTPS Everywhere extension</a>
       which will allows security conscious individuals to rewrite
       requests to these sites so that they use HTTPS by default. As part
       of this extension, you can <a href="https://www.eff.org/https-everywhere/rulesets">submit new public rules</a> for your
       site to ensure that it runs optimally with this browser extension.</p>
-    <p class="P2">With the use of <a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options">Frame Options</a>, users can be exposed
+    <p>With the use of <a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options">Frame Options</a>, users can be exposed
       to <a href="https://en.wikipedia.org/wiki/Clickjacking">Clickjacking</a> when an iframe is
       injected in your site. If you know that you aren’t going to need
       to use iframes in your site you can disable it by modifying the
@@ -1138,13 +1137,13 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <p class="P13">Header always append X-Frame-Options SAMEORIGIN</p>
     <br />
     <h3>4) Everything Else</h3>
-    <p class="P2">Modify the web server configuration to <a href="http://www.ducea.com/2007/10/22/apache-tips-disable-the-http-trace-method/">disable the TRACE/TRACK</a> methods
+    <p>Modify the web server configuration to <a href="http://www.ducea.com/2007/10/22/apache-tips-disable-the-http-trace-method/">disable the TRACE/TRACK</a> methods
       either by employing the TraceEnable directive or by <a href="http://perishablepress.com/disable-trace-and-track-for-better-security/">adding the following lines</a> to your
       Apache configuration: </p>
         <p class="P13">RewriteEngine On</p>
     <p class="P13">RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)</p>
     <p class="P13">RewriteRule .* - [F]</p>
-    <p class="P2">You should keep your server up-to date. Security by
+    <p>You should keep your server up-to date. Security by
       obscurity may delay some crackers, but not prevent them from
       accessing your system. Looking at the logs for any popular site,
       you will notice thousands of fruitless attempts at exploits that
@@ -1154,20 +1153,20 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       to your Apache configuration:</p>
         <p class="P13">ServerSignature Off</p>
     <p class="P13">ServerTokens ProductOnly</p>
-    <p class="P2">One of the nice things about Ubuntu/Debian is that the
+    <p>One of the nice things about Ubuntu/Debian is that the
       Apache file structure is clean. By default it allows you store a
       variety of different configurations for sites or modules that are
       stored in logical directories. That’s not critical, but having a
       well defined Apache config file is. There should be inline
       comments about all changed variables explaining why they were
       added or modified.</p>
-    <p class="P2">It is possible to restrict the outgoing access of the
+    <p>It is possible to restrict the outgoing access of the
       web server by leveraging iptables’ “--uid-owner” option on the
       OUTPUT table. This can also be done using <a href="https://www.getpantheon.com/blog/containers-not-virtual-machines-are-future-cloud-0">containers and namespaces</a> on modern
       Linux kernels. In most cases, if you are using containers, the UID
       of Apache will be the same inside the container as outside of it.
     </p>
-    <p class="P2">You should make note of the user/UID of your web
+    <p>You should make note of the user/UID of your web
       server. This is dependent on the package installation order, but
       often this is “www-data” (uid 33) in Debian/Ubuntu and “nobody”
       (uid 65534) in CentOS. If you are using PHP-FPM, then you will
@@ -1175,7 +1174,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       Apache’s. Double check by viewing the output of:</p>
         <p class="P13">Debian: ps aux | grep apache</p>
     <p class="P13">CentOS: ps aux | grep http</p>
-    <p class="P2">In order to restrict Apache to connect only to
+    <p>In order to restrict Apache to connect only to
       https://drupal.org (with IP addresses 140.211.10.62 and
       140.211.10.16 at the time of writing) insert the following
       firewall rules:</p>
@@ -1187,7 +1186,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       owner --uid-owner ${APACHE_UID} -m tcp --dport 443 -j ACCEPT</p>
     <p class="P13">iptables -A OUTPUT -m owner --uid-owner ${APACHE_UID}
       -m state --state NEW -j DROP</p>
-    <p class="P2">There are also Apache modules like <a href="https://www.projecthoneypot.org/httpbl_download.php">Project Honey Pot</a> that make it
+    <p>There are also Apache modules like <a href="https://www.projecthoneypot.org/httpbl_download.php">Project Honey Pot</a> that make it
       harder for people to hack your system. Honey Pot can also be <a href="https://drupal.org/project/httpbl">installed on Drupal</a>, but Apache is
       often more efficient at addressing attacks like this before it
       hits PHP:</p>
@@ -1195,11 +1194,11 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <p class="P13">CentOS: yum install mod_httpbl</p>
     <br />
     <h3>8) Web Application Firewall</h3>
-    <p class="P2">Web Application Firewalls (WAFs) can be used to
+    <p>Web Application Firewalls (WAFs) can be used to
       provide additional protection over the Web server. It can be a
       standalone server that act as a reverse proxy or a Web server
       modules.</p>
-    <p class="P2">Apache has a number of modules that can be installed
+    <p>Apache has a number of modules that can be installed
       to tighten security of the web server. We recommend installing <a href="http://www.thefanclub.co.za/how-to/how-install-apache2-modsecurity-and-modevasive-ubuntu-1204-lts-server">ModSecurity and mod_evasive</a> as a <a href="https://www.owasp.org/index.php/Web_Application_Firewall">Web Application Firewall (WAF)</a>.
       This can be set to leverage the Open Web Application Security
       Project's (OWASP) <a href="https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project">ModSecurity Core Rule Set Project</a>.
@@ -1207,9 +1206,9 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
         <p class="P13">Debian: apt-get install libapache2-mod-evasive
       libapache2-modsecurity; a2enmod mod-security; a2enmod
       mod-evasive CentOS: yum install mod_evasive mod_security</p>
-    <p class="P2">To engage ModSecurity in your Apache, you’ll need to <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#a-recommended-base-configuration">set up the base files in your Apache
+    <p>To engage ModSecurity in your Apache, you’ll need to <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#a-recommended-base-configuration">set up the base files in your Apache
         configuration</a> and then restart Apache.</p>
-    <p class="P2">Using default generic configurations such as the OWASP
+    <p>Using default generic configurations such as the OWASP
       Core Rule Set can impact the normal behavior of Drupal and must be
       tested extensively before deployment. Usually some rules are
       breaking rich content edition or modules that behave differently
@@ -1218,17 +1217,17 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       Default <a href="https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended#L7">configuration of ModSecurity</a> should
       do it with:</p>
         <p class="P13">SecRuleEngine DetectionOnly</p>
-    <p class="P2">You can then set it to “On” whenever you are ready. A
+    <p>You can then set it to “On” whenever you are ready. A
       server restart is needed for changes to be effective. In that case
       the WAF will behave as a passive Web application intrusion
       detection system and you can chose to never set it to “On” if you
       wish to use it only for that purpose. In any cases, you’ll want to
       monitor the log files for alerts in order to detect malicious
       attempts and potential false positives.</p>
-    <p class="P2">WAF software needs maintenance as well and rules
+    <p>WAF software needs maintenance as well and rules
       should be updated periodically. Tests for false positive should be
       made after each change of functionality within the Drupal site.</p>
-    <p class="P2">At last but not least, WAFs are a great solution for <a href="https://www.owasp.org/index.php/Virtual_Patching_Cheat_Sheet">virtual patching</a> and application
+    <p>At last but not least, WAFs are a great solution for <a href="https://www.owasp.org/index.php/Virtual_Patching_Cheat_Sheet">virtual patching</a> and application
       flaw fixing, but they can be bypassed. It is discouraged to rely
       solely on that technology to keep up with security: fixing flaw
       and applying patch on the backend applications should not be
@@ -1236,11 +1235,11 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <br />
     <h2>F) PHP</h2>
     <br />
-    <p class="P2">There are lots of good resources on how to tighten
+    <p>There are lots of good resources on how to tighten
       security for PHP. It is a very commonly used scripting language
       and it is running some of the biggest and most important sites on
       the Internet. </p>
-    <p class="P2">We recommend installing a PHP hardening tool called <a href="http://www.suhosin.org/stories/index.html">Suhosin</a> which tightens up PHP’s
+    <p>We recommend installing a PHP hardening tool called <a href="http://www.suhosin.org/stories/index.html">Suhosin</a> which tightens up PHP’s
       existing configuration so that it is more robust. It is designed
       to protect servers and users from known and unknown flaws in PHP
       applications and the PHP core. </p>
@@ -1249,22 +1248,22 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       update ; apt-get install php5-suhosin`</p>
     <p class="P13">Debian: apt-get install php5-suhosin</p>
     <p class="P13">CentOS: yum install php-suhosin</p>
-    <p class="P2">A good comprehensive list is from Justin C. Klein’s
+    <p>A good comprehensive list is from Justin C. Klein’s
       blog post <a href="http://www.madirish.net/199">Hardening PHP from php.ini</a>. Other
       than his comments on safe_mode, we think he’s got it right. Drupal
       needs safe_mode disabled in PHP. PHP’s Safe Mode isn’t really
       considered much of a security enhancement and it has been removed
       in recent versions. </p>
-    <p class="P2">As with Apache modules, look for what you can remove.
+    <p>As with Apache modules, look for what you can remove.
       You can display a list of enabled PHP modules and look for those
       which can be removed. From the command line you can get a list of
       php modules with:</p>
         <p class="P13">php -m</p>
     <h4>Setting PHP.ini Variables</h4>
-    <p class="P2">Many PHP variables can be set via Apache as well as in
+    <p>Many PHP variables can be set via Apache as well as in
       the PHP configuration. We recommend keeping PHP-specific security
       configuration centrally located in the php.ini file.</p>
-    <p class="P2">Another exploit is <a href="https://en.wikipedia.org/wiki/Session_fixation">Session fixation</a> where a user's
+    <p>Another exploit is <a href="https://en.wikipedia.org/wiki/Session_fixation">Session fixation</a> where a user's
       browser session can be hijacked by a third party. <a href="https://www.owasp.org/index.php/HttpOnly">OWASP</a> goes into much more detail,
       but by using the <a href="http://php.net/manual/en/function.setcookie.php">HttpOnly</a> flag when generating a
       cookie you can reduce the risk of an XSS attack by limiting access
@@ -1280,10 +1279,10 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <p class="P13">session.use_only_cookies = 1</p>
     <p class="P13">session.cookie_secure = 1</p>
     <p class="P13">session.hash_function = whirlpool</p>
-    <p class="P2">You can obtain a list of the available hash functions
+    <p>You can obtain a list of the available hash functions
       on your system by executing:</p>
         <p class="P13">php -r ‘print_r(hash_algos())’</p>
-    <p class="P2">Limit your exposure to only the system resources you
+    <p>Limit your exposure to only the system resources you
       want to make available to a PHP page. You can control your
       resources by limiting the upload_max_filesize, max_execution_time,
       max_input_time, memory_limit variables so that a script isn’t as
@@ -1292,18 +1291,18 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <p class="P13">php_value max_input_time = 60</p>
     <p class="P13">php_value max_execution_time = 30</p>
     <p class="P13">php_value upload_max_filesize = 2M</p>
-    <p class="P2">By keeping up with security releases some will argue
+    <p>By keeping up with security releases some will argue
       that there is no need to hide which version of PHP you are
       running. There is a broader discussion of this debate in Section
       K. In the PHP setting you can also <a href="http://simonholywell.com/post/2013/04/three-things-i-set-on-new-servers.html">limit information about PHP</a> which
       is exposed by adding this to your php.ini file:</p>
         <p class="P13">expose_php = Off</p>
     <br />
-    <p class="P2">You can also explicitly disable PHP functions which
+    <p>You can also explicitly disable PHP functions which
       allow scripts to reference other URLs.</p>
         <p class="P13">allow_url_include = Off</p>
     <p class="P13">allow_url_fopen = Off</p>
-    <p class="P2">You can also <a href="http://www.cyberciti.biz/faq/linux-unix-apache-lighttpd-phpini-disable-functions/">disable PHP functions</a> which are
+    <p>You can also <a href="http://www.cyberciti.biz/faq/linux-unix-apache-lighttpd-phpini-disable-functions/">disable PHP functions</a> which are
       considered dangerous. You will want to test to see that your
       Drupal install doesn’t require any of these functions. You can
       grep from the Drupal root to find out if your site uses any of
@@ -1323,7 +1322,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       posix_setpgid, posix_setsid, posix_setuid, posix_times,
       posix_ttyname, posix_uname, proc_open, proc_close,
       proc_get_status, proc_nice, proc_terminate, popen</p>
-    <p class="P2">Drupal’s status page has a link to the output of
+    <p>Drupal’s status page has a link to the output of
       phpinfo() and you should decide whether or not you want to exclude
       that function in this list.   You want to be able to limit what
       PHP has access to in the file system. Note that you may want to
@@ -1333,7 +1332,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       in Apache, but I’ve tried to keep the PHP specific information
       inside the php.ini file:</p>
         <p class="P13">open_basedir = /var/www</p>
-    <p class="P2">Make sure the session path is outside the root web
+    <p>Make sure the session path is outside the root web
       directory and not readable or writable by any other system users.
       You will also want to set a temporary upload file directory that
       is outside of the web root. This can be specified in the php.ini
@@ -1343,7 +1342,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <br />
     <h2>G) Database Layer</h2>
     <br />
-    <p class="P2">With Drupal’s database abstraction layer you can now
+    <p>With Drupal’s database abstraction layer you can now
       run it on <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.sqlite.org/">SQLite</a>
       or <a href="http://www.postgresql.org/">PostgreSQL</a>
       out of the box. There are in fact a number of popular MySQL forks
@@ -1353,20 +1352,20 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       Oracle support for PHP is weak, so it is not recommended to use
       this database. We are not aware of any security advantages of one
       over the other. </p>
-    <p class="P2">The database for Drupal can run on the same server,
+    <p>The database for Drupal can run on the same server,
       but for performance reasons it can be beneficial to set it up on
       another server. You want to ensure that your server environment is
       robust enough that it cannot be easily brought down by a denial of
       service (DOS) attack. There are a few server side tools to help
       with this, but mostly it’s useful to have a buffer, even at your
       highest traffic times, so that your site is always responsive. </p>
-    <p class="P2">At the point where your server environment spreads on
+    <p>At the point where your server environment spreads on
       to more than one system, it begins to make sense to have a second
       network behind the web server, possibly including a VPN. It is
       quite likely that if the database is moved to an external server
       that there may soon be other servers including more than one
       front-end server too. </p>
-    <p class="P2">There is a lot that can be done to <a href="http://www.greensql.com/content/mysql-security-best-practices-hardening-mysql-tips">secure your database</a>. Much of it
+    <p>There is a lot that can be done to <a href="http://www.greensql.com/content/mysql-security-best-practices-hardening-mysql-tips">secure your database</a>. Much of it
       comes down to reviewing <a href="https://drupal.org/documentation/install/create-database">access permissions for the Drupal user</a>
       (set in Drupal’s settings.php), the backup user (which has read
       only access to do regular backups) and the database’s root user
@@ -1374,7 +1373,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       all have complex passwords. These need to be unique passwords and
       the root password should not be stored on the server, but rather
       in your encrypted Keepass database.</p>
-    <p class="P2">If your server is running locally, you can disable
+    <p>If your server is running locally, you can disable
       access for MySQL to the network and force it to only use the
       internal IP address. If your web server and database are on
       different servers, you won’t be able to do this, but you will be
@@ -1384,13 +1383,13 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       both the web server and MySQL, you can add this to your my.conf
       file:</p>
         <p class="P13">bind-address=127.0.0.1</p>
-    <p class="P2">Be sure to <a href="http://www.symantec.com/connect/articles/securing-mysql-step-step">review your databases, users and
+    <p>Be sure to <a href="http://www.symantec.com/connect/articles/securing-mysql-step-step">review your databases, users and
         permissions</a> to see that there are not any sample users or
       old databases still enabled on the server and that you are not
       giving greater access to a user than they need. You should also
       review the file system to see that the database files are
       restricted</p>
-    <p class="P2">If you need a graphical tool like <a href="http://www.phpmyadmin.net/home_page/index.php">phpMyAdmin</a>, disable it after use.
+    <p>If you need a graphical tool like <a href="http://www.phpmyadmin.net/home_page/index.php">phpMyAdmin</a>, disable it after use.
       Web applications like this can also be tightened down by placing
       them on a different port, firewall that port from other than
       127.0.0.1, and always access it via ssh port forwarding. Access to
@@ -1413,7 +1412,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <h2>H) Drupal</h2>
     <br />
     <h3>1) Files</h3>
-    <p class="P2"><a href="https://drupal.org/node/244924">Verify Drupal file permissions on the
+    <p><a href="https://drupal.org/node/244924">Verify Drupal file permissions on the
         server</a>. You really need to restrict write access to the
       server and verify that the right users/groups have the access that
       they need for Drupal to operate effectively. One can set all of
@@ -1421,7 +1420,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       cached files, sessions and temporary directories with write
       permissions. The major limitation of this approach is that it
       makes applying security upgrades more difficult. </p>
-    <p class="P2">By default, Drupal 7 disables execution of PHP in
+    <p>By default, Drupal 7 disables execution of PHP in
       directories where you can upload PHP. Check the .htaccess file in
       the files directory. You can also add this to your Apache Virtual
       Host to ensure that no handlers have been overlooked.</p>
@@ -1446,14 +1445,14 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       .py .pyc .pyo</p>
     <p class="P13"> &lt;/Files&gt;</p>
     <p class="P13">&lt;/Directory&gt;</p>
-    <p class="P2">Drupal needs to be able to write to the server to be
+    <p>Drupal needs to be able to write to the server to be
       able to perform certain tasks like managing file uploads and
       compressing/caching CSS/JS files. Ensure that Apache has write
       access to /tmp and also to the public sites folder:</p>
         <p class="P13">Debian: chown -R www-data:www-data
       sites/default/files</p>
     <p class="P13">CentOS: chown -R nobody:nobody sites/default/files</p>
-    <p class="P2">Make sure that you are only allowing users to upload
+    <p>Make sure that you are only allowing users to upload
       file types that have limited security problems with them. Text and
       images are usually quite safe. There have been some exploits on
       PDF files, but they are quite rare. Microsoft Office documents
@@ -1464,7 +1463,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       swf, exe, html, htm, php, phtml, py, js, vb, vbe, vbs.</p>
     <br />
     <h3>2) Drush</h3>
-    <p class="P2">Drush is a command line shell and scripting interface
+    <p>Drush is a command line shell and scripting interface
       for Drupal. We strongly recommend using <a href="https://github.com/drush-ops/drush">Drush</a> on
       both staging and production servers because it simplifies
       development and maintenance. Note that the version of Drush
@@ -1472,16 +1471,16 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       Although Drush used to be installed best with <a href="http://pear.php.net/">PHP’s PEAR</a>,
       the current best practice is with <a href="https://getcomposer.org/doc/00-intro.md#system-requirements">Composer</a> (the dependency manager
       for PHP). See install details on the <a href="https://github.com/drush-ops/drush#installupdate---composer">Drush git page</a>.</p>
-    <p class="P2">There is a <a href="https://drupal.org/project/security_check">Security Check</a> module available for
+    <p>There is a <a href="https://drupal.org/project/security_check">Security Check</a> module available for
       Drush which is a basic sanity test for your configuration. When
       the module is added, you can run this against your site from the
       docroot on the command line using:</p>
     <p class="P16">drush secchk</p>
-    <p class="P2">As with the server configuration in general, document
+    <p>As with the server configuration in general, document
       what you are using. Drush makes this fairly straightforward as you
       can simply export a list from the command line:</p>
         <p class="P13">drush pm-list --type=Module --status=enabled </p>
-    <p class="P2">Cron is the Linux time-based job scheduler and it is
+    <p>Cron is the Linux time-based job scheduler and it is
       used for a lot of key Drupal functions. Check to see that you are
       running cron several times a day. For Drupal 7 and above, <a href="https://drupal.org/cron">if there
         is traffic to the site, cron jobs are run every 3 hours</a>. The
@@ -1492,7 +1491,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       command line enter crontab -e and then insert:</p>
         <p class="P13">30 2,6,11,18 * * * cd /home/drupal &amp;&amp; drush
       @sites core-cron -y &gt; /dev/null</p>
-    <p class="P2">You will need developer modules to help you build your
+    <p>You will need developer modules to help you build your
       site, but they are a security risk on your production site and
       need to be disabled. Many modules (such as Views) have separate
       administration screens that can also be disabled in a production
@@ -1500,22 +1499,22 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       but can be disabled when they are not in use.It is always a good
       practice to see if there are any unnecessary modules can be
       disabled on your site. This also offers performance benefits. </p>
-    <p class="P2">Views is an incredibly powerful query building tool.
+    <p>Views is an incredibly powerful query building tool.
       Because of that, it is important that all Views have explicit
       access permissions set at /admin/build/views </p>
     <br />
     <h3>3) Errors</h3>
-    <p class="P2">Check the Status Report and Watchdog pages regularly
+    <p>Check the Status Report and Watchdog pages regularly
       and resolve issues - Drupal should be happy! This needs to be done
       regularly, even after launch. Remember that you can more quickly
       scan your logs by filtering for PHP errors. With the <a href="https://drupal.org/project/views_watchdog">Views Watchdog</a> module you could
       also build custom reports to display on your website.</p>
-    <p class="P2">On your production server, make sure to disable the
+    <p>On your production server, make sure to disable the
       display of PHP errors. These should be recorded to your logs, but
       not visible to your visitors. On your staging site you will want
       to see those errors to help you debug PHP problems, but it is a
       potential vulnerability to have those exposed.</p>
-    <p class="P2">This won’t catch all PHP errors however, and so it is
+    <p>This won’t catch all PHP errors however, and so it is
       also useful to review the error log of the web server itself.
       Watchdog is a good tool, but is <a href="http://www.asmallwebfirm.net/blogs/2013/04/achieving-drupal-log-bliss-splunk">limited in a number of ways</a>. Simply
       because it is database dependent, even having a lot of 404 errors
@@ -1526,7 +1525,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       integrated logging. </p>
     <br />
     <h3>4) Core and Contrib Hacks</h3>
-    <p class="P2">Before launching your site (and periodically
+    <p>Before launching your site (and periodically
       afterwards) it is useful to run the <a href="https://drupal.org/project/hacked">Hacked!</a> module to check what code
       differs from what was released on Drupal.org. Particularly when
       the <a href="https://drupal.org/project/diff">diff</a> module is enabled this is a
@@ -1535,7 +1534,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       analysis tool. If you need to apply patches against the stable
       released version of the code, the patch should be in a clearly
       documented directory. </p>
-    <p class="P2">It is unfortunately a common practice for less
+    <p>It is unfortunately a common practice for less
       experienced Drupal developers to cut corners and hack core to
       provide some functionality that is required. There are lots of
       reasons why this is a bad idea and <a href="http://drupal.stackexchange.com/questions/59054/why-dont-we-hack-core">why responsible developers don’t hack
@@ -1547,13 +1546,13 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       Being able to quickly scan through hundreds of thousands of lines
       of code and find differences against known releases is a huge
       security advantage. </p>
-    <p class="P2">You can also generate Drush make file from an existing
+    <p>You can also generate Drush make file from an existing
       Drupal site and then recreate a clean copy of the codebase which
       you can then diff (a command line comparison tool) to determine if
       your site has been hacked. </p>
         <p class="P13">drush generate-makefile make-file.make</p>
     <p class="P13">drush make make-file.make -y</p>
-    <p class="P2">It is recommended to run all modules you use through
+    <p>It is recommended to run all modules you use through
       the <a href="https://drupal.org/project/coder">Coder</a> module, but especially any
       custom built modules and themes. This module <a href="https://drupal.org/node/2135539">can
         give you suggestions</a> on how to follow the <a href="https://drupal.org/coding-standards">Drupal communities coding standards</a>.
@@ -1561,14 +1560,14 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       your site. Particularly when building custom modules the Coder
       module can help identify <a href="https://drupal.org/node/101495">unsanitized user input</a>, <a href="http://www.pixelite.co.nz/article/sql-injection-and-drupal-7-top-1-10-owasp-security-risks">SQL injection vulnerabilities</a> and <a href="http://drupalscout.com/knowledge-base/introduction-cross-site-request-forgery-csrf">Cross Site Request Forgery (CSRF)</a>
       problems.</p>
-    <p class="P2">It is unfortunately quite common for developers to
+    <p>It is unfortunately quite common for developers to
       extend Drupal by forking existing projects and not provide
       enhancements back to the community. Doing this breaks assumptions
       within the Update module but more importantly makes upgrades much
       more difficult. Even with a properly documented patch, it is a lot
       of work to upgrade, patch and re-write a function in a live
       website. </p>
-    <p class="P2">By contributing the improved code upstream, you can
+    <p>By contributing the improved code upstream, you can
       avoid that often painful process. The peer review that comes with
       contributing your code back to the community is a secondary
       benefit: your codebase will become more robust because more people
@@ -1581,7 +1580,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       parts that might be confidential. </p>
     <br />
     <h3>5) Administration</h3>
-    <p class="P2">Drupal has a very fine grained and customizable
+    <p>Drupal has a very fine grained and customizable
       permissions model. In its simplest form, users are assigned roles
       and each role is given permissions to various functions. Take the
       time to review roles with access to any of Administer filters,
@@ -1589,7 +1588,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       types, Administer site, Administer configuration, Administer views
       and translate interface. It is useful to review the permissions
       after upgrades to verify if any new permissions have been added.</p>
-    <p class="P2">Don’t use “admin” as your user/1 admin name. It’s the
+    <p>Don’t use “admin” as your user/1 admin name. It’s the
       first one that a cracker is going to try, so be a bit more unique.
       Obscurity isn’t the same as security, but no need to give them
       their first guess when choosing user names. Another good practice
@@ -1600,7 +1599,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       directly in the database. As with other server user accounts, you
       will want to restrict who has access to servers. Make sure to
       delete any test or developer accounts on the production server. </p>
-    <p class="P2">Don’t run Drupal without enabling the Update module
+    <p>Don’t run Drupal without enabling the Update module
       that comes with core. Drupal core and contributed modules use a
       structured release process that allows your administrators to be
       proactively alerted when one of those modules has a security
@@ -1613,7 +1612,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       security problems that are identified with the module. The Update
       module also allows you to get a daily or weekly email if there are
       security upgrades that need to be applied. </p>
-    <p class="P2">Drupal’s input filters are very powerful, but can
+    <p>Drupal’s input filters are very powerful, but can
       provide a vulnerability. Don’t enable the PHP filter which is
       available in Drupal core. It makes debugging more difficult and
       exposes your site to a greater risk than it is worth. All PHP code
@@ -1625,7 +1624,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       enforce this practice. </p>
     <br />
     <h3>6) Modules</h3>
-    <p class="P2">There are <a href="https://github.com/wet-boew/wet-boew-drupal/issues/248">a lot of Drupal security modules</a>.
+    <p>There are <a href="https://github.com/wet-boew/wet-boew-drupal/issues/248">a lot of Drupal security modules</a>.
       Depending on your needs you will want to add more or less than
       those listed here. </p>
     <ul>
@@ -1668,7 +1667,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     </ul>
     <br />
     <h3>7) Drupal Distributions</h3>
-    <p class="P2">Drupal distributions provide turnkey installations
+    <p>Drupal distributions provide turnkey installations
       that have been optimized for specific purposes, generally with a
       curated selection of modules and settings. There are now two
       distributions which have been specifically built for security, <a href="https://drupal.org/project/guardr">Guardr</a> and <a href="https://drupal.org/project/hardened_drupal">Hardened Drupal</a>. Guardr is built to
@@ -1679,10 +1678,10 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       options. </p>
     <br />
     <h3>8) Miscellaneous</h3>
-    <p class="P2">Review the discussion in Section K and decide if you
+    <p>Review the discussion in Section K and decide if you
       are going to remove the CHANGELOG.txt file. Ensure that you can
       keep up security upgrades on a weekly basis anddo not hack core! </p>
-    <p class="P2">If you plan to distribute your live site so that you
+    <p>If you plan to distribute your live site so that you
       can do testing or development outside of a controlled environment,
       consider building a <a href="http://drupalscout.com/knowledge-base/creating-sanitized-drupal-database-backup">sanitized version of the database</a>.
       This is especially important if you have user information stored
@@ -1691,24 +1690,24 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <br />
     <h2>I) Writing Secure Code</h2>
     <br />
-    <p class="P2">There are lots of great resources about how to write
+    <p>There are lots of great resources about how to write
       secure code. The <a href="https://drupal.org/writing-secure-code">Drupal handbook page</a> is a great
       place to start as it is focused directly on the best practices
       defined by this community. </p>
-    <p class="P2">In Drupal 7 it is important to remember that the
+    <p>In Drupal 7 it is important to remember that the
       themes all have PHP in them and that this is a potential place of
       a security breach. It isn’t uncommon for themers to put a lot of
       PHP inside of a theme rather than in a separate module. It’s also
       more difficult to keep up with security releases in themes, as
       they are by their very nature customized. </p>
-    <p class="P2">OWASP has a good <a href="https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet">PHP Security Cheat Sheet</a> with
+    <p>OWASP has a good <a href="https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet">PHP Security Cheat Sheet</a> with
       information specific things to watch out for when running PHP
       applications. They also have a more generic document on <a href="https://www.owasp.org/index.php/Secure_Coding_Cheat_Sheet">Secure Coding</a> and a more specific
       one on <a href="https://www.owasp.org/index.php/HTML5_Security_Cheat_Sheet">HTML5 Security</a>. </p>
-    <p class="P2">There are also lots of good blogs on writing secure
+    <p>There are also lots of good blogs on writing secure
       code, <a href="http://www.addedbytes.com/articles/writing-secure-php/writing-secure-php-1/">like this one,</a> highlighting general
       approaches to PHP coding. </p>
-    <p class="P2">Code review can be used in order to find flaws in
+    <p>Code review can be used in order to find flaws in
       existing code and discover potential bugs. OWASP offer a <a href="https://www.owasp.org/index.php/Category:OWASP_Code_Review_Project">free book</a> that can guide you on
       that process. Basically, you can do it manually using the same
       guidelines as when writing secure code, but you can as well use
@@ -1720,7 +1719,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       security related weaknesses in PHP frameworks and PHP such as <a href="https://github.com/Pheromone/phpcs-security-audit">phpcs-security-audit</a> that even
       support Drupal, but like many tools they need manual follow up and
       tend to execute slowly.</p>
-    <p class="P2">Common Drupal secure coding practices are:</p>
+    <p>Common Drupal secure coding practices are:</p>
     <li>Never trust user input. With <a href="https://api.drupal.org/api/drupal/includes%21common.inc/group/sanitization/7">sanitization functions</a> like
       check_plain(), filter_xss(), and filter_xss_admin() it is easy in
       Drupal to clean strings on output. Any variable in a template or
@@ -1754,13 +1753,13 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       system(), fopen(), delete() and others that execute external
       applications or interact directly with the file system.
       <p> </p>
-      <p class="P2">As David Strauss wrote recently, <a href="https://www.getpantheon.com/blog/all-code-debt">All Code is Debt</a>. “All of the
+      <p>As David Strauss wrote recently, <a href="https://www.getpantheon.com/blog/all-code-debt">All Code is Debt</a>. “All of the
         custom code you’ve written yesterday, rewritten today, and what
         you’ll write tomorrow -- you will be burdened with maintaining,
         forever.” Code needs to be maintained on a regular basis to
         ensure that it is keeping up with the latest security best
         practices. </p>
-      <p class="P2">When writing code, testing is important and security
+      <p>When writing code, testing is important and security
         testing should be part of the process. OWASP publish a very
         complete <a href="https://www.owasp.org/index.php/OWASP_Testing_Project">Testing Guide</a> as well as an <a href="https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project">Application Security Verification
           Standard</a> that goes deep into details. The verification
@@ -1774,7 +1773,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       <br />
       <h2>J) Development, Staging and Production</h2>
       <br />
-      <p class="P2">Any formalized development process should have three
+      <p>Any formalized development process should have three
         distinct server environments. The development environment can
         simply be a developer’s computer (or perhaps several developers’
         computers). The staging and production servers should be
@@ -1782,7 +1781,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
         document and test the migration process to verify that the code
         and configuration can move onto the production server. For more
         information refer to OpenConcept’s blog post on the <a href="http://openconcept.ca/blog/mgifford/flow-content-code">path of code vs content</a>.</p>
-      <p class="P2">The code for your Drupal site should be stored in a
+      <p>The code for your Drupal site should be stored in a
         central repository. The Drupal community has generally adopted <a href="http://git-scm.com/">Git</a>,
         but there are other valid options for version control. A
         developer will pull/push/clone/branch to/from that repository.
@@ -1797,17 +1796,17 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
         is definitely more complicated, but both the staging and
         production environments will need to be accessible via Drush and
         the Git repository. </p>
-      <p class="P2">You will need to set up an SSH user with its own SSH
+      <p>You will need to set up an SSH user with its own SSH
         keys to allow you to use Drush aliases to transfer databases
         between staging and production. You may also want to have
         another account to be able to transfer uploaded files which
         probably would not be managed under version control. </p>
-      <p class="P2">Using an external site like <a href="https://github.com/">GitHub</a>
+      <p>Using an external site like <a href="https://github.com/">GitHub</a>
         for storing your repository provides access to some great
         additional tools like <a href="http://docs.travis-ci.com/user/getting-started/">Travis</a> and <a href="https://saucelabs.com/builder">SauceLabs</a>
         which can help you deliver a more reliable site. You can also
         set it up on your staging or development server. </p>
-      <p class="P2">Limit access between servers. There is a potential
+      <p>Limit access between servers. There is a potential
         risk from having a semi-porous boundary between these
         environments, but the risks are far outweighed by the benefits.
         Having a central Git repository gives you control across all
@@ -1819,7 +1818,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       <br />
       <h2>K) Regular Maintenance</h2>
       <br />
-      <p class="P2">No security plan is foolproof. You need regular
+      <p>No security plan is foolproof. You need regular
         backups to ensure that you can restore your system quickly if
         required. With both the database and file system it is important
         to have both local and remote backups. You want the local backup
@@ -1835,14 +1834,14 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
         <li><a href="https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html">mysqldump</a> </li>
         <li><a href="http://www.percona.com/doc/percona-xtrabackup">xtrabackup</a></li>
       </ul>
-      <p class="P2">Remember that a backup is only good if it can be
+      <p>Remember that a backup is only good if it can be
         restored. It’s a best practice to make use of <a href="https://en.wikipedia.org/wiki/RAID">RAID drives</a>, but RAID should be
         used as a failsafe and not considered a backup strategy. Backups
         should be stored regularly locally, but there also need to be
         regular, long-term backups stored off-site. Make sure to
         evaluate your backup procedures and test your restores to verify
         that they are working effectively.</p>
-      <p class="P2">Drupal.org releases <a href="https://drupal.org/security">security
+      <p>Drupal.org releases <a href="https://drupal.org/security">security
 
 
 
@@ -1852,7 +1851,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
         account and the instructions are on the sidebar of the previous
         link). It is also useful to check the Status page and Watchdog
         pages in your Drupal site. </p>
-      <p class="P2"><a href="http://drupalwatchdog.com/volume-2/issue-2/using-apache-and-selinux-together">SELinux provides auditing services</a>
+      <p><a href="http://drupalwatchdog.com/volume-2/issue-2/using-apache-and-selinux-together">SELinux provides auditing services</a>
         which are worth monitoring. You should be watching your server
         logs, particularly your Apache error log: </p>
       <br />
@@ -1860,16 +1859,16 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       <p class="P13">grep 'login.php' /var/log/httpd/error_log</p>
       <p class="P13">egrep -i "denied|error|warn"
         /var/log/httpd/error_log</p>
-      <p class="P2">Security best practices are constantly changing.
+      <p>Security best practices are constantly changing.
         OWASP has released their <a href="https://www.owasp.org/index.php/Top_10_2013-Introduction">Top 10 for 2013</a> and it is
         somewhat similar to the 2010 list. The Top 10 for 2010 was
         leveraged to look at <a href="http://www.cameronandwilding.com/blog/pablo/10-most-critical-drupal-security-risks">how it applies to Drupal</a>. This
         needs to be updated, and reviewed, particularly if you are
         writing any custom code. </p>
-      <p class="P2">It’s a simple idea, but it can be good to search <a href="https://www.google.com/search?q=site:healthcare.gov%20intext:%22test%22">Google for test data</a> that might
+      <p>It’s a simple idea, but it can be good to search <a href="https://www.google.com/search?q=site:healthcare.gov%20intext:%22test%22">Google for test data</a> that might
         have been left in development or exposed in an upgrade. Anything
         in a draft mode should never be exposed to the Internet. </p>
-      <p class="P2"><a href="https://www.acquia.com/products-services/acquia-network/cloud-services/insight">Acquia’s Insights</a> provides a
+      <p><a href="https://www.acquia.com/products-services/acquia-network/cloud-services/insight">Acquia’s Insights</a> provides a
         useful tool to get regular insights on how to improve your
         website. Their security section will be able to do a quick
         review of your website to check on a number of security related
@@ -1878,18 +1877,18 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
         this can be easily and securely done on any website accessible
         to the Internet. Their dashboard provides an easy way for you to
         regularly monitor important elements of your site. </p>
-      <p class="P2"><a href="https://www.qualys.com/">Qualys</a> and <a href="http://www.rapid7.com/">Rapid7</a>
+      <p><a href="https://www.qualys.com/">Qualys</a> and <a href="http://www.rapid7.com/">Rapid7</a>
         both offer a number of other security monitoring and risk
         assessment services. These are included in Acquia’s hosting. </p>
       <br />
       <h2>L) Points of Debate - Security by Obscurity</h2>
       <br />
-      <p class="P2">There is a bit of a division within the security
+      <p>There is a bit of a division within the security
         community as to whether one should expose information about what
         versions of software are being used. </p>
       <br />
       <h3>1) Make it Obscure</h3>
-      <p class="P2">Leaving a CHANGELOG.txt file visible does nothing to
+      <p>Leaving a CHANGELOG.txt file visible does nothing to
         improve security, rather it only helps inform an attacker how to
         focus their research efforts to find a zero day attack, a
         contrib module vulnerability even faster, or just disable any
@@ -1901,25 +1900,25 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
           hiding both the Drupal and server identification</a>.</p>
       <br />
       <h3>2) Make it Transparent</h3>
-      <p class="P2">In many cases where the CHANGELOG.txt has been
+      <p>In many cases where the CHANGELOG.txt has been
         removed, it is because the webmaster hasn’t done a Drupal core
         upgrade and they are looking for a way to obscure that fact. By
         keeping the CHANGELOG.txt up-to-date at the very least it
         indicates that someone is paying attention to security updates.</p>
-      <p class="P2">There are <a href="https://drupal.org/comment/3481992#comment-3481992">easy ways to fingerprint Drupal</a>
+      <p>There are <a href="https://drupal.org/comment/3481992#comment-3481992">easy ways to fingerprint Drupal</a>
         and the security team could hide access to this file in the
         .htaccess file that comes with Drupal core if they were
         concerned. </p>
-      <p class="P2">By making it transparent, there is an additional
+      <p>By making it transparent, there is an additional
         reason for developers to make it a priority to upgrade core when
         there is a security release. </p>
       <br />
       <h3>3) Be Consistent</h3>
-      <p class="P2">While there is some discussion on the benefits of
+      <p>While there is some discussion on the benefits of
         hiding CHANGELOG.txt there is agreement that when security
         releases are announced, that developers must apply them quickly
         so that the site cannot be compromised. </p>
-      <p class="P2">By default, the Linux distribution, Apache and PHP
+      <p>By default, the Linux distribution, Apache and PHP
         also announce information that can be turned off in their
         configuration files. It is good to be consistent and have your
         reasoning documented so that it is clearly understood. </p>
