@@ -573,8 +573,7 @@ li { margin-top: 3px; }
       restart the main daemon instances on package updates
       automatically, where RHEL-style systems treat daemon restarts as
       an administrator’s responsibility. </p>
-    <br />
-    <p class="P13">Debian: apt-get update &amp;&amp; apt-get upgrade</p>
+        <p class="P13">Debian: apt-get update &amp;&amp; apt-get upgrade</p>
     <p class="P13">CentOS: yum upgrade</p>
     <p class="P2">You will inevitably have a number of passwords to
       maintain. We recommend storing these in a new <a href="https://en.wikipedia.org/wiki/KeePass">KeePass or KeePassX Password database</a>.
@@ -604,47 +603,41 @@ is a possibility that they have been tampered with. Important security
 documents often come with a <a href="http://www.electrictoolbox.com/article/linux-unix-bsd/howto-check-md5-file/">MD5</a>
 or SHA (secure hash algorithm) code which allows a user to verify that
 the file on a server is identical to the file that they have
-downloaded.You can generate a  <a href="https://en.wikipedia.org/wiki/Checksum">checksum</a> to locally to determine equivelance using one of these: <br />
+downloaded.You can generate a  <a href="https://en.wikipedia.org/wiki/Checksum">checksum</a> to locally to determine equivalence using one of these: <br />
 </p>
-<p class="P2 P13">shasum -a 256 ~/DrupalSecurity.pdf<br />
+<p class="P13">shasum -a 256 ~/DrupalSecurity.pdf<br />
 md5sum ~/DrupalSecurity.pdf</p>
-<p class="P2 P13">openssl sha1  ~/DrupalSecurity.pdf</p>
-
+<p class="P13">openssl sha1  ~/DrupalSecurity.pdf</p>
     <br />
     <h3>3) <a name="Create_a_baseline">Create a baseline</a></h3>
     <p class="P2">Record a baseline of your server that you can review,
       knowing that this is the minimum number of processes which are
       running with a clean system. Likewise record the baseline from a
       netstat report to see what ports are open:</p>
-    <br />
-    <p class="P13">ps afx</p>
+        <p class="P13">ps afx</p>
     <p class="P13">netstat -l -p -n</p>
     <p class="P2">The management of ports on the network is managed
       through iptables. It is important to review and document them to
       see that they are properly restrictive. From the command line you
       can list them with:</p>
-    <br />
-    <p class="P13">iptables -L -v -n</p>
+        <p class="P13">iptables -L -v -n</p>
     <p class="P2">You can load/save the iptables easily using the
       iptables-persistent package `apt-get install iptables-persistent`.
       With that you can simply save the existing IP tables from the
       command line:</p>
-    <br />
-    <p class="P13">Debian: service iptables-persistent save CentOS:
+        <p class="P13">Debian: service iptables-persistent save CentOS:
       service iptables save</p>
     <p class="P2">Record the list of installed packages on the server.
       Save this information in a text file in your management code
       repository. If your server is compromised it is useful to know
       what packages were installed and running when you started:</p>
-    <br />
-    <p class="P13">Debian: dpkg -l</p>
+        <p class="P13">Debian: dpkg -l</p>
     <p class="P13">CentOS: yum list installed</p>
     <p class="P2"><a name="Create_a_baseline">Install </a><a href="http://sourceforge.net/apps/trac/rkhunter/wiki/SPRKH">Rootkit Hunter</a> (RKH) to help you
       “detect known rootkits, malware and signal general bad security
       practices”. You can set it up to <a href="http://www.tecmint.com/install-linux-rkhunter-rootkit-hunter-in-rhel-centos-and-fedora/">send you email alerts</a>, but can also
       do manual scans.</p>
-    <br />
-    <p class="P13">Debian: apt-get install rkhunter</p>
+        <p class="P13">Debian: apt-get install rkhunter</p>
     <p class="P13">CentOS: yum install rkhunter</p>
     <br />
     <h3>4) <a name="Limit_Access_from_Outside">Limit Access from
@@ -658,8 +651,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       line shell and scripting interface) to update modules (see H2
       below). You can easily see what ports are open by using a port
       scanner such as <a href="http://nmap.org/">nmap</a> from an external machine:</p>
-    <br />
-    <p class="P13">nmap -sS SERVER_ADDRESS</p>
+        <p class="P13">nmap -sS SERVER_ADDRESS</p>
     <p class="P2">We recommend running <a href="https://en.wikipedia.org/wiki/Port_scanner">periodic TCP port scans</a> on your
       server. <a href="http://mxtoolbox.com/PortScan.aspx">MXToolbox</a> offers an option to do
       this through their site, but you can also use tools like nmap
@@ -670,8 +662,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       to remove it, which are particularly important if you aren’t sure
       if you need it or not. To check if bind is running, run this from
       the command line:</p>
-    <br />
-    <p class="P13">ps -Al | grep bind</p>
+        <p class="P13">ps -Al | grep bind</p>
     <p class="P13">chkconfig | grep bind</p>
     <p class="P2">You can obscure your SSH port by reassigning it to
       other than the default (22). This might fool a lazy cracker who
@@ -687,8 +678,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       configuring this as you don’t want to block yourself from
       accessing the server. <a href="http://www.debian-administration.org/articles/87">Debian’s admin documentation</a> offers
       the following changes which can be made to the iptables firewall:</p>
-    <br />
-    <p class="P13"># All connections from address 1.2.3.4 to SSH (port
+        <p class="P13"># All connections from address 1.2.3.4 to SSH (port
       22) iptables -A INPUT -p tcp -m state --state NEW --source 1.2.3.4
       --dport 22 -j ACCEPT # Deny all other SSH connections iptables -A
       INPUT -p tcp --dport 22 -j DROP</p>
@@ -724,8 +714,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       SELinux (examples for use in <a href="https://wiki.debian.org/SELinux">Debian</a>
       and <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/">Red Hat</a>) as it’s rules were
       initially developed to meet NSA policies. </p>
-    <br />
-    <p class="P13">Debian (not Ubuntu): apt-get install perl-tk bastille
+        <p class="P13">Debian (not Ubuntu): apt-get install perl-tk bastille
       selinux-basics selinux-policy-default auditd</p>
     <p class="P2">Using an host based intrusion detection system (HIDS)
       such as the <a href="http://www.security-marathon.be/?p=544">OSSEC</a> host-based intrusion
@@ -752,18 +741,16 @@ md5sum ~/DrupalSecurity.pdf</p>
       attacks. Drupal also has some built in flood control options, the
       <a href="https://drupal.org/project/flood_control">Flood Control module</a> provides a UI
       to control them. Distributed denial of service attacks (DDoS) are
-      more difficult to address, but there’s a great defense plan laid
+      more difficult to address, but there’s a great defence plan laid
       out on <a href="http://stackoverflow.com/questions/14477942/how-to-enable-ddos-protection">StackOverflow</a>.</p>
-    <br />
-    <p class="P13">Debian: apt-get install fail2ban</p>
+        <p class="P13">Debian: apt-get install fail2ban</p>
     <p class="P13">CentOS: yum install fail2ban</p>
     <p class="P2">Place the /etc directory under version control so that
       you can easily track which configurations have changed. The
       program <a href="https://help.ubuntu.com/12.04/serverguide/etckeeper.html">etckeeper</a> automates this process
       nicely and hooks into your package manager and cron to do its work
       when your server is upgraded or new software is installed. </p>
-    <br />
-    <p class="P13">Debian: apt-get install etckeeper bzr &amp;&amp;
+        <p class="P13">Debian: apt-get install etckeeper bzr &amp;&amp;
       etckeeper init &amp;&amp; etckeeper commit "initial commit" </p>
     <p class="P13">CentOS: yum install etckeeper &amp;&amp; etckeeper
       init &amp;&amp; etckeeper commit "initial commit"</p>
@@ -773,8 +760,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       remove this package so that it is not a potential weak link. This
       is an optional package that can be easily removed without
       impacting your site’s performance.</p>
-    <br />
-    <p class="P13">Ubuntu: dpkg --purge popularity-contest
+        <p class="P13">Ubuntu: dpkg --purge popularity-contest
       ubuntu-standard</p>
     <p class="P2">You will probably want to install an opcode cache and
       <a href="http://memcached.org/">Memcache</a>
@@ -804,8 +790,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       configured to denying cookies on port 80. This is an example of
       what can be added to Varnish’s vcl file to remove the cookies
       which are required to authenticate:</p>
-    <br />
-    <p class="P13">if (req.http.host == "example.com") { unset
+        <p class="P13">if (req.http.host == "example.com") { unset
       req.http.Cookie;} </p>
     <p class="P2">If you have a site which has only a few users and
       doesn’t have any online forms for anonymous users then you can
@@ -839,8 +824,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       for the distribution (e.g. <a href="http://www.ubuntu.com/usn/">Ubuntu</a> and <a href="https://www.centos.org/modules/tinycontent/index.php?id=16">CentOS</a>), apply the updates, and
       review the logs to ensure everything is still running properly.
       Upgrades can be done with the following commands:</p>
-    <br />
-    <p class="P13">Debian: apt-get update &amp;&amp; apt-get upgrade </p>
+        <p class="P13">Debian: apt-get update &amp;&amp; apt-get upgrade </p>
     <p class="P13">CentOS: yum upgrade</p>
     <p class="P2">It is very useful to have a service like <a href="http://www.nagios.org/documentation">Nagios</a> monitoring your production
       server to alert you if any problems arise. The configuration of
@@ -851,16 +835,14 @@ md5sum ~/DrupalSecurity.pdf</p>
       also need to consider the <a href="http://nagios.sourceforge.net/docs/3_0/security.html">security implications</a> that it
       presents. To get the server installed in your staging environment,
       execute the following from the command line:</p>
-    <br />
-    <p class="P13">Debian: apt-get install nagios3 nagios-nrpe-plugin</p>
+        <p class="P13">Debian: apt-get install nagios3 nagios-nrpe-plugin</p>
     <p class="P2">And for each server you wish to monitor with Nagios:</p>
     <p class="P13">Debian: apt-get install nagios-nrpe-plugin</p>
     <p class="P2"><a href="http://munin-monitoring.org/">Munin</a> can be run on the production
       environment to give you a sense of the relative load of various
       key elements over the past hour, day, week and month. This can be
       useful when debugging issues with your server. </p>
-    <br />
-    <p class="P13">Debian: apt-get install munin munin-node</p>
+        <p class="P13">Debian: apt-get install munin munin-node</p>
     <p class="P2">Access to this information is available through your
       web server but you will want to configure your site to <a href="http://www.howtoforge.com/server_monitoring_monit_munin">ensure that this data is not publicly
         available</a>. </p>
@@ -875,7 +857,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       environments. </p>
     <br />
     <h3>7) Managing Server Logs</h3>
-    <p class="P2">Your webserver is a complex environment involving
+    <p class="P2">Your web server is a complex environment involving
       thousands of software projects. Most of these will store log files
       in /var/log. If log files aren’t properly rotated and compressed
       they can become unmanageably large. If your hard drive is filled
@@ -893,7 +875,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       early breach detection. </p>
     <p class="P2">If your server is configured with a caching reverse
       proxy server or a load balancer such as Varnish, Nginx or haproxy
-      then you should ensure that drupal is made aware of the actual
+      then you should ensure that Drupal is made aware of the actual
       REMOTE_IP. The common solution requires configuring the
       X-Forwarded-For in both Varnish and Apache, but as <a href="https://blog.jonathanmarcil.ca/2013/09/remoteaddr-and-httpxforwardedfor-bad.html">Jonathan Marcil’s blog post points out</a>,
       “X-Forwarded-For is actually a list that can be a chain of
@@ -910,8 +892,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       server, proxy or load balancer level. Note that the front facing
       proxy should ignore if the custom header exists and replace it
       with it's own.</p>
-    <br />
-    <p class="P13">$conf['reverse_proxy'] = TRUE;
+        <p class="P13">$conf['reverse_proxy'] = TRUE;
       $conf['reverse_proxy_addresses'] =
       array('127.0.0.1','192.168.0.2');</p>
     <p class="P13">$conf['reverse_proxy_header'] =
@@ -921,8 +902,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       Baheyeldin <a href="http://2bits.com/articles/correct-client-ip-address-reverse-proxy-or-content-delivery-network-cdn.html">writes in his blog</a>, this Apache
       module can be used for both Reverse Proxy and/or a Content
       Delivery Network (CDN). </p>
-    <br />
-    <p class="P13">Debian: apt-get install libapache2-mod-rpaf</p>
+        <p class="P13">Debian: apt-get install libapache2-mod-rpaf</p>
     <p class="P2">By editing the /etc/apache2/mods-enabled/rpaf.conf,
       set your proxy IP and restarting Apache your access.log will show
       the real client IP rather than that of your proxy.</p>
@@ -973,8 +953,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       enabled by default. Check if the<a href="http://www.thinkwiki.org/wiki/AES_NI"> SSL services employ only AES</a> with
       key lengths 256 bits and higher. You can install <a href="https://help.ubuntu.com/community/GnuTLS">GnuTLS</a> from the command line to
       enable this:</p>
-    <br />
-    <p class="P13">Debian: apt-get install gnutls-bin</p>
+        <p class="P13">Debian: apt-get install gnutls-bin</p>
     <p class="P2">It is also recommended to disable SSLCompression in
       Apache. As stated in the <a href="https://httpd.apache.org/docs/2.2/mod/mod_ssl.html#sslcompression">Apache documentation</a> “Enabling
       compression causes security issues in most setups (the so called
@@ -995,8 +974,7 @@ md5sum ~/DrupalSecurity.pdf</p>
         HTTPS protocol</a> (note that we’re now using Hynek Schlawack
       configuration rather than <a href="https://community.qualys.com/blogs/securitylabs/2013/08/05/configuring-apache-nginx-and-openssl-for-forward-secrecy">Ivan Ristic’s</a> because it is being
       updated more regularly) with:</p>
-    <br />
-    <p class="P13">SSLProtocol ALL -SSLv2 -SSLv3</p>
+        <p class="P13">SSLProtocol ALL -SSLv2 -SSLv3</p>
     <p class="P13">SSLHonorCipherOrder On</p>
     <p class="P13">SSLCipherSuite
 ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS</p>
@@ -1022,11 +1000,9 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       the validity of your SSL certificate through a free <a href="https://www.ssllabs.com/ssltest/">SSL
         Test constructed by SSLLabs</a> or with the following openssl
       command:</p>
-    <br />
-    <p class="P13">openssl s_client -connect SERVER:443</p>
+        <p class="P13">openssl s_client -connect SERVER:443</p>
     <p class="P2">To check a specific protocol using openssl:</p>
-    <br />
-    <p class="P13">openssl s_client -connect SERVER:443 -ssl2</p>
+        <p class="P13">openssl s_client -connect SERVER:443 -ssl2</p>
     <p class="P13">openssl s_client -connect SERVER:443 -ssl3</p>
     <p class="P2">Note that SSL Certificate Authorities are depreciating
       the very popular SHA1 hashing function because of weakness in the
@@ -1048,16 +1024,14 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       environments from both search engines, but especially
       fromcrackers. The following are examples of how to do this with
       mod_authz_host and also mod_rewrite: </p>
-    <br />
-    <p class="P13">Example Apache configuration using mod_authz_host:</p>
+        <p class="P13">Example Apache configuration using mod_authz_host:</p>
     <p class="P13">&lt;Location ~ “/node/.*/edit”&gt;</p>
     <p class="P13"> Order Deny,Allow</p>
     <p class="P13"> Deny from all</p>
     <p class="P13"> Allow from 206.47.13.64 174.142.104.53
       99.241.125.191</p>
     <p class="P13">&lt;/Location&gt;</p>
-    <br />
-    <p class="P13">Example Apache configuration using mod_rewrite:</p>
+        <p class="P13">Example Apache configuration using mod_rewrite:</p>
     <p class="P13">&lt;IfModule mod_rewrite.c&gt;</p>
     <p class="P13"> RewriteEngine on</p>
     <p class="P13"> # Allow only internal access to admin</p>
@@ -1070,8 +1044,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       they simply cannot be loaded from the web browser. Common
       processes to secure are update, install and cron, tasks which can
       all be triggered using drush:</p>
-    <br />
-    <p class="P13">Example Apache configuration:</p>
+        <p class="P13">Example Apache configuration:</p>
     <p class="P13">RedirectMatch 403
       "/(install|update|cron|xmlrpc|authorize).php"</p>
     <br />
@@ -1084,26 +1057,22 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       should disable CGI access by removing LoadModule cgi_module and
       AddHandler cgi-script .cgi from your Apache config. You can also
       do this from the command line with:</p>
-    <br />
-    <p class="P13">Debian: a2dismod cgi</p>
+        <p class="P13">Debian: a2dismod cgi</p>
     <p class="P2">If you don’t need it, remove it. All software is a
       source of potential risk, so list all Apache modules and look for
       unneeded modules. There are some <a href="https://groups.drupal.org/node/41320">good discussions</a> on drupal.org
       about which modules are necessary and which are not.</p>
-    <br />
-    <p class="P13">Debian: apache2ctl -t -D DUMP_MODULES</p>
+        <p class="P13">Debian: apache2ctl -t -D DUMP_MODULES</p>
     <p class="P13">CentOS: apachectl -t -D DUMP_MODULES</p>
     <p class="P2">If you are using mod_php with apache, it can be useful
       to enable php5-dev for Drupal so that you can enable tools like
       PECL’s uploadprogress. However, after you’ve done that you will
       want to remove the php module that you used to build it:</p>
-    <br />
-    <p class="P13">Debian: sudo apt-get remove php5-dev</p>
+        <p class="P13">Debian: sudo apt-get remove php5-dev</p>
     <br />
     <p class="P2">You can find other development packages on your server
       by:</p>
-    <br />
-    <p class="P13">Debian: apt-cache search ".-dev"</p>
+        <p class="P13">Debian: apt-cache search ".-dev"</p>
     <br />
     <h3>3) HTTP Headers</h3>
     <p class="P2">The Australian Government has produced an impressive
@@ -1123,8 +1092,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       commonalities with the Australian Government report above. To
       allow content from a trusted domain and all its subdomains, you
       can add the following to your Apache configuration:</p>
-    <br />
-    <p class="P13">Example Apache configuration:</p>
+        <p class="P13">Example Apache configuration:</p>
     <p class="P13">Content-Security-Policy: default-src 'self'
       *.example.gc.ca</p>
     <p class="P2">Your website and its visitors are going to be more
@@ -1137,8 +1105,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       usernames and passwords cannot be intercepted. Do ensure that all
       of your files are being served from a HTTPS environment as mixed
       traffic introduces security problems.</p>
-    <br />
-    <p class="P13">Example Apache configuration:</p>
+        <p class="P13">Example Apache configuration:</p>
     <p class="P13">&lt;VirtualHost *:80&gt;</p>
     <p class="P13"> ServerAlias *</p>
     <p class="P13"> RewriteEngine On</p>
@@ -1149,8 +1116,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       enhancement which sends a special response header to the browser,
       which then prevents any communications from being sent over HTTP
       to the specified domain. </p>
-    <br />
-    <p class="P13">Example HTTPS Apache configuration (see <a href="https://www.owasp.org/index.php/HTTP_Strict_Transport_Security#Server_Side">example</a>):</p>
+        <p class="P13">Example HTTPS Apache configuration (see <a href="https://www.owasp.org/index.php/HTTP_Strict_Transport_Security#Server_Side">example</a>):</p>
     <p class="P13">Header set Strict-Transport-Security
       "max-age=16070400; includeSubDomains"</p>
     <p class="P2">You can also submit your site to the <a href="https://www.eff.org/https-everywhere">EFF’s HTTPS Everywhere extension</a>
@@ -1168,16 +1134,14 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       before adding this string to your Apache configuration but this is
       easy to add through the command line -a2enmod headers - afterwards
       you can add this to your configuration. </p>
-    <br />
-    <p class="P13">Example Apache configuration:</p>
+        <p class="P13">Example Apache configuration:</p>
     <p class="P13">Header always append X-Frame-Options SAMEORIGIN</p>
     <br />
     <h3>4) Everything Else</h3>
     <p class="P2">Modify the web server configuration to <a href="http://www.ducea.com/2007/10/22/apache-tips-disable-the-http-trace-method/">disable the TRACE/TRACK</a> methods
       either by employing the TraceEnable directive or by <a href="http://perishablepress.com/disable-trace-and-track-for-better-security/">adding the following lines</a> to your
       Apache configuration: </p>
-    <br />
-    <p class="P13">RewriteEngine On</p>
+        <p class="P13">RewriteEngine On</p>
     <p class="P13">RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)</p>
     <p class="P13">RewriteRule .* - [F]</p>
     <p class="P2">You should keep your server up-to date. Security by
@@ -1188,8 +1152,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       information about your server environment isn’t likely to cause
       any harm, but if you choose to disable it you can simply add this
       to your Apache configuration:</p>
-    <br />
-    <p class="P13">ServerSignature Off</p>
+        <p class="P13">ServerSignature Off</p>
     <p class="P13">ServerTokens ProductOnly</p>
     <p class="P2">One of the nice things about Ubuntu/Debian is that the
       Apache file structure is clean. By default it allows you store a
@@ -1210,15 +1173,13 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       (uid 65534) in CentOS. If you are using PHP-FPM, then you will
       need to search for the UID of that application rather than
       Apache’s. Double check by viewing the output of:</p>
-    <br />
-    <p class="P13">Debian: ps aux | grep apache</p>
+        <p class="P13">Debian: ps aux | grep apache</p>
     <p class="P13">CentOS: ps aux | grep http</p>
     <p class="P2">In order to restrict Apache to connect only to
       https://drupal.org (with IP addresses 140.211.10.62 and
       140.211.10.16 at the time of writing) insert the following
       firewall rules:</p>
-    <br />
-    <p class="P13">iptables -A OUTPUT -m owner --uid-owner ${APACHE_UID}
+        <p class="P13">iptables -A OUTPUT -m owner --uid-owner ${APACHE_UID}
       -p udp --dport 53 -j ACCEPT</p>
     <p class="P13">iptables -A OUTPUT -d 140.211.10.62/32 -p tcp -m
       owner --uid-owner ${APACHE_UID} -m tcp --dport 443 -j ACCEPT</p>
@@ -1230,8 +1191,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       harder for people to hack your system. Honey Pot can also be <a href="https://drupal.org/project/httpbl">installed on Drupal</a>, but Apache is
       often more efficient at addressing attacks like this before it
       hits PHP:</p>
-    <br />
-    <p class="P13">Debian: apt-get install mod_httpbl</p>
+        <p class="P13">Debian: apt-get install mod_httpbl</p>
     <p class="P13">CentOS: yum install mod_httpbl</p>
     <br />
     <h3>8) Web Application Firewall</h3>
@@ -1244,8 +1204,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       This can be set to leverage the Open Web Application Security
       Project's (OWASP) <a href="https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project">ModSecurity Core Rule Set Project</a>.
     </p>
-    <br />
-    <p class="P13">Debian: apt-get install libapache2-mod-evasive
+        <p class="P13">Debian: apt-get install libapache2-mod-evasive
       libapache2-modsecurity; a2enmod mod-security; a2enmod
       mod-evasive CentOS: yum install mod_evasive mod_security</p>
     <p class="P2">To engage ModSecurity in your Apache, you’ll need to <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#a-recommended-base-configuration">set up the base files in your Apache
@@ -1258,8 +1217,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       manner in order to identify false positive when in production.
       Default <a href="https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended#L7">configuration of ModSecurity</a> should
       do it with:</p>
-    <br />
-    <p class="P13">SecRuleEngine DetectionOnly</p>
+        <p class="P13">SecRuleEngine DetectionOnly</p>
     <p class="P2">You can then set it to “On” whenever you are ready. A
       server restart is needed for changes to be effective. In that case
       the WAF will behave as a passive Web application intrusion
@@ -1286,8 +1244,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       existing configuration so that it is more robust. It is designed
       to protect servers and users from known and unknown flaws in PHP
       applications and the PHP core. </p>
-    <br />
-    <p class="P13">Ubuntu (this may not work in their LTS releases):
+        <p class="P13">Ubuntu (this may not work in their LTS releases):
       Enable ‘universe’ repo in /etc/apt/sources.list and `apt-get
       update ; apt-get install php5-suhosin`</p>
     <p class="P13">Debian: apt-get install php5-suhosin</p>
@@ -1302,8 +1259,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       You can display a list of enabled PHP modules and look for those
       which can be removed. From the command line you can get a list of
       php modules with:</p>
-    <br />
-    <p class="P13">php -m</p>
+        <p class="P13">php -m</p>
     <h4>Setting PHP.ini Variables</h4>
     <p class="P2">Many PHP variables can be set via Apache as well as in
       the PHP configuration. We recommend keeping PHP-specific security
@@ -1320,22 +1276,19 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       theft via eavesdropping. Furthermore, you can control the <a href="http://www.php.net/manual/en/session.configuration.php#ini.session.hash-function">hash algorithm</a> used to generate the
       session ID and choose from a number of algorithms like the NSA’s <a href="https://en.wikipedia.org/wiki/SHA-1">SHA-2</a> protocol or <a href="https://en.wikipedia.org/wiki/Whirlpool_%28cryptography%29">whirlpool</a>. Add the following to
       your php.ini file:</p>
-    <br />
-    <p class="P13">session.cookie_httponly = 1</p>
+        <p class="P13">session.cookie_httponly = 1</p>
     <p class="P13">session.use_only_cookies = 1</p>
     <p class="P13">session.cookie_secure = 1</p>
     <p class="P13">session.hash_function = whirlpool</p>
     <p class="P2">You can obtain a list of the available hash functions
       on your system by executing:</p>
-    <br />
-    <p class="P13">php -r ‘print_r(hash_algos())’</p>
+        <p class="P13">php -r ‘print_r(hash_algos())’</p>
     <p class="P2">Limit your exposure to only the system resources you
       want to make available to a PHP page. You can control your
       resources by limiting the upload_max_filesize, max_execution_time,
       max_input_time, memory_limit variables so that a script isn’t as
       likely to monopolize resources. </p>
-    <br />
-    <p class="P13">php_value memory_limit = 128M</p>
+        <p class="P13">php_value memory_limit = 128M</p>
     <p class="P13">php_value max_input_time = 60</p>
     <p class="P13">php_value max_execution_time = 30</p>
     <p class="P13">php_value upload_max_filesize = 2M</p>
@@ -1344,13 +1297,11 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       running. There is a broader discussion of this debate in Section
       K. In the PHP setting you can also <a href="http://simonholywell.com/post/2013/04/three-things-i-set-on-new-servers.html">limit information about PHP</a> which
       is exposed by adding this to your php.ini file:</p>
-    <br />
-    <p class="P13">expose_php = Off</p>
+        <p class="P13">expose_php = Off</p>
     <br />
     <p class="P2">You can also explicitly disable PHP functions which
       allow scripts to reference other URLs.</p>
-    <br />
-    <p class="P13">allow_url_include = Off</p>
+        <p class="P13">allow_url_include = Off</p>
     <p class="P13">allow_url_fopen = Off</p>
     <p class="P2">You can also <a href="http://www.cyberciti.biz/faq/linux-unix-apache-lighttpd-phpini-disable-functions/">disable PHP functions</a> which are
       considered dangerous. You will want to test to see that your
@@ -1381,15 +1332,13 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       salt.txt file) outside of the base directory. This can also be set
       in Apache, but I’ve tried to keep the PHP specific information
       inside the php.ini file:</p>
-    <br />
-    <p class="P13">open_basedir = /var/www</p>
+        <p class="P13">open_basedir = /var/www</p>
     <p class="P2">Make sure the session path is outside the root web
       directory and not readable or writable by any other system users.
       You will also want to set a temporary upload file directory that
       is outside of the web root. This can be specified in the php.ini
       file:</p>
-    <br />
-    <p class="P13">session.save_path = "/tmp"</p>
+        <p class="P13">session.save_path = "/tmp"</p>
     <p class="P13">upload_tmp_dir = "/tmp"</p>
     <br />
     <h2>G) Database Layer</h2>
@@ -1434,8 +1383,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       IP address and not any Internet-facing ones. For a machine running
       both the web server and MySQL, you can add this to your my.conf
       file:</p>
-    <br />
-    <p class="P13">bind-address=127.0.0.1</p>
+        <p class="P13">bind-address=127.0.0.1</p>
     <p class="P2">Be sure to <a href="http://www.symantec.com/connect/articles/securing-mysql-step-step">review your databases, users and
         permissions</a> to see that there are not any sample users or
       old databases still enabled on the server and that you are not
@@ -1477,8 +1425,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       directories where you can upload PHP. Check the .htaccess file in
       the files directory. You can also add this to your Apache Virtual
       Host to ensure that no handlers have been overlooked.</p>
-    <br />
-    <p class="P13">&lt;Directory
+        <p class="P13">&lt;Directory
       /var/www/drupal/sites/default/files/&gt;</p>
     <p class="P13"> # Important for security, prevents someone from</p>
     <p class="P13"> # uploading a malicious .htaccess</p>
@@ -1503,8 +1450,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       able to perform certain tasks like managing file uploads and
       compressing/caching CSS/JS files. Ensure that Apache has write
       access to /tmp and also to the public sites folder:</p>
-    <br />
-    <p class="P13">Debian: chown -R www-data:www-data
+        <p class="P13">Debian: chown -R www-data:www-data
       sites/default/files</p>
     <p class="P13">CentOS: chown -R nobody:nobody sites/default/files</p>
     <p class="P2">Make sure that you are only allowing users to upload
@@ -1534,8 +1480,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <p class="P2">As with the server configuration in general, document
       what you are using. Drush makes this fairly straightforward as you
       can simply export a list from the command line:</p>
-    <br />
-    <p class="P13">drush pm-list --type=Module --status=enabled </p>
+        <p class="P13">drush pm-list --type=Module --status=enabled </p>
     <p class="P2">Cron is the Linux time-based job scheduler and it is
       used for a lot of key Drupal functions. Check to see that you are
       running cron several times a day. For Drupal 7 and above, <a href="https://drupal.org/cron">if there
@@ -1545,8 +1490,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       you have either a low traffic site or have special requirements.
       To run cron on all of your sites in /home/drupal - from the
       command line enter crontab -e and then insert:</p>
-    <br />
-    <p class="P13">30 2,6,11,18 * * * cd /home/drupal &amp;&amp; drush
+        <p class="P13">30 2,6,11,18 * * * cd /home/drupal &amp;&amp; drush
       @sites core-cron -y &gt; /dev/null</p>
     <p class="P2">You will need developer modules to help you build your
       site, but they are a security risk on your production site and
@@ -1607,8 +1551,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       Drupal site and then recreate a clean copy of the codebase which
       you can then diff (a command line comparison tool) to determine if
       your site has been hacked. </p>
-    <br />
-    <p class="P13">drush generate-makefile make-file.make</p>
+        <p class="P13">drush generate-makefile make-file.make</p>
     <p class="P13">drush make make-file.make -y</p>
     <p class="P2">It is recommended to run all modules you use through
       the <a href="https://drupal.org/project/coder">Coder</a> module, but especially any
@@ -1651,8 +1594,8 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       Obscurity isn’t the same as security, but no need to give them
       their first guess when choosing user names. Another good practice
       with regards to user/1 is to <a href="https://www.drupal.org/node/947312#disable">completely disable the account</a>.
-      With the advent of drupal 7 and drush, user/1 is not required to
-      administer drupal websites anymore, and thus can be simply
+      With the advent of Drupal 7 and drush, user/1 is not required to
+      administer Drupal websites anymore, and thus can be simply
       blocked. The account can be re-enabled as needed through drush or
       directly in the database. As with other server user accounts, you
       will want to restrict who has access to servers. Make sure to
@@ -1929,7 +1872,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       <p class="P2"><a href="https://www.acquia.com/products-services/acquia-network/cloud-services/insight">Acquia’s Insights</a> provides a
         useful tool to get regular insights on how to improve your
         website. Their security section will be able to do a quick
-        review of your website to check on a number ofsecurity related
+        review of your website to check on a number of security related
         issues. They also address performance, best practices, SEO and
         code analysis. With the <a href="https://drupal.org/project/acquia_connector">Acquia Network Connector</a> module,
         this can be easily and securely done on any website accessible
