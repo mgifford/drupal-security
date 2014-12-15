@@ -2315,11 +2315,12 @@ upgrades.</p>
 whether it the Domain Name Registrar or Content Delivery Network (CDN).
 The communications paths with these agencies needs to be clear and well
 documented. This recently happened with a large Canadian municipality
-who was redirected recently using an approach known as “social
-engineering”. By leveraging human vulnerability, crackers were able to
+who was redirected recently using an approach known as “<a href="http://www.webroot.com/ca/en/home/resources/tips/online-shopping-banking/secure-what-is-social-engineering">social
+engineering</a>”. By leveraging human vulnerability, crackers were able to
 gain control of critical infrastructure. Properly documented procedures
 are important, as 3rd party services can often be manipulated phony
-email or telephone requests.</p>
+email or telephone requests. Take at least <a href="http://www.esecurityplanet.com/views/article.php/3908881/9-Best-Defenses-Against-Social-Engineering-Attacks.htm">basic precautions</a> to defend your organization against a "social engineering" attack.<br />
+</p>
 
 <p class="P2">It is also important to remember that one person working
 in isolation cannot be expected to be an expert in all aspects of
@@ -4038,45 +4039,47 @@ execute slowly.</p>
 
 <p class="P2">Common Drupal secure coding practices are:</p>
 
-<li>Never trust user input. With <a href="https://api.drupal.org/api/drupal/includes%21common.inc/group/sanitization/7" class="Internet_20_link">sanitization functions</a> like
+<li style="margin-left: 40px;">Never trust user input. With <a href="https://api.drupal.org/api/drupal/includes%21common.inc/group/sanitization/7" class="Internet_20_link">sanitization functions</a> like
 check_plain(), filter_xss(), and filter_xss_admin() it is easy in
 Drupal to clean strings on output. Any variable in a template or HTML
 output should pass through one of these.
   <p> </p>
 </li>
 
-<li>Protect yourself from SQL Injection through leverage Drupal’s <a href="https://api.drupal.org/api/drupal/includes%21database%21database.inc/group/database/7" class="Internet_20_link">database abstraction layer</a>. Drupal 6
+<li style="margin-left: 40px;">Protect yourself from SQL Injection through leverage Drupal’s <a href="https://api.drupal.org/api/drupal/includes%21database%21database.inc/group/database/7" class="Internet_20_link">database abstraction layer</a>. Drupal 6
 should use <a href="https://drupal.org/node/101496" class="Internet_20_link">parameterization</a>.
   <p> </p>
 </li>
 
-<li>Use preg_replace_callback() rather than preg_replace() as the
+<li style="margin-left: 40px;">Use preg_replace_callback() rather than preg_replace() as the
 latter can allow matches to be evaluated as PHP code although the \e
 modifier that introduce this flaw is now deprecated in PHP.
   <p> </p>
 </li>
 
-<li>Always use the Drupal functions when possible instead of plain old
+<li style="margin-left: 40px;">Always use the Drupal functions when possible instead of plain old
 PHP.
   <p> </p>
 </li>
 
-<li>Drupal comes with jQuery and leverages it extensively. Do not rely
+<li style="margin-left: 40px;">Drupal comes with jQuery and leverages it extensively. Do not rely
 on JavaScript for validation.
   <p> </p>
 </li>
 
-<li>If you are using eval() or drupal_eval() this is a potential
+<li style="margin-left: 40px;">If you are using eval() or drupal_eval() this is a potential
 security risk if PHP input provided contains malicious code. If you do
 this, you can add a new permission in your module so that an admin
 needs to explicitly assign permissions to a user role.
   <p> </p>
 </li>
 
-<li>Same precautions should be taken with functions such as exec(),
+<li>
+  <div style="margin-left: 40px;">Same precautions should be taken with functions such as exec(),
 system(), fopen(), delete() and others that execute external
 applications or interact directly with the file system.
-  <p> </p>
+  </div>
+<p> </p>
   <p class="P2">As David Strauss wrote recently, <a href="https://www.getpantheon.com/blog/all-code-debt" class="Internet_20_link">All Code is Debt</a>. “All of the custom code
 you’ve written yesterday, rewritten today, and what you’ll write
 tomorrow -- you will be burdened with maintaining, forever.” Code needs
@@ -4277,6 +4280,8 @@ Overview of OS Security Features - CSEC</a>
 <li><a href="https://targetedthreats.net/">Communities @ Risk: Targeted Digital Threats Against Civil Society</a></li>
     <li><a href="https://securityinabox.org/" class="Internet_20_link">Security
 in a Box - Tactical Technology Collective</a></li>
+    <li><a href="http://www.social-engineer.org/">SocialEngineer.org</a><br />
+    </li>
 
 </ul><br />
 
