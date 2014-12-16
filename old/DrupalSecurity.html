@@ -594,30 +594,34 @@ md5sum ~/DrupalSecurity.pdf</p>
       <a href="https://en.wikipedia.org/wiki/Netstat">netstat</a> report to see what ports are open:</p>
         <p class="P13">ps afx</p>
     <p class="P13">netstat -l -p -n</p>
-    <p>The management of ports on the network is managed
-      through iptables. It is important to review and document them to
-      see that they are properly restrictive. From the command line you
-      can list them with:</p>
-        <p class="P13">iptables -L -v -n</p>
-    <p>You can load/save the iptables easily using the
-      iptables-persistent package `apt-get install iptables-persistent`.
-      With that you can simply save the existing IP tables from the
-      command line:</p>
-        <p class="P13">Debian: service iptables-persistent save CentOS:
-      service iptables save</p>
-    <p>Record the list of installed packages on the server.
+<p>Record the list of installed packages on the server.
       Save this information in a text file in your management code
       repository. If your server is compromised it is useful to know
       what packages were installed and running when you started:</p>
         <p class="P13">Debian: dpkg -l</p>
     <p class="P13">CentOS: yum list installed</p>
+    <p>Manage your ports through firewall settings: It is important to review and document the firewall settings - open ports - to see that they are properly restrictive. The firewall program for sysVinit OS versions (CentOS/RHEL &lt;=6), iptables, is still available for systemd OS versions (CentOS/RHEL&gt;=7), which by default uses firewalld. </p>
+    <p>Using iptables, the port settings can be listed from the command line with:    </p>
+    <p class="P13">iptables -L -v -n</p>
+<p>You can load/save the iptables easily using the
+      iptables-persistent package `apt-get install iptables-persistent`.
+      With that you can simply save the existing IP tables from the
+      command line:</p>
+    <p class="P13">Debian: service iptables-persistent save </p>
+<p class="P13">CentOS:
+      service iptables save</p>
+<p class="P13">&nbsp;</p>
+    <p class="P13">(For a sysVinit vs. systemd cheatsheet, see:<br />
+https://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet)</p>
+    <p class="P13">&nbsp;</p>
     <p><a name="Create_a_baseline">Install </a><a href="http://sourceforge.net/apps/trac/rkhunter/wiki/SPRKH">Rootkit Hunter</a> (RKH) to help you
       “detect known rootkits, malware and signal general bad security
       practices”. You can set it up to <a href="http://www.tecmint.com/install-linux-rkhunter-rootkit-hunter-in-rhel-centos-and-fedora/">send you email alerts</a>, but can also
       do manual scans.</p>
         <p class="P13">Debian: apt-get install rkhunter</p>
     <p class="P13">CentOS: yum install rkhunter</p>
-    <br />
+    <p class="P13"><br />
+    </p>
     <h3>4) <a name="Limit_Access_from_Outside">Limit Access from
         Outside</a></h3>
     <br />
@@ -641,7 +645,8 @@ md5sum ~/DrupalSecurity.pdf</p>
       if you need it or not. To check if bind is running, run this from
       the command line:</p>
         <p class="P13">ps -Al | grep bind</p>
-    <p class="P13">chkconfig | grep bind</p>
+    <p class="P13">sysVinit: chkconfig | grep bind</p>
+    <p class="P13">systemd: systemctl is-enabled bind</p>
     <p>You can obscure your SSH port by reassigning it to
       other than the default (22). This might fool a lazy cracker who
       isn’t using a port scanner first, but won’t stop the serious
@@ -660,9 +665,9 @@ md5sum ~/DrupalSecurity.pdf</p>
       22) iptables -A INPUT -p tcp -m state --state NEW --source 1.2.3.4
       --dport 22 -j ACCEPT # Deny all other SSH connections iptables -A
       INPUT -p tcp --dport 22 -j DROP</p>
-    <p>There are many ways to do this. Debian uses <a href="https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server">ufw</a>, the current release of RHEL
-      uses <a href="https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server">system-config-firewall-tui</a>, <a href="http://docs.saltstack.com/en/latest/topics/tutorials/firewall.html">lokkit</a> is coming along nicely and
-      it looks like RHEL 7 may be shipped with <a href="https://fedoraproject.org/wiki/FirewallD">FirewallD</a> by default. Ultimately
+    <p>There are many ways to do this. Debian uses <a href="https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server">ufw</a>, the sysVinit releases of RHEL
+      use <a href="https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server">system-config-firewall-tui</a>, <a href="http://docs.saltstack.com/en/latest/topics/tutorials/firewall.html">lokkit</a> is coming along nicely and
+      systemd releases of RHEL ships with <a href="https://fedoraproject.org/wiki/FirewallD">FirewallD</a> by default. Ultimately
       they all do the same thing slightly differently. Make sure you
       understand your configurations and review them regularly. </p>
     <p>If you already have established a <a href="https://en.wikipedia.org/wiki/Virtual_private_network">virtual private network</a> (VPN) then
@@ -673,6 +678,7 @@ md5sum ~/DrupalSecurity.pdf</p>
       already using a VPN however, then the usability problems with
       forcing people to use it may encourage developers to find ways to
       circumvent it. </p>
+    <p>It is also important to remember that a VPN is only as secure as the individual servers on the VPN. If the VPN is shared with systems out of your control, and the responsible sysadmins are lax in security, then your servers should be hardened as if on the public network. </p>
     <br />
     <h3>5) <a name="Initial_Installs">Initial Installs</a></h3>
     <p>There are some tools to harden your Linux system. The
@@ -847,7 +853,7 @@ md5sum ~/DrupalSecurity.pdf</p>
     <p>Most Linux distributions also come with syslog built
       in, which is critical for doing security audits. You can also
       configure it to <a href="http://www.linuxvoodoo.com/resources/howtos/syslog">send emergency messages to a remote
-        machine</a>. There is a discussion in the Drupal section later
+        machine</a>, or even duplicate all log messages on an external loghost. There is a discussion in the Drupal section later
       on about how to direct Watchdog messages to syslog. There are many
       tools to help system administrators more effectively monitor their
       log files, and regular log reviews can be an important part of
