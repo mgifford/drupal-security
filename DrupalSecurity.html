@@ -718,7 +718,8 @@ md5sum ~/DrupalSecurity.pdf</p>
         for flood control</a> and can stop most denial of service
       attacks. Drupal also has some built in flood control options, the
       <a href="https://drupal.org/project/flood_control">Flood Control module</a> provides a UI
-      to control them. Distributed denial of service attacks (DDoS) are
+      to control them. <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">Distributed Denial of
+      Service (DDOS)</a> attacs are
       more difficult to address, but there’s a great defence plan laid
       out on <a href="http://stackoverflow.com/questions/14477942/how-to-enable-ddos-protection">StackOverflow</a>.</p>
         <p class="P13">Debian: apt-get install fail2ban</p>
@@ -1044,7 +1045,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <p class="P13">CentOS: apachectl -t -D DUMP_MODULES</p>
     <p>If you are using mod_php with apache, it can be useful
       to enable php5-dev for Drupal so that you can enable tools like
-      PECL’s uploadprogress. However, after you’ve done that you will
+      <a href="http://pecl.php.net/package/uploadprogress">PECL’s uploadprogress</a>. However, after you’ve done that you will
       want to remove the php module that you used to build it:</p>
         <p class="P13">Debian: sudo apt-get remove php5-dev</p>
     <br />
@@ -1106,7 +1107,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       to <a href="https://en.wikipedia.org/wiki/Clickjacking">Clickjacking</a> when an iframe is
       injected in your site. If you know that you aren’t going to need
       to use iframes in your site you can disable it by modifying the
-      Force X-Frame options in the Apache configuration. As usual, OWASP
+      Force X-Frame options in the Apache configuration. As usual, <a href="https://www.owasp.org/">OWASP</a>
       has an <a href="https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet">extremely useful guide on avoiding
         Clickjacking</a>. You must have the mod-headers module enabled
       before adding this string to your Apache configuration but this is
@@ -1188,7 +1189,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <p>To engage ModSecurity in your Apache, you’ll need to <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#a-recommended-base-configuration">set up the base files in your Apache
         configuration</a> and then restart Apache.</p>
     <p>Using default generic configurations such as the OWASP
-      Core Rule Set can impact the normal behavior of Drupal and must be
+      Core Rule Set can impact the normal behaviour of Drupal and must be
       tested extensively before deployment. Usually some rules are
       breaking rich content edition or modules that behave differently
       than Drupal core. It is recommended to run the rules in a passive
@@ -1334,8 +1335,8 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <p>The database for Drupal can run on the same server,
       but for performance reasons it can be beneficial to set it up on
       another server. You want to ensure that your server environment is
-      robust enough that it cannot be easily brought down by a denial of
-      service (DOS) attack. There are a few server side tools to help
+      robust enough that it cannot be easily brought down by a Denial of
+      Service (DOS) attack. There are a few server side tools to help
       with this, but mostly it’s useful to have a buffer, even at your
       highest traffic times, so that your site is always responsive. </p>
     <p>At the point where your server environment spreads on
@@ -1658,7 +1659,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
     <h3>8) Miscellaneous</h3>
     <p>Review the discussion in Section K and decide if you
       are going to remove the CHANGELOG.txt file. Ensure that you can
-      keep up security upgrades on a weekly basis anddo not hack core! </p>
+      keep up security upgrades on a weekly basis and <strong>do not hack core!</strong> </p>
     <p>If you plan to distribute your live site so that you
       can do testing or development outside of a controlled environment,
       consider building a <a href="http://drupalscout.com/knowledge-base/creating-sanitized-drupal-database-backup">sanitized version of the database</a>.
@@ -1733,7 +1734,7 @@ ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES
       <p> </p>
       <p>As David Strauss wrote recently, <a href="https://www.getpantheon.com/blog/all-code-debt">All Code is Debt</a>. “All of the
         custom code you’ve written yesterday, rewritten today, and what
-        you’ll write tomorrow -- you will be burdened with maintaining,
+        you’ll write tomorrow ― you will be burdened with maintaining,
         forever.” Code needs to be maintained on a regular basis to
         ensure that it is keeping up with the latest security best
         practices. </p>
