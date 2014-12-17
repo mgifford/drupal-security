@@ -17,28 +17,14 @@ originally written for for Public Safety Canada
 **Version:** 1.0 (December 15, 2014)
 _This is a living document, sign up for updates on http://openconcept.ca/drupal-security-guide._
 
-This document describes best practices for setting up
-and maintaining a Drupal site. It was initially written for the
-Government of Canada, but it is equally applicable to other
-organizations.
+This document describes best practices for setting up and maintaining a Drupal site. It was initially written for the Government of Canada, but it is equally applicable to other organizations.
 
-Drupal is a popular, open source content management
-system (CMS). It has a strong security model, but like any
-application, requires adherence to best practices. Furthermore,
-Drupal is only one piece of the software that is required to run
-your site, and one needs to consider the security of the entire
+Drupal is a popular, open source content management system (CMS). It has a strong security model, but like any application, requires adherence to best practices. Furthermore, Drupal is only one piece of the software that is required to run your site, and one needs to consider the security of the entire
 server stack.
 
-This is not a comprehensive document, as IT security
-is a complex field. We have tried to focus on fundamental
-principles that can improve security. For more information on web
-server security, see the links at the end of this article.
+This is not a comprehensive document, as IT security is a complex field. We have tried to focus on fundamental principles that can improve security. For more information on web server security, see the links at the end of this article.
 
-We do not believe that there will ever be a 100%
-secure system. There are always bugs in software and new exploits
-are being attempted all of the time. We are listing options to
-consider, but each organization will need to weigh which
-combination they are going to use.
+We do not believe that there will ever be a 100% secure system. There are always bugs in software and new exploits are being attempted all of the time. We are listing options to consider, but each organization will need to weigh which combination they are going to use.
 
 ### Copyright
 
@@ -141,392 +127,131 @@ M) Additional Resources
 
 ## A) Introduction
 
-Drupal 7 is a leading content management system in
-governments around the world. It has been widely adopted by
-institutions around the world that are looking to meet increasing
-demands for service, larger challenges with accessibility and
-mobile requirements, and ever smaller budgets.
+Drupal 7 is a leading content management system in governments around the world. It has been widely adopted by institutions around the world that are looking to meet increasing demands for service, larger challenges with accessibility and mobile requirements, and ever smaller budgets.
 
-With governments increasingly targeted for cyber
-attacks, it is important that they remain up to date with best
-practices so that personal information and government assets are
-protected.
+With governments increasingly targeted for cyber attacks, it is important that they remain up to date with best practices so that personal information and government assets are protected.
 
-This guide provides an overview of important security
-principles, best practices for basic security; plus extra steps to
-be considered, if budget allows. Where possible we will be
-providing some detailed instructions. Managers should read
-sections B and C. System administrators will need to focus on
-sections D, E, F, G, I, J and K. Drupal developers can focus on
-section H and I, but should be familiar with the impact of the
-other sections too.
+This guide provides an overview of important security principles, best practices for basic security; plus extra steps to be considered, if budget allows. Where possible we will be providing some detailed instructions. Managers should read
+sections B and C. System administrators will need to focus on sections D, E, F, G, I, J and K. Drupal developers can focus on section H and I, but should be familiar with the impact of the other sections too.
 
-It should be clear that not all of the steps outlined
-here will need to be taken on all sites. The principles should be
-followed but not all of the security suggestions described will
-need to be followed by all organizations. Each practice or tool
-should be carefully evaluated to understand the potential costs,
-risks and benefits.
+It should be clear that not all of the steps outlined here will need to be taken on all sites. The principles should be followed but not all of the security suggestions described will need to be followed by all organizations. Each practice or tool should be carefully evaluated to understand the potential costs, risks and benefits.
 
-This document raises issues to consider before you
-procure a server and when you first gain access to your server. It
-provides suggestions on what additional software you can add to
-your site which can help improve it’s security. It also highlights
-configuration options that you can apply to Apache, PHP and MySQL
-to improve on the default settings. Finally we talk about things
-that you can do to enhance Drupal security.
+This document raises issues to consider before you procure a server and when you first gain access to your server. It provides suggestions on what additional software you can add to your site which can help improve it’s security. It also highlights configuration options that you can apply to Apache, PHP and MySQL
+to improve on the default settings. Finally we talk about things that you can do to enhance Drupal security.
 
-The code snippets which are included are not always a
-comprehensive guide, but there are always links in the descriptive
-paragraph with more information which you should consult before
-installing programs on your production server. Section I has
-information on building secure modules and themes, but it is also
-worth consulting the [community documentation on Drupal.org](https://drupal.org/writing-secure-code).
+The code snippets which are included are not always a comprehensive guide, but there are always links in the descriptive paragraph with more information which you should consult before installing programs on your production server. Section I has information on building secure modules and themes, but it is also worth consulting the [community documentation on Drupal.org](https://drupal.org/writing-secure-code).
 
-Because this document strongly recommends against the
-use of Microsoft Windows servers for Internet-facing web sites,
-Windows security will not be addressed.
+Because this document strongly recommends against the use of Microsoft Windows servers for Internet-facing web sites, Windows security will not be addressed.
 
 Security cannot be just a buzzword, [it is a process](https://www.schneier.com/essays/archives/2000/04/the_process_of_secur.html). There needs to be
-clear understanding about lines of responsibility and ultimately
-management needs to provide the budget required to ensure that
-systems can be maintained and regularly re-evaluated.
+clear understanding about lines of responsibility and ultimately management needs to provide the budget required to ensure that systems can be maintained and regularly re-evaluated.
 
-Eternal vigilance is important as those searching for
-your vulnerabilities are working around the clock and are
-well-financed. This document will, itself, need to evolve to keep
-pace with new vulnerabilities.
+Eternal vigilance is important as those searching for your vulnerabilities are working around the clock and are well-financed. This document will, itself, need to evolve to keep pace with new vulnerabilities.
 
 ## B) Principles of Security
 
-*   **There is safety in the herd:** Leverage large, well maintained
-open source libraries (packages) with a critical mass of users
-and developers. Use compiled packages and check data integrity
-of downloaded code. Start with a standard Debian/Ubuntu or Red
-Hat/CentOS installation.
-*   **Order matters:** Don’t open up services to the Internet before
-your server is properly secured.
-*   **Limit exposure:** Only install and maintain what is necessary.
-Reduce the amount of code installed. Review server configuration
-regularly to see if it can be streamlined.
-*   **Deny access by default:** Only allow access where it is needed,
-and make all access policies deny by default.
-*   **Use well known security tools:** There are well supported
-libraries that limit exposure, and check for intrusion.
-Suggestions are provided later.
-*   **Avoid writing custom code:** Even large government departments
-find it difficult to invest properly in regular, ongoing code
-reviews. Minimize the use of any custom code.
-*   **Contribute back: No software is ever perfect.** There is always
-room for improvement. Make the code you use better and give it
-back to the community. If you do it it properly you won’t have
-to rewrite your code with the next security release and you will
+*   **There is safety in the herd:** Leverage large, well maintained open source libraries (packages) with a critical mass of users and developers. Use compiled packages and check data integrity of downloaded code. Start with a standard Debian/Ubuntu or Red Hat/CentOS installation.
+*   **Order matters:** Don’t open up services to the Internet before your server is properly secured.
+*   **Limit exposure:** Only install and maintain what is necessary. Reduce the amount of code installed. Review server configuration regularly to see if it can be streamlined.
+*   **Deny access by default:** Only allow access where it is needed, and make all access policies deny by default.
+*   **Use well known security tools:** There are well supported libraries that limit exposure, and check for intrusion. Suggestions are provided later.
+*   **Avoid writing custom code:** Even large government departments find it difficult to invest properly in regular, ongoing code reviews. Minimize the use of any custom code.
+*   **Contribute back: No software is ever perfect.** There is always room for improvement. Make the code you use better and give it back to the community. If you do it it properly you won’t have to rewrite your code with the next security release and you will
 get free peer review and ongoing maintenance.
-*   **Limit access:** There needs to be clear, documented roles of who
-has access to what. Only use root access when required and do so
-through sudo so people are not actually logging in as root.
-Isolate distinct roles where possible. Each person with access
-requires a separate account as shared accounts are inherently
-insecure.
-*   **Make your application happy:** When running smoothly your server
-should not be generating errors. Monitor your server then
-investigate and resolve errors.
-*   **Document everything:** Make sure you have an overview of any
-customizations which may have been done or any additional
-software that may have been added.
-*   **Limit use of passwords:** Have sane organizational policies on
-password requirements. Keep track of your passwords in
-controlled, encrypted programs. Where possible use password-less
-approaches such as ssh key pairs which are more secure.
-*   **Don’t trust your backup:** Define and review backup procedures
-and regularly test that you can restore your site.
-*   **Obscurity isn’t security:** Organizations need to have their
-security policies well documented and internally transparent.
-Section K discusses this issue in detail.
-*   **Security is big:** It is a mistake to assume that one person can
-do it well in isolation. Having access to a team (even outside
-of the organization) will help.
-*   **Remember, you’re still not safe:** Have an audit trail stored on
-another system. If your site is compromised, take the time to
-find out how. Use proper version control for all code and
-configuration.
-*   **Not just for techs:** Upper management needs to take the time to
-understand these general principles of IT security as they have
-profound implications for the whole organization.
+*   **Limit access:** There needs to be clear, documented roles of who has access to what. Only use root access when required and do so through sudo so people are not actually logging in as root. Isolate distinct roles where possible. Each person with access requires a separate account as shared accounts are inherently insecure.
+*   **Make your application happy:** When running smoothly your server should not be generating errors. Monitor your server then investigate and resolve errors.
+*   **Document everything:** Make sure you have an overview of any customizations which may have been done or any additional software that may have been added.
+*   **Limit use of passwords:** Have sane organizational policies on password requirements. Keep track of your passwords in controlled, encrypted programs. Where possible use password-less approaches such as ssh key pairs which are more secure.
+*   **Don’t trust your backup:** Define and review backup procedures and regularly test that you can restore your site.
+*   **Obscurity isn’t security:** Organizations need to have their security policies well documented and internally transparent. Section K discusses this issue in detail.
+*   **Security is big:** It is a mistake to assume that one person can do it well in isolation. Having access to a team (even outside of the organization) will help.
+*   **Remember, you’re still not safe:** Have an audit trail stored on another system. If your site is compromised, take the time to find out how. Use proper version control for all code and configuration.
+*   **Not just for techs:** Upper management needs to take the time to understand these general principles of IT security as they have profound implications for the whole organization.
 
 ## C) Security Concerns for Managers
 
-There are many assumptions about IT security that need
-to be fundamentally rethought in the era of the Internet.
-Government is struggling to come to terms with this at the same
-time as working to understand the implication of cloud-based
-services. What we can be certain of is that this field is
-accelerating and government departments need to keep up.
+There are many assumptions about IT security that need to be fundamentally rethought in the era of the Internet. Government is struggling to come to terms with this at the same time as working to understand the implication of cloud-based services. What we can be certain of is that this field is accelerating and government departments need to keep up.
 
-The first principle is to understand that time
-corrodes security and on the Internet time moves very fast. You
-can’t assume that any service you buy or develop is currently
-secure or will remain that way for long. It is critical to
-understand what investments have been made and how they are
-maintained.
+The first principle is to understand that time corrodes security and on the Internet time moves very fast. You can’t assume that any service you buy or develop is currently secure or will remain that way for long. It is critical to understand what investments have been made and how they are maintained.
 
-Web hosting and application development are different
-fields and one cannot simply outsource security upgrades to
-someone else to do. No government server platform or private web
-hosting company can “take care” of your server security in
-isolation of the application that is running on it. Ultimately,
-someone familiar with your website and it’s content needs to be
-involved in performing upgrades.
+Web hosting and application development are different fields and one cannot simply outsource security upgrades to someone else to do. No government server platform or private web hosting company can “take care” of your server security in isolation of the application that is running on it. Ultimately, someone familiar with your website and it’s content needs to be involved in performing upgrades.
 
-Third party agencies are ultimately going to be
-involved, whether it the Domain Name Registrar or Content Delivery
-Network (CDN). The communications paths with these agencies needs
-to be clear and well documented. This recently happened with a
-large Canadian municipality who was redirected recently using an
-approach known as “social engineering”. By leveraging human
-vulnerability, crackers were able to gain control of critical
-infrastructure. Properly documented procedures are important, as
-3rd party services can often be manipulated phony email or
-telephone requests.
+Third party agencies are ultimately going to be involved, whether it the Domain Name Registrar or Content Delivery Network (CDN). The communications paths with these agencies needs to be clear and well documented. This recently happened with a large Canadian municipality who was redirected recently using an approach known as “social engineering”. By leveraging human vulnerability, crackers were able to gain control of critical infrastructure. Properly documented procedures are important, as 3rd party services can often be manipulated phony email or telephone requests.
 
-It is also important to remember that one person
-working in isolation cannot be expected to be an expert in all
-aspects of Internet security. This is a vast area of expertise and
-it is changing quickly. It’s important that your security person
-has ongoing training and is engaged with both the Drupal and wider
-security communities to keep up with the latest threats,
-vulnerabilities and mitigation strategies.
+It is also important to remember that one person working in isolation cannot be expected to be an expert in all aspects of Internet security. This is a vast area of expertise and it is changing quickly. It’s important that your security person has ongoing training and is engaged with both the Drupal and wider security communities to keep up with the latest threats, vulnerabilities and mitigation strategies.
 
-Schedule time for a skilled security expert outside
-the core team to double check the server/Drupal configuration
-every quarter. This does not have to be a consultant, but it
-should be someone outside of the website development team.
+Schedule time for a skilled security expert outside the core team to double check the server/Drupal configuration every quarter. This does not have to be a consultant, but it should be someone outside of the website development team.
 
-Everyone wants security to be simple, it isn’t. It’s a
-matter of determining, as an organization, how much risk you want
-to be exposed to. You can invest as much or as little on security
-as you want, but the risks are generally inversely proportional to
-resources spent on tightening your system. Security has costs as
-well as benefits. Complex systems are usually less secure because
-it costs relatively so much more to secure them.
+Everyone wants security to be simple, it isn’t. It’s a matter of determining, as an organization, how much risk you want to be exposed to. You can invest as much or as little on security as you want, but the risks are generally inversely proportional to resources spent on tightening your system. Security has costs as
+well as benefits. Complex systems are usually less secure because it costs relatively so much more to secure them.
 
-Many organizations have policies for [Threat and Risk Assessments](https://www.dhs.gov/homeland-infrastructure-threat-and-risk-analysis-center).
-However, as we’ve seen with the implementation of [Healthcare.gov](https://www.healthcare.gov/)
-political pressures associated with large projects often push
-security concerns into a post-launch phase. It is highly
-recommended to go through a [Application Threat Modeling](https://www.owasp.org/index.php/Application_Threat_Modeling)
-process. [Threat Risk Modeling](https://www.owasp.org/index.php/Threat_Risk_Modeling) is also a
-recommended process to help expand understanding of potential
-threats by using processes like STRIDE or DREAD. By [identifying and classifying an
-  organization’s assets](http://www.networkmagazineindia.com/200212/security2.shtml) one can begin to prioritize where to
-focus resources.
+Many organizations have policies for [Threat and Risk Assessments](https://www.dhs.gov/homeland-infrastructure-threat-and-risk-analysis-center). However, as we’ve seen with the implementation of [Healthcare.gov](https://www.healthcare.gov/) political pressures associated with large projects often push security concerns into a post-launch phase. It is highly recommended to go through a [Application Threat Modeling](https://www.owasp.org/index.php/Application_Threat_Modeling) process. [Threat Risk Modeling](https://www.owasp.org/index.php/Threat_Risk_Modeling) is also a recommended process to help expand understanding of potential threats by using processes like STRIDE or DREAD. By [identifying and classifying an organization’s assets](http://www.networkmagazineindia.com/200212/security2.shtml) one can begin to prioritize where to focus resources.
 
-Thinking through attack vectors and limiting exposure
-is really important. I’m sure that many of the sites that were
-compromised by the Shellshock bash bug in that hit in September of
-2014 simply hadn’t disabled services like Apache’s CGI module. To
-run Drupal, you simply shouldn’t need to expose bash to anyone
-other than properly authenticated Linux users.
+Thinking through attack vectors and limiting exposure is really important. I’m sure that many of the sites that were compromised by the Shellshock bash bug in that hit in September of 2014 simply hadn’t disabled services like Apache’s CGI module. To run Drupal, you simply shouldn’t need to expose bash to anyone other than properly authenticated Linux users.
 
-As with most work, a great deal of security work lies
-in identifying and eliminating assumptions. Document what is done,
-and be transparent in your work so that your organization knows
-that it has the level of risk it wants to maintain.
+As with most work, a great deal of security work lies in identifying and eliminating assumptions. Document what is done, and be transparent in your work so that your organization knows that it has the level of risk it wants to maintain.
 
-Organizations should also consider if the software
-that they use is properly resourced. The Internet is built on free
-software, but much of it is backed by corporations who are also
-providing services built on the expertise that they use have built
-by contributing to open source software. The [Heartbleed bug](http://heartbleed.com/) cost
-the economy billions, but was largely caused because the OpenSSL
-library was under resourced. Although this is just one example,
-consider donating to project like the [OpenSSL Software Foundation](https://www.openssl.org/support/index.html) which
-supports the security infrastructure your organization depends on.
-Likewise consider supporting organizations who contribute to [Drupal’s security team](https://www.drupal.org/security-team).
+Organizations should also consider if the software that they use is properly resourced. The Internet is built on free software, but much of it is backed by corporations who are also providing services built on the expertise that they use have built by contributing to open source software. The [Heartbleed bug](http://heartbleed.com/) cost the economy billions, but was largely caused because the OpenSSL library was under resourced. Although this is just one example, consider donating to project like the [OpenSSL Software Foundation](https://www.openssl.org/support/index.html) which supports the security infrastructure your organization depends on. Likewise consider supporting organizations who contribute to [Drupal’s security team](https://www.drupal.org/security-team).
 
-A great deal of security work begins before anything
-is installed. Properly considering security before beginning a
-server implementation is important. Addressing security issues
-later in a project makes it impossible to do a security evaluation
-of the base system. When setup is rushed, bad practices are often
-used which then become patterns that are followed long after the
-site is launched.
+A great deal of security work begins before anything is installed. Properly considering security before beginning a server implementation is important. Addressing security issues later in a project makes it impossible to do a security evaluation of the base system. When setup is rushed, bad practices are often used which then become patterns that are followed long after the site is launched.
 
-Implementing and enforcing a policy of using very
-complex passwords and [2 factor authentication](http://lifehacker.com/5938565/heres-everywhere-you-should-enable-two-factor-authentication-right-now) for any service that is responsible
-for delivering a critical service like email or code repositories.
-Proper use of a secure, redundant password manager is also
-something that should be key for all employees. If someone is able
-to hack into your Google Mail or GitHub account, they can often
-access much more than your communications. Most services on the
-Internet are keyed to email addresses and passwords to 3rd party
-services are often stored. Identity theft online is a huge problem
-for institutions.
+Implementing and enforcing a policy of using very complex passwords and [2 factor authentication](http://lifehacker.com/5938565/heres-everywhere-you-should-enable-two-factor-authentication-right-now) for any service that is responsible for delivering a critical service like email or code repositories. Proper use of a secure, redundant password manager is also something that should be key for all employees. If someone is able to hack into your Google Mail or GitHub account, they can often access much more than your communications. Most services on the
+Internet are keyed to email addresses and passwords to 3rd party services are often stored. Identity theft online is a huge problem for institutions.
 
-The [UK’s Government Service Design Manual](https://www.gov.uk/service-manual/) is an excellent resource for any large institution and it has a
-great section that applies directly to web security, [Security as enabler: Using ](https://www.gov.uk/service-manual/technology/security-as-enabler.html)[technological change to build secure services](https://www.gov.uk/service-manual/technology/security-as-enabler.html). In particular I like the point that security
-shouldn’t degrade user experience.
+The [UK’s Government Service Design Manual](https://www.gov.uk/service-manual/) is an excellent resource for any large institution and it has a great section that applies directly to web security, [Security as enabler: Using](https://www.gov.uk/service-manual/technology/security-as-enabler.html)[technological change to build secure services](https://www.gov.uk/service-manual/technology/security-as-enabler.html). In particular I like the point that security shouldn’t degrade user experience.
 
-Don’t ignore minor bugs. As [Darren Mothersele](http://darrenmothersele.com/blog/2014/02/20/drupal-security/) mentions in his
-blog, it is possible for a number of minor vulnerabilities to be
-chained together in a way which can become a major exploit. Sites
-as large as GitHub have been successfully targeted this way. As he
-says, The cost of (in)security is high and “investment in security
-review and penetration testing is a Good Thing”.
+Don’t ignore minor bugs. As [Darren Mothersele](http://darrenmothersele.com/blog/2014/02/20/drupal-security/) mentions in his blog, it is possible for a number of minor vulnerabilities to be
+chained together in a way which can become a major exploit. Sites as large as GitHub have been successfully targeted this way. As he says, The cost of (in)security is high and “investment in security review and penetration testing is a Good Thing”.
 
 ## D) Server Security
 
-Any website is a complex ecosystem of software. Each
-aspect can be tightened through proper configuration and through
-the addition of components beyond what is found in a default
-installation. This document provides some examples, but mostly
-relies on links so that you can read the specific details on how
-this should be done. There are other lists of considerations for
-server security, like Robert Hansen’s list of [10 major tenets of a secure hosting model](http://drupalwatchdog.com/2/2/securing-your-environment), but where possible we will be referring back to the
-Principles of Security in Section B.
+Any website is a complex ecosystem of software. Each aspect can be tightened through proper configuration and through the addition of components beyond what is found in a default installation. This document provides some examples, but mostly relies on links so that you can read the specific details on how
+this should be done. There are other lists of considerations for server security, like Robert Hansen’s list of [10 major tenets of a secure hosting model](http://drupalwatchdog.com/2/2/securing-your-environment), but where possible we will be referring back to the Principles of Security in Section B.
 
 ### 1) Server Procurement
 
-Start server documentation with information from your
-server contract. There are often technical details and notes about
-who to contact when things go wrong.
+Start server documentation with information from your server contract. There are often technical details and notes about who to contact when things go wrong.
 
-It is important to determine that there is a strong
-security community behind the OS distribution you choose, and that
-you have the necessary human resources in your department to
-maintain it. Both Debian/Ubuntu and Red Hat Enterprise
-Linux(RHEL)/CentOS/Fedora can be considered solid. The advantage
-of a Debian or Red Hat based solution is that there is extensive
-documentation and large communities of users who’ve shared their
-experiences through forums, issue trackers, and blog posts. Ubuntu
-is based on Debian. CentOS is almost a copy of RHEL and Fedora is
-the community edition of RHEL so is often somewhat ahead. Most
-references to one of these two groups of distributions should be
-interchangeable.Note that Ubuntu and Debian have a different
-development cycle and are not identical.
+It is important to determine that there is a strong security community behind the OS distribution you choose, and that you have the necessary human resources in your department to maintain it. Both Debian/Ubuntu and Red Hat Enterprise Linux(RHEL)/CentOS/Fedora can be considered solid. The advantage of a Debian or Red Hat based solution is that there is extensive documentation and large communities of users who’ve shared their experiences through forums, issue trackers, and blog posts. Ubuntu is based on Debian. CentOS is almost a copy of RHEL and Fedora is the community edition of RHEL so is often somewhat ahead. Most references to one of these two groups of distributions should be interchangeable.Note that Ubuntu and Debian have a different development cycle and are not identical.
 
-If you use a Red Hat Enterprise Linux (RHEL) system,
-you will need to subscribe to their service in order to apply
-security upgrades and install the additional packages mentioned in
-this document. Before procuring a Red Hat server, check that your
-package includes a subscription.
+If you use a Red Hat Enterprise Linux (RHEL) system, you will need to subscribe to their service in order to apply security upgrades and install the additional packages mentioned in this document. Before procuring a Red Hat server, check that your package includes a subscription.
 
-In our opinion, distributions of Linux like SuSE
-simply do not have a critical mass of users and developers (in the
-web server space) to maintain the code and documentation required
-for a secure environment. Microsoft Windows is not a standard
-platform for hosting Drupal and is generally not recommended since
-community support is much less robust. It is very difficult to
-limit exposure on a Windows Server since there are many unneeded
-pieces of the operating system which you cannot easily uninstall.
+In our opinion, distributions of Linux like SUSE simply do not have a critical mass of users and developers (in the web server space) to maintain the code and documentation required for a secure environment. Microsoft Windows is not a standard platform for hosting Drupal and is generally not recommended since community support is much less robust. It is very difficult to limit exposure on a Windows Server since there are many unneeded pieces of the operating system which you cannot easily uninstall.
 
-If you are worried about the server’s physical
-security, you can also set up an [encrypted partition](https://wiki.archlinux.org/index.php/Disk_Encryption) on your hard
-drive. This may introduce performance issues which might cause
-problems for your server. This document will not be covering [how to set up an encrypted drive](https://help.ubuntu.com/community/EncryptedFilesystemHowto)
-but depending on the perceived threats, it may be worth
-implementing.
+If you are worried about the server’s physical security, you can also set up an [encrypted partition](https://wiki.archlinux.org/index.php/Disk_Encryption) on your hard drive. This may introduce performance issues which might cause problems for your server. This document will not be covering [how to set up an encrypted drive](https://help.ubuntu.com/community/EncryptedFilesystemHowto) but depending on the perceived threats, it may be worth implementing.
 
-Special consideration should be taken when enabling
-HTTPS for encrypted traffic on “shared host”-type environments
-(any server hosting more than 1 domain). Typically, due to the
-nature of the protocol, only one https website (domain name) could
-be hosted per IP. However, with [Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication), it is now
-possible to host multiple https domains with distinct TLS
-certificates on the same IP. It must be noted that SNI is
-dependent on both the client and the server supporting the TLS
-extension, but most do nowadays. Another option, which might be
-useful if your servers or clients do not support SNI, is using [Subject Alternative Name](https://en.wikipedia.org/wiki/SubjectAltName) on
-certificates (also known as Unified Communications Certificates).
-These certificates contain extra fields that list other common
-names (domain names) for which that certificate is valid.
+Special consideration should be taken when enabling HTTPS for encrypted traffic on “shared host”-type environments (any server hosting more than 1 domain). Typically, due to the nature of the protocol, only one https website (domain name) could be hosted per IP. However, with [Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication), it is now possible to host multiple https domains with distinct TLS certificates on the same IP. It must be noted that SNI is dependent on both the client and the server supporting the TLS extension, but most do nowadays. Another option, which might be useful if your servers or clients do not support SNI, is using [Subject Alternative Name](https://en.wikipedia.org/wiki/SubjectAltName) on certificates (also known as Unified Communications Certificates). These certificates contain extra fields that list other common names (domain names) for which that certificate is valid.
 
-Finally, don’t get a server that comes with a server
-admin control panel. They promise to make managing your site
-easier but present security problems. There are a number of
-commercial packages, like cPanel or PLESK, that do make it easier
-to change settings on your site. This seems particularly
-attractive if less technical users are responsible for server
-administration. In our recent experience with cPanel, it
-introduced many difficulties in applying many of the suggestions
-and recommendations described here. Because you can’t simply
-disable cPanel, we had to reinstall the site on a new server. If
-you choose a server with one, you will need to experiment with
-which of the following suggestions you are able to implement. Some
-control panels are also known to overwrite settings when manual
-changes are made to configuration files. It is important to work
-to minimize the attack surface and as these dashboards are managed
-through the web, it is yet another point where your server can be
-compromised. Ultimately a control panel could prove convenient
-both for you and for those looking to hack into your system.
+Finally, don’t get a server that comes with a server admin control panel. They promise to make managing your site easier but present security problems. There are a number of commercial packages, like cPanel or PLESK, that do make it easier to change settings on your site. This seems particularly attractive if less technical users are responsible for server administration. In our recent experience with cPanel, it introduced many difficulties in applying many of the suggestions and recommendations described here. Because you can’t simply disable cPanel, we had to reinstall the site on a new server. If you choose a server with one, you will need to experiment with which of the following suggestions you are able to implement. Some control panels are also known to overwrite settings when manual changes are made to configuration files. It is important to work to minimize the attack surface and as these dashboards are managed through the web, it is yet another point where your server can be compromised. Ultimately a control panel could prove convenient both for you and for those looking to hack into your system.
 
 ### 2) Immediately After Receiving Root Access
 
-Hopefully the root password wasn’t sent via an
-unencrypted email with the other login credentials. Very few
-people use [GPG to encrypt emails](https://en.wikipedia.org/wiki/GNU_Privacy_Guard) because it is
+Hopefully the root password wasn’t sent via an unencrypted email with the other login credentials. Very few people use [GPG to encrypt emails](https://en.wikipedia.org/wiki/GNU_Privacy_Guard) because it is
 cumbersome, but confidential documents should be encoded/decoded
-with this type of protection. You can request that the password
-not be sent using the same medium so it will be difficult to
-intercept. Minimally passwords can be sent in a separate email,
-but this provides only a slightly more obscure means to stop this
-information from being intercepted.
+with this type of protection. You can request that the password not be sent using the same medium so it will be difficult to intercept. Minimally passwords can be sent in a separate email, but this provides only a slightly more obscure means to stop this information from being intercepted.
 
-Most web hosts send all of the credentials together,
-therefore, the first step after getting access is to log in and
-change the root password. Unencrypted email communications offers
-no security on the Internet and thus you must address this
-vulnerability immediately.
+Most web hosts send all of the credentials together, therefore, the first step after getting access is to log in and change the root password. Unencrypted email communications offers no security on the Internet and thus you must address this vulnerability immediately.
 
-Update the list of available software and perform
-system software upgrades. Most web hosts will use a pre-packaged
-distribution and there will frequently be updates that need to be
-applied. Make sure you’ve got the updates and that the new
-packages are running. If you update the Linux kernel you will have
-to reboot the server for it to be applied. If you update Apache,
-you will also need to restart it. Debian-style systems often
-restart the main daemon instances on package updates
-automatically, where RHEL-style systems treat daemon restarts as
-an administrator’s responsibility.
+Update the list of available software and perform system software upgrades. Most web hosts will use a pre-packaged distribution and there will frequently be updates that need to be applied. Make sure you’ve got the updates and that the new packages are running. If you update the Linux kernel you will have to reboot the server for it to be applied. If you update Apache, you will also need to restart it. Debian-style systems often restart the main daemon instances on package updates automatically, where RHEL-style systems treat daemon restarts as an administrator’s responsibility.
 
 ```
 Debian: apt-get update && apt-get upgrade
 CentOS: yum upgrade
 ```
 
-You will inevitably have a number of passwords to
-maintain. We recommend storing these in a new [KeePass or KeePassX Password database](https://en.wikipedia.org/wiki/KeePass).
-It has a nice password generator which makes it very easy to
-generate long (20+ characters) and complex passwords and store
-them immediately. If you get any other passwords supplied via
-email, reset them immediately. Your email address is also a [point of vulnerability](http://drupalwatchdog.com/2/2/practical-security).
+You will inevitably have a number of passwords to maintain. We recommend storing these in a new [KeePass or KeePassX Password database](https://en.wikipedia.org/wiki/KeePass). It has a nice password generator which makes it very easy to generate long (20+ characters) and complex passwords and store them immediately. If you get any other passwords supplied via email, reset them immediately. Your email address is also a [point of vulnerability](http://drupalwatchdog.com/2/2/practical-security).
 
-The most common account that crackers try to
-compromise is the root user, so disable root logins. Furthermore,
-set up user accounts with sudo access and [use ssh keys](https://wiki.archlinux.org/index.php/SSH_Keys) so that nobody
-accessing the site is using a password. Note: the commands listed
-here assume you are using sudo access and but we have chosen not
-to explicitly prefix them with sudo.
+The most common account that crackers try to compromise is the root user, so disable root logins. Furthermore, set up user accounts with sudo access and [use ssh keys](https://wiki.archlinux.org/index.php/SSH_Keys) so that nobody accessing the site is using a password. Note: the commands listed here assume you are using sudo access and but we have chosen not to explicitly prefix them with sudo.
 
-Protect your ssh keys by ensuring that your private
-keys are [password protected and using 2048-bits](https://www.ssllabs.com/downloads/SSL_TLS_Deployment_Best_Practices.pdf).
-By disabling the use of passwords for ssh user logins a common
-server vulnerability is simply eliminated. When you turn off
-password logins “[script kiddies](https://en.wikipedia.org/wiki/Script_kiddie)” simply cannot
-compromise your server with common dictionary or brute force
-attacks. There are explanations on how to [effectively disable password logins](http://lani78.wordpress.com/2008/08/08/generate-a-ssh-key-and-disable-password-authentication-on-ubuntu-server/)
-but check that /etc/ssh/sshd_config has the text
+Protect your ssh keys by ensuring that your private keys are [password protected and using 2048-bits](https://www.ssllabs.com/downloads/SSL_TLS_Deployment_Best_Practices.pdf). By disabling the use of passwords for ssh user logins a common
+server vulnerability is simply eliminated. When you turn off password logins “[script kiddies](https://en.wikipedia.org/wiki/Script_kiddie)” simply cannot
+compromise your server with common dictionary or brute force attacks. There are explanations on how to [effectively disable password logins](http://lani78.wordpress.com/2008/08/08/generate-a-ssh-key-and-disable-password-authentication-on-ubuntu-server/) but check that /etc/ssh/sshd_config has the text
 
 ```
 PasswordAuthentication no
 ```
 
-Remember that when downloading important files that there
-is a possibility that they have been tampered with. Important security
-documents often come with a [MD5](http://www.electrictoolbox.com/article/linux-unix-bsd/howto-check-md5-file/)
-or SHA (secure hash algorithm) code which allows a user to verify that
-the file on a server is identical to the file that they have
-downloaded.You can generate a  [checksum](https://en.wikipedia.org/wiki/Checksum) to locally to determine equivalence using one of these:
+Remember that when downloading important files that there is a possibility that they have been tampered with. Important security documents often come with a [MD5](http://www.electrictoolbox.com/article/linux-unix-bsd/howto-check-md5-file/) or SHA (secure hash algorithm) code which allows a user to verify that the file on a server is identical to the file that they have downloaded.You can generate a  [checksum](https://en.wikipedia.org/wiki/Checksum) to locally to determine equivalence using one of these:
 
 ```
 shasum -a 256 ~/DrupalSecurity.pdf
@@ -536,49 +261,34 @@ openssl sha1  ~/DrupalSecurity.pdf
 
 ### 3) Create a baseline
 
-Record a baseline of your server that you can review,
-knowing that this is the minimum number of processes which are
-running with a clean system. Likewise record the baseline from a
-[netstat](https://en.wikipedia.org/wiki/Netstat) report to see what ports are open:
+Record a baseline of your server that you can review, knowing that this is the minimum number of processes which are running with a clean system. Likewise record the baseline from a [netstat](https://en.wikipedia.org/wiki/Netstat) report to see what ports are open:
 
 ```
 ps afx
 netstat -l -p -n
 ```
 
-The management of ports on the network is managed
-through iptables. It is important to review and document them to
-see that they are properly restrictive. From the command line you
-can list them with:
+The management of ports on the network is managed through iptables. It is important to review and document them to see that they are properly restrictive. From the command line you can list them with:
 
 ```
 iptables -L -v -n
 ```
 
-You can load/save the iptables easily using the
-iptables-persistent package `apt-get install iptables-persistent`.
-With that you can simply save the existing IP tables from the
-command line:
+You can load/save the iptables easily using the iptables-persistent package `apt-get install iptables-persistent`. With that you can simply save the existing IP tables from the command line:
 
 ```
 Debian: service iptables-persistent save 
 CentOS: service iptables save
 ```
 
-Record the list of installed packages on the server.
-Save this information in a text file in your management code
-repository. If your server is compromised it is useful to know
-what packages were installed and running when you started:
+Record the list of installed packages on the server. Save this information in a text file in your management code repository. If your server is compromised it is useful to know what packages were installed and running when you started:
 
 ```
 Debian: dpkg -l
 CentOS: yum list installed
 ```
 
-Install [Rootkit Hunter](http://sourceforge.net/apps/trac/rkhunter/wiki/SPRKH) (RKH) to help you
-“detect known rootkits, malware and signal general bad security
-practices”. You can set it up to [send you email alerts](http://www.tecmint.com/install-linux-rkhunter-rootkit-hunter-in-rhel-centos-and-fedora/), but can also
-do manual scans.
+Install [Rootkit Hunter](http://sourceforge.net/apps/trac/rkhunter/wiki/SPRKH) (RKH) to help you “detect known rootkits, malware and signal general bad security practices”. You can set it up to [send you email alerts](http://www.tecmint.com/install-linux-rkhunter-rootkit-hunter-in-rhel-centos-and-fedora/), but can also do manual scans.
 
 ```
 Debian: apt-get install rkhunter
@@ -587,28 +297,16 @@ CentOS: yum install rkhunter
 
 ### 4) Limit Access from Outside
 
-In general you will want to allow traffic for port 22
-(for known IPs), 80, 443 and reject other ports. It can also be
-useful to use firewall rules to restrict outgoing connections from
-the Apache user. The possible exception to this is drupal.org’s IP
-address as you will want to regularly use drush (Drupal’s command
-line shell and scripting interface) to update modules (see H2
-below). You can easily see what ports are open by using a port
-scanner such as [nmap](http://nmap.org/) from an external machine:
+In general you will want to allow traffic for port 22 (for known IPs), 80, 443 and reject other ports. It can also be useful to use firewall rules to restrict outgoing connections from the Apache user. The possible exception to this is drupal.org’s IP address as you will want to regularly use drush (Drupal’s command line shell and scripting interface) to update modules (see H2
+below). You can easily see what ports are open by using a port scanner such as [nmap](http://nmap.org/) from an external machine:
 
 ```
 nmap -sS SERVER_ADDRESS
 ```
 
-We recommend running [periodic TCP port scans](https://en.wikipedia.org/wiki/Port_scanner) on your
-server. [MXToolbox](http://mxtoolbox.com/PortScan.aspx) offers an option to do this through their site, but you can also use tools like nmap
-which offers you more fine-grained controls.
+We recommend running [periodic TCP port scans](https://en.wikipedia.org/wiki/Port_scanner) on your server. [MXToolbox](http://mxtoolbox.com/PortScan.aspx) offers an option to do this through their site, but you can also use tools like nmap which offers you more fine-grained controls.
 
-Many servers come with [BIND](https://en.wikipedia.org/wiki/BIND) on UDP port 53\. This program
-can probably be removed in most instances or should be restricted
-with a firewall if required. There are some [detailed instructions here](http://askubuntu.com/questions/162371/what-is-the-named-daemon-and-why-is-it-running) on how
-to remove it, which are particularly important if you aren’t sure
-if you need it or not. To check if bind is running, run this from
+Many servers come with [BIND](https://en.wikipedia.org/wiki/BIND) on UDP port 53\. This program can probably be removed in most instances or should be restricted with a firewall if required. There are some [detailed instructions here](http://askubuntu.com/questions/162371/what-is-the-named-daemon-and-why-is-it-running) on how to remove it, which are particularly important if you aren’t sure if you need it or not. To check if bind is running, run this from
 the command line:
 
 ```
@@ -616,22 +314,12 @@ the command line:
     chkconfig | grep bind
 ```
 
-You can obscure your SSH port by reassigning it to
-other than the default (22). This might fool a lazy cracker who
-isn’t using a port scanner first, but won’t stop the serious
-folks.
+You can obscure your SSH port by reassigning it to other than the default (22). This might fool a lazy cracker who isn’t using a port scanner first, but won’t stop the serious folks.
 
-One of the best ways to limit ssh access to a server
-is to restrict access to a handful of known subnets (ie.
-192.168.1.0/24) where administrators actually work. Don't be
-afraid to add to this list; make it easy for your people to work
+One of the best ways to limit ssh access to a server is to restrict access to a handful of known subnets (ie. 192.168.1.0/24) where administrators actually work. Don't be afraid to add to this list; make it easy for your people to work
 wherever they need to.Security is not the enemy.
 
-You can also [restrict who can ssh](http://apple.stackexchange.com/questions/34091/how-to-restrict-remote-login-ssh-access-to-only-certain-ip-ranges) into the
-server to a limited number of IP addresses. Be very careful when
-configuring this as you don’t want to block yourself from
-accessing the server. [Debian’s admin documentation](http://www.debian-administration.org/articles/87) offers
-the following changes which can be made to the iptables firewall:
+You can also [restrict who can ssh](http://apple.stackexchange.com/questions/34091/how-to-restrict-remote-login-ssh-access-to-only-certain-ip-ranges) into the server to a limited number of IP addresses. Be very careful when configuring this as you don’t want to block yourself from accessing the server. [Debian’s admin documentation](http://www.debian-administration.org/articles/87) offers the following changes which can be made to the iptables firewall:
 
 ```
   # All connections from address 1.2.3.4 to SSH (port 22) iptables -A INPUT -p tcp -m state --state NEW --source 1.2.3.4
@@ -639,187 +327,78 @@ the following changes which can be made to the iptables firewall:
 INPUT -p tcp --dport 22 -j DROP
 ```
 
-There are many ways to do this. Debian uses [ufw](https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server), the current release of RHEL
-uses [system-config-firewall-tui](https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server), [lokkit](http://docs.saltstack.com/en/latest/topics/tutorials/firewall.html) is coming along nicely and
-it looks like RHEL 7 may be shipped with [FirewallD](https://fedoraproject.org/wiki/FirewallD) by default. Ultimately
-they all do the same thing slightly differently. Make sure you
-understand your configurations and review them regularly.
+There are many ways to do this. Debian uses [ufw](https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server), the current release of RHEL uses [system-config-firewall-tui](https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server), [lokkit](http://docs.saltstack.com/en/latest/topics/tutorials/firewall.html) is coming along nicely and
+it looks like RHEL 7 may be shipped with [FirewallD](https://fedoraproject.org/wiki/FirewallD) by default. Ultimately they all do the same thing slightly differently. Make sure you understand your configurations and review them regularly.
 
-If you already have established a [virtual private network](https://en.wikipedia.org/wiki/Virtual_private_network) (VPN) then
-you can restrict SSH access to within that private network. This
-way you need to first log in to the VPN before being able to
-access the port. Leveraging an existing VPN has some additional
-costs but also some security advantages. If an organization isn’t
-already using a VPN however, then the usability problems with
-forcing people to use it may encourage developers to find ways to
-circumvent it.
+If you already have established a [virtual private network](https://en.wikipedia.org/wiki/Virtual_private_network) (VPN) then you can restrict SSH access to within that private network. This way you need to first log in to the VPN before being able to access the port. Leveraging an existing VPN has some additional costs but also some security advantages. If an organization isn’t already using a VPN however, then the usability problems with
+forcing people to use it may encourage developers to find ways to circumvent it.
 
 ### 5) Initial Installs
 
-There are some tools to harden your Linux system. The
-program [grsecurity](http://olex.openlogic.com/packages/grsecurity) addresses a number of memory and permissions issues with the kernel.
+There are some tools to harden your Linux system. The program [grsecurity](http://olex.openlogic.com/packages/grsecurity) addresses a number of memory and permissions issues with the kernel.
 
-[BastilleLinux](https://help.ubuntu.com/community/BastilleLinux) guides the
-administrator through an interactive process to limit access on
-the server.
+[BastilleLinux](https://help.ubuntu.com/community/BastilleLinux) guides the administrator through an interactive process to limit access on the server.
 
-Mandatory Access Controls (MAC) policies can be
-managed through programs like [SELinux](https://en.wikipedia.org/wiki/Security-Enhanced_Linux) and [AppArmour](https://en.wikipedia.org/wiki/AppArmor), for high security
-environments. With Ubuntu, use AppArmour as it comes installed by
-default. While AppArmour is often considered inferior and less
-flexible than SELinux, there is no need to uninstall it.AppArmour
-may impact other security tools and should not be used in
-conjunction with SELinux.
+Mandatory Access Controls (MAC) policies can be managed through programs like [SELinux](https://en.wikipedia.org/wiki/Security-Enhanced_Linux) and [AppArmour](https://en.wikipedia.org/wiki/AppArmor), for high security environments. With Ubuntu, use AppArmour as it comes installed by default. While AppArmour is often considered inferior and less flexible than SELinux, there is no need to uninstall it.AppArmour may impact other security tools and should not be used in conjunction with SELinux.
 
-With other distributions it is recommended to use
-SELinux (examples for use in [Debian](https://wiki.debian.org/SELinux)
-and [Red Hat](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/)) as it’s rules were
-initially developed to meet NSA policies.
+With other distributions it is recommended to use SELinux (examples for use in [Debian](https://wiki.debian.org/SELinux) and [Red Hat](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/)) as it’s rules were initially developed to meet NSA policies.
 
 ```
 Debian (not Ubuntu): apt-get install perl-tk bastille
 selinux-basics selinux-policy-default auditd
 ```
 
-Using an host based intrusion detection system (HIDS)
-such as the [OSSEC](http://www.security-marathon.be/?p=544) host-based intrusion
-detection system (HIDS) or [PHPIDS](http://www.phpids.org/) (PHP-intrusion detection
-system) is a good practice. There are good how-to documents
-available for both [PHPIDS](http://www.howtoforge.com/intrusion-detection-for-php-applications-with-phpids) and [OSSEC](http://www.ossec.net/?page_id=11).
-[Tripwire](http://www.tripwire.com/)
-and [Snort](http://www.snort.org/)
-are other IDS’s which monitor the integrity of core files and will
-alert you to suspicious activity (available for [CentOS](https://www.centos.org/docs/2/rhl-rg-en-7.2/ch-tripwire.html) and [Debian](http://penguinapple.blogspot.ca/2010/12/installing-configuring-and-using.html)). With any HIDS, you should
-make sure that secure IPs, such as your outgoing gateway is
-whitelisted.
+Using an host based intrusion detection system (HIDS) such as the [OSSEC](http://www.security-marathon.be/?p=544) host-based intrusion detection system (HIDS) or [PHPIDS](http://www.phpids.org/) (PHP-intrusion detection system) is a good practice. There are good how-to documents available for both [PHPIDS](http://www.howtoforge.com/intrusion-detection-for-php-applications-with-phpids) and [OSSEC](http://www.ossec.net/?page_id=11). [Tripwire](http://www.tripwire.com/) and [Snort](http://www.snort.org/) are other IDS’s which monitor the integrity of core files and will alert you to suspicious activity (available for [CentOS](https://www.centos.org/docs/2/rhl-rg-en-7.2/ch-tripwire.html) and [Debian](http://penguinapple.blogspot.ca/2010/12/installing-configuring-and-using.html)). With any HIDS, you should make sure that secure IPs, such as your outgoing gateway is whitelisted.
 
-[Drupal monitoring can be set up to work
-  with OSSEC](http://www.madirish.net/428) which would be more efficient than using Drupal’s
-[Login Security](https://drupal.org/project/login_security) module as it would allow you to use your existing HIDS infrastructure to alert you to
-these sorts of attacks.
+[Drupal monitoring can be set up to work with OSSEC](http://www.madirish.net/428) which would be more efficient than using Drupal’s [Login Security](https://drupal.org/project/login_security) module as it would allow you to use your existing HIDS infrastructure to alert you to these sorts of attacks.
 
-Crackers will often try to use a [brute force attack](http://en.wikipedia.org/wiki/Brute-force_attack) to guess
-usernames and passwords. Using a service like [Fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) can block IP addresses
-that are making an unreasonable number of login attempts. This
-won’t prevent distributed attacks, but could be used in
-conjunction with OSSEC. [Fail2ban is also an effective measure
-  for flood control](http://www.debian-administration.org/article/Blocking_a_DNS_DDOS_using_the_fail2ban_package) and can stop most denial of service
-attacks. Drupal also has some built in flood control options, the
-[Flood Control module](https://drupal.org/project/flood_control) provides a UI to control them. [Distributed Denial of
-Service (DDOS)](https://en.wikipedia.org/wiki/Denial-of-service_attack) attacs are more difficult to address, but there’s a great defence plan laid
-out on [StackOverflow](http://stackoverflow.com/questions/14477942/how-to-enable-ddos-protection).
+Crackers will often try to use a [brute force attack](http://en.wikipedia.org/wiki/Brute-force_attack) to guess usernames and passwords. Using a service like [Fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) can block IP addresses
+that are making an unreasonable number of login attempts. This won’t prevent distributed attacks, but could be used in conjunction with OSSEC. [Fail2ban is also an effective measure for flood control](http://www.debian-administration.org/article/Blocking_a_DNS_DDOS_using_the_fail2ban_package) and can stop most denial of service attacks. Drupal also has some built in flood control options, the [Flood Control module](https://drupal.org/project/flood_control) provides a UI to control them. [Distributed Denial of Service (DDOS)](https://en.wikipedia.org/wiki/Denial-of-service_attack) attacs are more difficult to address, but there’s a great defence plan laid out on [StackOverflow](http://stackoverflow.com/questions/14477942/how-to-enable-ddos-protection).
 
 ```
 Debian: apt-get install fail2ban
 CentOS: yum install fail2ban
 ```
 
-Place the /etc directory under version control so that
-you can easily track which configurations have changed. The
-program [etckeeper](https://help.ubuntu.com/12.04/serverguide/etckeeper.html) automates this process
-nicely and hooks into your package manager and cron to do its work
-when your server is upgraded or new software is installed.
+Place the /etc directory under version control so that you can easily track which configurations have changed. The program [etckeeper](https://help.ubuntu.com/12.04/serverguide/etckeeper.html) automates this process nicely and hooks into your package manager and cron to do its work when your server is upgraded or new software is installed.
 
 ```
 Debian: apt-get install etckeeper bzr && etckeeper init && etckeeper commit "initial commit"
 CentOS: yum install etckeeper && etckeeper init && etckeeper commit "initial commit"
 ```
 
-Ubuntu comes with the [Ubuntu Popularity Contest](https://help.ubuntu.com/community/UbuntuPopularityContest) (popcon)
-to gather statistics about which packages are used in the
-community. Although this is anonymous, it can be a good idea to
-remove this package so that it is not a potential weak link. This
-is an optional package that can be easily removed without
-impacting your site’s performance.
+Ubuntu comes with the [Ubuntu Popularity Contest](https://help.ubuntu.com/community/UbuntuPopularityContest) (popcon) to gather statistics about which packages are used in the community. Although this is anonymous, it can be a good idea to remove this package so that it is not a potential weak link. This is an optional package that can be easily removed without impacting your site’s performance.
 
 ```
 Ubuntu: dpkg --purge popularity-contest ubuntu-standard
 ```
 
-You will probably want to install an opcode cache and
-[Memcache](http://memcached.org/)
-(or [Redis](http://redis.io/))
-to ensure that your site is responding quickly. PHP 5.5+ now comes
-with built in opcode cache, earlier versions of PHP can add this
-using [APC](http://php.net/manual/en/book.apc.php). Memcached is a general-purpose
-distributed [memory caching](https://en.wikipedia.org/wiki/Memory_caching) system. Both work to
-make your server more responsive by minimizing the load on the
-server and improving caching. This will help when there is an
-unexpected server load.
+You will probably want to install an opcode cache and [Memcache](http://memcached.org/) (or [Redis](http://redis.io/)) to ensure that your site is responding quickly. PHP 5.5+ now comes with built in opcode cache, earlier versions of PHP can add this using [APC](http://php.net/manual/en/book.apc.php). Memcached is a general-purpose distributed [memory caching](https://en.wikipedia.org/wiki/Memory_caching) system. Both work to make your server more responsive by minimizing the load on the server and improving caching. This will help when there is an unexpected server load.
 
-Aside from the performance advantages, there can be
-security improvements by caching the public display. There are
-huge security advantages to restricting access to the rendering
-logic (Drupal’s admin) so that the public is only interacting with
-a cache serving front end content. In using any caching however,
-it is critical that only anonymous data is cached. A
-mis-configured cache can easily [expose personal data to the public](https://speakerdeck.com/owaspmontreal/demystifying-web-cache-by-kristian-lyngstol#24%20).
-This needs to be carefully tested on sites which have private or
-confidential data.
+Aside from the performance advantages, there can be security improvements by caching the public display. There are huge security advantages to restricting access to the rendering logic (Drupal’s admin) so that the public is only interacting with a cache serving front end content. In using any caching however, it is critical that only anonymous data is cached. A mis-configured cache can easily [expose personal data to the public](https://speakerdeck.com/owaspmontreal/demystifying-web-cache-by-kristian-lyngstol#24%20). This needs to be carefully tested on sites which have private or confidential data.
 
-There are a number of ways to cache the public
-display, including leveraging Memcache and [Nginx](http://wiki.nginx.org/Main)
-to extend Drupal's internal page cache. One of the most powerful
-tools is [Varnish](https://www.varnish-cache.org/) which can provide
-incredible performance enhancements. It can also be used
-effectively to deny all logins on your public site by being
-configured to denying cookies on port 80\. This is an example of
-what can be added to Varnish’s vcl file to remove the cookies
-which are required to authenticate:
+There are a number of ways to cache the public display, including leveraging Memcache and [Nginx](http://wiki.nginx.org/Main) to extend Drupal's internal page cache. One of the most powerful tools is [Varnish](https://www.varnish-cache.org/) which can provide incredible performance enhancements. It can also be used effectively to deny all logins on your public site by being configured to denying cookies on port 80\. This is an example of what can be added to Varnish’s vcl file to remove the cookies which are required to authenticate:
 
 ```
 if (req.http.host == "example.com") { unset req.http.Cookie;}
 ```
 
-If you have a site which has only a few users and
-doesn’t have any online forms for anonymous users then you can
-configure Varnish to simply reject all HTTP POST requests. Then in
-Apache you can whitelist the IP address you want to have access to
-login into Drupal. Matt Korostoff documented this approach in his
-[breakdown of the Drupalgeddon attacks](http://mattkorostoff.com/article/I-survived-drupalgeddon-how-hackers-took-over-my-site)
-that affected many Drupal 7 sites.
+If you have a site which has only a few users and doesn’t have any online forms for anonymous users then you can configure Varnish to simply reject all HTTP POST requests. Then in Apache you can whitelist the IP address you want to have access to login into Drupal. Matt Korostoff documented this approach in his [breakdown of the Drupalgeddon attacks](http://mattkorostoff.com/article/I-survived-drupalgeddon-how-hackers-took-over-my-site) that affected many Drupal 7 sites.
 
-Shared server environments provide a number of
-security challenges. Do not expect it to be easy to securely host
-several sites on the same server with direct shell access to
-different clients. If you need to do this, it is worth
-investigating [FastCGI](http://www.fastcgi.com/drupal/) which when used in
-conjunction with [suexec](https://httpd.apache.org/docs/current/suexec.html) or [cgiwrap](http://cgiwrap.sourceforge.net/)
-to isolate individual processes on a shared server. We expect most
-government departments to have access to either a virtual (e.g. [VMware](http://www.vmware.com/),
-[Xen](http://www.xenserver.org/),
-[OpenVZ](http://openvz.org/)
-or [KVM](http://www.linux-kvm.org/))
-or cloud-based (e.g. [Amazon](https://aws.amazon.com/ec2/) or [Rackspace](http://www.rackspace.com/cloud/))
-servers. There is also [significant movement in the Drupal
-  community](https://www.getpantheon.com/blog/why-we-built-pantheon-containers-instead-virtual-machines) to use [Linux Containers](https://en.wikipedia.org/wiki/LXC) to more
-efficiently distribute processing power without compromising
-security.
+Shared server environments provide a number of security challenges. Do not expect it to be easy to securely host several sites on the same server with direct shell access to different clients. If you need to do this, it is worth investigating [FastCGI](http://www.fastcgi.com/drupal/) which when used in conjunction with [suexec](https://httpd.apache.org/docs/current/suexec.html) or [cgiwrap](http://cgiwrap.sourceforge.net/) to isolate individual processes on a shared server. We expect most government departments to have access to either a virtual (e.g. [VMware](http://www.vmware.com/), [Xen](http://www.xenserver.org/), [OpenVZ](http://openvz.org/) or [KVM](http://www.linux-kvm.org/)) or cloud-based (e.g. [Amazon](https://aws.amazon.com/ec2/) or [Rackspace](http://www.rackspace.com/cloud/)) servers. There is also [significant movement in the Drupal
+  community](https://www.getpantheon.com/blog/why-we-built-pantheon-containers-instead-virtual-machines) to use [Linux Containers](https://en.wikipedia.org/wiki/LXC) to more efficiently distribute processing power without compromising security.
 
 ### 6) Server Maintenance
 
-Security requires constant vigilance. Someone should
-be tasked with ensuring that the server is kept up-to-date at
-least weekly. This isn’t usually a complex task, but it does
-require that someone subscribe to the security update mailing list
-for the distribution (e.g. [Ubuntu](http://www.ubuntu.com/usn/) and [CentOS](https://www.centos.org/modules/tinycontent/index.php?id=16)), apply the updates, and
-review the logs to ensure everything is still running properly.
-Upgrades can be done with the following commands:
+Security requires constant vigilance. Someone should be tasked with ensuring that the server is kept up-to-date at least weekly. This isn’t usually a complex task, but it does require that someone subscribe to the security update mailing list for the distribution (e.g. [Ubuntu](http://www.ubuntu.com/usn/) and [CentOS](https://www.centos.org/modules/tinycontent/index.php?id=16)), apply the updates, and review the logs to ensure everything is still running properly. Upgrades can be done with the following commands:
 
 ```
 Debian: apt-get update && apt-get upgrade
 CentOS: yum upgrade
 ```
 
-It is very useful to have a service like [Nagios](http://www.nagios.org/documentation) monitoring your production
-server to alert you if any problems arise. The configuration of
-Nagios can be quite complex, but you can set it up easily enough
-on your staging server. You will need to grant access on your
-production environment to this server and you must enable CGI
-access on this server. Remember that if you enable this, you will
-also need to consider the [security implications](http://nagios.sourceforge.net/docs/3_0/security.html) that it
-presents. To get the server installed in your staging environment,
-execute the following from the command line:
+It is very useful to have a service like [Nagios](http://www.nagios.org/documentation) monitoring your production server to alert you if any problems arise. The configuration of Nagios can be quite complex, but you can set it up easily enough on your staging server. You will need to grant access on your production environment to this server and you must enable CGI access on this server. Remember that if you enable this, you will
+also need to consider the [security implications](http://nagios.sourceforge.net/docs/3_0/security.html) that it presents. To get the server installed in your staging environment, execute the following from the command line:
 
 ```
 Debian: apt-get install nagios3 nagios-nrpe-plugin
@@ -831,59 +410,24 @@ And for each server you wish to monitor with Nagios:
 Debian: apt-get install nagios-nrpe-plugin
 ```
 
-[Munin](http://munin-monitoring.org/) can be run on the production
-environment to give you a sense of the relative load of various
-key elements over the past hour, day, week and month. This can be
-useful when debugging issues with your server.
+[Munin](http://munin-monitoring.org/) can be run on the production environment to give you a sense of the relative load of various key elements over the past hour, day, week and month. This can be useful when debugging issues with your server.
 
 ```
 Debian: apt-get install munin munin-node
 ```
 
-Access to this information is available through your
-web server but you will want to configure your site to [ensure that this data is not publicly
-  available](http://www.howtoforge.com/server_monitoring_monit_munin).
+Access to this information is available through your web server but you will want to configure your site to [ensure that this data is not publicly available](http://www.howtoforge.com/server_monitoring_monit_munin).
 
-There are also many good reasons to use server [configuration management software](https://en.wikipedia.org/wiki/Software_configuration_management)
-like [Puppet](http://projects.puppetlabs.com/projects/puppet) or [Chef](https://www.chef.io/). Initially, it will take you a lot more time to configure it this way, but it will make it much easier to restore your server when something does happen and and see you are back online quickly. It also codifies the process to ensure that you don't miss critical
-setup steps. This approach also makes it trivial to have
-essentially duplicate development, staging and production
-environments.
+There are also many good reasons to use server [configuration management software](https://en.wikipedia.org/wiki/Software_configuration_management) like [Puppet](http://projects.puppetlabs.com/projects/puppet) or [Chef](https://www.chef.io/). Initially, it will take you a lot more time to configure it this way, but it will make it much easier to restore your server when something does happen and and see you are back online quickly. It also codifies the process to ensure that you don't miss critical setup steps. This approach also makes it trivial to have essentially duplicate development, staging and production environments.
 
 ### 7) Managing Server Logs
 
-Your web server is a complex environment involving
-thousands of software projects. Most of these will store log files
-in /var/log. If log files aren’t properly rotated and compressed
-they can become unmanageably large. If your hard drive is filled
-up with old log files your site will simply stop functioning. Most
-distributions of Linux come come with [logrotate](http://www.cyberciti.biz/faq/how-do-i-rotate-log-files/) configured such that log
-files are segmented on a regular basis and the archive is
-compressed so that space isn’t a problem.
+Your web server is a complex environment involving thousands of software projects. Most of these will store log files in /var/log. If log files aren’t properly rotated and compressed they can become unmanageably large. If your hard drive is filled up with old log files your site will simply stop functioning. Most distributions of Linux come come with [logrotate](http://www.cyberciti.biz/faq/how-do-i-rotate-log-files/) configured such that log files are segmented on a regular basis and the archive is compressed so that space isn’t a problem.
 
-Most Linux distributions also come with syslog built
-in, which is critical for doing security audits. You can also
-configure it to [send emergency messages to a remote machine](http://www.linuxvoodoo.com/resources/howtos/syslog). There is a discussion in the Drupal section later on about how to direct Watchdog messages to syslog. There are many tools to help system administrators more effectively monitor their log files, and regular log reviews can be an important part of early breach detection.
+Most Linux distributions also come with syslog built in, which is critical for doing security audits. You can also configure it to [send emergency messages to a remote machine](http://www.linuxvoodoo.com/resources/howtos/syslog). There is a discussion in the Drupal section later on about how to direct Watchdog messages to syslog. There are many tools to help system administrators more effectively monitor their log files, and regular log reviews can be an important part of early breach detection.
 
-If your server is configured with a caching reverse
-proxy server or a load balancer such as Varnish, Nginx or haproxy
-then you should ensure that Drupal is made aware of the actual
-REMOTE_IP. The common solution requires configuring the
-X-Forwarded-For in both Varnish and Apache, but as [Jonathan Marcil’s blog post points out](https://blog.jonathanmarcil.ca/2013/09/remoteaddr-and-httpxforwardedfor-bad.html),
-“X-Forwarded-For is actually a list that can be a chain of
-multiples proxies and not just a single IP address”. To that
-effect, ensure that all IP addresses for your reverse proxies are
-identified in your settings.php file ([configuration](https://github.com/drupal/drupal/blob/7.x/sites/default/default.settings.php#L358)). Another solution
-would be to create a custom HTTP header such as
-HTTP_X_FORWARDED_FOR and use it in your architecture and tell
-Drupal to use it using the configuration variable
-"reverse_proxy_header" in settings.php under "Reverse Proxy
-Configuration". Drupal itself will manage correctly a list of
-trusted reverse proxy with the standard "X-Forwarded-For" header,
-but this is useful if you want to correctly logs IP at a Web
-server, proxy or load balancer level. Note that the front facing
-proxy should ignore if the custom header exists and replace it
-with it's own.
+If your server is configured with a caching reverse proxy server or a load balancer such as Varnish, Nginx or haproxy then you should ensure that Drupal is made aware of the actual REMOTE_IP. The common solution requires configuring the X-Forwarded-For in both Varnish and Apache, but as [Jonathan Marcil’s blog post points out](https://blog.jonathanmarcil.ca/2013/09/remoteaddr-and-httpxforwardedfor-bad.html), “X-Forwarded-For is actually a list that can be a chain of multiples proxies and not just a single IP address”. To that effect, ensure that all IP addresses for your reverse proxies are identified in your settings.php file ([configuration](https://github.com/drupal/drupal/blob/7.x/sites/default/default.settings.php#L358)). Another solution would be to create a custom HTTP header such as HTTP_X_FORWARDED_FOR and use it in your architecture and tell
+Drupal to use it using the configuration variable "reverse_proxy_header" in settings.php under "Reverse Proxy Configuration". Drupal itself will manage correctly a list of trusted reverse proxy with the standard "X-Forwarded-For" header, but this is useful if you want to correctly logs IP at a Web server, proxy or load balancer level. Note that the front facing proxy should ignore if the custom header exists and replace it with it's own.
 
 ```
 $conf['reverse_proxy'] = TRUE;
@@ -891,28 +435,16 @@ $conf['reverse_proxy_addresses'] = array('127.0.0.1','192.168.0.2');
 $conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
 ```
 
-Another approach to dealing with this is to simply use
-Apache’s Reverse Proxy Add Forward (RPAF) module. As Khalid
-Baheyeldin [writes in his blog](http://2bits.com/articles/correct-client-ip-address-reverse-proxy-or-content-delivery-network-cdn.html), this Apache
-module can be used for both Reverse Proxy and/or a Content
-Delivery Network (CDN).
+Another approach to dealing with this is to simply use Apache’s Reverse Proxy Add Forward (RPAF) module. As Khalid Baheyeldin [writes in his blog](http://2bits.com/articles/correct-client-ip-address-reverse-proxy-or-content-delivery-network-cdn.html), this Apache module can be used for both Reverse Proxy and/or a Content Delivery Network (CDN).
 
 ```
 Debian: apt-get install libapache2-mod-rpaf
 ```
 
-By editing the /etc/apache2/mods-enabled/rpaf.conf,
-set your proxy IP and restarting Apache your access.log will show
-the real client IP rather than that of your proxy.
+By editing the /etc/apache2/mods-enabled/rpaf.conf, set your proxy IP and restarting Apache your access.log will show the real client IP rather than that of your proxy.
 
-The most important server logs to monitor are
-Apache’s. If there is more than one site on a given server, it is
-normal for each site to have it’s own log file rather than using
-the default generic one. If you run more than one site or have
-multiple web servers, log centralization can allow you to get an
-overall view of site issues. Open source tools such as [logstash](http://logstash.net/)
-can be used to simplify the process of searching all of your log
-files.
+The most important server logs to monitor are Apache’s. If there is more than one site on a given server, it is normal for each site to have it’s own log file rather than using the default generic one. If you run more than one site or have
+multiple web servers, log centralization can allow you to get an overall view of site issues. Open source tools such as [logstash](http://logstash.net/) can be used to simplify the process of searching all of your log files.
 
 ### 8) Rough Server Ecosystem Image
 
@@ -920,65 +452,25 @@ files.
 
 ## E) Web Servers
 
-All files and directories in your DocumentRoot should
-be editable by a non-root user, and should also not be writable by
-the Apache user, except the Drupal files/ directory. Please refer
-to Drupal’s [Securing file permissions and ownership](https://drupal.org/node/244924) for the complete discussion.
+All files and directories in your DocumentRoot should be editable by a non-root user, and should also not be writable by the Apache user, except the Drupal files/ directory. Please refer to Drupal’s [Securing file permissions and ownership](https://drupal.org/node/244924) for the complete discussion.
 
-[PHP-FPM over FastCGI](http://php-fpm.org/) allows your server to have [site specific “pools” of PHP](http://www.howtoforge.com/php-fpm-nginx-security-in-shared-hosting-environments-debian-ubuntu). By
-giving each site unique PHP permissions you can effectively
-"sandbox" a PHP application and simplify file/folder permissions
-by specifying the user and group for the process pool. This
-reduces the points of failure in a shared hosting environment,
-where the PHP on another site could be used to hijack the server.
-There are also real [advantages to using PHP-FPM for
-  managing server load](https://phpbestpractices.org/#serving-php) as Apache's mod_php isn’t very
-efficient.
+[PHP-FPM over FastCGI](http://php-fpm.org/) allows your server to have [site specific “pools” of PHP](http://www.howtoforge.com/php-fpm-nginx-security-in-shared-hosting-environments-debian-ubuntu). By giving each site unique PHP permissions you can effectively "sandbox" a PHP application and simplify file/folder permissions by specifying the user and group for the process pool. This reduces the points of failure in a shared hosting environment, where the PHP on another site could be used to hijack the server. There are also real [advantages to using PHP-FPM for
+  managing server load](https://phpbestpractices.org/#serving-php) as Apache's mod_php isn’t very efficient.
 
-Server or browser support for SSL versions 2 and 3 are
-not recommended. Despite this, as Google noted in their blog post
-about the [POODLE Exploit](http://googleonlinesecurity.blogspot.co.uk/2014/10/this-poodle-bites-exploiting-ssl-30.html), “SSL 3.0 is nearly
-18 years old, but support for it remains widespread.” Web browsers
-still support this insecure version of SSL, but it is [easy to
-  test](https://zmap.io/sslv3/) to ensure if your browsers are vulnerable. Qualys SSL
-Labs also have a really [great
-  tool to evaluate](https://www.ssllabs.com/ssltest/) if your server is still vulnerable.
+Server or browser support for SSL versions 2 and 3 are not recommended. Despite this, as Google noted in their blog post about the [POODLE Exploit](http://googleonlinesecurity.blogspot.co.uk/2014/10/this-poodle-bites-exploiting-ssl-30.html), “SSL 3.0 is nearly
+18 years old, but support for it remains widespread.” Web browsers still support this insecure version of SSL, but it is [easy to test](https://zmap.io/sslv3/) to ensure if your browsers are vulnerable. Qualys SSL Labs also have a really [great tool to evaluate](https://www.ssllabs.com/ssltest/) if your server is still vulnerable.
 
-On your web server, it is good to ensure that SSL
-configuration permits only TLS version 1.2\. unfortunately some
-common web browsers still do not support the latest version of
-TLS. Fortunately, as of [February 2014](https://en.wikipedia.org/wiki/Transport_Layer_Security#Web_browsers), the latest version
-of all major web browsers support SSL 3.0, TLS 1.0, 1.1, and 1.2
-enabled by default. Check if the[ SSL services employ only AES](http://www.thinkwiki.org/wiki/AES_NI) with
-key lengths 256 bits and higher. You can install [GnuTLS](https://help.ubuntu.com/community/GnuTLS) from the command line to
-enable this:
+On your web server, it is good to ensure that SSL configuration permits only TLS version 1.2\. unfortunately some common web browsers still do not support the latest version of TLS. Fortunately, as of [February 2014](https://en.wikipedia.org/wiki/Transport_Layer_Security#Web_browsers), the latest version of all major web browsers support SSL 3.0, TLS 1.0, 1.1, and 1.2 enabled by default. Check if the[ SSL services employ only AES](http://www.thinkwiki.org/wiki/AES_NI) with key lengths 256 bits and higher. You can install [GnuTLS](https://help.ubuntu.com/community/GnuTLS) from the command line to enable this:
 
 ```
 Debian: apt-get install gnutls-bin
 ```
 
-It is also recommended to disable SSLCompression in
-Apache. As stated in the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_ssl.html#sslcompression) “Enabling
-compression causes security issues in most setups (the so called
-CRIME attack).” This is the default for Apache version 2.4.4+.
+It is also recommended to disable SSLCompression in Apache. As stated in the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_ssl.html#sslcompression) “Enabling compression causes security issues in most setups (the so called CRIME attack).” This is the default for Apache version 2.4.4+.
 
-The **HeartBleed security bug** has gotten a lot of
-attention lately. The primary security practice we can recommend
-from this is to ensure that someone is always paying attention to
-the security mailing lists for your operating system. By the time
-you hear it from the media it is probably too late. The other
-suggestion is one that is suggested by the [EFF](https://www.eff.org/) and others which
-includes implementing [Perfect Forward Secrecy](https://www.eff.org/deeplinks/2013/08/pushing-perfect-forward-secrecy-important-web-privacy-protection) (PFS).
-Although we didn’t explicitly refer to it as this in earlier
-versions of this document, the hardened SSL configuration we
-recommended in the fall implements this.
+The **HeartBleed security bug** has gotten a lot of attention lately. The primary security practice we can recommend from this is to ensure that someone is always paying attention to the security mailing lists for your operating system. By the time you hear it from the media it is probably too late. The other suggestion is one that is suggested by the [EFF](https://www.eff.org/) and others which includes implementing [Perfect Forward Secrecy](https://www.eff.org/deeplinks/2013/08/pushing-perfect-forward-secrecy-important-web-privacy-protection) (PFS). Although we didn’t explicitly refer to it as this in earlier versions of this document, the hardened SSL configuration we recommended in the fall implements this.
 
-The duraconf configuration scripts for [hardening SSL/TLS services](https://github.com/ioerror/duraconf) provided
-by Jacob Appelbaum would have protected users from the HeartBleed
-bug. In the Apache config you can [set hardened SSL configurations for the
-  HTTPS protocol](https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/) (note that we’re now using Hynek Schlawack
-configuration rather than [Ivan Ristic’s](https://community.qualys.com/blogs/securitylabs/2013/08/05/configuring-apache-nginx-and-openssl-for-forward-secrecy) because it is being
-updated more regularly) with:
+The duraconf configuration scripts for [hardening SSL/TLS services](https://github.com/ioerror/duraconf) provided by Jacob Appelbaum would have protected users from the HeartBleed bug. In the Apache config you can [set hardened SSL configurations for the HTTPS protocol](https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/) (note that we’re now using Hynek Schlawack configuration rather than [Ivan Ristic’s](https://community.qualys.com/blogs/securitylabs/2013/08/05/configuring-apache-nginx-and-openssl-for-forward-secrecy) because it is being updated more regularly) with:
 
 ```
 SSLProtocol ALL -SSLv2 -SSLv3
@@ -987,28 +479,11 @@ SSLCipherSuite
 ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
 ```
 
-After restarting Apache, you can check the SSL
-information in a browser by double clicking on the lock icon in
-the address bar on https:// sites to get information on the
-encryption channel and confirm it’s using TLS.
+After restarting Apache, you can check the SSL information in a browser by double clicking on the lock icon in the address bar on https:// sites to get information on the encryption channel and confirm it’s using TLS.
 
-There are other approaches like that suggested by [Remy van Elst](https://raymii.org/s/tutorials/Strong_SSL_Security_On_Apache2.html), but ultimately you
-need to test your SSL configuration through a tool like [Qualys SSL Labs’ Server Test](https://www.ssllabs.com/ssltest/). This is a free online service that
-performs a deep analysis of the configuration of any SSL web
-server on the public Internet. This will grade your SSL compliance
-and do things like confirm that you are using the latest version
-of TLS and verify that you are protected from [BEAST attacks](https://en.wikipedia.org/wiki/Transport_Layer_Security#BEAST_attack). You want straight A’s!
+There are other approaches like that suggested by [Remy van Elst](https://raymii.org/s/tutorials/Strong_SSL_Security_On_Apache2.html), but ultimately you need to test your SSL configuration through a tool like [Qualys SSL Labs’ Server Test](https://www.ssllabs.com/ssltest/). This is a free online service that performs a deep analysis of the configuration of any SSL web server on the public Internet. This will grade your SSL compliance and do things like confirm that you are using the latest version of TLS and verify that you are protected from [BEAST attacks](https://en.wikipedia.org/wiki/Transport_Layer_Security#BEAST_attack). You want straight A’s!
 
-On your staging/development server it is fine to
-provide a [self signed SSL certificate](https://en.wikipedia.org/wiki/Self-signed_certificate) to
-ensure that the traffic is encrypted. Setting up a third party
-verified SSL certificate on your production environment will be
-important as otherwise your users will be asked to verify the
-exception when accessing the HTTPS version of your site. A listing
-of certificate authorities is available at the bottom of [this Wikipedia page](https://en.wikipedia.org/wiki/Certificate_authority#External_links). You can review
-the validity of your SSL certificate through a free [SSL
-  Test constructed by SSLLabs](https://www.ssllabs.com/ssltest/) or with the following openssl
-command:
+On your staging/development server it is fine to provide a [self signed SSL certificate](https://en.wikipedia.org/wiki/Self-signed_certificate) to ensure that the traffic is encrypted. Setting up a third party verified SSL certificate on your production environment will be important as otherwise your users will be asked to verify the exception when accessing the HTTPS version of your site. A listing of certificate authorities is available at the bottom of [this Wikipedia page](https://en.wikipedia.org/wiki/Certificate_authority#External_links). You can review the validity of your SSL certificate through a free [SSL Test constructed by SSLLabs](https://www.ssllabs.com/ssltest/) or with the following openssl command:
 
 ```
 openssl s_client -connect SERVER:443
@@ -1021,27 +496,13 @@ openssl s_client -connect SERVER:443 -ssl2
 openssl s_client -connect SERVER:443 -ssl3
 ```
 
-Note that SSL Certificate Authorities are depreciating
-the very popular SHA1 hashing function because of weakness in the
-algorithm. Qualys Labs recommends [renewing with SHA256](https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know) as soon as
-possible.
+Note that SSL Certificate Authorities are depreciating the very popular SHA1 hashing function because of weakness in the algorithm. Qualys Labs recommends [renewing with SHA256](https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know) as soon as possible.
 
 ### 1) Restricting Access
 
-Another useful Apache module is [mod_authz_host](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html) which can restrict
-access to specific pages such as /user and /admin/* - this can be
-useful if your site is used just as a CMS with no user
-interaction. The example below is more appropriate for sites which
-would have broader user authentication, but where users are
-restricted from editing nodes - node/*/edit - this type of
-approach can also be used to restrict access to non-production
-environments. If you have a multi-lingual site, you may also want
-to check that access is denied for paths with the language prefix,
-in Canada, many sites would need to also add /fr/user and /en/user
-. It is a best practice to secure all pages on non-production
-environments from both search engines, but especially
-from crackers. The following are examples of how to do this with
-mod_authz_host and also mod_rewrite:
+Another useful Apache module is [mod_authz_host](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html) which can restrict access to specific pages such as /user and /admin/* - this can be useful if your site is used just as a CMS with no user interaction. The example below is more appropriate for sites which would have broader user authentication, but where users are restricted from editing nodes - node/*/edit - this type of approach can also be used to restrict access to non-production
+environments. If you have a multi-lingual site, you may also want to check that access is denied for paths with the language prefix, in Canada, many sites would need to also add /fr/user and /en/user . It is a best practice to secure all pages on non-production environments from both search engines, but especially
+from crackers. The following are examples of how to do this with mod_authz_host and also mod_rewrite:
 
 Example Apache configuration using mod_authz_host:
 
@@ -1066,11 +527,7 @@ Example Apache configuration using mod_rewrite:
 </IfModule>
 ```
 
-Drupal has a number of processes that can be triggered
-by URLs. You may wish to block some of these using Apache so that
-they simply cannot be loaded from the web browser. Common
-processes to secure are update, install and cron, tasks which can
-all be triggered using drush:
+Drupal has a number of processes that can be triggered by URLs. You may wish to block some of these using Apache so that they simply cannot be loaded from the web browser. Common processes to secure are update, install and cron, tasks which can all be triggered using drush:
 
 Example Apache configuration:
 
@@ -1081,40 +538,26 @@ RedirectMatch 403
 
 ### 2) Removing Code
 
-[CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface)s have been used extensively in
-web development and there are a great many good server executables
-that you may want to consider running. However, many CGIs that may
-be installed on a server are not actually needed and expose you to
-an additional security risk. If you are not running any CGIs, you
-should disable CGI access by removing LoadModule cgi_module and
-AddHandler cgi-script .cgi from your Apache config. You can also
-do this from the command line with:
+[CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface)s have been used extensively in web development and there are a great many good server executables that you may want to consider running. However, many CGIs that may be installed on a server are not actually needed and expose you to an additional security risk. If you are not running any CGIs, you should disable CGI access by removing LoadModule cgi_module and AddHandler cgi-script .cgi from your Apache config. You can also do this from the command line with:
 
 ```
 Debian: a2dismod cgi
 ```
 
-If you don’t need it, remove it. All software is a
-source of potential risk, so list all Apache modules and look for
-unneeded modules. There are some [good discussions](https://groups.drupal.org/node/41320) on drupal.org
-about which modules are necessary and which are not.
+If you don’t need it, remove it. All software is a source of potential risk, so list all Apache modules and look for unneeded modules. There are some [good discussions](https://groups.drupal.org/node/41320) on drupal.org about which modules are necessary and which are not.
 
 ```
 Debian: apache2ctl -t -D DUMP_MODULES
 CentOS: apachectl -t -D DUMP_MODULES
 ```
 
-If you are using mod_php with apache, it can be useful
-to enable php5-dev for Drupal so that you can enable tools like
-[PECL’s uploadprogress](http://pecl.php.net/package/uploadprogress). However, after you’ve done that you will
-want to remove the php module that you used to build it:
+If you are using mod_php with apache, it can be useful to enable php5-dev for Drupal so that you can enable tools like [PECL’s uploadprogress](http://pecl.php.net/package/uploadprogress). However, after you’ve done that you will want to remove the php module that you used to build it:
 
 ```
 Debian: sudo apt-get remove php5-dev
 ```
 
-You can find other development packages on your server
-by:
+You can find other development packages on your server by:
 
 ```
 Debian: apt-cache search ".-dev"
@@ -1122,21 +565,11 @@ Debian: apt-cache search ".-dev"
 
 ### 3) HTTP Headers
 
-The Australian Government has produced an impressive
-report [Information Security Advice for All Levels of Government](http://www.dsd.gov.au/publications/csocprotect/protecting_web_apps.htm) which is sadly a bit out-dated as it hasn’t been updated since early 2012. Most of that report is focused on content security policy, HTTP strict transport security and frame options.
+The Australian Government has produced an impressive report [Information Security Advice for All Levels of Government](http://www.dsd.gov.au/publications/csocprotect/protecting_web_apps.htm) which is sadly a bit out-dated as it hasn’t been updated since early 2012. Most of that report is focused on content security policy, HTTP strict transport security and frame options.
 
-The [Security Kit](https://drupal.org/project/seckit) Drupal module
-addresses many security problems associated with HTTP headers, but
-it is good to have them addressed at the Apache layer where
-possible.
+The [Security Kit](https://drupal.org/project/seckit) Drupal module addresses many security problems associated with HTTP headers, but it is good to have them addressed at the Apache layer where possible.
 
-The [W3C](http://www.w3.org/TR/CSP/) is developing a standard
-content security policy (CSP) to provide security controls which
-can mitigate attacks such as [Cross Site Scripting (XSS)](https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29). [Mozilla](https://developer.mozilla.org/en-US/docs/Security/CSP/Using_Content_Security_Policy) has produced a good
-description of how to write a [CSP](https://www.owasp.org/index.php/Content_Security_Policy) and and there are many
-commonalities with the Australian Government report above. To
-allow content from a trusted domain and all its subdomains, you
-can add the following to your Apache configuration:
+The [W3C](http://www.w3.org/TR/CSP/) is developing a standard content security policy (CSP) to provide security controls which can mitigate attacks such as [Cross Site Scripting (XSS)](https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29). [Mozilla](https://developer.mozilla.org/en-US/docs/Security/CSP/Using_Content_Security_Policy) has produced a good description of how to write a [CSP](https://www.owasp.org/index.php/Content_Security_Policy) and and there are many commonalities with the Australian Government report above. To allow content from a trusted domain and all its subdomains, you can add the following to your Apache configuration:
 
 Example Apache configuration:
 
@@ -1185,14 +618,7 @@ RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
 RewriteRule .* - [F]
 ```
 
-You should keep your server up-to date. Security by
-obscurity may delay some crackers, but not prevent them from
-accessing your system. Looking at the logs for any popular site,
-you will notice thousands of fruitless attempts at exploits that
-may not even exist (or have existed) on your system. Broadcasting
-information about your server environment isn’t likely to cause
-any harm, but if you choose to disable it you can simply add this
-to your Apache configuration:
+You should keep your server up-to date. Security by obscurity may delay some crackers, but not prevent them from accessing your system. Looking at the logs for any popular site, you will notice thousands of fruitless attempts at exploits that may not even exist (or have existed) on your system. Broadcasting information about your server environment isn’t likely to cause any harm, but if you choose to disable it you can simply add this to your Apache configuration:
 
 ```
 ServerSignature Off
@@ -1211,10 +637,7 @@ Debian: ps aux | grep apache
 CentOS: ps aux | grep http
 ```
 
-In order to restrict Apache to connect only to
-https://drupal.org (with IP addresses 140.211.10.62 and
-140.211.10.16 at the time of writing) insert the following
-firewall rules:
+In order to restrict Apache to connect only to https://drupal.org (with IP addresses 140.211.10.62 and 140.211.10.16 at the time of writing) insert the following firewall rules:
 
 ```
 iptables -A OUTPUT -m owner --uid-owner ${APACHE_UID}
@@ -1239,15 +662,9 @@ CentOS: yum install mod_httpbl
 
 ### 8) Web Application Firewall
 
-Web Application Firewalls (WAFs) can be used to
-provide additional protection over the Web server. It can be a
-standalone server that act as a reverse proxy or a Web server
-modules.
+Web Application Firewalls (WAFs) can be used to provide additional protection over the Web server. It can be a standalone server that act as a reverse proxy or a Web server modules.
 
-Apache has a number of modules that can be installed
-to tighten security of the web server. We recommend installing [ModSecurity and mod_evasive](http://www.thefanclub.co.za/how-to/how-install-apache2-modsecurity-and-modevasive-ubuntu-1204-lts-server) as a [Web Application Firewall (WAF)](https://www.owasp.org/index.php/Web_Application_Firewall).
-This can be set to leverage the Open Web Application Security
-Project's (OWASP) [ModSecurity Core Rule Set Project](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project).
+Apache has a number of modules that can be installed to tighten security of the web server. We recommend installing [ModSecurity and mod_evasive](http://www.thefanclub.co.za/how-to/how-install-apache2-modsecurity-and-modevasive-ubuntu-1204-lts-server) as a [Web Application Firewall (WAF)](https://www.owasp.org/index.php/Web_Application_Firewall). This can be set to leverage the Open Web Application Security Project's (OWASP) [ModSecurity Core Rule Set Project](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project).
 
 ```
 Debian: apt-get install libapache2-mod-evasive
@@ -1257,51 +674,28 @@ mod-evasive CentOS: yum install mod_evasive mod_security
 
 To engage ModSecurity in your Apache, you’ll need to [set up the base files in your Apache configuration](https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#a-recommended-base-configuration) and then restart Apache.
 
-Using default generic configurations such as the OWASP
-Core Rule Set can impact the normal behaviour of Drupal and must be
-tested extensively before deployment. Usually some rules are
-breaking rich content edition or modules that behave differently
-than Drupal core. It is recommended to run the rules in a passive
-manner in order to identify false positive when in production.
-Default [configuration of ModSecurity](https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended#L7) should
+Using default generic configurations such as the OWASP Core Rule Set can impact the normal behaviour of Drupal and must be tested extensively before deployment. Usually some rules are breaking rich content edition or modules that behave differently than Drupal core. It is recommended to run the rules in a passive manner in order to identify false positive when in production. Default [configuration of ModSecurity](https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended#L7) should
 do it with:
 
 ```
 SecRuleEngine DetectionOnly
 ```
 
-You can then set it to “On” whenever you are ready. A
-server restart is needed for changes to be effective. In that case
-the WAF will behave as a passive Web application intrusion
-detection system and you can chose to never set it to “On” if you
-wish to use it only for that purpose. In any cases, you’ll want to
-monitor the log files for alerts in order to detect malicious
-attempts and potential false positives.
+You can then set it to “On” whenever you are ready. A server restart is needed for changes to be effective. In that case the WAF will behave as a passive Web application intrusion detection system and you can chose to never set it to “On” if you wish to use it only for that purpose. In any cases, you’ll want to monitor the log files for alerts in order to detect malicious attempts and potential false positives.
 
-WAF software needs maintenance as well and rules
-should be updated periodically. Tests for false positive should be
-made after each change of functionality within the Drupal site.
+WAF software needs maintenance as well and rules should be updated periodically. Tests for false positive should be made after each change of functionality within the Drupal site.
 
-At last but not least, WAFs are a great solution for [virtual patching](https://www.owasp.org/index.php/Virtual_Patching_Cheat_Sheet) and application flaw fixing, but they can be bypassed. It is discouraged to rely solely on that technology to keep up with security: fixing flaw
-and applying patch on the backend applications should not be
-replaced with WAF utilization.
+At last but not least, WAFs are a great solution for [virtual patching](https://www.owasp.org/index.php/Virtual_Patching_Cheat_Sheet) and application flaw fixing, but they can be bypassed. It is discouraged to rely solely on that technology to keep up with security: fixing flaw and applying patch on the backend applications should not be replaced with WAF utilization.
 
 ## F) PHP
 
-There are lots of good resources on how to tighten
-security for PHP. It is a very commonly used scripting language
-and it is running some of the biggest and most important sites on
-the Internet.
+There are lots of good resources on how to tighten security for PHP. It is a very commonly used scripting language and it is running some of the biggest and most important sites on the Internet.
 
-We recommend installing a PHP hardening tool called [Suhosin](http://www.suhosin.org/stories/index.html) which tightens up PHP’s
-existing configuration so that it is more robust. It is designed
-to protect servers and users from known and unknown flaws in PHP
-applications and the PHP core.
+We recommend installing a PHP hardening tool called [Suhosin](http://www.suhosin.org/stories/index.html) which tightens up PHP’s existing configuration so that it is more robust. It is designed to protect servers and users from known and unknown flaws in PHP applications and the PHP core.
 
 Ubuntu (this may not work in their LTS releases).
 
-Enable ‘universe’ repo in /etc/apt/sources.list and `apt-get
-update ; apt-get install php5-suhosin`
+Enable ‘universe’ repo in /etc/apt/sources.list and `apt-get update ; apt-get install php5-suhosin`
 
 ```
 Debian: apt-get install php5-suhosin
@@ -1318,9 +712,7 @@ php -m
 
 #### Setting PHP.ini Variables
 
-Many PHP variables can be set via Apache as well as in
-the PHP configuration. We recommend keeping PHP-specific security
-configuration centrally located in the php.ini file.
+Many PHP variables can be set via Apache as well as in the PHP configuration. We recommend keeping PHP-specific security configuration centrally located in the php.ini file.
 
 Another exploit is [Session fixation](https://en.wikipedia.org/wiki/Session_fixation) where a user's
 browser session can be hijacked by a third party. [OWASP](https://www.owasp.org/index.php/HttpOnly) goes into much more detail, but by using the [HttpOnly](http://php.net/manual/en/function.setcookie.php) flag when generating a cookie you can reduce the risk of an XSS attack by limiting access to protected cookies. It is advised to stop Javascript from accessing cookie data. Session information should only ever be passed to the server with the same domain. You can also set a [secure cookie attribute](https://en.wikipedia.org/wiki/HTTP_cookie#Secure_cookie) and restrict all transmission of cookie data to an HTTPS connection to ensure that the cookie is less likely to be exposed to cookie theft via eavesdropping. Furthermore, you can control the [hash algorithm](http://www.php.net/manual/en/session.configuration.php#ini.session.hash-function) used to generate the session ID and choose from a number of algorithms like the NSA’s [SHA-2](https://en.wikipedia.org/wiki/SHA-1) protocol or [whirlpool](https://en.wikipedia.org/wiki/Whirlpool_%28cryptography%29). Add the following to your php.ini file:
@@ -1360,8 +752,7 @@ allow_url_include = Off
 allow_url_fopen = Off
 ```
 
-You can also [disable PHP functions](http://www.cyberciti.biz/faq/linux-unix-apache-lighttpd-phpini-disable-functions/) which are considered dangerous. You will want to test to see that your Drupal install doesn’t require any of these functions. You can
-grep from the Drupal root to find out if your site uses any of these functions. Drupal’s PHP filter leverages the exec() function, however there are lots of good reasons not to use the PHP filter. You can add this to your php.ini file:
+You can also [disable PHP functions](http://www.cyberciti.biz/faq/linux-unix-apache-lighttpd-phpini-disable-functions/) which are considered dangerous. You will want to test to see that your Drupal install doesn’t require any of these functions. You can grep from the Drupal root to find out if your site uses any of these functions. Drupal’s PHP filter leverages the exec() function, however there are lots of good reasons not to use the PHP filter. You can add this to your php.ini file:
 
 ```
 disable_functions = php_uname, getmyuid, getmypid,
@@ -1394,9 +785,7 @@ upload_tmp_dir = "/tmp"
 
 ## G) Database Layer
 
-With Drupal’s database abstraction layer you can now
-run it on [MySQL](https://www.mysql.com/), [SQLite](https://www.sqlite.org/)
-or [PostgreSQL](http://www.postgresql.org/) out of the box. There are in fact a number of popular MySQL forks like [MariaDB](https://mariadb.org/) and [Percona](http://www.percona.com/software/percona-server). Drupal can run with MSSQL too, but there will be more support for MySQL flavours of SQL. Oracle support for PHP is weak, so it is not recommended to use this database. We are not aware of any security advantages of one over the other.
+With Drupal’s database abstraction layer you can now run it on [MySQL](https://www.mysql.com/), [SQLite](https://www.sqlite.org/) or [PostgreSQL](http://www.postgresql.org/) out of the box. There are in fact a number of popular MySQL forks like [MariaDB](https://mariadb.org/) and [Percona](http://www.percona.com/software/percona-server). Drupal can run with MSSQL too, but there will be more support for MySQL flavours of SQL. Oracle support for PHP is weak, so it is not recommended to use this database. We are not aware of any security advantages of one over the other.
 
 The database for Drupal can run on the same server, but for performance reasons it can be beneficial to set it up on another server. You want to ensure that your server environment is robust enough that it cannot be easily brought down by a Denial of Service (DOS) attack. There are a few server side tools to help with this, but mostly it’s useful to have a buffer, even at your highest traffic times, so that your site is always responsive.
 
