@@ -2,25 +2,25 @@
 
 A Guide for Governments and Nonprofits
 
-**By [OpenConcept Consulting Inc.](http://openconcept.ca/)**,
-originally written for for Public Safety Canada
+**By [OpenConcept Consulting Inc.](http://openconcept.ca/)**, originally written for Public Safety Canada
 
 **Principal Author:** [Mike Gifford](mailto:mike@openconcept.ca)
 
-**Contributors:** 
- * [Mike Mallett](mailto:mike.mallett@openconcept.ca),
- * [Matt Parker](https://drupal.org/user/536298),
- * [Xavier Landreville](mailto:xavier@openconcept.ca),
- * [Michael Richardson](http://www.sandelman.ottawa.on.ca/),
- * [Colan Schwartz](http://colans.net/),
- * [Mack Hardy](http://affinitybridge.com/),
- * [Peter Cruickshank](http://spartakan.wordpress.com/),
- * [David Norman](https://deekayen.net/),
- * [Lee Rowlands](http://rowlandsgroup.com/),
- * [David Timothy Strauss](https://linkedin.com/in/davidstrauss),
- * [Ben Hosmer](http://www.radarearth.com/),
- * [Ursula Pieper](http://upsitesweb.com/),
- * [Jonathan Marcil](https://blog.jonathanmarcil.ca/)
+**Contributors:**
+
+*   [Mike Mallett](mailto:mike.mallett@openconcept.ca) (OpenConcept Consulting Inc.),
+*   [Matt Parker](https://drupal.org/user/536298) (OpenConcept Consulting Inc.),
+*   [Xavier Landreville](mailto:xavier@openconcept.ca) (OpenConcept Consulting Inc.),
+*   [Michael Richardson](http://www.sandelman.ottawa.on.ca/),
+*   [Colan Schwartz](http://colans.net/),
+*   [Mack Hardy](http://affinitybridge.com/),
+*   [Peter Cruickshank](http://spartakan.wordpress.com/),
+*   [David Norman](https://deekayen.net/),
+*   [Lee Rowlands](http://rowlandsgroup.com/),
+*   [David Timothy Strauss](https://linkedin.com/in/davidstrauss),
+*   [Ben Hosmer](http://www.radarearth.com/),
+*   [Ursula Pieper](http://upsitesweb.com/),
+*   [Jonathan Marcil](https://blog.jonathanmarcil.ca/)
 
 **Editor:** [Lee Hunter](http://streamoflight.com/)
 
@@ -46,10 +46,7 @@ This document is made available under a [Attribution-ShareAlike](https://creativ
 
 Mike Gifford is the founder and president of OpenConcept Consulting Inc., headquartered in Ottawa Canada. Long a prominent contributor to the Drupal community, Mike has been a member of the international group of developers that contribute to Drupal Core. Mike is currently a Drupal 8 Core Accessibility Maintainer. Led by Mike, OpenConcept contributed the first Drupal theme for the Government of Canada and has since been actively involved in the Drupal Web Experience Toolkit distribution within the Government of Canada.
 
-To contact Mike, email [mike@openconcept.ca](mailto:mike@openconcept.ca) or
-  telephone 1-613-686-6736.
-
-or visit [http://openconcept.ca](http://openconcept.ca/)
+To contact Mike, email [mike@openconcept.ca](mailto:mike@openconcept.ca), call 1-613-686-6736, or visit [http://openconcept.ca](http://openconcept.ca/).
 
 ### Table of Contents
 
@@ -860,13 +857,13 @@ CentOS: chown -R nobody:nobody sites/default/files
 
 Make sure that you are only allowing users to upload file types that have limited security problems with them. Text and images are usually quite safe. There have been some exploits on PDF files, but they are quite rare. Microsoft Office documents should be scanned if they are going to be uploaded onto the server. [ClamAV](https://drupal.org/project/clamav) can be incorporated into Drupal to scan uploaded files for viruses and other malicious code. Acquia recommends excluding the following file types: flv,
 swf, exe, html, htm, php, phtml, py, js, vb, vbe, vbs.
-    
+
 
 ### 2) Drush
 
-Drush is a command line shell and scripting interface for Drupal. We strongly recommend using [Drush](https://github.com/drush-ops/drush) on 
+Drush is a command line shell and scripting interface for Drupal. We strongly recommend using [Drush](https://github.com/drush-ops/drush) on
 
-both staging and production servers because it simplifies development and maintenance. Note that the version of Drush packaged with your OS is likely to be extremely out of date. 
+both staging and production servers because it simplifies development and maintenance. Note that the version of Drush packaged with your OS is likely to be extremely out of date.
 
 Although Drush used to be installed best with [PHP’s PEAR](http://pear.php.net/), the current best practice is with [Composer](https://getcomposer.org/doc/00-intro.md#system-requirements) (the dependency manager for PHP). See install details on the [Drush git page](https://github.com/drush-ops/drush#installupdate---composer).
 
@@ -879,55 +876,55 @@ drush secchk
 As with the server configuration in general, document what you are using. Drush makes this fairly straightforward as you can simply export a list from the command line:
 
 ```
-drush pm-list --type=Module --status=enabled 
+drush pm-list --type=Module --status=enabled
 ```
 
-Cron is the Linux time-based job scheduler and it is 
+Cron is the Linux time-based job scheduler and it is
 
-used for a lot of key Drupal functions. Check to see that you are running cron several times a day. For Drupal 7 and above, [if there is traffic to the site, cron jobs are run every 3 hours](https://drupal.org/cron). The status page will tell you when the last time cron was run on the site. You may want to set up a Linux cron job using using Drush if you have either a low traffic site or have special requirements. 
+used for a lot of key Drupal functions. Check to see that you are running cron several times a day. For Drupal 7 and above, [if there is traffic to the site, cron jobs are run every 3 hours](https://drupal.org/cron). The status page will tell you when the last time cron was run on the site. You may want to set up a Linux cron job using using Drush if you have either a low traffic site or have special requirements.
 
 To run cron on all of your sites in /home/drupal - from the command line enter crontab -e and then insert:
 
 ```
-30 2,6,11,18 * * * cd /home/drupal &amp;&amp; drush 
+30 2,6,11,18 * * * cd /home/drupal &amp;&amp; drush
 
 @sites core-cron -y &gt; /dev/null
 ```
 
-You will need developer modules to help you build your site, but they are a security risk on your production site and need to be disabled. Many modules (such as Views) have separate administration screens that can also be disabled in a production environment. They are absolutely required when building the site, but can be disabled when they are not in use.It is always a good practice to see if there are any unnecessary modules can be disabled on your site. This also offers performance benefits. Views is an incredibly powerful query building tool. Because of that, it is important that all Views have explicit access permissions set at /admin/build/views 
+You will need developer modules to help you build your site, but they are a security risk on your production site and need to be disabled. Many modules (such as Views) have separate administration screens that can also be disabled in a production environment. They are absolutely required when building the site, but can be disabled when they are not in use.It is always a good practice to see if there are any unnecessary modules can be disabled on your site. This also offers performance benefits. Views is an incredibly powerful query building tool. Because of that, it is important that all Views have explicit access permissions set at /admin/build/views
 
 ### 3) Errors
 
-Check the Status Report and Watchdog pages regularly and resolve issues - Drupal should be happy! This needs to be done regularly, even after launch. Remember that you can more quickly scan your logs by filtering for PHP errors. With the [Views Watchdog](https://drupal.org/project/views_watchdog) module you could also build custom reports to display on your website.On your production server, make sure to disable the display of PHP errors. These should be recorded to your logs, but not visible to your visitors. On your staging site you will want to see those errors to help you debug PHP problems, but it is a potential vulnerability to have those exposed.This won’t catch all PHP errors however, and so it is also useful to review the error log of the web server itself. 
+Check the Status Report and Watchdog pages regularly and resolve issues - Drupal should be happy! This needs to be done regularly, even after launch. Remember that you can more quickly scan your logs by filtering for PHP errors. With the [Views Watchdog](https://drupal.org/project/views_watchdog) module you could also build custom reports to display on your website.On your production server, make sure to disable the display of PHP errors. These should be recorded to your logs, but not visible to your visitors. On your staging site you will want to see those errors to help you debug PHP problems, but it is a potential vulnerability to have those exposed.This won’t catch all PHP errors however, and so it is also useful to review the error log of the web server itself.
 
-Watchdog is a good tool, but is [limited in a number of ways](http://www.asmallwebfirm.net/blogs/2013/04/achieving-drupal-log-bliss-splunk). Simply because it is database dependent, even having a lot of 404 errors can affect performance. Fortunately, logs can be easily directed to the server’s syslog, with the [Syslog Access](https://drupal.org/project/syslog_access) module, which also allows you to leverage your favourite log management tool. The Drupal Handbook also has a great resource for how to [send your logs to Syslog](https://drupal.org/documentation/modules/syslog) with integrated logging. 
+Watchdog is a good tool, but is [limited in a number of ways](http://www.asmallwebfirm.net/blogs/2013/04/achieving-drupal-log-bliss-splunk). Simply because it is database dependent, even having a lot of 404 errors can affect performance. Fortunately, logs can be easily directed to the server’s syslog, with the [Syslog Access](https://drupal.org/project/syslog_access) module, which also allows you to leverage your favourite log management tool. The Drupal Handbook also has a great resource for how to [send your logs to Syslog](https://drupal.org/documentation/modules/syslog) with integrated logging.
 
 ### 4) Core and Contrib Hacks
 
-Before launching your site (and periodically afterwards) it is useful to run the [Hacked!](https://drupal.org/project/hacked) module to check what code differs from what was released on Drupal.org. Particularly when the [diff](https://drupal.org/project/diff) module is enabled this is a powerful tool to evaluate your code. There are millions of lines of code in a given Drupal site, so Hacked! is a really valuable analysis tool. If you need to apply patches against the stable released version of the code, the patch should be in a clearly documented directory. It is unfortunately a common practice for less experienced Drupal developers to cut corners and hack core to provide some functionality that is required. There are lots of reasons why this is a bad idea and [why responsible developers don’t hack core](http://drupal.stackexchange.com/questions/59054/why-dont-we-hack-core). For the purposes of this document it is sufficient to say it makes it harder to secure. The [same is true for contributed modules](http://www.bluespark.com/blog/youre-doing-it-wrong-dont-hack-drupal-core-change-text), you shouldn’t have to alter the code to customize it most of the time. The Hacked! module is very useful in identifying when modules no longer are the same as their releases on Drupal.org. Being able to quickly scan through hundreds of thousands of lines of code and find differences against known releases is a huge security advantage. 
+Before launching your site (and periodically afterwards) it is useful to run the [Hacked!](https://drupal.org/project/hacked) module to check what code differs from what was released on Drupal.org. Particularly when the [diff](https://drupal.org/project/diff) module is enabled this is a powerful tool to evaluate your code. There are millions of lines of code in a given Drupal site, so Hacked! is a really valuable analysis tool. If you need to apply patches against the stable released version of the code, the patch should be in a clearly documented directory. It is unfortunately a common practice for less experienced Drupal developers to cut corners and hack core to provide some functionality that is required. There are lots of reasons why this is a bad idea and [why responsible developers don’t hack core](http://drupal.stackexchange.com/questions/59054/why-dont-we-hack-core). For the purposes of this document it is sufficient to say it makes it harder to secure. The [same is true for contributed modules](http://www.bluespark.com/blog/youre-doing-it-wrong-dont-hack-drupal-core-change-text), you shouldn’t have to alter the code to customize it most of the time. The Hacked! module is very useful in identifying when modules no longer are the same as their releases on Drupal.org. Being able to quickly scan through hundreds of thousands of lines of code and find differences against known releases is a huge security advantage.
 
-You can also generate Drush make file from an existing Drupal site and then recreate a clean copy of the codebase which you can then diff (a command line comparison tool) to determine if your site has been hacked. 
+You can also generate Drush make file from an existing Drupal site and then recreate a clean copy of the codebase which you can then diff (a command line comparison tool) to determine if your site has been hacked.
 
 ```
 drush generate-makefile make-file.make
 drush make make-file.make -y
 ```
 
-It is recommended to run all modules you use through the [Coder](https://drupal.org/project/coder) module, but especially any custom built modules and themes. This module [can give you suggestions](https://drupal.org/node/2135539) on how to follow the [Drupal communities coding standards](https://drupal.org/coding-standards). 
+It is recommended to run all modules you use through the [Coder](https://drupal.org/project/coder) module, but especially any custom built modules and themes. This module [can give you suggestions](https://drupal.org/node/2135539) on how to follow the [Drupal communities coding standards](https://drupal.org/coding-standards).
 
-It can also help you identify other coding errors that may affect your site. Particularly when building custom modules the Coder module can help identify [unsanitized user input](https://drupal.org/node/101495), [SQL injection vulnerabilities](http://www.pixelite.co.nz/article/sql-injection-and-drupal-7-top-1-10-owasp-security-risks) and [Cross Site Request Forgery (CSRF)](http://drupalscout.com/knowledge-base/introduction-cross-site-request-forgery-csrf) 
+It can also help you identify other coding errors that may affect your site. Particularly when building custom modules the Coder module can help identify [unsanitized user input](https://drupal.org/node/101495), [SQL injection vulnerabilities](http://www.pixelite.co.nz/article/sql-injection-and-drupal-7-top-1-10-owasp-security-risks) and [Cross Site Request Forgery (CSRF)](http://drupalscout.com/knowledge-base/introduction-cross-site-request-forgery-csrf)
 
-problems. It is unfortunately quite common for developers to extend Drupal by forking existing projects and not provide enhancements back to the community. Doing this breaks assumptions within the Update module but more importantly makes upgrades much more difficult. Even with a properly documented patch, it is a lot of work to upgrade, patch and re-write a function in a live website. 
+problems. It is unfortunately quite common for developers to extend Drupal by forking existing projects and not provide enhancements back to the community. Doing this breaks assumptions within the Update module but more importantly makes upgrades much more difficult. Even with a properly documented patch, it is a lot of work to upgrade, patch and re-write a function in a live website.
 
-By contributing the improved code upstream, you can avoid that often painful process. The peer review that comes with contributing your code back to the community is a secondary benefit: your codebase will become more robust because more people will understand it. Your [bus count](http://www.thesalesengineer.com/2011/06/20/whats-your-se-bus-count/) (the number of people who can go missing from a project by either being hit by a bus or winning the lottery) will increase by releasing your code. Publishing the code elsewhere forces you to actually think about what is required. further, if someone tries to install your code/system, they might notice missing parts or for that matter parts that might be confidential. 
+By contributing the improved code upstream, you can avoid that often painful process. The peer review that comes with contributing your code back to the community is a secondary benefit: your codebase will become more robust because more people will understand it. Your [bus count](http://www.thesalesengineer.com/2011/06/20/whats-your-se-bus-count/) (the number of people who can go missing from a project by either being hit by a bus or winning the lottery) will increase by releasing your code. Publishing the code elsewhere forces you to actually think about what is required. further, if someone tries to install your code/system, they might notice missing parts or for that matter parts that might be confidential.
 
 ### 5) Administration
 
-Drupal has a very fine grained and customizable permissions model. In its simplest form, users are assigned roles and each role is given permissions to various functions. Take the time to review roles with access to any of Administer filters, Administer users, Administer permissions, Administer content types, Administer site, Administer configuration, Administer views and translate interface. It is useful to review the permissions after upgrades to verify if any new permissions have been added.Don’t use “admin” as your user/1 admin name. It’s the first one that a cracker is going to try, so be a bit more unique. Obscurity isn’t the same as security, but no need to give them their first guess when choosing user names. Another good practice with regards to user/1 is to [completely disable the account](https://www.drupal.org/node/947312#disable). With the advent of Drupal 7 and drush, user/1 is not required to administer Drupal websites anymore, and thus can be simply blocked. The account can be re-enabled as needed through drush or directly in the database. As with other server user accounts, you will want to restrict who has access to servers. Make sure to delete any test or developer accounts on the production server. Don’t run Drupal without enabling the Update module that comes with core. Drupal core and contributed modules use a structured release process that allows your administrators to be proactively alerted when one of those modules has a security release. Any piece of code is susceptible to a security issue, and having a central repository that a Drupal site can compare against is key to the security paradigm. Aside from the releases that have fixes for known security problems, some modules (or a version of that module) may become unsupported. This is also a security problem, in that you will not receive updates if there are security problems that are identified with the module. The Update module also allows you to get a daily or weekly email if there are security upgrades that need to be applied. Drupal’s input filters are very powerful, but can provide a vulnerability. Don’t enable the PHP filter which is available in Drupal core. It makes debugging more difficult and exposes your site to a greater risk than it is worth. All PHP code should be written to the file system and not stored in the database. Another input filter that can be problematic isFull HTML which should only be granted to trusted roles. If needed, you can add some additional tags to the Filtered HTML input format but be cautious. Installing the [Paranoia](https://drupal.org/project/paranoia) module can really help enforce this practice. 
+Drupal has a very fine grained and customizable permissions model. In its simplest form, users are assigned roles and each role is given permissions to various functions. Take the time to review roles with access to any of Administer filters, Administer users, Administer permissions, Administer content types, Administer site, Administer configuration, Administer views and translate interface. It is useful to review the permissions after upgrades to verify if any new permissions have been added.Don’t use “admin” as your user/1 admin name. It’s the first one that a cracker is going to try, so be a bit more unique. Obscurity isn’t the same as security, but no need to give them their first guess when choosing user names. Another good practice with regards to user/1 is to [completely disable the account](https://www.drupal.org/node/947312#disable). With the advent of Drupal 7 and drush, user/1 is not required to administer Drupal websites anymore, and thus can be simply blocked. The account can be re-enabled as needed through drush or directly in the database. As with other server user accounts, you will want to restrict who has access to servers. Make sure to delete any test or developer accounts on the production server. Don’t run Drupal without enabling the Update module that comes with core. Drupal core and contributed modules use a structured release process that allows your administrators to be proactively alerted when one of those modules has a security release. Any piece of code is susceptible to a security issue, and having a central repository that a Drupal site can compare against is key to the security paradigm. Aside from the releases that have fixes for known security problems, some modules (or a version of that module) may become unsupported. This is also a security problem, in that you will not receive updates if there are security problems that are identified with the module. The Update module also allows you to get a daily or weekly email if there are security upgrades that need to be applied. Drupal’s input filters are very powerful, but can provide a vulnerability. Don’t enable the PHP filter which is available in Drupal core. It makes debugging more difficult and exposes your site to a greater risk than it is worth. All PHP code should be written to the file system and not stored in the database. Another input filter that can be problematic isFull HTML which should only be granted to trusted roles. If needed, you can add some additional tags to the Filtered HTML input format but be cautious. Installing the [Paranoia](https://drupal.org/project/paranoia) module can really help enforce this practice.
 
 ### 6) Modules
 
-There are [a lot of Drupal security modules](https://github.com/wet-boew/wet-boew-drupal/issues/248). Depending on your needs you will want to add more or less than those listed here. 
+There are [a lot of Drupal security modules](https://github.com/wet-boew/wet-boew-drupal/issues/248). Depending on your needs you will want to add more or less than those listed here.
 
 *   [Automated Logout](https://drupal.org/project/autologout) - ability to log users out after a specified time of inactivity
 *   [Clear Password Field](https://drupal.org/project/clear_password_field) - Stops forms from pre-populating a password
@@ -949,11 +946,11 @@ There are [a lot of Drupal security modules](https://github.com/wet-boew/wet-boe
 
 ### 7) Drupal Distributions
 
-Drupal distributions provide turnkey installations that have been optimized for specific purposes, generally with a curated selection of modules and settings. There are now two distributions which have been specifically built for security, [Guardr](https://drupal.org/project/guardr) and [Hardened Drupal](https://drupal.org/project/hardened_drupal). Guardr is built to follow the [CIA information security triad](https://en.wikipedia.org/wiki/Information_security): confidentiality, integrity and availability. It is worth watching the evolution of these distributions and installing them from time to time if only to have a comparison of modules and configuration options. 
+Drupal distributions provide turnkey installations that have been optimized for specific purposes, generally with a curated selection of modules and settings. There are now two distributions which have been specifically built for security, [Guardr](https://drupal.org/project/guardr) and [Hardened Drupal](https://drupal.org/project/hardened_drupal). Guardr is built to follow the [CIA information security triad](https://en.wikipedia.org/wiki/Information_security): confidentiality, integrity and availability. It is worth watching the evolution of these distributions and installing them from time to time if only to have a comparison of modules and configuration options.
 
 ### 8) Miscellaneous
 
-Review the discussion in Section K and decide if you are going to remove the CHANGELOG.txt file. Ensure that you can keep up security upgrades on a weekly basis and **do not hack core!** If you plan to distribute your live site so that you can do testing or development outside of a controlled environment, consider building a [sanitized version of the database](http://drupalscout.com/knowledge-base/creating-sanitized-drupal-database-backup). This is especially important if you have user information stored in the database. For many government sites this may not be necessary. 
+Review the discussion in Section K and decide if you are going to remove the CHANGELOG.txt file. Ensure that you can keep up security upgrades on a weekly basis and **do not hack core!** If you plan to distribute your live site so that you can do testing or development outside of a controlled environment, consider building a [sanitized version of the database](http://drupalscout.com/knowledge-base/creating-sanitized-drupal-database-backup). This is especially important if you have user information stored in the database. For many government sites this may not be necessary.
 
 ## I) Writing Secure Code
 
@@ -969,15 +966,15 @@ Common Drupal secure coding practices are:
 * If you are using eval() or drupal_eval() this is a potential security risk if PHP input provided contains malicious code. If you do this, you can add a new permission in your module so that an admin needs to explicitly assign permissions to a user role.
 * Same precautions should be taken with functions such as exec(), system(), fopen(), delete() and others that execute external applications or interact directly with the file system.
 
-As David Strauss wrote recently, [All Code is Debt](https://www.getpantheon.com/blog/all-code-debt). “All of the custom code you’ve written yesterday, rewritten today, and what you’ll write tomorrow ― you will be burdened with maintaining, forever.” Code needs to be maintained on a regular basis to ensure that it is keeping up with the latest security best practices. When writing code, testing is important and security testing should be part of the process. OWASP publish a very complete [Testing Guide](https://www.owasp.org/index.php/OWASP_Testing_Project) as well as an [Application Security Verification 
+As David Strauss wrote recently, [All Code is Debt](https://www.getpantheon.com/blog/all-code-debt). “All of the custom code you’ve written yesterday, rewritten today, and what you’ll write tomorrow ― you will be burdened with maintaining, forever.” Code needs to be maintained on a regular basis to ensure that it is keeping up with the latest security best practices. When writing code, testing is important and security testing should be part of the process. OWASP publish a very complete [Testing Guide](https://www.owasp.org/index.php/OWASP_Testing_Project) as well as an [Application Security Verification
 
 Standard](https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project) that goes deep into details. The verification standard could also be used as a complete security requirement list when designing new modules for your Drupal site. Open source tools such as [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) and [Subgraph Vega](http://www.subgraph.com/products.html) provide graphical user interface to perform dynamic scanning of Web sites. For complex Drupal sites they might have some difficulties but they can still be used as a intercepting web proxy in order to perform manual testing.
 
 ## J) Development, Staging and Production
 
-Any formalized development process should have three distinct server environments. The development environment can simply be a developer’s computer (or perhaps several developers’ computers). The staging and production servers should be essentially identical. The role of the staging server is to document and test the migration process to verify that the code and configuration can move onto the production server. For more information refer to OpenConcept’s blog post on the [path of code vs content](http://openconcept.ca/blog/mgifford/flow-content-code).The code for your Drupal site should be stored in a central repository. The Drupal community has generally adopted [Git](http://git-scm.com/), but there are other valid options for version control. A developer will pull/push/clone/branch to/from that repository. New code is committed and pushed from the development environment into the central repository, and can then be pulled onto the staging environment. If it passes testing there, it can 
+Any formalized development process should have three distinct server environments. The development environment can simply be a developer’s computer (or perhaps several developers’ computers). The staging and production servers should be essentially identical. The role of the staging server is to document and test the migration process to verify that the code and configuration can move onto the production server. For more information refer to OpenConcept’s blog post on the [path of code vs content](http://openconcept.ca/blog/mgifford/flow-content-code).The code for your Drupal site should be stored in a central repository. The Drupal community has generally adopted [Git](http://git-scm.com/), but there are other valid options for version control. A developer will pull/push/clone/branch to/from that repository. New code is committed and pushed from the development environment into the central repository, and can then be pulled onto the staging environment. If it passes testing there, it can
 
-then be pulled into production. The database on the staging server can simply be cloned from the production server using Drush. Assuming that the new code works well with the production database, you can be reasonably certain that you will be able to migrate that code and configuration to the production site. This is definitely more complicated, but both the staging and production environments will need to be accessible via Drush and the Git repository. 
+then be pulled into production. The database on the staging server can simply be cloned from the production server using Drush. Assuming that the new code works well with the production database, you can be reasonably certain that you will be able to migrate that code and configuration to the production site. This is definitely more complicated, but both the staging and production environments will need to be accessible via Drush and the Git repository.
 
 You will need to set up an SSH user with its own SSH keys to allow you to use Drush aliases to transfer databases between staging and production. You may also want to have another account to be able to transfer uploaded files which probably would not be managed under version control. Using an external site like [GitHub](https://github.com/) for storing your repository provides access to some great additional tools like [Travis](http://docs.travis-ci.com/user/getting-started/) and [SauceLabs](https://saucelabs.com/builder) which can help you deliver a more reliable site. You can also set it up on your staging or development server. Limit access between servers. There is a potential risk from having a semi-porous boundary between these environments, but the risks are far outweighed by the benefits. Having a central Git repository gives you control across all environments at one time. Being able to diff any change allows you to quickly identify where changes have been made and know why. Drush is certainly powerful, but only experienced users should have access to it. With a solid backup plan, even if this is compromised, it can be quickly restored.
 
@@ -990,27 +987,27 @@ No security plan is foolproof. You need regular backups to ensure that you can r
 *   [mysqldump](https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html)
 *   [xtrabackup](http://www.percona.com/doc/percona-xtrabackup)
 
-Remember that a backup is only good if it can be restored. It’s a best practice to make use of [RAID drives](https://en.wikipedia.org/wiki/RAID), but RAID should be used as a failsafe and not considered a backup strategy. Backups should be stored regularly locally, but there also need to be regular, long-term backups stored off-site. Make sure to evaluate your backup procedures and test your restores to verify that they are working effectively. Drupal.org releases [security updates](https://drupal.org/security) on Wednesdays when needed which are broadcast by 
+Remember that a backup is only good if it can be restored. It’s a best practice to make use of [RAID drives](https://en.wikipedia.org/wiki/RAID), but RAID should be used as a failsafe and not considered a backup strategy. Backups should be stored regularly locally, but there also need to be regular, long-term backups stored off-site. Make sure to evaluate your backup procedures and test your restores to verify that they are working effectively. Drupal.org releases [security updates](https://drupal.org/security) on Wednesdays when needed which are broadcast by
 
-an email list, [RSS feeds](https://drupal.org/security/psa/rss.xml) and [Twitter](https://twitter.com/drupalsecurity). Subscribe to the security newsletter for updates (you will need a Drupal.org account and the instructions are on the sidebar of the previous link). It is also useful to check the Status page and Watchdog pages in your Drupal site. 
+an email list, [RSS feeds](https://drupal.org/security/psa/rss.xml) and [Twitter](https://twitter.com/drupalsecurity). Subscribe to the security newsletter for updates (you will need a Drupal.org account and the instructions are on the sidebar of the previous link). It is also useful to check the Status page and Watchdog pages in your Drupal site.
 
-[SELinux provides auditing services](http://drupalwatchdog.com/volume-2/issue-2/using-apache-and-selinux-together) which are worth monitoring. You should be watching your server logs, particularly your Apache error log: 
+[SELinux provides auditing services](http://drupalwatchdog.com/volume-2/issue-2/using-apache-and-selinux-together) which are worth monitoring. You should be watching your server logs, particularly your Apache error log:
 
 ```
 tail -f /var/log/httpd/error_log
 
 grep 'login.php' /var/log/httpd/error_log
 
-egrep -i "denied|error|warn" 
+egrep -i "denied|error|warn"
 
 /var/log/httpd/error_log
 ```
 
-Security best practices are constantly changing. OWASP has released their [Top 10 for 2013](https://www.owasp.org/index.php/Top_10_2013-Introduction) and it is somewhat similar to the 2010 list. The Top 10 for 2010 was leveraged to look at [how it applies to Drupal](http://www.cameronandwilding.com/blog/pablo/10-most-critical-drupal-security-risks). This needs to be updated, and reviewed, particularly if you are writing any custom code. It’s a simple idea, but it can be good to search [Google for test data](https://www.google.com/search?q=site:healthcare.gov%20intext:%22test%22) that might have been left in development or exposed in an upgrade. Anything in a draft mode should never be exposed to the Internet. [Acquia’s Insights](https://www.acquia.com/products-services/acquia-network/cloud-services/insight) provides a useful tool to get regular insights on how to improve your website. Their security section will be able to do a quick review of your website to check on a number of security related issues. They also address performance, best practices, SEO and code analysis. With the [Acquia Network Connector](https://drupal.org/project/acquia_connector) module, this can be easily and securely done on any website accessible to the Internet. Their dashboard provides an easy way for you to regularly monitor important elements of your site. [Qualys](https://www.qualys.com/) and [Rapid7](http://www.rapid7.com/) both offer a number of other security monitoring and risk assessment services. These are included in Acquia’s hosting. 
+Security best practices are constantly changing. OWASP has released their [Top 10 for 2013](https://www.owasp.org/index.php/Top_10_2013-Introduction) and it is somewhat similar to the 2010 list. The Top 10 for 2010 was leveraged to look at [how it applies to Drupal](http://www.cameronandwilding.com/blog/pablo/10-most-critical-drupal-security-risks). This needs to be updated, and reviewed, particularly if you are writing any custom code. It’s a simple idea, but it can be good to search [Google for test data](https://www.google.com/search?q=site:healthcare.gov%20intext:%22test%22) that might have been left in development or exposed in an upgrade. Anything in a draft mode should never be exposed to the Internet. [Acquia’s Insights](https://www.acquia.com/products-services/acquia-network/cloud-services/insight) provides a useful tool to get regular insights on how to improve your website. Their security section will be able to do a quick review of your website to check on a number of security related issues. They also address performance, best practices, SEO and code analysis. With the [Acquia Network Connector](https://drupal.org/project/acquia_connector) module, this can be easily and securely done on any website accessible to the Internet. Their dashboard provides an easy way for you to regularly monitor important elements of your site. [Qualys](https://www.qualys.com/) and [Rapid7](http://www.rapid7.com/) both offer a number of other security monitoring and risk assessment services. These are included in Acquia’s hosting.
 
 ## L) Points of Debate - Security by Obscurity
 
-There is a bit of a division within the security community as to whether one should expose information about what versions of software are being used. 
+There is a bit of a division within the security community as to whether one should expose information about what versions of software are being used.
 
 ### 1) Make it Obscure
 
@@ -1018,11 +1015,11 @@ Leaving a CHANGELOG.txt file visible does nothing to improve security, rather it
 
 ### 2) Make it Transparent
 
-In many cases where the CHANGELOG.txt has been removed, it is because the webmaster hasn’t done a Drupal core upgrade and they are looking for a way to obscure that fact. By keeping the CHANGELOG.txt up-to-date at the very least it indicates that someone is paying attention to security updates.There are [easy ways to fingerprint Drupal](https://drupal.org/comment/3481992#comment-3481992) and the security team could hide access to this file in the .htaccess file that comes with Drupal core if they were concerned. By making it transparent, there is an additional reason for developers to make it a priority to upgrade core when there is a security release. 
+In many cases where the CHANGELOG.txt has been removed, it is because the webmaster hasn’t done a Drupal core upgrade and they are looking for a way to obscure that fact. By keeping the CHANGELOG.txt up-to-date at the very least it indicates that someone is paying attention to security updates.There are [easy ways to fingerprint Drupal](https://drupal.org/comment/3481992#comment-3481992) and the security team could hide access to this file in the .htaccess file that comes with Drupal core if they were concerned. By making it transparent, there is an additional reason for developers to make it a priority to upgrade core when there is a security release.
 
 ### 3) Be Consistent
 
-While there is some discussion on the benefits of hiding CHANGELOG.txt there is agreement that when security releases are announced, that developers must apply them quickly so that the site cannot be compromised. By default, the Linux distribution, Apache and PHP also announce information that can be turned off in their configuration files. It is good to be consistent and have your reasoning documented so that it is clearly understood. 
+While there is some discussion on the benefits of hiding CHANGELOG.txt there is agreement that when security releases are announced, that developers must apply them quickly so that the site cannot be compromised. By default, the Linux distribution, Apache and PHP also announce information that can be turned off in their configuration files. It is good to be consistent and have your reasoning documented so that it is clearly understood.
 
 ## M) Additional Resources
 
@@ -1037,7 +1034,7 @@ While there is some discussion on the benefits of hiding CHANGELOG.txt there is 
 *   [Security: How the world's largest open source CMS combines open and security - Acquia](https://www.acquia.com/blog/keeping-drupal-secure)*   [Drupal, SSL and Possible Solutions - Acquia](http://drupalscout.com/knowledge-base/drupal-and-ssl-multiple-recipespossible-solutions-https)
 *   [Drupal Watchdog Magazine - Security Edition](http://drupalwatchdog.com/issue/toc/2/2)
 
-#### Secure hosting 
+#### Secure hosting
 
 *   [Linux: 25 PHP Security Best Practices For Sys Admins - Nixcraft](http://www.cyberciti.biz/tips/php-security-best-practices-tutorial.html)*   [Hardening an SSL server against the NSA - xin.at](http://wp.xin.at/archives/1359)
 *   [LinuxSecurity.com](http://www.linuxsecurity.com/)
