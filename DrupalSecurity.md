@@ -268,24 +268,26 @@ ps afx
 netstat -l -p -n
 ```
 
-The management of ports on the network is managed through iptables. It is important to review and document them to see that they are properly restrictive. From the command line you can list them with:
-
-```
-iptables -L -v -n
-```
-
-You can load/save the iptables easily using the iptables-persistent package `apt-get install iptables-persistent`. With that you can simply save the existing IP tables from the command line:
-
-```
-Debian: service iptables-persistent save 
-CentOS: service iptables save
-```
-
 Record the list of installed packages on the server. Save this information in a text file in your management code repository. If your server is compromised it is useful to know what packages were installed and running when you started:
 
 ```
 Debian: dpkg -l
 CentOS: yum list installed
+```
+
+Manage your ports through firewall settings: It is important to review and document the firewall settings - open ports - to see that they are properly restrictive. The firewall program for sysVinit OS versions (CentOS/RHEL <=6), iptables, is still available for systemd OS versions (CentOS/RHEL >=7), which by default uses firewalld.
+
+Using iptables, the port settings can be listed from the command line with:
+
+```
+iptables -L -v -n
+```
+
+You can load/save the iptables easily using the iptables-persistent package (installed on Debian/Ubuntu using `apt-get install iptables-persistent`). With that you can simply save the existing IP tables from the command line:
+
+```
+Debian: service iptables-persistent save
+CentOS: service iptables save
 ```
 
 Install [Rootkit Hunter](http://sourceforge.net/apps/trac/rkhunter/wiki/SPRKH) (RKH) to help you “detect known rootkits, malware and signal general bad security practices”. You can set it up to [send you email alerts](http://www.tecmint.com/install-linux-rkhunter-rootkit-hunter-in-rhel-centos-and-fedora/), but can also do manual scans.
@@ -306,12 +308,12 @@ nmap -sS SERVER_ADDRESS
 
 We recommend running [periodic TCP port scans](https://en.wikipedia.org/wiki/Port_scanner) on your server. [MXToolbox](http://mxtoolbox.com/PortScan.aspx) offers an option to do this through their site, but you can also use tools like nmap which offers you more fine-grained controls.
 
-Many servers come with [BIND](https://en.wikipedia.org/wiki/BIND) on UDP port 53\. This program can probably be removed in most instances or should be restricted with a firewall if required. There are some [detailed instructions here](http://askubuntu.com/questions/162371/what-is-the-named-daemon-and-why-is-it-running) on how to remove it, which are particularly important if you aren’t sure if you need it or not. To check if bind is running, run this from
-the command line:
+Many servers come with [BIND](https://en.wikipedia.org/wiki/BIND) on UDP port 53\. This program can probably be removed in most instances or should be restricted with a firewall if required. There are some [detailed instructions here](http://askubuntu.com/questions/162371/what-is-the-named-daemon-and-why-is-it-running) on how to remove it, which are particularly important if you aren’t sure if you need it or not. To check if bind is running, run this from the command line:
 
 ```
-    ps -Al | grep bind
-    chkconfig | grep bind
+ps -Al | grep bind
+sysVinit: chkconfig | grep bind
+systemd: systemctl is-enabled bind
 ```
 
 You can obscure your SSH port by reassigning it to other than the default (22). This might fool a lazy cracker who isn’t using a port scanner first, but won’t stop the serious folks.
@@ -327,11 +329,11 @@ You can also [restrict who can ssh](http://apple.stackexchange.com/questions/340
 INPUT -p tcp --dport 22 -j DROP
 ```
 
-There are many ways to do this. Debian uses [ufw](https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server), the current release of RHEL uses [system-config-firewall-tui](https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server), [lokkit](http://docs.saltstack.com/en/latest/topics/tutorials/firewall.html) is coming along nicely and
-it looks like RHEL 7 may be shipped with [FirewallD](https://fedoraproject.org/wiki/FirewallD) by default. Ultimately they all do the same thing slightly differently. Make sure you understand your configurations and review them regularly.
+There are many ways to do this. Debian uses [ufw](https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server), the sysVinit releases of RHEL use [system-config-firewall-tui](https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server), [lokkit](http://docs.saltstack.com/en/latest/topics/tutorials/firewall.html) is coming along nicely and systemd releases RHEL 7 ship with [FirewallD](https://fedoraproject.org/wiki/FirewallD) by default. Ultimately they all do the same thing slightly differently. Make sure you understand your configurations and review them regularly.
 
 If you already have established a [virtual private network](https://en.wikipedia.org/wiki/Virtual_private_network) (VPN) then you can restrict SSH access to within that private network. This way you need to first log in to the VPN before being able to access the port. Leveraging an existing VPN has some additional costs but also some security advantages. If an organization isn’t already using a VPN however, then the usability problems with
 forcing people to use it may encourage developers to find ways to circumvent it.
+It is important to remember that a VPN is only as secure as the individual servers on the VPN. If the VPN is shared with systems out of your control, and the responsible sysadmins are lax in security, then your servers should be hardened as if on the public network.
 
 ### 5) Initial Installs
 
@@ -424,7 +426,7 @@ There are also many good reasons to use server [configuration management softwar
 
 Your web server is a complex environment involving thousands of software projects. Most of these will store log files in /var/log. If log files aren’t properly rotated and compressed they can become unmanageably large. If your hard drive is filled up with old log files your site will simply stop functioning. Most distributions of Linux come come with [logrotate](http://www.cyberciti.biz/faq/how-do-i-rotate-log-files/) configured such that log files are segmented on a regular basis and the archive is compressed so that space isn’t a problem.
 
-Most Linux distributions also come with syslog built in, which is critical for doing security audits. You can also configure it to [send emergency messages to a remote machine](http://www.linuxvoodoo.com/resources/howtos/syslog). There is a discussion in the Drupal section later on about how to direct Watchdog messages to syslog. There are many tools to help system administrators more effectively monitor their log files, and regular log reviews can be an important part of early breach detection.
+Most Linux distributions also come with syslog built in, which is critical for doing security audits. You can also configure it to [send emergency messages to a remote machine](http://www.linuxvoodoo.com/resources/howtos/syslog), or even send a duplicate of all log messages to an external loghost. There is a discussion in the Drupal section later on about how to direct Watchdog messages to syslog. There are many tools to help system administrators more effectively monitor their log files, and regular log reviews can be an important part of early breach detection.
 
 If your server is configured with a caching reverse proxy server or a load balancer such as Varnish, Nginx or haproxy then you should ensure that Drupal is made aware of the actual REMOTE_IP. The common solution requires configuring the X-Forwarded-For in both Varnish and Apache, but as [Jonathan Marcil’s blog post points out](https://blog.jonathanmarcil.ca/2013/09/remoteaddr-and-httpxforwardedfor-bad.html), “X-Forwarded-For is actually a list that can be a chain of multiples proxies and not just a single IP address”. To that effect, ensure that all IP addresses for your reverse proxies are identified in your settings.php file ([configuration](https://github.com/drupal/drupal/blob/7.x/sites/default/default.settings.php#L358)). Another solution would be to create a custom HTTP header such as HTTP_X_FORWARDED_FOR and use it in your architecture and tell
 Drupal to use it using the configuration variable "reverse_proxy_header" in settings.php under "Reverse Proxy Configuration". Drupal itself will manage correctly a list of trusted reverse proxy with the standard "X-Forwarded-For" header, but this is useful if you want to correctly logs IP at a Web server, proxy or load balancer level. Note that the front facing proxy should ignore if the custom header exists and replace it with it's own.
