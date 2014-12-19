@@ -5,12 +5,24 @@ A Guide for Governments and Nonprofits
 **By [OpenConcept Consulting Inc.](http://openconcept.ca/)**,
 originally written for for Public Safety Canada
 
-**Principal Author: **[Mike
-  Gifford](mailto:mike@openconcept.ca)
+**Principal Author:** [Mike Gifford](mailto:mike@openconcept.ca)
 
-**Contributors: **[Mike Mallett](mailto:mike.mallett@openconcept.ca), [Matt Parker](https://drupal.org/user/536298), [Xavier Landreville](mailto:xavier@openconcept.ca), [Michael Richardson](http://www.sandelman.ottawa.on.ca/), [Colan Schwartz](http://colans.net/), [Mack Hardy](http://affinitybridge.com/), [Peter Cruickshank](http://spartakan.wordpress.com/), [David Norman](https://deekayen.net/), [Lee Rowlands](http://rowlandsgroup.com/), [David Timothy Strauss](https://linkedin.com/in/davidstrauss), [Ben Hosmer](http://www.radarearth.com/), [Ursula Pieper](http://upsitesweb.com/), [Jonathan Marcil](https://blog.jonathanmarcil.ca/)
+**Contributors:** 
+ * [Mike Mallett](mailto:mike.mallett@openconcept.ca),
+ * [Matt Parker](https://drupal.org/user/536298),
+ * [Xavier Landreville](mailto:xavier@openconcept.ca),
+ * [Michael Richardson](http://www.sandelman.ottawa.on.ca/),
+ * [Colan Schwartz](http://colans.net/),
+ * [Mack Hardy](http://affinitybridge.com/),
+ * [Peter Cruickshank](http://spartakan.wordpress.com/),
+ * [David Norman](https://deekayen.net/),
+ * [Lee Rowlands](http://rowlandsgroup.com/),
+ * [David Timothy Strauss](https://linkedin.com/in/davidstrauss),
+ * [Ben Hosmer](http://www.radarearth.com/),
+ * [Ursula Pieper](http://upsitesweb.com/),
+ * [Jonathan Marcil](https://blog.jonathanmarcil.ca/)
 
-**Editor: **[Lee Hunter](http://streamoflight.com/)
+**Editor:** [Lee Hunter](http://streamoflight.com/)
 
 ## Foreword
 
