@@ -291,7 +291,7 @@ If someone is able to hack into your Google Mail or GitHub account, they can oft
 Most services on the Internet are keyed to email addresses and passwords to 3rd party services are often stored.
 Identity theft online is a huge problem for institutions.
 
-The [UK's Government Service Design Manual](https://www.gov.uk/service-manual/) is an excellent resource for any large institution and it has a great section that applies directly to web security, [Security as enabler: Using](https://www.gov.uk/service-manual/technology/security-as-enabler.html)[technological change to build secure services](https://www.gov.uk/service-manual/technology/security-as-enabler.html).
+The [UK's Government Service Design Manual](https://www.gov.uk/service-manual/) is an excellent resource for any large institution and it has a great section that applies directly to web security, [Security as enabler: Using technological change to build secure services](https://www.gov.uk/service-manual/technology/security-as-enabler.html).
 In particular I like the point that security shouldn't degrade user experience.
 
 Don't ignore minor bugs.
