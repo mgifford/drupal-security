@@ -1303,11 +1303,11 @@ The Update module also allows you to get a daily or weekly email if there are se
 
 Drupal's input filters are very powerful, but can provide a vulnerability.
 Don't enable the PHP filter which is available in Drupal core.
-It makes debugging more difficult and exposes your site to a greater risk than it is worth.
+Installing the [Paranoia](https://drupal.org/project/paranoia) module can really help enforce this practice.
+The PHP filter makes debugging more difficult and exposes your site to a greater risk than it is worth.
 All PHP code should be written to the file system and not stored in the database.
 Another input filter that can be problematic is Full HTML which should only be granted to trusted roles.
 If needed, you can add some additional tags to the Filtered HTML input format but be cautious.
-Installing the [Paranoia](https://drupal.org/project/paranoia) module can really help enforce this practice.
 
 ### 6) Modules
 
