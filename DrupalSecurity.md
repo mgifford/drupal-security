@@ -92,7 +92,9 @@ E-2) Removing Code
 
 E-3) HTTP Headers
 
-E-4) Everything Else
+E-4) HTTP Basic Authentication
+
+E-5) Everything Else
 
 E-8) Web Application Firewall
 
@@ -868,7 +870,15 @@ Example Apache configuration:
 Header always append X-Frame-Options SAMEORIGIN
 ```
 
-### 4) Everything Else
+### 4) HTTP Basic Authentication
+
+Most webservers provide a way to restict access to a site using [HTTP Basic Authentication](http://tools.ietf.org/html/rfc7235) — for example, using Apache HTTP Server's [`htpasswd` files or `Auth*` directives](http://httpd.apache.org/docs/2.2/howto/auth.html), or nginx's [`ngx_http_auth_basic_module`](http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html) module.
+
+While HTTP Basic Authentication is a good way to prevent search engines from indexing your testing and staging sites, it is inherintly insecure: traffic between browsers and your site is not encrypted, and in fact, anyone can gain access to the site simply by copying the "Authorization" HTTP header.
+
+Furthermore, the username and password used for HTTP Basic Authentication are not encrypted either (just base-64 encoded, which is trival to decode), so do not re-use credentials used elsewhere (e.g.: don't re-use the credentials someone uses to log into Drupal, SSH into the webserver; or hook HTTP Basic Authentication up to an LDAP database or the operating system's `/etc/passwd`).
+
+### 5) Everything Else
 
 Modify the web server configuration to [disable the TRACE/TRACK](http://www.ducea.com/2007/10/22/apache-tips-disable-the-http-trace-method/) methods either by employing the TraceEnable directive or by [adding the following lines](http://perishablepress.com/disable-trace-and-track-for-better-security/) to your Apache configuration:
 
