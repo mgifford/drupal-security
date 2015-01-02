@@ -1282,25 +1282,30 @@ further, if someone tries to install your code/system, they might notice missing
 Drupal has a very fine grained and customizable permissions model.
 In its simplest form, users are assigned roles and each role is given permissions to various functions.
 Take the time to review roles with access to any of Administer filters, Administer users, Administer permissions, Administer content types, Administer site, Administer configuration, Administer views and translate interface.
-It is useful to review the permissions after upgrades to verify if any new permissions have been added.Don't use "admin" as your user/1 admin name.
+It is useful to review the permissions after upgrades to verify if any new permissions have been added.
+
+Don't use "admin" as your user/1 admin name.
 It's the first one that a cracker is going to try, so be a bit more unique.
 Obscurity isn't the same as security, but no need to give them their first guess when choosing user names.
 Another good practice with regards to user/1 is to [completely disable the account](https://www.drupal.org/node/947312#disable).
 With the advent of Drupal 7 and drush, user/1 is not required to administer Drupal websites anymore, and thus can be simply blocked.
 The account can be re-enabled as needed through drush or directly in the database.
+
 As with other server user accounts, you will want to restrict who has access to servers.
 Make sure to delete any test or developer accounts on the production server.
+
 Don't run Drupal without enabling the Update module that comes with core.
 Drupal core and contributed modules use a structured release process that allows your administrators to be proactively alerted when one of those modules has a security release.
 Any piece of code is susceptible to a security issue, and having a central repository that a Drupal site can compare against is key to the security paradigm.
 Aside from the releases that have fixes for known security problems, some modules (or a version of that module) may become unsupported.
 This is also a security problem, in that you will not receive updates if there are security problems that are identified with the module.
 The Update module also allows you to get a daily or weekly email if there are security upgrades that need to be applied.
+
 Drupal's input filters are very powerful, but can provide a vulnerability.
 Don't enable the PHP filter which is available in Drupal core.
 It makes debugging more difficult and exposes your site to a greater risk than it is worth.
 All PHP code should be written to the file system and not stored in the database.
-Another input filter that can be problematic isFull HTML which should only be granted to trusted roles.
+Another input filter that can be problematic is Full HTML which should only be granted to trusted roles.
 If needed, you can add some additional tags to the Filtered HTML input format but be cautious.
 Installing the [Paranoia](https://drupal.org/project/paranoia) module can really help enforce this practice.
 
