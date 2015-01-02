@@ -1382,9 +1382,7 @@ Common Drupal secure coding practices are:
 As David Strauss wrote recently, [All Code is Debt](https://www.getpantheon.com/blog/all-code-debt).
 "All of the custom code you've written yesterday, rewritten today, and what you'll write tomorrow ― you will be burdened with maintaining, forever." Code needs to be maintained on a regular basis to ensure that it is keeping up with the latest security best practices.
 When writing code, testing is important and security testing should be part of the process.
-OWASP publish a very complete [Testing Guide](https://www.owasp.org/index.php/OWASP_Testing_Project) as well as an [Application Security Verification
-
-Standard](https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project) that goes deep into details.
+OWASP publish a very complete [Testing Guide](https://www.owasp.org/index.php/OWASP_Testing_Project) as well as an [Application Security Verification Standard](https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project) that goes deep into details.
 The verification standard could also be used as a complete security requirement list when designing new modules for your Drupal site.
 Open source tools such as [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) and [Subgraph Vega](http://www.subgraph.com/products.html) provide graphical user interface to perform dynamic scanning of Web sites.
 For complex Drupal sites they might have some difficulties but they can still be used as a intercepting web proxy in order to perform manual testing.
