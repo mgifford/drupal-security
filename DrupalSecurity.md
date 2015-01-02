@@ -34,8 +34,7 @@ It was initially written for the Government of Canada, but it is equally applica
 
 Drupal is a popular, open source content management system (CMS).
 It has a strong security model, but like any application, requires adherence to best practices.
-Furthermore, Drupal is only one piece of the software that is required to run your site, and one needs to consider the security of the entire
-server stack.
+Furthermore, Drupal is only one piece of the software that is required to run your site, and one needs to consider the security of the entire set of software.
 
 This is not a comprehensive document, as IT security is a complex field.
 We have tried to focus on fundamental principles that can improve security.
