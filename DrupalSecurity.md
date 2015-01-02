@@ -112,11 +112,13 @@ H-4) Core and Contrib Hacks
 
 H-5) Administration
 
-H-6) Modules
+H-6) Modules to Consider
 
-H-7) Drupal Distributions
+H-7) Modules to Avoid on Shared Servers
 
-H-8) Miscellaneous
+H-8) Drupal Distributions
+
+H-9) Miscellaneous
 
 I) Writing Secure Code
 
@@ -1309,7 +1311,7 @@ All PHP code should be written to the file system and not stored in the database
 Another input filter that can be problematic is Full HTML which should only be granted to trusted roles.
 If needed, you can add some additional tags to the Filtered HTML input format but be cautious.
 
-### 6) Modules
+### 6) Modules to Consider
 
 There are [a lot of Drupal security modules](https://github.com/wet-boew/wet-boew-drupal/issues/248).
 Depending on your needs you will want to add more or less than those listed here.
@@ -1332,14 +1334,38 @@ Depending on your needs you will want to add more or less than those listed here
 *   [Restrict IP](https://drupal.org/project/restrict_ip) - Restrict access to an administrator defined set of IP addresses
 *   [Username Enumeration Prevention](https://drupal.org/project/username_enumeration_prevention) - Stop brute force attacks from leveraging discoverable usernames
 
-### 7) Drupal Distributions
+### 7) Modules to Avoid on Shared Servers
+
+Many Drupal modules intended to help developers develop code also disclose sensitive information about Drupal and/or the webserver, or allow users to perform dangerous operations (e.g.: run arbitrary PHP code or trigger long-running operations that could be used to deny service).
+These modules can be used to debug locally (and many are essential tools for Drupal developers), but should never be installed on a shared environment (e.g.: a production, staging, or testing server).
+
+To limit the damage a malicious user can do if they gain privileged access to Drupal, it's not sufficient for a development module to be simply disabled: the files that make up the module should be removed from the filesystem altogether.
+Doing so prevents a malicious user from enabling it and gaining more data about the system than they would be able to otherwise.
+Note that it is difficult to automatically enforce that these modules are not deployed to shared systems: developers need to understand why they should not commit these modules and take care to double-check what they're about to deploy.
+
+Some popular development modules which should not be present on any shared website include:
+
+* [Delete all](https://www.drupal.org/project/delete_all) — This module allows someone with sufficient privileges to delete all content and users on a site.
+* [Devel](https://www.drupal.org/project/devel) — Besides letting users run arbitrary PHP from any page, Devel can be configured to display backtraces, raw database queries and their results, display raw variables, and disable caching, among other things.
+* [Drupal for Firebug](https://www.drupal.org/project/drupalforfirebug) — Drupal for Firebug outputs the contents of most variables, raw database queries and their results, display PHP source code, and can be used to run arbitrary PHP. Furthermore, it does all this by interfacing with browser developer tools, making it difficult to determine if this module is enabled by glancing at the site.
+* [Theme Developer](https://www.drupal.org/project/devel_themer) — This module, which depends on the Devel module mentioned earlier, is very useful for determining which theme files / functions are used to output a particular section of the site, but it displays raw variables and slows down the site significantly.
+* [Trace](https://www.drupal.org/project/trace) — This module can be used to display backtraces and raw variables, among other things.
+
+Note that most "normal" modules can be dangerous if a malicious user gains privileged access to Drupal.
+You should evaluate each new module you install to determine what it does and whether the features it brings are worth the risks.
+Some modules to take into special consideration are:
+
+* [Backup and Migrate](https://www.drupal.org/project/backup_migrate) allows you to download a copy of the site's database. If restrictions placed upon you by your hosting provider prevents you from being able to make backups, this module will allow you to do so; but a malicious user with privileged access would be able to download a copy of the whole Drupal database, including usernames, passwords, and depending on your site, access keys to the services you use.
+* [Coder](https://www.drupal.org/project/coder) — This module is very useful for ensuring your code conforms to coding standards but can be used to display the PHP that makes up modules.
+
+### 8) Drupal Distributions
 
 Drupal distributions provide turnkey installations that have been optimized for specific purposes, generally with a curated selection of modules and settings.
 There are now two distributions which have been specifically built for security, [Guardr](https://drupal.org/project/guardr) and [Hardened Drupal](https://drupal.org/project/hardened_drupal).
 Guardr is built to follow the [CIA information security triad](https://en.wikipedia.org/wiki/Information_security): confidentiality, integrity and availability.
 It is worth watching the evolution of these distributions and installing them from time to time if only to have a comparison of modules and configuration options.
 
-### 8) Miscellaneous
+### 9) Miscellaneous
 
 Review the discussion in Section K and decide if you are going to remove the CHANGELOG.txt file.
 Ensure that you can keep up security upgrades on a weekly basis and **do not hack core**!
