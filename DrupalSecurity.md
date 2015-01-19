@@ -712,8 +712,7 @@ In the Apache config you can [set hardened SSL configurations for the HTTPS prot
 ```
 SSLProtocol ALL -SSLv2 -SSLv3
 SSLHonorCipherOrder On
-SSLCipherSuite
-ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
+SSLCipherSuite ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
 ```
 
 After restarting Apache, you can check the SSL information in a browser by double clicking on the lock icon in the address bar on https:// sites to get information on the encryption channel and confirm it's using TLS.
