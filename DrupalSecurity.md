@@ -1335,7 +1335,8 @@ Depending on your needs you will want to add more or less than those listed here
 *   [Session Limit](https://drupal.org/project/session_limit) - limit the number of simultaneous sessions per user
 *   [Settings Audit Log](https://drupal.org/project/settings_audit_log) - Logs who did what, when
 *   [Security Kit](https://drupal.org/project/seckit) - Hardens various pieces of Drupal
-*   [Secure Login](https://drupal.org/project/securelogin) - An alternative to Secure Pages above to provide secure HTTPS access, but without the mixed-mode capability
+*   [Secure Login](https://drupal.org/project/securelogin) - Provides secure HTTPS access, without mixed-mode capability
+*   [HTTP Strict Transport Security] (https://www.drupal.org/project/hsts) - To be used together with Secure Login, to prevent ssl strip attacks. Alternatively, directly enforce through web-server settings (see http://opentodo.net/2012/10/enable-http-strict-transport-security-in-apache-nginx/)
 *   [Secure Pages](https://drupal.org/project/securepages) - Manages mixed-mode (HTTPS and HTTP) authenticated sessions for enhanced security (note required core patches)
 *   [Secure Permissions](https://drupal.org/project/secure_permissions) - Disables the UI to set/change file permissions
 *   [Security Review](https://drupal.org/project/security_review) - Produces a quick review of your site's security configuration
