@@ -1318,7 +1318,7 @@ Don't enable the PHP filter which is available in Drupal core.
 Installing the [Paranoia](https://drupal.org/project/paranoia) module can really help enforce this practice.
 The PHP filter makes debugging more difficult and exposes your site to a greater risk than it is worth.
 All PHP code should be written to the file system and not stored in the database.
-Another input filter that can be problematic is Full HTML which should only be granted to trusted roles.
+Another input filter that is problematic is Full HTML which should only be granted to administrator roles. Anyone with the Full HTML filter can craft malicious JavaScript and gain full admin access to any website on the same domain as the Drupal website.
 If needed, you can add some additional tags to the Filtered HTML input format but be cautious.
 
 ### 6) Modules to Consider
