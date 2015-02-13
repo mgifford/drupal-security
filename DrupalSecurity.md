@@ -164,7 +164,7 @@ The principles should be followed but not all of the security suggestions descri
 Each practice or tool should be carefully evaluated to understand the potential costs, risks and benefits.
 
 This document raises issues to consider before you procure a server and when you first gain access to your server.
-It provides suggestions on what additional software you can add to your site which can help improve it's security.
+It provides suggestions on what additional software you can add to your site which can help improve its security.
 It also highlights configuration options that you can apply to Apache, PHP and MySQL
 to improve on the default settings.
 Finally we talk about things that you can do to enhance Drupal security.
@@ -244,7 +244,7 @@ It is critical to understand what investments have been made and how they are ma
 
 Web hosting and application development are different fields and one cannot simply outsource security upgrades to someone else to do.
 No government server platform or private web hosting company can "take care" of your server security in isolation of the application that is running on it.
-Ultimately, someone familiar with your website and it's content needs to be involved in performing upgrades.
+Ultimately, someone familiar with your website and its content needs to be involved in performing upgrades.
 
 Third party agencies are ultimately going to be involved, whether it the Domain Name Registrar or Content Delivery Network (CDN).
 The communications paths with these agencies needs to be clear and well documented.
@@ -510,7 +510,7 @@ Mandatory Access Controls (MAC) policies can be managed through programs like [S
 With Ubuntu, use AppArmour as it comes installed by default.
 While AppArmour is often considered inferior and less flexible than SELinux, there is no need to uninstall it.AppArmour may impact other security tools and should not be used in conjunction with SELinux.
 
-With other distributions it is recommended to use SELinux (examples for use in [Debian](https://wiki.debian.org/SELinux) and [Red Hat](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/)) as it's rules were initially developed to meet NSA policies.
+With other distributions it is recommended to use SELinux (examples for use in [Debian](https://wiki.debian.org/SELinux) and [Red Hat](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/)) as its rules were initially developed to meet NSA policies.
 
 ```
 Debian (not Ubuntu): apt-get install perl-tk bastille
@@ -647,7 +647,7 @@ To that effect, ensure that all IP addresses for your reverse proxies are identi
 Another solution would be to create a custom HTTP header such as HTTP_X_FORWARDED_FOR and use it in your architecture and tell
 Drupal to use it using the configuration variable "reverse_proxy_header" in settings.php under "Reverse Proxy Configuration".
 Drupal itself will manage correctly a list of trusted reverse proxy with the standard "X-Forwarded-For" header, but this is useful if you want to correctly logs IP at a Web server, proxy or load balancer level.
-Note that the front facing proxy should ignore if the custom header exists and replace it with it's own.
+Note that the front facing proxy should ignore if the custom header exists and replace it with its own.
 
 ```
 $conf['reverse_proxy'] = TRUE;
@@ -665,7 +665,7 @@ Debian: apt-get install libapache2-mod-rpaf
 By editing the /etc/apache2/mods-enabled/rpaf.conf, set your proxy IP and restarting Apache your access.log will show the real client IP rather than that of your proxy.
 
 The most important server logs to monitor are Apache's.
-If there is more than one site on a given server, it is normal for each site to have it's own log file rather than using the default generic one.
+If there is more than one site on a given server, it is normal for each site to have its own log file rather than using the default generic one.
 If you run more than one site or have multiple web servers, log centralization can allow you to get an overall view of site issues.
 Open source tools such as [logstash](http://logstash.net/) can be used to simplify the process of searching all of your log files.
 
@@ -1138,7 +1138,7 @@ Note that any software you use should be regularly updated to ensure that it rec
 You can restrict access to phpMyAdmin via .htaccess or by configuring Apache to request an HTTP username/password login.
 They can also be restricted to only allow access from certain trusted IP addresses.
 This is an important vulnerability as it could give acracker full access to your databases.
-It can be beneficial to put phpMyAdmin in it's own VirtualHost and even run it on a non-standard port.
+It can be beneficial to put phpMyAdmin in its own VirtualHost and even run it on a non-standard port.
 Force HTTPS connections to phpMyAdmin - do not use regular HTTP.
 Also consider the implications of allowing database access via the web server: There is little benefit if you have restricted which interfaces MySQL will listen on, as described above, but then allow control of the database from an Internet-facing web page.
 
@@ -1234,7 +1234,8 @@ To run cron on all of your sites in /home/drupal - from the command line enter c
 
 You will need developer modules to help you build your site, but they are a security risk on your production site and need to be disabled.
 Many modules (such as Views) have separate administration screens that can also be disabled in a production environment.
-They are absolutely required when building the site, but can be disabled when they are not in use.It is always a good practice to see if there are any unnecessary modules can be disabled on your site.
+They are absolutely required when building the site, but can be disabled when they are not in use.
+It is always a good practice to see if there are any unnecessary modules can be disabled on your site.
 This also offers performance benefits.
 Views is an incredibly powerful query building tool.
 Because of that, it is important that all Views have explicit access permissions set at /admin/build/views
@@ -1246,7 +1247,8 @@ Remember that you can more quickly scan your logs by filtering for PHP errors.
 With the [Views Watchdog](https://drupal.org/project/views_watchdog) module you could also build custom reports to display on your website.
 On your production server, make sure to disable the display of PHP errors.
 These should be recorded to your logs, but not visible to your visitors.
-On your staging site you will want to see those errors to help you debug PHP problems, but it is a potential vulnerability to have those exposed.This won't catch all PHP errors however, and so it is also useful to review the error log of the web server itself.
+On your staging site you will want to see those errors to help you debug PHP problems, but it is a potential vulnerability to have those exposed.
+This won't catch all PHP errors however, and so it is also useful to review the error log of the web server itself.
 
 Watchdog is a good tool, but is [limited in a number of ways](http://www.asmallwebfirm.net/blogs/2013/04/achieving-drupal-log-bliss-splunk).
 Simply because it is database dependent, even having a lot of 404 errors can affect performance.
@@ -1286,7 +1288,7 @@ By contributing the improved code upstream, you can avoid that often painful pro
 The peer review that comes with contributing your code back to the community is a secondary benefit: your codebase will become more robust because more people will understand it.
 Your [bus count](http://www.thesalesengineer.com/2011/06/20/whats-your-se-bus-count/) (the number of people who can go missing from a project by either being hit by a bus or winning the lottery) will increase by releasing your code.
 Publishing the code elsewhere forces you to actually think about what is required.
-further, if someone tries to install your code/system, they might notice missing parts or for that matter parts that might be confidential.
+Further, if someone tries to install your code/system, they might notice missing parts or for that matter parts that might be confidential.
 
 ### 5) Administration
 
@@ -1390,7 +1392,7 @@ The [Drupal handbook page](https://drupal.org/writing-secure-code) is a great pl
 In Drupal 7 it is important to remember that the themes all have PHP in them and that this is a potential place of a security breach.
 It isn't uncommon for themers to put a lot of PHP inside of a theme rather than in a separate module.
 It's also more difficult to keep up with security releases in themes, as they are by their very nature customized.
-OWASP has a good [PHP Security Cheat Sheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet) with information specific things to watch out for when running PHP applications.
+OWASP has a good [PHP Security Cheat Sheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet) with information on specific things to watch out for when running PHP applications.
 They also have a more generic document on [Secure Coding](https://www.owasp.org/index.php/Secure_Coding_Cheat_Sheet) and a more specific one on [HTML5 Security](https://www.owasp.org/index.php/HTML5_Security_Cheat_Sheet).
 There are also lots of good blogs on writing secure code, [like this one,](http://www.addedbytes.com/articles/writing-secure-php/writing-secure-php-1/) highlighting general approaches to PHP coding.
 Code review can be used in order to find flaws in existing code and discover potential bugs.
@@ -1418,7 +1420,7 @@ Common Drupal secure coding practices are:
 As David Strauss wrote recently, [All Code is Debt](https://www.getpantheon.com/blog/all-code-debt).
 "All of the custom code you've written yesterday, rewritten today, and what you'll write tomorrow ― you will be burdened with maintaining, forever." Code needs to be maintained on a regular basis to ensure that it is keeping up with the latest security best practices.
 When writing code, testing is important and security testing should be part of the process.
-OWASP publish a very complete [Testing Guide](https://www.owasp.org/index.php/OWASP_Testing_Project) as well as an [Application Security Verification Standard](https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project) that goes deep into details.
+OWASP publishes a very complete [Testing Guide](https://www.owasp.org/index.php/OWASP_Testing_Project) as well as an [Application Security Verification Standard](https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project) that goes deep into details.
 The verification standard could also be used as a complete security requirement list when designing new modules for your Drupal site.
 Open source tools such as [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) and [Subgraph Vega](http://www.subgraph.com/products.html) provide graphical user interface to perform dynamic scanning of Web sites.
 For complex Drupal sites they might have some difficulties but they can still be used as a intercepting web proxy in order to perform manual testing.
