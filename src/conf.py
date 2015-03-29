@@ -127,6 +127,7 @@ try:
         'github_repo': 'drupal-security',
         'show_powered_by': False,
     }
+    html_style = 'style.css'
 except ImportError:
     html_theme = 'default'
     html_sidebars = {}
