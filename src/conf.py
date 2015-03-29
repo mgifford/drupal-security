@@ -113,6 +113,7 @@ try:
     html_theme_options = {
         'github_user': 'mgifford',
         'github_repo': 'drupal-security',
+        'show_powered_by': False,
     }
 except ImportError:
     html_theme = 'default'
