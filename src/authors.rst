@@ -17,4 +17,3 @@ Toolkit distribution within the Government of Canada.
 
 To contact Mike, email `mike@openconcept.ca <mike@openconcept.ca>`__, call
 1-613-686-6736, or visit `http://openconcept.ca <http://openconcept.ca/>`__.
-

@@ -44,4 +44,3 @@ reasoning documented so that it is clearly understood.
 
 .. _hiding both the Drupal and server identification: http://www.madirish.net/242
 .. _easy ways to fingerprint Drupal: https://drupal.org/comment/3481992#comment-3481992
-

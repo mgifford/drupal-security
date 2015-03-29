@@ -167,5 +167,3 @@ outside of the web root.
 
     session.save_path = "/tmp"
     upload_tmp_dir = "/tmp"
-
-

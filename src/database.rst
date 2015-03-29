@@ -85,5 +85,3 @@ run it on a non-standard port.
 server: There is little benefit if you have restricted which interfaces
 MySQL will listen on, as described above, but then allow control of the
 database from an Internet-facing web page.
-
-

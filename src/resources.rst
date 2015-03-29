@@ -61,4 +61,3 @@ Books
 - `Announcement of New Cyber Security Books published by scitech <http://scitechconnect.elsevier.com/elsevier-publishes-seven-new-cyber-security-books/>`_
 - `SELinux System Administration by Sven Vermeulen <https://www.packtpub.com/networking-and-servers/selinux-system-administration>`_
 - `OWASP Application Security Guide For CISOs <https://www.owasp.org/index.php/OWASP_Application_Security_Guide_For_CISOs_Project>`_
-

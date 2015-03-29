@@ -678,4 +678,3 @@ used to simplify the process of searching all of your log files.
 |image for generic server ecosystem|
 
 .. |image for generic server ecosystem| image:: http://openconcept.ca/sites/oc2014/files/drupal_security_best_practices_for_government.svg
-

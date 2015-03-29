@@ -8,4 +8,3 @@ Feel free to distribute this, but please ensure to credit this original
 document, and its authors.
 
 .. _Attribution-ShareAlike: https://creativecommons.org/licenses/by-sa/4.0/
-

@@ -457,5 +457,3 @@ database <http://drupalscout.com/knowledge-base/creating-sanitized-drupal-databa
 | This is especially important if you have user information stored in
 the database.
 | For many government sites this may not be necessary.
-
-

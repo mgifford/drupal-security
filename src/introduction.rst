@@ -52,4 +52,3 @@ to evolve to keep pace with new vulnerabilities.
 
 .. _community documentation on Drupal.org: https://drupal.org/writing-secure-code
 .. _process: https://www.schneier.com/essays/archives/2000/04/the_process_of_secur.html
-

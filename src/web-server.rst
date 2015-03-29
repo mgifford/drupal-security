@@ -513,5 +513,3 @@ and application flaw fixing, but they can be bypassed.
 | It is discouraged to rely solely on that technology to keep up with
 security: fixing flaw and applying patch on the backend applications
 should not be replaced with WAF utilization.
-
-

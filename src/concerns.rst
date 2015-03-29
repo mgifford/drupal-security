@@ -116,4 +116,3 @@ and "investment in security review and penetration testing is a Good Thing".
 .. _UK's Government Service Design Manual: https://www.gov.uk/service-manual/
 .. _Security as enabler\: Using technological change to build secure services: https://www.gov.uk/service-manual/technology/security-as-enabler.html
 .. _Darren Mothersele: http://darrenmothersele.com/blog/2014/02/20/drupal-security/
-

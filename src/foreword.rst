@@ -19,5 +19,3 @@ We do not believe that there will ever be a 100% secure system. There are always
 bugs in software and new exploits are being attempted all of the time.  We are
 listing options to consider, but each organization will need to weigh which
 combination they are going to use.
-
-

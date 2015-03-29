@@ -43,4 +43,3 @@ it can be quickly restored.
 .. _GitHub: https://github.com/
 .. _Travis: http://docs.travis-ci.com/user/getting-started/
 .. _SauceLabs: https://saucelabs.com/builder
-

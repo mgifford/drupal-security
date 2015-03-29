@@ -65,4 +65,3 @@ B) Principles of Security
 
 **Not just for techs:**
   | Upper management needs to take the time to understand these general principles of IT security as they have profound implications for the whole organization.
-
