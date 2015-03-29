@@ -1,5 +1,5 @@
 Additional Resources
-=======================
+====================
 
 General Guidelines
 ------------------

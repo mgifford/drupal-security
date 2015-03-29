@@ -1,5 +1,5 @@
 K) Regular Maintenance
-----------------------
+======================
 
 .. highlight:: bash
 
@@ -32,9 +32,9 @@ also useful to check the Status page and Watchdog pages in your Drupal site.
 `SELinux provides auditing services`_ which are worth monitoring.  You should be
 watching your server logs, particularly your Apache error log::
 
-  tail -f /var/log/httpd/error_log
-  grep 'login.php' /var/log/httpd/error_log
-  egrep -i "denied|error|warn" /var/log/httpd/error_log
+  $ tail -f /var/log/httpd/error_log
+  $ grep 'login.php' /var/log/httpd/error_log
+  $ egrep -i "denied|error|warn" /var/log/httpd/error_log
 
 Security best practices are constantly changing.  OWASP has released their `Top
 10 for 2013`_ and it is somewhat similar to the 2010 list.  The Top 10 for 2010
