@@ -1,6 +1,8 @@
 L) Points of Debate
 ===================
 
+.. _debate-obscurity:
+
 1) Security by Obscurity
 ------------------------
 

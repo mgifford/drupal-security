@@ -52,7 +52,7 @@ B) Principles of Security
 
 **Obscurity isn't security:**
   | Organizations need to have their security policies well documented and internally transparent.
-  | Section :doc:`debate` discusses this issue in detail.
+  | Section :ref:`debate-obscurity` discusses this issue in detail.
 
 **Security is big:**
   | It is a mistake to assume that one person can do it well in isolation.

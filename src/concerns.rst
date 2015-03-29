@@ -94,9 +94,9 @@ often stored. Identity theft online is a huge problem for institutions.
 
 The `UK's Government Service Design Manual`_ is an excellent resource for any
 large institution and it has a great section that applies directly to web
-security, `Security as enabler: Using technological change to build secure
-services`_. In particular I like the point that security shouldn't degrade user
-experience.
+security,
+`Security as enabler: Using technological change to build secure services`_.
+In particular I like the point that security shouldn't degrade user experience.
 
 Don't ignore minor bugs. As `Darren Mothersele`_ mentions in his blog, it is
 possible for a number of minor vulnerabilities to be chained together in a way
