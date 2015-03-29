@@ -39,7 +39,7 @@ Contents:
 
    foreword
    copyright
-   author
+   authors
    introduction
    principles
    concerns
