@@ -26,7 +26,7 @@ A Guide for Governments and Nonprofits
                - `Jonathan Marcil <https://blog.jonathanmarcil.ca/>`__
 
 :Editors: `Lee Hunter <http://streamoflight.com/>`__,
-          `Xavier Landreville <xavier@openconcept.ca>`__ (OpenConcept Consulting Inc.)
+          `Xavier Landreville <xavier@openconcept.ca>`__
 
 :Version: | |version| (|today|)
           | This is a *living document*, `sign up for updates`_.
