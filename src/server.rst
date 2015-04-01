@@ -295,10 +295,10 @@ as its rules were initially developed to meet NSA policies.
   $ apt-get install perl-tk bastille selinux-basics selinux-policy-default auditd
 
 Using an host based intrusion detection system (HIDS) such as the `OSSEC`_
-host-based intrusion detection system (HIDS) or `PHPIDS`_ (PHP-intrusion
-detection system) is a good practice. You can find more information on the
-projects, including tutorials and how-tos at `PHPIDS's documentation`_ and
-`OSSEC's documentation`_. `Tripwire`_ and `Snort`_ are other IDS's which
+host-based intrusion detection system (HIDS) is a good practice. 
+You can find more information on the
+projects, including tutorials and how-tos at `OSSEC's documentation`_. 
+`Tripwire`_ and `Snort`_ are other IDS's which
 monitor the integrity of core files and will alert you to suspicious activity
 (see `Tripwire on CentOS`_ and `Tripwire on Debian`_). With any HIDS, you
 should make sure that secure IPs, such as your outgoing gateway is whitelisted.
@@ -556,8 +556,6 @@ simplify the process of searching all of your log files.
 .. _AppArmour: https://en.wikipedia.org/wiki/AppArmor
 .. _SELinux on Debian: https://wiki.debian.org/SELinux
 .. _SELinux on Red Hat: https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/
-.. _PHPIDS: http://www.phpids.org/
-.. _PHPIDS's documentation: http://phpids.org
 .. _OSSEC: http://www.ossec.net/
 .. _OSSEC's documentation: http://www.ossec.net/?page_id=11
 .. _Tripwire: http://www.tripwire.com/
