@@ -9,7 +9,7 @@ A Guide for Governments and Nonprofits
 
 :By: `OpenConcept Consulting Inc.`_, originally written for Public Safety Canada
 
-:Principal Author: `Mike Gifford <mike@openconcept.ca>`__
+:Main Author: `Mike Gifford <mike@openconcept.ca>`__
 
 :Contributors: - `Mike Mallett <mike.mallett@openconcept.ca>`__ (OpenConcept Consulting Inc.),
                - `Matt Parker <https://drupal.org/user/536298>`__ (OpenConcept Consulting Inc.),

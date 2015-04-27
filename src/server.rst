@@ -132,7 +132,7 @@ with common dictionary or brute force attacks. There are explanations on how to
 
 .. code-block:: ssh
 
-    PasswordAuthentication no
+  PasswordAuthentication no
 
 Remember that when downloading important files that there is a possibility that
 they have been tampered with. Important security documents often come with a
@@ -141,8 +141,8 @@ the file on a server is identical to the file that they have downloaded.You can
 generate a `checksum`_ to locally to determine equivalence using one of these::
 
   $ shasum -a 256 -/DrupalSecurity.pdf
-  $  md5sum -/DrupalSecurity.pdf
-  $ openssl sha1  -/DrupalSecurity.pdf
+  $ md5sum -/DrupalSecurity.pdf
+  $ openssl sha1 -/DrupalSecurity.pdf
 
 3) Create a baseline
 --------------------
