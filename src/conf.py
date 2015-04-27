@@ -350,11 +350,3 @@ epub_show_urls = 'no'
 # If false, no index is generated.
 #epub_use_index = True
 
-def setup(app):
-     from sphinx.util.texescape import tex_replacements
-     tex_replacements += [(u'♮', u'$\\natural$'),
-                          (u'ē', u'\=e'),
-                          (u'♩', u'\quarternote'),
-                          (u'↑', u'$\\uparrow$'),
-                          ]
-

@@ -1,5 +1,12 @@
 @import url('epub.css');
 
+@font-face {
+  font-family: AnonymousPro;
+  font-weight: normal;
+  font-style: normal;
+  src: url("fonts/Anonymous Pro.ttf");
+}
+
 li {
   list-style-type: none;
 }
@@ -9,6 +16,7 @@ pre, span.pre { white-space: pre-wrap; }
 .highlight {
   background-color: #ffffff;
   padding-left: 1em;
+  font-family: "AnonymousPro", "Consolas", monospace;
 }
 
 /* vim: ft=css:
