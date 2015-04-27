@@ -18,7 +18,7 @@ import os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('extensions'))
 
 # -- General configuration ------------------------------------------------
 
@@ -32,6 +32,7 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.todo',
     'sphinx.ext.ifconfig',
+    'epub2',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -295,7 +296,7 @@ epub_copyright = copyright
 # for small screen space, using the same theme for HTML and epub output is
 # usually not wise. This defaults to 'epub', a theme designed to save visual
 # space.
-#epub_theme = 'epub'
+epub_theme = 'epub2'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
@@ -344,7 +345,16 @@ epub_exclude_files = ['search.html']
 #epub_max_image_width = 0
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
-#epub_show_urls = 'inline'
+epub_show_urls = 'no'
 
 # If false, no index is generated.
 #epub_use_index = True
+
+def setup(app):
+     from sphinx.util.texescape import tex_replacements
+     tex_replacements += [(u'♮', u'$\\natural$'),
+                          (u'ē', u'\=e'),
+                          (u'♩', u'\quarternote'),
+                          (u'↑', u'$\\uparrow$'),
+                          ]
+

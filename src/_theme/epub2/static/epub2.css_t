@@ -1,0 +1,15 @@
+@import url('epub.css');
+
+li {
+  list-style-type: none;
+}
+
+pre, span.pre { white-space: pre-wrap; }
+
+.highlight {
+  background-color: #ffffff;
+  padding-left: 1em;
+}
+
+/* vim: ft=css:
+ */
