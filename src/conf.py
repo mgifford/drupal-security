@@ -108,15 +108,16 @@ extlinks = {
     'drupalnode': ('https://drupal.org/node/%s', None),
 }
 
-
 # -- Options for HTML output ----------------------------------------------
+
+html_theme_path = ['_theme']
 
 try:
     import alabaster
 
-    html_theme_path = [alabaster.get_path()]
+    html_theme_path.append(alabaster.get_path())
     extensions.append('alabaster')
-    html_theme = 'alabaster'
+    html_theme = 'book'
     html_sidebars = {
         '**': [
             'about.html', 'navigation.html', 'searchbox.html',
@@ -127,7 +128,6 @@ try:
         'github_repo': 'drupal-security',
         'show_powered_by': False,
     }
-    html_style = 'style.css'
 except ImportError:
     html_theme = 'default'
     html_sidebars = {}
