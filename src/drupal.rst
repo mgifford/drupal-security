@@ -236,60 +236,60 @@ Filtered HTML input format but be cautious.
 There are `a lot of Drupal security modules`_. Depending on your needs you will
 want to add more or less than those listed here.
 
-:`Automated Logout`_:
+`Automated Logout`_
   Provides the ability to log users out after a specified time of inactivity.
 
-:`Clear Password Field`_:
+`Clear Password Field`_
   Stops forms from pre-populating a password.
 
-:`Drupal Tiny-IDS`_:
+`Drupal Tiny-IDS`_
   An alternative to a server-based intrusion detection service.
 
-:`Local Image Input Filter`_:
+`Local Image Input Filter`_
   Avoids CSRF attacks through external image references.
 
-:`Login Security`_:
+`Login Security`_
   Set access control to restrict access to login forms by IP address.
 
-:`Paranoia`_:
+`Paranoia`_
   Limits PHP functionality and other controls.
 
-:`Password Policy`_:
+`Password Policy`_
   Enforces your user password policy.
 
-:`Session Limit`_:
+`Session Limit`_
   Limits the number of simultaneous sessions per user.
 
-:`Settings Audit Log`_:
+`Settings Audit Log`_
   Logs who did what, when.
 
-:`Security Kit`_:
+`Security Kit`_
   Hardens various pieces of Drupal.
 
-:`Secure Login`_:
+`Secure Login`_
   Provides secure HTTPS access, without mixed-mode capability.
 
-:`HTTP Strict Transport Security`_:
+`HTTP Strict Transport Security`_
   To be used together with Secure Login, to prevent ssl strip attacks.
   Alternatively, directly `enforce it through web-server settings`_.
 
-:`Secure Pages`_:
+`Secure Pages`_
   Manages mixed-mode (HTTPS and HTTP) authenticated sessions for enhanced
   security (note required core patches).
 
-:`Secure Permissions`_:
+`Secure Permissions`_
   Disables the UI to set/change file permissions.
 
-:`Security Review`_:
+`Security Review`_
   Produces a quick review of your site's security configuration.
 
-:`Shield`_:
+`Shield`_
   Protects your non-production environment from being accessed.
 
-:`Restrict IP`_:
+`Restrict IP`_
   Restrict access to an administrator defined set of IP addresses.
 
-:`Username Enumeration Prevention`_:
+`Username Enumeration Prevention`_
   Stop brute force attacks from leveraging discoverable usernames.
 
 7) Modules to Avoid on Shared Servers
@@ -315,29 +315,29 @@ care to double-check what they're about to deploy.
 Some popular development modules which should not be present on any shared
 website include:
 
-:`Delete all`_:
+`Delete all`_
   This module allows someone with sufficient privileges to delete all content
   and users on a site.
 
-:`Devel`_:
+`Devel`_
   Besides letting users run arbitrary PHP from any page, Devel can be configured
   to display backtraces, raw database queries and their results, display raw
   variables, and disable caching, among other things.
 
-:`Drupal for Firebug`_:
+`Drupal for Firebug`_
   Drupal for Firebug outputs the contents of most variables, raw database
   queries and their results, display PHP source code, and can be used to run
   arbitrary PHP. Furthermore, it does all this by interfacing with browser
   developer tools, making it difficult to determine if this module is enabled by
   glancing at the site.
 
-:`Theme Developer`_:
+`Theme Developer`_
   This module, which depends on the Devel module mentioned earlier, is very
   useful for determining which theme files / functions are used to output a
   particular section of the site, but it displays raw variables and slows down
   the site significantly.
 
-:`Trace`_:
+`Trace`_
   This module can be used to display backtraces and raw variables, among other
   things.
 
@@ -346,7 +346,7 @@ privileged access to Drupal. You should evaluate each new module you install to
 determine what it does and whether the features it brings are worth the risks.
 Some modules to take into special consideration are:
 
-:`Backup and Migrate`_:
+`Backup and Migrate`_
   This module allows you to download a copy of the site's database. If
   restrictions placed upon you by your hosting provider prevents you from being
   able to make backups, this module will allow you to do so; but a malicious
@@ -354,7 +354,7 @@ Some modules to take into special consideration are:
   Drupal database, including usernames, passwords, and depending on your site,
   access keys to the services you use.
 
-:`Coder`_:
+`Coder`_
   This module is very useful for ensuring your code conforms to coding standards
   but can be used to display the PHP that makes up modules.
 
