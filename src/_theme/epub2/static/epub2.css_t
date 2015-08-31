@@ -1,17 +1,66 @@
 @import url('epub.css');
 
-@font-face {
+/* ----- Fonts, Headings, and Paragraphs ----- */
+
+@font-face{
   font-family: AnonymousPro;
   font-weight: normal;
   font-style: normal;
   src: url("fonts/Anonymous Pro.ttf");
 }
 
-li {
-  list-style-type: none;
+@font-face{
+  font-family: Lato;
+  font-weight: normal;
+  font-style: normal;
+  src: url("fonts/Lato/Lato-Regular.ttf");
 }
 
-pre, span.pre { white-space: pre-wrap; }
+@font-face{
+  font-family: Open Sans;
+  font-weight: normal;
+  font-style: normal;
+  src: url("fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+
+html, body{
+  font-size: 16px;
+  line-height: 26px;
+  font-family: 'Open Sans', arial, sans-serif;
+  color: #3D3D3D;
+  hyphens: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Lato', arial, sans-serif;
+	text-align: left;
+}
+h1{ font-size: 1.8em;}
+h2{ font-size: 1.2em;}
+
+p, a{
+	font-size: 16px;
+	line-height: 26px;
+}
+p{text-align: justify;}
+
+a{
+	cursor: pointer; 
+	text-align: left;
+	color: #16A9E1
+}
+a:link{color: #16A9E1;}
+a:visited{color: #0F6F93;}
+a:hover, a:focus{color: #985300;}
+a:active{color: #3D3D3D;}
+
+li {
+	list-style-type: none;
+}
+pre, span.pre { 
+	white-space: pre-wrap; 
+	background-color: #D7F2FB;
+  padding: 10px;
+}
 
 .highlight {
   background-color: #ffffff;
@@ -19,5 +68,49 @@ pre, span.pre { white-space: pre-wrap; }
   font-family: "AnonymousPro", "Consolas", monospace;
 }
 
-/* vim: ft=css:
- */
+tr{
+
+}
+
+/* ----- Layout ----- */
+
+
+html, body{
+  font-size: 16px;
+  line-height: 26px;
+  font-family: 'Open Sans', arial, sans-serif;
+  color: #3D3D3D;
+}
+.body{
+	padding: 1% 2%;
+}
+.header{
+	position: relative;
+	top: 10px;
+	right: 10px;
+}
+.header-img img{
+	width: 10%;
+	height: 10%;
+
+}
+
+/* ----- Custom Layout ----- */
+
+#contributors ul{
+	padding: 0;
+}
+#contributors ul li{
+	padding-top: 10px;
+}
+#drupal-security-best-practices p{
+	text-align: left;
+}
+#writing-secure-code ul{
+	padding: 3% 10%;
+}
+#writing-secure-code ul li, #k-regular-maintenance ul li{
+	list-style-type: disc;
+}
+
+/* vim: ft=css: */
