@@ -109,7 +109,7 @@ html, body{
 #writing-secure-code ul{
 	padding: 3% 10%;
 }
-#writing-secure-code ul li, #k-regular-maintenance ul li{
+#i-writing-secure-code ul li, #k-regular-maintenance ul li{
 	list-style-type: disc;
 }
 

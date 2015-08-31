@@ -11,12 +11,12 @@ problem.  You want a remote backup in case of total system failure.  There are
 many ways to setup and configure this.  Some helpful backup solutions include:
 
 .. hlist::
-   :columns: 4
+   :columns: 2
 
-   - `Bacula <http://www.bacula.org/>`_
-   - `rsync <https://rsync.samba.org/>`_/`rsnapshot <http://www.rsnapshot.org/>`_
-   - `mysqldump <https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html>`_
-   - `xtrabackup <http://www.percona.com/doc/percona-xtrabackup>`_
+   * `Bacula <http://www.bacula.org/>`_
+   * `rsync <https://rsync.samba.org/>`_/`rsnapshot <http://www.rsnapshot.org/>`_
+   * `mysqldump <https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html>`_
+   * `xtrabackup <http://www.percona.com/doc/percona-xtrabackup>`_
 
 Remember that a backup is only good if it can be restored.  It's a best practice
 to make use of `RAID drives`_, but RAID should be used as a failsafe and not

@@ -32,32 +32,32 @@ slowly.
 
 Common Drupal secure coding practices are:
 
-- Never trust user input.
+* Never trust user input.
 
   With `sanitization functions`_ like :drupalapi:`check_plain`,
   :drupalapi:`filter_xss`, and :drupalapi:`filter_xss_admin` it is easy in
   Drupal to clean strings on output. Any variable in a template or HTML output
   should pass through one of these.
 
-- Protect yourself from SQL Injection through leverage Drupal's
+* Protect yourself from SQL Injection through leverage Drupal's
   `database abstraction layer`_. Drupal 6 should use `parameterization`_.
 
-- Use :phpdoc:`preg_replace_callback` rather than :phpdoc:`preg_replace` as the
+* Use :phpdoc:`preg_replace_callback` rather than :phpdoc:`preg_replace` as the
   latter can allow matches to be evaluated as PHP code although the ``\e``
   modifier that introduced this flaw is now deprecated in PHP.
 
-- Always use the Drupal functions when possible instead of plain old PHP.
+* Always use the Drupal functions when possible instead of plain old PHP.
 
-- Drupal comes with jQuery and leverages it extensively. However, do not rely on
+* Drupal comes with jQuery and leverages it extensively. However, do not rely on
   JavaScript for validation.
 
-- If you are using :phpdoc:`eval` or :drupalapi:`drupal_eval` this is a
+* If you are using :phpdoc:`eval` or :drupalapi:`drupal_eval` this is a
   potential security risk if PHP input provided contains malicious code.
 
   If you do this, you can add a new permission in your module so that an admin
   needs to explicitly assign permissions to a user role.
 
-- Same precautions should be taken with functions such as :phpdoc:`exec`,
+* Same precautions should be taken with functions such as :phpdoc:`exec`,
   :phpdoc:`system`, :phpdoc:`fopen`, :phpdoc:`delete` and others that execute
   external applications or interact directly with the file system.
 

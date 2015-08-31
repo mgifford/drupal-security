@@ -7,32 +7,43 @@ Drupal Security Best Practices
 
 A Guide for Governments and Nonprofits
 
-:By: `OpenConcept Consulting Inc.`_, originally written for Public Safety Canada
+By: `OpenConcept Consulting Inc.`_, 
+   :sub:`originally written for Public Safety Canada`
 
-:Main Author: `Mike Gifford <mike@openconcept.ca>`__
+Main Author: `Mike Gifford <mike@openconcept.ca>`__
 
-:Contributors: - `Mike Mallett <mike.mallett@openconcept.ca>`__ (OpenConcept Consulting Inc.),
-               - `Matt Parker <https://drupal.org/user/536298>`__ (OpenConcept Consulting Inc.),
-               - `Xavier Landreville <xavier@openconcept.ca>`__ (OpenConcept Consulting Inc.),
-               - `Michael Richardson <http://www.sandelman.ottawa.on.ca/>`__,
-               - `Colan Schwartz <http://colans.net/>`__,
-               - `Mack Hardy <http://affinitybridge.com/>`__,
-               - `Peter Cruickshank <http://spartakan.wordpress.com/>`__,
-               - `David Norman <https://deekayen.net/>`__,
-               - `Lee Rowlands <http://rowlandsgroup.com/>`__,
-               - `David Timothy Strauss <https://linkedin.com/in/davidstrauss>`__,
-               - `Ben Hosmer <http://www.radarearth.com/>`__,
-               - `Ursula Pieper <http://upsitesweb.com/>`__,
-               - `Jonathan Marcil <https://blog.jonathanmarcil.ca/>`__
+Contributors:
+=============
+   * `Mike Mallett <mike.mallett@openconcept.ca>`__ 
+   * :sup:`(OpenConcept Consulting Inc.)`
+   * `Xavier Landreville <xavier@openconcept.ca>`__ 
+   * :sup:`(OpenConcept Consulting Inc.)`
+   * `Matt Parker <https://drupal.org/user/536298>`__
+   * `Michael Richardson <http://www.sandelman.ottawa.on.ca/>`__
+   * `Colan Schwartz <http://colans.net/>`__
+   * `Mack Hardy <http://affinitybridge.com/>`__
+   * `Peter Cruickshank <http://spartakan.wordpress.com/>`__
+   * `David Norman <https://deekayen.net/>`__
+   * `Lee Rowlands <http://rowlandsgroup.com/>`__
+   * `David Timothy Strauss <https://linkedin.com/in/davidstrauss>`__
+   * `Ben Hosmer <http://www.radarearth.com/>`__
+   * `Ursula Pieper <http://upsitesweb.com/>`__
+   * `Jonathan Marcil <https://blog.jonathanmarcil.ca/>`__
 
-:Editors: `Lee Hunter <http://streamoflight.com/>`__,
-          `Xavier Landreville <xavier@openconcept.ca>`__
+Editors
+--------
+   * `Lee Hunter <http://streamoflight.com/>`__,
+   * `Xavier Landreville <xavier@openconcept.ca>`__
 
-:Version: | |version| (|today|)
-          | This is a *living document*, `sign up for updates`_.
+Version
+--------
 
+   | |version| (|today|)
+   | This is a *living document*, `sign up for updates`_.
+
+==========
 Contents:
-
+==========
 
 .. toctree::
    :maxdepth: 2
