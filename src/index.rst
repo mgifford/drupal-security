@@ -14,11 +14,9 @@ Main Author: `Mike Gifford <mike@openconcept.ca>`__
 
 Contributors:
 =============
-   * `Mike Mallett <mike.mallett@openconcept.ca>`__ 
-   * :sup:`(OpenConcept Consulting Inc.)`
-   * `Xavier Landreville <xavier@openconcept.ca>`__ 
-   * :sup:`(OpenConcept Consulting Inc.)`
-   * `Matt Parker <https://drupal.org/user/536298>`__
+   * `Mike Mallett <mike.mallett@openconcept.ca>`__ :sup:`(OpenConcept Consulting Inc.)`
+   * `Xavier Landreville <xavier@openconcept.ca>`__ :sup:`(OpenConcept Consulting Inc.)`
+   * `Matt Parker <https://drupal.org/user/536298>`__ :sup:`(OpenConcept Consulting Inc.)`
    * `Michael Richardson <http://www.sandelman.ottawa.on.ca/>`__
    * `Colan Schwartz <http://colans.net/>`__
    * `Mack Hardy <http://affinitybridge.com/>`__
@@ -32,7 +30,7 @@ Contributors:
 
 Editors
 --------
-   * `Lee Hunter <http://streamoflight.com/>`__,
+   * `Lee Hunter <http://streamoflight.com/>`__
    * `Xavier Landreville <xavier@openconcept.ca>`__
 
 Version
