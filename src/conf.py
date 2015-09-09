@@ -176,7 +176,7 @@ html_static_path = ['_static']
 html_domain_indices = False
 
 # If false, no index is generated.
-#html_use_index = False
+html_use_index = False
 
 # If true, the index is split into individual pages for each letter.
 #html_split_index = False
@@ -313,7 +313,7 @@ epub_theme = 'epub2'
 #epub_uid = ''
 
 # A tuple containing the cover image and cover page html template filenames.
-epub_cover = ('_static/images/cover.png', '')
+epub_cover = ('_static/images/cover.png', 'epub-cover.html')
 
 # A sequence of (type, uri, title) tuples for the guide element of content.opf.
 #epub_guide = ()
