@@ -34,8 +34,8 @@ enhance Drupal security.
 The code snippets which are included are not always a comprehensive guide, but
 there are always links in the descriptive paragraph with more information which
 you should consult before installing programs on your production server.
-Section I has information on building secure modules and themes, but it is also
-worth consulting the `community documentation on Drupal.org`_.
+Section :ref:`debate-obscurity` has information on building secure modules and themes, 
+but it is also worth consulting the `community documentation on Drupal.org`_.
 
 Because this document strongly recommends against the use of Microsoft Windows
 servers for Drupal sites, Windows security will not be addressed.
