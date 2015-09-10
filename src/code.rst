@@ -5,7 +5,9 @@ There are lots of great resources about how to write secure code. The `Drupal
 handbook page`_ is a great place to start as it is focused directly on the best
 practices defined by this community.
 
-In Drupal 7 it is important to remember that the themes all have PHP in them and
+With Drupal 8, Twig has been adopted as the template engine, partly to make it 
+harder for insecure code to be used in a site's theme. With prior versions of
+Drupal it is important to remember that the themes all have PHP in them and
 that this is a potential place of a security breach. It isn't uncommon for
 themers to put a lot of PHP inside of a theme rather than in a separate module.
 It's also more difficult to keep up with security releases in themes, as they
@@ -40,7 +42,7 @@ Common Drupal secure coding practices are:
   should pass through one of these.
 
 * Protect yourself from SQL Injection through leverage Drupal's
-  `database abstraction layer`_. Drupal 6 should use `parameterization`_.
+  `database abstraction layer`_.
 
 * Use :phpdoc:`preg_replace_callback` rather than :phpdoc:`preg_replace` as the
   latter can allow matches to be evaluated as PHP code although the ``\e``
