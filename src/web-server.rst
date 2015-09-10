@@ -4,7 +4,7 @@ E) Web Servers
 .. highlight:: bash
 
 All files and directories in your DocumentRoot should be editable by a non-root
-user, and should also not be writable by the Apache user, except the Drupal
+user (usually "www-data"), and should also not be writable by the Apache user, except the Drupal
 files/ directory. Please refer to Drupal's `Securing file permissions and
 ownership`_ for the complete discussion.
 
@@ -18,15 +18,16 @@ load`_ as Apache's ``mod_php`` isn't very efficient.
 
 Server or browser support for SSL versions 2 and 3 are not recommended. Despite
 this, as Google noted in their blog post about the `POODLE Exploit`_, "SSL 3.0
-is nearly 18 years old, but support for it remains widespread." Web browsers
+is nearly 18 years old, but support for it remains widespread." Many older browsers 
 still support this insecure version of SSL, but it is `easy to test`_ to ensure
-if your browsers are vulnerable. Qualys SSL Labs also have a really `great tool
-to evaluate`_ if your server is still vulnerable.
+if your browsers are vulnerable and the number of `exposed users is falling`_. 
+Qualys SSL Labs also have a really `great tool to evaluate`_ if your server is 
+still vulnerable.
 
 On your web server, it is good to ensure that SSL configuration permits only TLS
 version 1.2. unfortunately some common web browsers still do not support the
-latest version of TLS. Fortunately, as of `February 2014`_, the latest version
-of all major web browsers support SSL 3.0, TLS 1.0, 1.1, and 1.2 enabled by
+latest version of TLS. Fortunately, as of `September 2015`_, the latest version
+of all major web browsers support TLS 1.0, 1.1, and 1.2 enabled by
 default. Check if the `SSL services employ only AES`_ with key lengths 256 bits
 and higher. You can install `GnuTLS`_ from the command line to enable this::
 
@@ -409,6 +410,7 @@ patch on the backend applications should not be replaced with WAF utilization.
 .. _advantages to using PHP-FPM for managing server load: https://phpbestpractices.org/#serving-php
 .. _POODLE Exploit: http://googleonlinesecurity.blogspot.co.uk/2014/10/this-poodle-bites-exploiting-ssl-30.html
 .. _easy to test: https://zmap.io/sslv3/
+.. _exposed users is falling: https://www.trustworthyinternet.org/ssl-pulse/
 .. _great tool to evaluate: https://www.ssllabs.com/ssltest/
 .. _February 2014: https://en.wikipedia.org/wiki/Transport_Layer_Security#Web_browsers
 .. _SSL services employ only AES: http://www.thinkwiki.org/wiki/AES_NI
