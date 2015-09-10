@@ -42,7 +42,7 @@ limit exposure on a Windows Server since there are many unneeded pieces of the
 operating system which you cannot easily uninstall.
 
 If you are worried about the server's physical security, you can also set up an
-`encrypted partition`_ on your hard drive. If you do this, be be careful as it 
+`encrypted partition`_ on your hard drive. If you do this, be awaare that it 
 may introduce performance issues which might cause problems for your server. 
 This document will not be covering `how to set up an encrypted drive`_ but 
 depending on the perceived threats, it may be worth implementing.
@@ -50,7 +50,7 @@ depending on the perceived threats, it may be worth implementing.
 Special consideration should be taken when enabling HTTPS for encrypted traffic
 on "shared host"-type environments (any server hosting more than 1 domain).
 Typically, due to the nature of the protocol, only one https website (domain
-name) could be hosted per IP. However, with `Server Name Indication`_, it is
+name) could be hosted per IP. However, with `Server Name Indication`_ (SNI), it is
 now possible to host multiple https domains with distinct TLS certificates on
 the same IP. It must be noted that SNI is dependent on both the client and the
 server supporting the TLS extension, but most do nowadays. Another option,
@@ -59,10 +59,10 @@ which might be useful if your servers or clients do not support SNI, is using
 Communications Certificates). These certificates contain extra fields that list
 other common names (domain names) for which that certificate is valid.
 
-Finally, don't get a server that comes with a server admin control panel. They
-promise to make managing your site easier but present security problems. There
+Finally, don't get a server that comes with a server admin control panel. It 
+promises to make managing your site easier but present security problems. There
 are a number of commercial packages, like cPanel or PLESK, that do make it
-easier to change settings on your site. This seems particularly attractive if
+easier to change settings on your server. This seems particularly attractive if
 less technical users are responsible for server administration. In our recent
 experience with cPanel, it introduced many difficulties in applying many of the
 suggestions and recommendations described here. Because you can't simply
@@ -70,10 +70,10 @@ disable cPanel, we had to reinstall the site on a new server. If you choose a
 server with one, you will need to experiment with which of the following
 suggestions you are able to implement. Some control panels are also known to
 overwrite settings when manual changes are made to configuration files. It is
-important to work to minimize the attack surface and as these dashboards are
+important to work to minimize the attack surface and since these dashboards are
 managed through the web, it is yet another point where your server can be
-compromised. Ultimately a control panel could prove convenient both for you and
-for those looking to hack into your system.
+compromised. Ultimately a control panel could prove convenient both for an 
+administrator and for someone looking to hack into your system.
 
 2) Immediately After Receiving Root Access
 ------------------------------------------
@@ -84,7 +84,9 @@ cumbersome, but confidential documents should be encoded/decoded with this type
 of protection. You can request that the password not be sent using the same
 medium so it will be difficult to intercept. Minimally passwords can be sent in
 a separate email, but this provides only a slightly more obscure means to stop
-this information from being intercepted.
+this information from being intercepted. Ideally credentials would be sent with 
+a tool similar to NoteShred_ which can delete a password after it is viewed without
+leaving an email archive of the information. 
 
 Most web hosts send all of the credentials together, therefore, the first step
 after getting access is to log in and change the root password. Unencrypted
@@ -93,9 +95,9 @@ address this vulnerability immediately.
 
 Update the list of available software and perform system software upgrades.
 Most web hosts will use a pre-packaged distribution and there will frequently
-be updates that need to be applied. Make sure you've got the updates and that
-the new packages are running. If you update the Linux kernel you will have to
-reboot the server for it to be applied. If you update Apache, you will also
+be updates that need to be applied immediately. Make sure you've got the updates 
+and that the new packages are running. If you update the Linux kernel you will 
+have to reboot the server for it to be applied. If you update Apache, you will also
 need to restart it. Debian-style systems often restart the main daemon
 instances on package updates automatically, where RHEL-style systems treat
 daemon restarts as an administrator's responsibility.
@@ -110,10 +112,10 @@ daemon restarts as an administrator's responsibility.
 
 You will inevitably have a number of passwords to maintain. We recommend
 storing these in a new `KeePass or KeePassX Password database`_. It has a nice
-password generator which makes it very easy to generate long (20+ characters)
+password generator which makes it very easy to generate long (25+ characters)
 and complex passwords and store them immediately. If you get any other
-passwords supplied via email, reset them immediately. Your email address is
-also a `point of vulnerability`_.
+passwords supplied via email, reset them immediately. Remember that your email 
+address is also a `point of vulnerability`_.
 
 The most common account that crackers try to compromise is the root user, so
 disable root logins. Furthermore, set up user accounts with sudo access and
@@ -139,9 +141,9 @@ they have been tampered with. Important security documents often come with a
 the file on a server is identical to the file that they have downloaded.You can
 generate a `checksum`_ to locally to determine equivalence using one of these::
 
-  $ shasum -a 256 -/DrupalSecurity.pdf
-  $ md5sum -/DrupalSecurity.pdf
-  $ openssl sha1 -/DrupalSecurity.pdf
+  $ shasum -a 256 -/DrupalSecurity.epub
+  $ md5sum -/DrupalSecurity.epub
+  $ openssl sha1 -/DrupalSecurity.epub
 
 3) Create a baseline
 --------------------
@@ -236,7 +238,7 @@ stop the serious folks.
 One of the best ways to limit ssh access to a server is to restrict access to a
 handful of known subnets (ie. 192.168.1.0/24) where administrators actually
 work. Don't be afraid to add to this list; make it easy for your people to work
-wherever they need to.Security is not the enemy.
+wherever they need to. Security is not the enemy.
 
 You can also `restrict who can ssh`_ into the server to a limited number of IP
 addresses. Be very careful when configuring this as you don't want to block
@@ -264,8 +266,8 @@ organization isn't already using a VPN however, then the usability problems
 with forcing people to use it may encourage developers to find ways to
 circumvent it. It is important to remember that a VPN is only as secure as the
 individual servers on the VPN. If the VPN is shared with systems out of your
-control, and the responsible sysadmins are lax in security, then your servers
-should be hardened as if on the public network.
+control, and the responsible sysadmins might be lax in security, then your
+servers should be hardened as if on the public network.
 
 5) Initial Installs
 -------------------
@@ -280,7 +282,7 @@ Mandatory Access Controls (MAC) policies can be managed through programs like
 `SELinux`_ and `AppArmour`_, for high security environments. With Ubuntu, use
 AppArmour as it comes installed by default. While AppArmour is often considered
 inferior and less flexible than SELinux, there is no need to uninstall
-it.AppArmour may impact other security tools and should not be used in
+it. AppArmour may impact other security tools and should not be used in
 conjunction with SELinux.
 
 With other distributions it is recommended to use SELinux (examples for
@@ -293,9 +295,8 @@ as its rules were initially developed to meet NSA policies.
   # Debian (not Ubuntu)
   $ apt-get install perl-tk bastille selinux-basics selinux-policy-default auditd
 
-Using an host based intrusion detection system (HIDS) such as the `OSSEC`_
-host-based intrusion detection system (HIDS) is a good practice. 
-You can find more information on the
+Using an Host Based Intrusion Detection System (HIDS) such as the `OSSEC`_
+HIDS is a good practice. You can find more information on the
 projects, including tutorials and how-tos at `OSSEC's documentation`_. 
 `Tripwire`_ and `Snort`_ are other IDS's which
 monitor the integrity of core files and will alert you to suspicious activity
@@ -307,11 +308,9 @@ efficient than using Drupal's `Login Security`_ module as it would allow you to
 use your existing HIDS infrastructure to alert you to these sorts of attacks.
 
 Crackers will often try to use a `brute force attack`_ to guess usernames and
-passwords. Using a service like
-
-`Fail2ban`_ can block IP addresses that are making an unreasonable number of
-login attempts. This won't prevent distributed attacks, but could be used in
-conjunction with OSSEC.
+passwords. Using a service like `Fail2ban`_ that can block IP addresses that 
+are making an unreasonable number of login attempts. This won't prevent 
+distributed attacks, but could be used in conjunction with OSSEC.
 
 `Fail2ban is also an effective measure for flood control`_ and can stop most
 denial of service attacks. Drupal also has some built in flood control options,
@@ -371,9 +370,9 @@ There are a number of ways to cache the public display, including leveraging
 Memcache and `Nginx`_ to extend Drupal's internal page cache. One of the most
 powerful tools is `Varnish`_ which can provide incredible performance
 enhancements. It can also be used effectively to deny all logins on your public
-site by being configured to denying cookies on port 80. This is an example of
-what can be added to Varnish's vcl file to remove the cookies which are
-required to authenticate:
+site by being configured to denying cookies on port 80. This is a line that can
+be added to your Varnish vcl file to remove the cookies so that it becomes 
+impossible to login to Drupal directly:
 
 .. code-block:: varnish
 
@@ -516,8 +515,9 @@ simplify the process of searching all of your log files.
 8) Rough Server Ecosystem Image
 -------------------------------
 
-.. image:: /images/ServerEcosystem.*
-   :alt: Generic server ecosystem
+   .. image:: /images/ServerEcosystem.*
+     :alt: Generic server ecosystem
+
 
 .. _Ubuntu Popularity Contest: https://help.ubuntu.com/community/UbuntuPopularityContest
 .. _10 major tenets of a secure hosting model: http://drupalwatchdog.com/2/2/securing-your-environment
@@ -525,6 +525,7 @@ simplify the process of searching all of your log files.
 .. _how to set up an encrypted drive: https://help.ubuntu.com/community/EncryptedFilesystemHowto
 .. _Server Name Indication: http://en.wikipedia.org/wiki/Server_Name_Indication
 .. _Subject Alternative Name: https://en.wikipedia.org/wiki/SubjectAltName
+.. _NoteShred: https://www.noteshred.com/
 .. _GPG to encrypt emails: https://en.wikipedia.org/wiki/GNU_Privacy_Guard
 .. _KeePass or KeePassX Password database: https://en.wikipedia.org/wiki/KeePass
 .. _point of vulnerability: http://drupalwatchdog.com/2/2/practical-security
