@@ -512,6 +512,16 @@ have multiple web servers, log centralization can allow you to get an overall
 view of site issues. Open source tools such as `logstash`_ can be used to
 simplify the process of searching all of your log files.
 
+.. Neither of these attempts to insert a page break works, least with my tests.
+
+.. raw:: html
+
+   <div style="page-break-before:always;"></div>
+
+.. raw:: latex
+
+   \newpage
+
 8) Rough Server Ecosystem Image
 -------------------------------
 
