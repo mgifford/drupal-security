@@ -85,7 +85,7 @@ resources::
 
 By keeping up with security releases some will argue that there is no need to
 hide which version of PHP you are running. There is a broader discussion of this
-debate in Section :ref:`debate-obscurity`. In the PHP setting you can also
+debate in Section L) Points of Debate under :ref:`debate-obscurity`. In the PHP setting you can also
 `limit information about PHP`_ which is exposed by adding this to your
 :file:`php.ini` file::
 
