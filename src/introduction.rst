@@ -2,7 +2,7 @@ A) Introduction
 ===============
 
 Drupal is a leading Content Management System (CMS) in many institutions around 
-the world. These organiztions and others are facing increasing demands for service, 
+the world. These organizations and others are facing increasing demands for service, 
 larger challenges with accessibility and mobile requirements, and ever smaller budgets.
 
 With governments increasingly targeted for cyber attacks, it is important that

@@ -39,7 +39,7 @@ It is also recommended to disable SSLCompression in Apache. As stated in the
 setups (the so called CRIME attack)." This is the default for Apache version
 2.4.4+.
 
-The **HeartBleed security bug** did a lot of dammage in 2014. The
+The **HeartBleed security bug** did a lot of damage in 2014. The
 primary security practice we can recommend from this is to ensure that someone
 is always paying attention to the security mailing lists for your operating
 system. By the time you hear it from the media it is probably too late. The
@@ -137,7 +137,7 @@ Example Apache configuration using ``mod_rewrite``:
 Drupal has a number of processes that can be triggered by URLs. You may wish to
 block some of these using Apache so that they simply cannot be loaded from the
 web browser. Common processes to secure are update, install and cron, tasks
-which can all be triggered using drush:
+which can all be triggered using Drush:
 
 .. code-block:: apache
 
@@ -261,12 +261,12 @@ Authentication`_ — for example, using Apache HTTP Server's `htpasswd files or
 Auth* directives`_, or nginx's `ngx_http_auth_basic_module`_ module.
 
 While HTTP Basic Authentication is a good way to prevent search engines from
-indexing your testing and staging sites, it is inherintly insecure: traffic
+indexing your testing and staging sites, it is inherently insecure: traffic
 between browsers and your site is not encrypted, and in fact, anyone can gain
 access to the site simply by copying the "Authorization" HTTP header.
 
 Furthermore, the username and password used for HTTP Basic Authentication are
-not encrypted either (just base-64 encoded, which is trival to decode), so do
+not encrypted either (just base-64 encoded, which is trivial to decode), so do
 not re-use credentials used elsewhere (e.g.: don't re-use the credentials
 someone uses to log into Drupal, SSH into the webserver; or hook HTTP Basic
 Authentication up to an LDAP database or the operating system's

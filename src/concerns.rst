@@ -23,7 +23,7 @@ Third party agencies are ultimately going to be involved, whether it the Domain
 Name Registrar or Content Delivery Network (CDN). The communications paths with
 these agencies needs to be clear and well documented. This recently happened
 with a large Canadian municipal website that was redirected to an image of
-a dancing banada using an approach known as **"social engineering"**. By 
+a dancing banana using an approach known as **"social engineering"**. By 
 leveraging human vulnerability, crackers were able to gain control of critical 
 infrastructure. Properly documented procedures are important, as 3rd party 
 services can often be manipulated phony email or telephone requests.

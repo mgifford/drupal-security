@@ -33,7 +33,7 @@ versions.
 
 As with Apache modules, look for what you can remove. You can display a list of
 enabled PHP modules and look for those which can be removed. From the command
-line you can get a list of php modules with:
+line you can get a list of PHP modules with:
 
 .. code-block:: bash
 

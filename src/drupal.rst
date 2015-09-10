@@ -174,7 +174,7 @@ a function in a live website.
 
 By contributing the improved code upstream, you can avoid that often painful
 process. The peer review that comes with contributing your code back to the
-community is a secondary benefit: your codebase will become more robust because
+community is a secondary benefit: your code base will become more robust because
 more people will understand it. Your `bus factor`_ (the number of people who can
 go missing from a project by either being hit by a bus or winning the lottery)
 will increase by releasing your code. Publishing the code elsewhere forces you
@@ -198,8 +198,8 @@ name. It's the first ones that a cracker is going to try, so be a bit more
 unique. Obscurity isn't the same as security, but no need to give them their
 first guess when choosing user names. Another good practice with regards to
 user/1 is to `completely disable the account`_. With the advent of Drupal 7 and
-drush, user/1 is not required to administer Drupal websites anymore, and thus
-can be simply blocked. The account can be re-enabled as needed through drush or
+Drush, user/1 is not required to administer Drupal websites anymore, and thus
+can be simply blocked. The account can be re-enabled as needed through Drush or
 directly in the database.
 
 As with other server user accounts, you will want to restrict who has access to
@@ -297,7 +297,7 @@ want to add more or less than those listed here.
 -------------------------------------
 
 Many Drupal modules intended to help developers develop code also disclose
-sensitive information about Drupal and/or the webserver, or allow users to
+sensitive information about Drupal and/or the web-server, or allow users to
 perform dangerous operations (e.g.: run arbitrary PHP code or trigger
 long-running operations that could be used to deny service). These modules can
 be used to debug locally (and many are essential tools for Drupal developers),
@@ -306,7 +306,7 @@ staging, or testing server).
 
 To limit the damage a malicious user can do if they gain privileged access to
 Drupal, it's not sufficient for a development module to be simply disabled: the
-files that make up the module should be removed from the filesystem altogether.
+files that make up the module should be removed from the file-system altogether.
 Doing so prevents a malicious user from enabling it and gaining more data about
 the system than they would be able to otherwise. Note that it is difficult to
 automatically enforce that these modules are not deployed to shared systems:

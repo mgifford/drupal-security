@@ -42,16 +42,16 @@ limit exposure on a Windows Server since there are many unneeded pieces of the
 operating system which you cannot easily uninstall.
 
 If you are worried about the server's physical security, you can also set up an
-`encrypted partition`_ on your hard drive. If you do this, be awaare that it 
+`encrypted partition`_ on your hard drive. If you do this, be aware that it 
 may introduce performance issues which might cause problems for your server. 
 This document will not be covering `how to set up an encrypted drive`_ but 
 depending on the perceived threats, it may be worth implementing.
 
 Special consideration should be taken when enabling HTTPS for encrypted traffic
 on "shared host"-type environments (any server hosting more than 1 domain).
-Typically, due to the nature of the protocol, only one https website (domain
+Typically, due to the nature of the protocol, only one HTTPS website (domain
 name) could be hosted per IP. However, with `Server Name Indication`_ (SNI), it is
-now possible to host multiple https domains with distinct TLS certificates on
+now possible to host multiple HTTPS domains with distinct TLS certificates on
 the same IP. It must be noted that SNI is dependent on both the client and the
 server supporting the TLS extension, but most do nowadays. Another option,
 which might be useful if your servers or clients do not support SNI, is using
@@ -203,7 +203,7 @@ alerts`_, but can also do manual scans.
 In general you will want to allow traffic for port 22 (for known IPs), 80, 443
 and reject other ports. It can also be useful to use firewall rules to restrict
 outgoing connections from the Apache user. The possible exception to this is
-drupal.org's IP address as you will want to regularly use drush (Drupal's
+drupal.org's IP address as you will want to regularly use Drush (Drupal's
 command line shell and scripting interface) to update modules (see H2 below).
 You can easily see what ports are open by using a port scanner such as `nmap`_
 from an external machine::
