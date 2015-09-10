@@ -71,9 +71,8 @@ recommend using `Drush`_ on both staging and production servers because it
 simplifies development and maintenance. Note that the version of Drush packaged
 with your OS is likely to be extremely out of date.
 
-Although Drush used to be installed best with `PHP's PEAR`_, the current best
-practice is to use `Composer`_ (the dependency manager for PHP). See install
-details on the `Drush git page`_.
+It is recommended to install Drush with `Composer`_ (the dependency manager for 
+PHP) but other options and details on the `Drush git page`_.
 
 There is a `Security Check`_ module available for Drush which is a basic sanity
 test for your configuration. When the module is added, you can run this against
@@ -140,7 +139,7 @@ tool to evaluate your code. There are millions of lines of code in a given
 Drupal site, so Hacked! is a really valuable analysis tool. If you need to apply
 patches against the stable released version of the code, the patch should be in
 a clearly documented directory. It is unfortunately a common practice for less
-experienced Drupal developers to cut corners and hack core to provide some
+experienced Drupal developers to cut corners and hack Drupal Core to provide some
 functionality that is required. There are lots of reasons why this is a bad idea
 and `why responsible developers don't hack core`_. For the purposes of this
 document it is sufficient to say it makes it harder to secure. The `same is true
@@ -216,15 +215,17 @@ security paradigm. Aside from the releases that have fixes for known security
 problems, some modules (or a version of that module) may become unsupported.
 This is also a security problem, in that you will not receive updates if there
 are security problems that are identified with the module. The Update module
-also allows you to get a daily or weekly email if there are security upgrades
-that need to be applied.
+also allows you to get a weekly email if there are security upgrades that need 
+to be applied.
 
 Drupal's input filters are very powerful, but can provide a vulnerability. Don't
 enable the PHP filter which is available in Drupal core. Installing the
 `Paranoia`_ module can really help enforce this practice. The PHP filter makes
 debugging more difficult and exposes your site to a greater risk than it is
 worth. All PHP code should be written to the file system and not stored in the
-database. Another input filter that is problematic is Full HTML which should
+database. 
+
+Another input filter that is problematic is Full HTML which should
 only be granted to administrator roles. Anyone with the Full HTML filter can
 craft malicious JavaScript and gain full admin access to any website on the same
 domain as the Drupal website. If needed, you can add some additional tags to the
