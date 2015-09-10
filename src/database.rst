@@ -55,7 +55,7 @@ ensure that it receives any security enhancements, particularly if stored on the
 server. You can restrict access to phpMyAdmin via .htaccess or by configuring
 Apache to request an HTTP username/password login. They can also be restricted
 to only allow access from certain trusted IP addresses. This is an important
-vulnerability as it could give acracker full access to your databases. It can be
+vulnerability as it could give a cracker full access to your databases. It can be
 beneficial to put phpMyAdmin in its own VirtualHost and even run it on a
 non-standard port. Force HTTPS connections to phpMyAdmin - do not use regular
 HTTP. Also consider the implications of allowing database access via the web
