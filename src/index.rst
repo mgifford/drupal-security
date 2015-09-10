@@ -12,10 +12,13 @@ By: `OpenConcept Consulting Inc.`_,
 
 Main Author: `Mike Gifford <mike@openconcept.ca>`__
 
-Contributors:
-=============
-   * `Mike Mallett <mike.mallett@openconcept.ca>`__ :sup:`(OpenConcept Consulting Inc.)`
-   * `Xavier Landreville <xavier@openconcept.ca>`__ :sup:`(OpenConcept Consulting Inc.)`
+Contributors
+============
+.. hlist::
+   :columns: 2
+
+   * `Mike Mallett <mike.mallett@openconcept.ca>`__ :sup:`(OpenConcept)`
+   * `Xavier Landreville <xavier@openconcept.ca>`__ :sup:`(OpenConcept)`
    * `Matt Parker <https://drupal.org/user/536298>`__
    * `Michael Richardson <http://www.sandelman.ottawa.on.ca/>`__
    * `Colan Schwartz <http://colans.net/>`__
