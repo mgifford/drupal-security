@@ -7,7 +7,7 @@ environments. The development environment can simply be a developer's computer
 should be essentially identical. The role of the staging server is to document
 and test the migration process to verify that the code and configuration can
 move onto the production server. For more information refer to OpenConcept's
-blog post on the `path of code vs content`_.The code for your Drupal site should
+blog post on the `path of code vs content`_. The code for your Drupal site should
 be stored in a central repository. The Drupal community has generally adopted
 
 `Git`_, but there are other valid options for version control. A developer will
