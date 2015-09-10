@@ -22,11 +22,11 @@ upgrades.
 Third party agencies are ultimately going to be involved, whether it the Domain
 Name Registrar or Content Delivery Network (CDN). The communications paths with
 these agencies needs to be clear and well documented. This recently happened
-with a large Canadian municipality who was redirected recently using an approach
-known as "social engineering". By leveraging human vulnerability, crackers were
-able to gain control of critical infrastructure. Properly documented procedures
-are important, as 3rd party services can often be manipulated phony email or
-telephone requests.
+with a large Canadian municipal website that was redirected to an image of
+a dancing banada using an approach known as **"social engineering"**. By 
+leveraging human vulnerability, crackers were able to gain control of critical 
+infrastructure. Properly documented procedures are important, as 3rd party 
+services can often be manipulated phony email or telephone requests.
 
 It is also important to remember that one person working in isolation cannot be
 expected to be an expert in all aspects of Internet security. This is a vast
@@ -51,12 +51,12 @@ we've seen with the implementation of `Healthcare.gov`_ political pressures
 associated with large projects often push security concerns into a post-launch
 phase. It is highly recommended to go through a `Application Threat Modeling`_
 process. `Threat Risk Modeling`_ is also a recommended process to help expand
-understanding of potential threats by using processes like STRIDE or DREAD. By
+understanding of potential threats by using processes like `STRIDE or DREAD`_. By
 `identifying and classifying an organization's assets`_ one can begin to
 prioritize where to focus resources.
 
 Thinking through attack vectors and limiting exposure is really important. I'm
-sure that many of the sites that were compromised by the Shellshock bash bug in
+sure that many of the sites that were compromised by the Shellshock_ bash bug in
 that hit in September of 2014 simply hadn't disabled services like Apache's CGI
 module. To run Drupal, you simply shouldn't need to expose bash to anyone other
 than properly authenticated Linux users.
@@ -108,6 +108,8 @@ and "investment in security review and penetration testing is a Good Thing".
 .. _Healthcare.gov: https://www.healthcare.gov/
 .. _Application Threat Modeling: https://www.owasp.org/index.php/Application_Threat_Modeling
 .. _Threat Risk Modeling: https://www.owasp.org/index.php/Threat_Risk_Modeling
+.. _STRIDE or DREAD: https://en.wikipedia.org/wiki/STRIDE_%28security%29
+.. _Shellshock: https://en.wikipedia.org/wiki/Shellshock_%28software_bug%29
 .. _identifying and classifying an organization's assets: http://www.networkmagazineindia.com/200212/security2.shtml
 .. _Heartbleed bug: http://heartbleed.com/
 .. _OpenSSL Software Foundation: https://www.openssl.org/support/index.html
