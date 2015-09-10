@@ -5,7 +5,7 @@ This document describes best practices for setting up and maintaining a Drupal
 site. It was initially written for the Government of Canada, but it is equally
 applicable to other organizations.
 
-Drupal is a popular, open source content management system (CMS). It has a
+Drupal is a popular, open source Content Management System (CMS). It has a
 strong security model, but like any application, requires adherence to best
 practices. Furthermore, Drupal is only one piece of the software that is
 required to run your site, and one needs to consider the security of the entire
