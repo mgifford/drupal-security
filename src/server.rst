@@ -7,8 +7,7 @@ is found in a default installation. This document provides some examples, but
 mostly relies on links so that you can read the specific details on how this
 should be done. There are other lists of considerations for server security,
 like Robert Hansen's list of `10 major tenets of a secure hosting model`_, but
-where possible we will be referring back to the Principles of Security in
-Section B.
+where possible we will be referring back to Section :doc:`principles`.
 
 1) Server Procurement
 ---------------------
@@ -38,15 +37,15 @@ In our opinion, distributions of Linux like SUSE simply do not have a critical
 mass of users and developers (in the web server space) to maintain the code and
 documentation required for a secure environment. Microsoft Windows is not a
 standard platform for hosting Drupal and is generally not recommended since
-community support is much less robust. It is very difficult to limit exposure
-on a Windows Server since there are many unneeded pieces of the operating
-system which you cannot easily uninstall.
+community support is much less robust. Furthermore, it is very difficult to 
+limit exposure on a Windows Server since there are many unneeded pieces of the 
+operating system which you cannot easily uninstall.
 
 If you are worried about the server's physical security, you can also set up an
-`encrypted partition`_ on your hard drive. This may introduce performance
-issues which might cause problems for your server. This document will not be
-covering `how to set up an encrypted drive`_ but depending on the perceived
-threats, it may be worth implementing.
+`encrypted partition`_ on your hard drive. If you do this, be be careful as it 
+may introduce performance issues which might cause problems for your server. 
+This document will not be covering `how to set up an encrypted drive`_ but 
+depending on the perceived threats, it may be worth implementing.
 
 Special consideration should be taken when enabling HTTPS for encrypted traffic
 on "shared host"-type environments (any server hosting more than 1 domain).
