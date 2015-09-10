@@ -53,11 +53,10 @@ a:visited{color: #0F6F93;}
 a:hover, a:focus{color: #985300;}
 a:active{color: #3D3D3D;}
 
-/* bullets can be useful in printed text, right? 
-li {
+/* remove bullets in tables like list of authors */
+td li {
 	list-style-type: none;
 }
-*/
 
 pre, span.pre { 
 	white-space: pre-wrap; 
@@ -71,8 +70,8 @@ pre, span.pre {
   font-family: "AnonymousPro", "Consolas", monospace;
 }
 
-tr{
-
+td{
+  	vertical-align: top;
 }
 
 /* ----- Layout ----- */
