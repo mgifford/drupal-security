@@ -1,10 +1,9 @@
 A) Introduction
 ===============
 
-Drupal 7 is a leading content management system in governments around the world.
-It has been widely adopted by institutions around the world that are looking to
-meet increasing demands for service, larger challenges with accessibility and
-mobile requirements, and ever smaller budgets.
+Drupal is a leading Content Management System (CMS) in many institutions around 
+the world. These organiztions and others are facing increasing demands for service, 
+larger challenges with accessibility and mobile requirements, and ever smaller budgets.
 
 With governments increasingly targeted for cyber attacks, it is important that
 they remain up to date with best practices so that personal information and
@@ -20,13 +19,13 @@ Drupal developers can focus on section :doc:`drupal` and :doc:`code`, but should
 be familiar with the impact of the other sections too.
 
 It should be clear that not all of the steps outlined here will need to be taken
-on all drupal sites. The principles should be followed but not all of the
+on all Drupal sites. The principles should be followed but not all of the
 security suggestions described will need to be followed by all organizations.
 Each practice or tool should be carefully evaluated to understand the potential
 costs, risks and benefits.
 
-This document raises issues to consider before you procure a server and when you
-first gain access to your server. It provides suggestions on what additional
+This document raises issues to consider before you procure a server and especially 
+when you first gain access to your server. It provides suggestions on what additional
 software you can add to your site which can help improve its security. It also
 highlights configuration options that you can apply to Apache, PHP and MySQL to
 improve on the default settings. Finally we talk about things that you can do to
@@ -41,10 +40,10 @@ worth consulting the `community documentation on Drupal.org`_.
 Because this document strongly recommends against the use of Microsoft Windows
 servers for Drupal sites, Windows security will not be addressed.
 
-Security cannot be just a buzzword, it is a `process`_. There needs to be clear
-understanding about lines of responsibility and ultimately management needs to
-provide the budget required to ensure that systems can be maintained and
-regularly re-evaluated.
+Security cannot be just a buzzword, it is a `process`_ that needs to be ingrained 
+in the culture of an organization. There needs to be clear understanding about 
+lines of responsibility and ultimately management needs to provide the budget 
+required to ensure that systems can be maintained and regularly re-evaluated.
 
 Eternal vigilance is important as those searching for your vulnerabilities are
 working around the clock and are well-financed. This document will, itself, need
