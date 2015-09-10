@@ -39,7 +39,7 @@ It is also recommended to disable SSLCompression in Apache. As stated in the
 setups (the so called CRIME attack)." This is the default for Apache version
 2.4.4+.
 
-The **HeartBleed security bug** has gotten a lot of attention lately. The
+The **HeartBleed security bug** did a lot of dammage in 2014. The
 primary security practice we can recommend from this is to ensure that someone
 is always paying attention to the security mailing lists for your operating
 system. By the time you hear it from the media it is probably too late. The
@@ -101,12 +101,12 @@ site is used just as a CMS with no user interaction. The example below is more
 appropriate for sites which would have broader user authentication, but where
 users are restricted from editing nodes - ``node/*/edit`` - this type of
 approach can also be used to restrict access to non-production environments. If
-you have a multi-lingual site, you may also want to check that access is denied
-for paths with the language prefix, in Canada, many sites would need to also add
-``/fr/use``r and ``/en/user`` . It is a best practice to secure all pages on
-non-production environments from both search engines, but especially from
-crackers. The following are examples of how to do this with ``mod_authz_host``
-and also ``mod_rewrite``.
+you have a multi-lingual site using a language prefix, you may also want to 
+check that sensitive paths are restricted with the language prefix. In Canada, 
+many sites would need to add ``/fr/user`` and ``/en/user`` . It is a best practice 
+to secure all pages on non-production environments from both search engines, but 
+especially from crackers. The following are examples of how to do this with 
+``mod_authz_host`` and also ``mod_rewrite``.
 
 Example Apache configuration using ``mod_authz_host``:
 
@@ -157,7 +157,7 @@ line with::
   # Ubuntu/Debian
   $ a2dismod cgi
 
-If you don't need it, remove it. All software is a source of potential risk, so
+**If you don't need it, remove it.** All software is a source of potential risk, so
 list all Apache modules and look for unneeded modules. There are some `good
 discussions`_ on drupal.org about which modules are necessary and which are not.
 
@@ -172,7 +172,7 @@ discussions`_ on drupal.org about which modules are necessary and which are not.
 If you are using ``mod_php`` with apache, it can be useful to enable
 ``php5-dev`` for Drupal so that you can enable tools like `PECL's
 uploadprogress`_. However, after you've done that you will want to remove the
-php module that you used to build it::
+php5-dev module that you used to build it::
 
   # Ubuntu/Debian
   $ apt-get remove php5-dev
@@ -205,12 +205,13 @@ following to your Apache configuration:
 
 .. code-block:: apache
 
-  Content-Security-Policy: default-src 'self' *.example.gc.ca
+  Content-Security-Policy: default-src 'self' *.example.com
 
 Your website and its visitors are going to be more secure if you use HTTPS to
 ensure that all information passing between the web server and the browser is
 encrypted. There is a `growing movement encrypt all web traffic`_, even to
-brochure sites. Doing so will have minor performance implications as it does
+brochure sites. Google announced in 2014 that HTTPS would be a `ranking signal`_. 
+Doing so will have minor performance implications as it does
 take some additional processing power. You certainly want to ensure that all
 authentication happens through a secure HTTPS connection so that usernames and
 passwords cannot be intercepted. Do ensure that all of your files are being
@@ -433,6 +434,7 @@ patch on the backend applications should not be replaced with WAF utilization.
 .. _Mozilla: https://developer.mozilla.org/en-US/docs/Security/CSP/Using_Content_Security_Policy
 .. _CSP: https://www.owasp.org/index.php/Content_Security_Policy
 .. _growing movement encrypt all web traffic: http://chapterthree.com/blog/why-your-site-should-be-using-https
+.. _ranking signal: http://googlewebmastercentral.blogspot.ca/2014/08/https-as-ranking-signal.html
 .. _HTTP Strict Transport Security (HSTS): https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security
 .. _HSTS example: https://www.owasp.org/index.php/HTTP_Strict_Transport_Security#Server_Side
 .. _EFF's HTTPS Everywhere extension: https://www.eff.org/https-everywhere
