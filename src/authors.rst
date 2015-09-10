@@ -15,5 +15,14 @@ Led by Mike, OpenConcept contributed the first Drupal theme for the Government
 of Canada and has since been actively involved in the Drupal Web Experience
 Toolkit distribution within the Government of Canada.
 
-To contact Mike, email `mike@openconcept.ca <mike@openconcept.ca>`__, call
-1-613-686-6736, or visit `http://openconcept.ca <http://openconcept.ca/>`__.
+To contact Mike:
+
++------------+-----------------------------------------------------+
+| **email**  | `mike@openconcept.ca <mike@openconcept.ca>`__       |
++------------+-----------------------------------------------------+
+| **follow** | `@mgifford <https://twitter.com/mgifford>`__        |
++------------+-----------------------------------------------------+
+|  **call**  | 1-613-686-6736                                      |
++------------+-----------------------------------------------------+
+| **browse** | `https://openconcept.ca <http://openconcept.ca/>`__ |
++------------+-----------------------------------------------------+
