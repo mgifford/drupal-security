@@ -16,7 +16,7 @@ Contributors:
 =============
    * `Mike Mallett <mike.mallett@openconcept.ca>`__ :sup:`(OpenConcept Consulting Inc.)`
    * `Xavier Landreville <xavier@openconcept.ca>`__ :sup:`(OpenConcept Consulting Inc.)`
-   * `Matt Parker <https://drupal.org/user/536298>`__ :sup:`(OpenConcept Consulting Inc.)`
+   * `Matt Parker <https://drupal.org/user/536298>`__
    * `Michael Richardson <http://www.sandelman.ottawa.on.ca/>`__
    * `Colan Schwartz <http://colans.net/>`__
    * `Mack Hardy <http://affinitybridge.com/>`__
