@@ -525,9 +525,8 @@ simplify the process of searching all of your log files.
 8) Rough Server Ecosystem Image
 -------------------------------
 
-   .. image:: /images/ServerEcosystem.*
-     :alt: Generic server ecosystem
-
+   .. image:: _static/images/ServerEcosystem.*
+     :alt: Generic server ecosystem 
 
 .. _Ubuntu Popularity Contest: https://help.ubuntu.com/community/UbuntuPopularityContest
 .. _10 major tenets of a secure hosting model: http://drupalwatchdog.com/2/2/securing-your-environment

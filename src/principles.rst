@@ -1,6 +1,12 @@
 B) Principles of Security
 =========================
 
+.. image:: /_static/images/noun/noun_5983_cc.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: Shield from the noun project. 
+
 **There is safety in the herd:**
   | Leverage large, well maintained open source libraries (packages) with a critical mass of users and developers.
 
@@ -59,6 +65,12 @@ B) Principles of Security
   | Keep track of your passwords in controlled, encrypted programs.
 
   | Where possible use password-less approaches such as ssh key pairs which are more secure.
+
+.. image:: /_static/images/noun/noun_6482_cc.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: Minus from the noun project. 
 
 **Don't trust your backup:**
   | Define and review backup procedures and regularly test that you can restore your site.
