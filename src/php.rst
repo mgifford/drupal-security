@@ -3,6 +3,12 @@ F) PHP
 
 .. highlight:: ini
 
+.. image:: /_static/images/noun/noun_13698_cc.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: A PHP prompt from the noun project.
+
 There are lots of good resources on how to tighten security for PHP. It is a
 very commonly used scripting language and it is running some of the biggest and
 most important sites on the Internet.

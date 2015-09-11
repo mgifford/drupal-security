@@ -12,6 +12,6 @@ document, and its authors.
    :height: 31px
    :align: right
    :scale: 50%
-   :alt: Creative commons license. 
+   :alt: Creative Commons ShareAlike license. 
 
 .. _Attribution-ShareAlike: https://creativecommons.org/licenses/by-sa/4.0/

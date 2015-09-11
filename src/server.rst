@@ -1,6 +1,12 @@
 D) Server Security
 ==================
 
+.. image:: /_static/images/noun/noun_65895_cc.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: Server from the noun project. 
+
 Any website is a complex ecosystem of software. Each aspect can be tightened
 through proper configuration and through the addition of components beyond what
 is found in a default installation. This document provides some examples, but
@@ -394,6 +400,12 @@ government departments to have access to either a virtual (e.g. `VMware`_,
 servers. There is also `significant movement in the Drupal community`_ to use
 `Linux Containers`_ to more efficiently distribute processing power without
 compromising security.
+
+.. image:: /_static/images/noun/noun_67380_cc.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: Shield from the noun project.
 
 6) Server Maintenance
 ---------------------

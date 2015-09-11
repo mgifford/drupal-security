@@ -3,6 +3,12 @@ H) Drupal
 
 .. highlight:: bash
 
+.. image:: /_static/images/druplicon.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: Drupal icon
+
 1) Files
 --------
 

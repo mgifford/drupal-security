@@ -3,6 +3,12 @@ K) Regular Maintenance
 
 .. highlight:: bash
 
+.. image:: /_static/images/noun/noun_71483_cc.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: A hard drive with a circle in it from the noun project.
+
 No security plan is foolproof.  You need regular backups to ensure that you can
 restore your system quickly if required.  With both the database and file system
 it is important to have both local and remote backups.  You want the local

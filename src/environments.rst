@@ -1,6 +1,12 @@
 J) Development, Staging and Production
 ======================================
 
+.. image:: /_static/images/noun/noun_104096_cc.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: Different stages of development & review from the noun project.
+
 Any formalized development process should have three distinct server
 environments. The development environment can simply be a developer's computer
 (or perhaps several developers' computers). The staging and production servers

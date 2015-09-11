@@ -3,6 +3,12 @@ G) Database Layer
 
 .. highlight:: ini
 
+.. image:: /_static/images/noun/noun_36148_cc.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: Database image from the noun project.
+
 With Drupal's database abstraction layer you can now run it on `MySQL`_,
 `SQLite`_, or `PostgreSQL`_ out of the box. There are in fact a number of
 popular MySQL forks like `MariaDB`_ and `Percona`_. Drupal can run with MSSQL

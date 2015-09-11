@@ -3,6 +3,12 @@ E) Web Servers
 
 .. highlight:: bash
 
+.. image:: /_static/images/noun/noun_18141.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: A link from the noun project.
+
 All files and directories in your DocumentRoot should be editable by a non-root
 user (usually "www-data"), and should also not be writable by the Apache user, except the Drupal
 files/ directory. Please refer to Drupal's `Securing file permissions and

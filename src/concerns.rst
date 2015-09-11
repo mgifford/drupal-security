@@ -1,6 +1,12 @@
 C) Security Concerns for Managers
 =================================
 
+.. image:: /_static/images/noun/noun_43646_cc.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: A woman manager from the noun project. 
+   
 There are many assumptions about IT security that need to be fundamentally
 rethought in the era of the Internet. Government is struggling to come to terms
 with this at the same time as working to understand the implication of

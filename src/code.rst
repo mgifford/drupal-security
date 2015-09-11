@@ -1,6 +1,12 @@
 I) Writing Secure Code
 ======================
 
+.. image:: /_static/images/noun/noun_65754_cc.*
+   :width: 150px
+   :align: right
+   :scale: 50%
+   :alt: A computer monitor representing code from the noun project.
+
 There are lots of great resources about how to write secure code. The `Drupal
 handbook page`_ is a great place to start as it is focused directly on the best
 practices defined by this community.

@@ -1,5 +1,5 @@
-About the Authors
-=================
+About the Author
+================
 
 Mike Gifford, Principal Author
 ------------------------------
