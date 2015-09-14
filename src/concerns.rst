@@ -110,7 +110,7 @@ which can become a major exploit. Sites as large as GitHub have been
 successfully targeted this way. As he says, The cost of (in)security is high
 and "investment in security review and penetration testing is a Good Thing".
 
-.. _dancing banana: http://www.ottawasun.com/2014/11/24/mayor-says-imposter-managed-to-redirect-ottawaca-website
+.. _`dancing banana`: http://www.ottawasun.com/2014/11/24/mayor-says-imposter-managed-to-redirect-ottawaca-website
 .. _social engineering: https://en.wikipedia.org/wiki/Social_engineering_%28security%29
 .. _Threat and Risk Assessments: https://www.owasp.org/index.php/Threat_Risk_Modeling
 .. _Healthcare.gov: https://www.healthcare.gov/

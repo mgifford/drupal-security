@@ -25,12 +25,9 @@ Drush aliases to transfer databases between staging and production. You may also
 want to have another account to be able to transfer uploaded files which
 probably would not be managed under version control. Using an external site like
 `GitHub`_ for storing your repository provides access to some great additional
-tools like `Travis`_ and `SauceLabs`_ which can help you deliver a more reliable site. You can also set
-it up on your staging or development server. Limit access between servers.
-There is a potential risk from having a semi-porous boundary between these
-environments, but the risks are far outweighed by the benefits. Having a central
-Git repository gives you control across all environments at one time.  Being
-able to diff any change allows you to quickly identify where changes have been
+tools like `Travis`_ and `SauceLabs`_ which can help you deliver a more reliable site. You can also set it up on your staging or development server. 
+
+Limit access between servers. There is a potential risk from having a semi-porous boundary between these environments, but the risks are far outweighed by the benefits. Having a central Git repository gives you control across all environments at one time.  Being able to diff any change allows you to quickly identify where changes have been
 made and know why. Drush is certainly powerful, but only experienced users
 should have access to it. With a solid backup plan, even if this is compromised,
 it can be quickly restored.
