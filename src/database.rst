@@ -54,7 +54,7 @@ the file system to see that the database files are restricted.
 
 If you need a graphical tool like `phpMyAdmin`_, disable it after use. Web
 applications like this can also be tightened down by placing them on a different
-port, firewall that port from other than 127.0.0.1, and always access it via ssh
+port, firewall that port from other than 127.0.0.1, and always access it via SSH
 port forwarding. Access to these tools can also be limited to IP addresses for
 extra protection. Note that any software you use should be regularly updated to
 ensure that it receives any security enhancements, particularly if stored on the

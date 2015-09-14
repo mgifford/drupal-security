@@ -14,7 +14,7 @@ user (usually "www-data"), and should also not be writable by the Apache user, e
 files/ directory. Please refer to Drupal's `Securing file permissions and
 ownership`_ for the complete discussion.
 
-`PHP-FPM over FastCGI`_ allows your server to have `site specific "pools" of
+`PHP-FPM over FastCGI`_ allows your server to have `site-specific "pools" of
 PHP`_. By giving each site unique PHP permissions you can effectively "sandbox"
 a PHP application and simplify file/folder permissions by specifying the user
 and group for the process pool. This reduces the points of failure in a shared
@@ -33,7 +33,7 @@ still vulnerable.
 On your web server, it is good to ensure that SSL configuration permits only TLS
 version 1.2. unfortunately some common web browsers still do not support the
 latest version of TLS. Fortunately, as of `September 2015`_, the latest version
-of all major web browsers support TLS 1.0, 1.1, and 1.2 enabled by
+of all major web browsers support only secure TLS 1.0, 1.1, and 1.2 by
 default. Check if the `SSL services employ only AES`_ with key lengths 256 bits
 and higher. You can install `GnuTLS`_ from the command line to enable this::
 
@@ -42,7 +42,7 @@ and higher. You can install `GnuTLS`_ from the command line to enable this::
 
 It is also recommended to disable SSLCompression in Apache. As stated in the
 `Apache documentation`_ "Enabling compression causes security issues in most
-setups (the so called CRIME attack)." This is the default for Apache version
+setups (the so called `CRIME attack`_ )." This is the default for Apache version
 2.4.4+.
 
 The **HeartBleed security bug** did a lot of damage in 2014. The
@@ -67,7 +67,7 @@ Ristic's`_ because it is being updated more regularly) with:
   SSLCipherSuite ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
 
 After restarting Apache, you can check the SSL information in a browser by
-double clicking on the lock icon in the address bar on https:// sites to get
+double clicking on the lock icon in the address bar on HTTPS sites to get
 information on the encryption channel and confirm it's using TLS.
 
 There are other approaches like that suggested by `Remy van Elst`_, but
@@ -273,10 +273,8 @@ access to the site simply by copying the "Authorization" HTTP header.
 
 Furthermore, the username and password used for HTTP Basic Authentication are
 not encrypted either (just base-64 encoded, which is trivial to decode), so do
-not re-use credentials used elsewhere (e.g.: don't re-use the credentials
-someone uses to log into Drupal, SSH into the webserver; or hook HTTP Basic
-Authentication up to an LDAP database or the operating system's
-:file:`/etc/passwd`).
+not re-use credentials used elsewhere (e.g.: each unique login should have it's 
+own unique password).
 
 5) Everything Else
 ------------------
@@ -304,7 +302,7 @@ you choose to disable it you can simply add this to your Apache configuration:
   ServerTokens ProductOnly
 
 One of the nice things about Ubuntu/Debian is that the Apache file structure is
-clean. By default it allows you store a variety of different configurations for
+clean. By default it allows you to store a variety of different configurations for
 sites or modules that are stored in logical directories. That's not critical,
 but having a well defined Apache config file is. There should be inline comments
 about all changed variables explaining why they were added or modified.
@@ -413,16 +411,18 @@ patch on the backend applications should not be replaced with WAF utilization.
 .. _this Wikipedia page: https://en.wikipedia.org/wiki/Certificate_authority#External_links
 .. _Securing file permissions and ownership: https://drupal.org/node/244924
 .. _PHP-FPM over FastCGI: http://php-fpm.org/
-.. _site specific "pools" of PHP: http://www.howtoforge.com/php-fpm-nginx-security-in-shared-hosting-environments-debian-ubuntu
+.. _site-specific "pools" of PHP: http://www.howtoforge.com/php-fpm-nginx-security-in-shared-hosting-environments-debian-ubuntu
 .. _advantages to using PHP-FPM for managing server load: https://phpbestpractices.org/#serving-php
 .. _POODLE Exploit: http://googleonlinesecurity.blogspot.co.uk/2014/10/this-poodle-bites-exploiting-ssl-30.html
 .. _easy to test: https://zmap.io/sslv3/
 .. _exposed users is falling: https://www.trustworthyinternet.org/ssl-pulse/
+.. _September 2015: https://en.wikipedia.org/wiki/Transport_Layer_Security#Web_browsers
 .. _great tool to evaluate: https://www.ssllabs.com/ssltest/
 .. _February 2014: https://en.wikipedia.org/wiki/Transport_Layer_Security#Web_browsers
 .. _SSL services employ only AES: http://www.thinkwiki.org/wiki/AES_NI
 .. _GnuTLS: https://help.ubuntu.com/community/GnuTLS
 .. _Apache documentation: https://httpd.apache.org/docs/2.2/mod/mod_ssl.html#sslcompression
+.. _CRIME attack: https://en.wikipedia.org/wiki/CRIME
 .. _EFF: https://www.eff.org/
 .. _Perfect Forward Secrecy: https://www.eff.org/deeplinks/2013/08/pushing-perfect-forward-secrecy-important-web-privacy-protection
 .. _hardening SSL/TLS services: https://github.com/ioerror/duraconf

@@ -97,7 +97,7 @@ perform manual testing.
 .. _database abstraction layer: https://api.drupal.org/api/drupal/includes%21database%21database.inc/group/database/7
 .. _parameterization: https://drupal.org/node/101496
 .. _All Code is Debt: https://www.getpantheon.com/blog/all-code-debt
-.. _Testing Guide: https://www.owasp.org/index.php/OWASP_Testing_Project
+.. _`Testing Guide`: https://www.owasp.org/index.php/OWASP_Testing_Project
 .. _Application Security Verification Standard: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
 .. _OWASP ZAP: https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project
 .. _Subgraph Vega: http://www.subgraph.com/products.html

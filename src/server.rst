@@ -23,15 +23,13 @@ are often technical details and notes about who to contact when things go
 wrong.
 
 It is important to determine that there is a strong security community behind
-the OS distribution you choose, and that you have the necessary human resources
-in your department to maintain it. Both Debian/Ubuntu and Red Hat Enterprise
-Linux(RHEL)/CentOS/Fedora can be considered solid. The advantage of a Debian or
-Red Hat based solution is that there is extensive documentation and large
-communities of users who've shared their experiences through forums, issue
-trackers, and blog posts. Ubuntu is based on Debian. CentOS is almost a copy of
-RHEL and Fedora is the community edition of RHEL so is often somewhat ahead.
+the Operating System (OS) distribution you choose, and that you have the 
+necessary human resources in your department to maintain it. Both Debian/Ubuntu 
+and Red Hat Enterprise Linux(RHEL)/CentOS/Fedora can be considered solid. The 
+advantage of a Debian or Red Hat based solution is that there is extensive documentation and large communities of users who've shared their experiences through forums, issue trackers, and blog posts. Ubuntu is based on Debian. CentOS is almost a copy of RHEL and Fedora is the community edition of RHEL. The Fedora edition often 
+releases updates before RHEL which can be an advantage for some security fixes.
 Most references to one of these two groups of distributions should be
-interchangeable.Note that Ubuntu and Debian have a different development cycle
+interchangeable. Note that Ubuntu and Debian have a different development cycle
 and are not identical.
 
 If you use a Red Hat Enterprise Linux (RHEL) system, you will need to subscribe
@@ -57,7 +55,7 @@ Special consideration should be taken when enabling HTTPS for encrypted traffic
 on "shared host"-type environments (any server hosting more than 1 domain).
 Typically, due to the nature of the protocol, only one HTTPS website (domain
 name) could be hosted per IP. However, with `Server Name Indication`_ (SNI), it is
-now possible to host multiple HTTPS domains with distinct TLS certificates on
+now possible to host multiple HTTPS domains with distinct `TLS certificates` on
 the same IP. It must be noted that SNI is dependent on both the client and the
 server supporting the TLS extension, but most do nowadays. Another option,
 which might be useful if your servers or clients do not support SNI, is using
@@ -88,11 +86,12 @@ Hopefully the root password wasn't sent via an unencrypted email with the other
 login credentials. Very few people use `GPG to encrypt emails`_ because it is
 cumbersome, but confidential documents should be encoded/decoded with this type
 of protection. You can request that the password not be sent using the same
-medium so it will be difficult to intercept. Minimally passwords can be sent in
-a separate email, but this provides only a slightly more obscure means to stop
-this information from being intercepted. Ideally credentials would be sent with 
-a tool similar to NoteShred_ which can delete a password after it is viewed without
-leaving an email archive of the information. 
+medium so it will be difficult to intercept. At the very minimum, try to ensure 
+passwords are sent separately from the rest of the authentication data. This provides  
+a slightly more obscure means to stop this information from being intercepted. 
+Ideally credentials would be sent with a tool similar to NoteShred_ which can 
+delete a password after it is viewed without leaving an email archive of the 
+information. However it is sent, change your password immediately after receiving it.
 
 Most web hosts send all of the credentials together, therefore, the first step
 after getting access is to log in and change the root password. Unencrypted
@@ -125,14 +124,14 @@ address is also a `point of vulnerability`_.
 
 The most common account that crackers try to compromise is the root user, so
 disable root logins. Furthermore, set up user accounts with sudo access and
-`use ssh keys`_ so that nobody accessing the site is using a password. Note:
+`use SSH keys`_ so that nobody accessing the site is using a password. Note:
 the commands listed here assume you are using sudo access and but we have
 chosen not to explicitly prefix them with sudo.
 
 Protect your SSH keys by ensuring that your private keys are `password
 protected and using 2048-bits`_. By disabling the use of passwords for SSH user
 logins a common server vulnerability is simply eliminated. When you turn off
-password logins "`script kiddies`_\ " simply cannot compromise your server
+password logins, "`script kiddies`_\ " simply cannot compromise your server
 with common dictionary or brute force attacks. There are explanations on how to
 `effectively disable password logins`_ but check that
 :file:`/etc/ssh/sshd_config` has the text
@@ -143,7 +142,7 @@ with common dictionary or brute force attacks. There are explanations on how to
 
 Remember that when downloading important files that there is a possibility that
 they have been tampered with. Important security documents often come with a
-`MD5`_ or SHA (secure hash algorithm) code which allows a user to verify that
+`MD5`_ or `Secure Hash Algorithm`_ (SHA) code which allows a user to verify that
 the file on a server is identical to the file that they have downloaded.You can
 generate a `checksum`_ to locally to determine equivalence using one of these::
 
@@ -155,7 +154,7 @@ generate a `checksum`_ to locally to determine equivalence using one of these::
 --------------------
 
 Record a baseline of your server that you can review, knowing that this is the
-minimum number of processes which are running with a clean system. Likewise
+minimum number of processes which are running with a clean system. Likewise,
 record the baseline from a `netstat`_ report to see what ports are open::
 
   $ ps afx
@@ -246,7 +245,7 @@ handful of known subnets (ie. 192.168.1.0/24) where administrators actually
 work. Don't be afraid to add to this list; make it easy for your people to work
 wherever they need to. Security is not the enemy.
 
-You can also `restrict who can ssh`_ into the server to a limited number of IP
+You can also `restrict who can SSH`_ into the server to a limited number of IP
 addresses. Be very careful when configuring this as you don't want to block
 yourself from accessing the server.
 
@@ -272,8 +271,8 @@ organization isn't already using a VPN however, then the usability problems
 with forcing people to use it may encourage developers to find ways to
 circumvent it. It is important to remember that a VPN is only as secure as the
 individual servers on the VPN. If the VPN is shared with systems out of your
-control, and the responsible sysadmins might be lax in security, then your
-servers should be hardened as if on the public network.
+control, and the responsible Systems Administrators (Sysadmins) might be lax in
+security, then your servers should be hardened as if on the public network.
 
 5) Initial Installs
 -------------------
@@ -468,7 +467,7 @@ Your web server is a complex environment involving thousands of software
 projects. Most of these will store log files in /var/log. If log files aren't
 properly rotated and compressed they can become unmanageably large. If your
 hard drive is filled up with old log files your site will simply stop
-functioning. Most distributions of Linux come come with `logrotate`_ configured
+functioning. Most distributions of Linux come with `logrotate`_ configured
 such that log files are segmented on a regular basis and the archive is
 compressed so that space isn't a problem.
 
@@ -521,7 +520,7 @@ The most important server logs to monitor are Apache's. If there is more than
 one site on a given server, it is normal for each site to have its own log file
 rather than using the default generic one. If you run more than one site or
 have multiple web servers, log centralization can allow you to get an overall
-view of site issues. Open source tools such as `logstash`_ can be used to
+view of site issues. Open-source tools such as `logstash`_ can be used to
 simplify the process of searching all of your log files.
 
 .. Neither of these attempts to insert a page break works, least with my tests.
@@ -545,14 +544,16 @@ simplify the process of searching all of your log files.
 .. _encrypted partition: https://wiki.archlinux.org/index.php/Disk_Encryption
 .. _how to set up an encrypted drive: https://help.ubuntu.com/community/EncryptedFilesystemHowto
 .. _Server Name Indication: http://en.wikipedia.org/wiki/Server_Name_Indication
+.. _TLS certificates: https://en.wikipedia.org/wiki/Transport_Layer_Security
 .. _Subject Alternative Name: https://en.wikipedia.org/wiki/SubjectAltName
 .. _NoteShred: https://www.noteshred.com/
 .. _GPG to encrypt emails: https://en.wikipedia.org/wiki/GNU_Privacy_Guard
 .. _KeePass or KeePassX Password database: https://en.wikipedia.org/wiki/KeePass
 .. _point of vulnerability: http://drupalwatchdog.com/2/2/practical-security
-.. _use ssh keys: https://wiki.archlinux.org/index.php/SSH_Keys
+.. _use SSH keys: https://wiki.archlinux.org/index.php/SSH_Keys
 .. _password protected and using 2048-bits: https://www.ssllabs.com/downloads/SSL_TLS_Deployment_Best_Practices.pdf
 .. _script kiddies: https://en.wikipedia.org/wiki/Script_kiddie
+.. _Secure Hash Algorithm: https://en.wikipedia.org/wiki/Secure_Hash_Algorithm
 .. _effectively disable password logins: http://lani78.wordpress.com/2008/08/08/generate-a-ssh-key-and-disable-password-authentication-on-ubuntu-server/
 .. _MD5: http://www.electrictoolbox.com/article/linux-unix-bsd/howto-check-md5-file/
 .. _checksum: https://en.wikipedia.org/wiki/Checksum
@@ -564,7 +565,7 @@ simplify the process of searching all of your log files.
 .. _MXToolbox: http://mxtoolbox.com/PortScan.aspx
 .. _BIND: https://en.wikipedia.org/wiki/BIND
 .. _detailed instructions here: http://askubuntu.com/questions/162371/what-is-the-named-daemon-and-why-is-it-running
-.. _restrict who can ssh: http://apple.stackexchange.com/questions/34091/how-to-restrict-remote-login-ssh-access-to-only-certain-ip-ranges
+.. _restrict who can SSH: http://apple.stackexchange.com/questions/34091/how-to-restrict-remote-login-ssh-access-to-only-certain-ip-ranges
 .. _Debian's admin documentation: http://www.debian-administration.org/articles/87
 .. _ufw: https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server
 .. _system-config-firewall-tui: https://www.digitalocean.com/community/articles/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server

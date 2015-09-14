@@ -96,7 +96,7 @@ Cron is the Linux time-based job scheduler and it is used for a lot of key
 Drupal functions. Check to see that you are running cron several times a day.
 For Drupal 7 and above, `if there is traffic to the site, cron jobs are run
 every 3 hours`_. The status page will tell you when the last time cron was run
-on the site. You may want to set up a Linux cron job using using Drush if you
+on the site. You may want to set up a Linux cron job using Drush if you
 have either a low traffic site or have special requirements.
 
 To run cron on all of your sites in /home/drupal - from the command line enter
@@ -109,10 +109,10 @@ security risk on your production site and need to be disabled. Many modules
 (such as Views) have separate administration screens that can also be disabled
 in a production environment. They are absolutely required when building the
 site, but can be disabled when they are not in use. It is always a good practice
-to see if there are any unnecessary modules can be disabled on your site. This
+to see if there are any unnecessary modules that can be disabled on your site. This
 also offers performance benefits. Views is an incredibly powerful query building
 tool. Because of that, it is important that all Views have explicit access
-permissions set at ``/admin/build/views``
+permissions set at ``/admin/build/views`` .
 
 3) Errors
 ---------
@@ -140,7 +140,7 @@ how to `send your logs to Syslog`_ with integrated logging.
 
 Before launching your site (and periodically afterwards) it is useful to run the
 `Hacked!`_ module to check what code differs from what was released on
-Drupal.org. Particularly when the `diff`_ module is enabled this is a powerful
+Drupal.org. Particularly when the `diff`_ module is enabled, this is a powerful
 tool to evaluate your code. There are millions of lines of code in a given
 Drupal site, so Hacked! is a really valuable analysis tool. If you need to apply
 patches against the stable released version of the code, the patch should be in
