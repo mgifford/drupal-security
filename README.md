@@ -7,6 +7,9 @@ Drupal websites.
 This represents current best practices and "not to do"s for administrating
 servers and specifically drupal website.
 
+We have chosen to use Sphinx & reStructuredText to build this document http://sphinx-doc.org/rest.html 
+as it allows us to build more accessible ePub files by default.
+
 How do I get a usable document?
 -------------------------------
 
@@ -28,4 +31,4 @@ Can I help?
 -----------
 
 **YES!**, we'd like to get your thoughts, concerns, comments. If you have an 
-improvements submit a PR or a patch!
+improvements submit a comment, a pull request or a patch!
