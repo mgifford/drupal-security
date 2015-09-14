@@ -79,7 +79,7 @@ When writing code, testing is important and security testing should be part of
 the process. OWASP publishes a very complete `Testing Guide`_ as well as an
 `Application Security Verification Standard`_ that goes deep into details. The
 verification standard could also be used as a complete security requirement list
-when designing new modules for your Drupal site. Open source tools such as
+when designing new modules for your Drupal site. Open-source tools such as
 `OWASP ZAP`_ and `Subgraph Vega`_ provide graphical user interface to perform
 dynamic scanning of Web sites. For complex Drupal sites they might have some
 difficulties but they can still be used as a intercepting web proxy in order to

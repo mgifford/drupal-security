@@ -30,7 +30,7 @@ considered a backup strategy.  Backups should be stored regularly locally, but
 there also need to be regular, long-term backups stored off-site.  Make sure to
 evaluate your backup procedures and test your restores to verify that they are
 working effectively.  Drupal.org releases `security updates`_ on Wednesdays when
-needed which are broadcast by an email list, `RSS feeds`_ and `Twitter`_.
+needed. These are broadcast through an email list, `RSS feeds`_ and `Twitter`_.
 Subscribe to the security newsletter for updates (you will need a Drupal.org
 account and the instructions are on the sidebar of the previous link).  It is
 also useful to check the Status page and Watchdog pages in your Drupal site.
