@@ -10,17 +10,17 @@ A Guide for Governments and Nonprofits
 By: `OpenConcept Consulting Inc.`_, 
    :sub:`originally written for Public Safety Canada`
 
-Main Author: `Mike Gifford <mike@openconcept.ca>`__
+Main Author: `Mike Gifford`_
 
 Contributors
 ============
 .. hlist::
    :columns: 2
 
-   * `Mike Mallett <mike.mallett@openconcept.ca>`__ :sup:`(OpenConcept)`
-   * `Xavier Landreville <xavier@openconcept.ca>`__ :sup:`(OpenConcept)`
+   * `Mike Mallet`_ :sup:`(OpenConcept)`
+   * `Xavier Landreville`_ :sup:`(OpenConcept)`
    * `Matt Parker <https://drupal.org/user/536298>`__
-   * `Michael Richardson <http://www.sandelman.ottawa.on.ca/>`__
+   * `Michael Richardson`_
    * `Colan Schwartz <http://colans.net/>`__
    * `Mack Hardy <http://affinitybridge.com/>`__
    * `Peter Cruickshank <http://spartakan.wordpress.com/>`__
@@ -66,5 +66,9 @@ Contents:
    debate
    resources
 
+.. _Mike Gifford: http://openconcept.ca/users/mike
+.. _Mike Mallet: http://openconcept.ca/users/mikem
+.. _Xavier Landreville: http://openconcept.ca/users/xavier
+.. _Michael Richardson: http://www.sandelman.ca/mcr/
 .. _OpenConcept Consulting Inc.: http://openconcept.ca/
 .. _sign up for updates: http://openconcept.ca/drupal-security-guide
