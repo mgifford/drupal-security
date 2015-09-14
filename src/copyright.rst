@@ -5,7 +5,7 @@ This document is made available under a `Attribution-ShareAlike`_ Creative
 Commons License.
 
 Feel free to distribute this, but please ensure to credit this original
-document, and its authors.
+document and its authors.
 
 .. image:: /_static/images/Attribution-ShareAlike.png
    :width: 88px

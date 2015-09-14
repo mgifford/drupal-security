@@ -33,6 +33,8 @@ Organizational Security
 - `Communities @ Risk: Targeted Digital Threats Against Civil Society <https://targetedthreats.net/>`_
 - `Security in a Box - Tactical Technology Collective <https://securityinabox.org/>`_
 - `SocialEngineer.org <http://www.social-engineer.org/>`_
+- `Schneier on Security <https://www.schneier.com/>`_
+
 
 Videos
 ------

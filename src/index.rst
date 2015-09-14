@@ -34,7 +34,7 @@ Contributors
 Editors
 --------
    * `Lee Hunter <http://streamoflight.com/>`__
-   * `Xavier Landreville <xavier@openconcept.ca>`__
+   * `Xavier Landreville`_
 
 Version
 --------

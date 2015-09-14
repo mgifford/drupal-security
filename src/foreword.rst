@@ -13,7 +13,7 @@ set of software.
 
 This is not a comprehensive document, as IT security is a complex field. We have
 tried to focus on fundamental principles that can improve security. For more
-information on web server security, see the links at the end of this article.
+information on web server security, see the reference links.
 
 We do not believe that there will ever be a 100% secure system. There are always
 bugs in software and new exploits are being attempted all of the time.  We are

@@ -25,14 +25,14 @@ in isolation of the application that is running on it. Ultimately, someone
 familiar with your website and its content needs to be involved in performing
 upgrades.
 
-Third party agencies are ultimately going to be involved, whether it the Domain
-Name Registrar or Content Delivery Network (CDN). The communications paths with
-these agencies needs to be clear and well documented. This recently happened
-with a large Canadian municipal website that was redirected to an image of
-a dancing banana using an approach known as **"social engineering"**. By 
-leveraging human vulnerability, crackers were able to gain control of critical 
-infrastructure. Properly documented procedures are important, as 3rd party 
-services can often be manipulated phony email or telephone requests.
+Third-party agencies are ultimately going to be involved in supporting your site. 
+The protocol for communicating with these agencies needs to be clear and well 
+documented. This recently happened with a large Canadian municipal website that 
+was redirected to an image of a `dancing banana`_ using an approach known as 
+`social engineering`_. By leveraging human vulnerability, crackers were able 
+to gain control of critical infrastructure. Properly documented procedures are 
+important, as third-party services can often be manipulated phony email or telephone 
+requests.
 
 It is also important to remember that one person working in isolation cannot be
 expected to be an expert in all aspects of Internet security. This is a vast
@@ -63,9 +63,10 @@ prioritize where to focus resources.
 
 Thinking through attack vectors and limiting exposure is really important. I'm
 sure that many of the sites that were compromised by the Shellshock_ bash bug in
-that hit in September of 2014 simply hadn't disabled services like Apache's CGI
-module. To run Drupal, you simply shouldn't need to expose bash to anyone other
-than properly authenticated Linux users.
+that hit in September of 2014 simply hadn't disabled services that they weren't
+using. Bash is a command processor that runs in a terminal window, so for most 
+Drupal sites there simply isn't a need to expose it anyone other than properly 
+authenticated Linux users.
 
 As with most work, a great deal of security work lies in identifying and
 eliminating assumptions. Document what is done, and be transparent in your work
@@ -74,10 +75,10 @@ maintain.
 
 Organizations should also consider if the software that they use is properly
 resourced. The Internet is built on free software, but much of it is backed by
-corporations who are also providing services built on the expertise that they
-use have built by contributing to open source software. The `Heartbleed bug`_
+corporations who are also providing services built on the expertise that they 
+have built by contributing to open-source software. The `Heartbleed bug`_
 cost the economy billions, but was largely caused because the OpenSSL library
-was under resourced. Although this is just one example, consider donating to
+was under-resourced. Although this is just one example, consider donating to
 project like the `OpenSSL Software Foundation`_ which supports the security
 infrastructure your organization depends on. Likewise consider supporting
 organizations who contribute to `Drupal's security team`_.
@@ -89,20 +90,19 @@ security evaluation of the base system. When setup is rushed, bad practices are
 often used which then become patterns that are followed long after the site is
 launched.
 
-Implementing and enforcing a policy of using very complex passwords and `2
-factor authentication`_ for any service that is responsible for delivering a
-critical service like email or code repositories. Proper use of a secure,
-redundant password manager is also something that should be key for all
+Implementing and enforcing a policy of using very complex passwords and 
+`two-factor authentication`_ for any critical service, like email. Proper use of 
+a secure,redundant password manager is also something that should be key for all
 employees. If someone is able to hack into your Google Mail or GitHub account,
 they can often access much more than your communications. Most services on the
-Internet are keyed to email addresses and passwords to 3rd party services are
+Internet are keyed to email addresses and passwords to third-party services are
 often stored. Identity theft online is a huge problem for institutions.
 
 The `UK's Government Service Design Manual`_ is an excellent resource for any
 large institution and it has a great section that applies directly to web
 security,
 `Security as enabler: Using technological change to build secure services`_.
-In particular I like the point that security shouldn't degrade user experience.
+In particular, I like the point that security shouldn't degrade user experience.
 
 Don't ignore minor bugs. As `Darren Mothersele`_ mentions in his blog, it is
 possible for a number of minor vulnerabilities to be chained together in a way
@@ -110,17 +110,19 @@ which can become a major exploit. Sites as large as GitHub have been
 successfully targeted this way. As he says, The cost of (in)security is high
 and "investment in security review and penetration testing is a Good Thing".
 
-.. _Threat and Risk Assessments: https://www.dhs.gov/homeland-infrastructure-threat-and-risk-analysis-center
+.. _dancing banana: http://www.ottawasun.com/2014/11/24/mayor-says-imposter-managed-to-redirect-ottawaca-website
+.. _social engineering: https://en.wikipedia.org/wiki/Social_engineering_%28security%29
+.. _Threat and Risk Assessments: https://www.owasp.org/index.php/Threat_Risk_Modeling
 .. _Healthcare.gov: https://www.healthcare.gov/
 .. _Application Threat Modeling: https://www.owasp.org/index.php/Application_Threat_Modeling
 .. _Threat Risk Modeling: https://www.owasp.org/index.php/Threat_Risk_Modeling
-.. _STRIDE or DREAD: https://en.wikipedia.org/wiki/STRIDE_%28security%29
+.. _`STRIDE or DREAD`: https://en.wikipedia.org/wiki/STRIDE_%28security%29
 .. _Shellshock: https://en.wikipedia.org/wiki/Shellshock_%28software_bug%29
 .. _identifying and classifying an organization's assets: http://www.networkmagazineindia.com/200212/security2.shtml
 .. _Heartbleed bug: http://heartbleed.com/
 .. _OpenSSL Software Foundation: https://www.openssl.org/support/index.html
 .. _Drupal's security team: https://www.drupal.org/security-team
-.. _2 factor authentication: http://lifehacker.com/5938565/heres-everywhere-you-should-enable-two-factor-authentication-right-now
+.. _two-factor authentication: http://lifehacker.com/5938565/heres-everywhere-you-should-enable-two-factor-authentication-right-now
 .. _UK's Government Service Design Manual: https://www.gov.uk/service-manual/
 .. _Security as enabler\: Using technological change to build secure services: https://www.gov.uk/service-manual/technology/security-as-enabler.html
 .. _Darren Mothersele: http://darrenmothersele.com/blog/2014/02/20/drupal-security/

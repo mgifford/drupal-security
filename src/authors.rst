@@ -5,7 +5,7 @@ Mike Gifford, Principal Author
 ------------------------------
 
 Mike Gifford is the founder and president of OpenConcept Consulting Inc.,
-headquartered in Ottawa Canada.
+based in Ottawa, Canada.
 
 Long a prominent contributor to the Drupal community, Mike has been a member of
 the international group of developers that contribute to Drupal Core. Mike is

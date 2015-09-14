@@ -8,11 +8,11 @@ B) Principles of Security
    :alt: Shield from the noun project. 
 
 **There is safety in the herd:**
-  | Leverage large, well maintained open source libraries (packages) with a critical mass of users and developers.
+  | Leverage large, well maintained open-source libraries (packages) with a critical mass of users and developers.
 
   | Use compiled packages and check data integrity of downloaded code.
 
-  | Start with a standard Debian/Ubuntu or Red Hat/CentOS installation.
+  | Start with a popular and well maintained Linux distribution (Debian/Ubuntu or Red Hat/CentOS).
 
 **Order matters:**
   | Don't open up services to the Internet before your server is properly secured.
@@ -30,7 +30,7 @@ B) Principles of Security
 **Use well known security tools:**
   | There are well supported libraries that limit exposure, and check for intrusion.
 
-  | Suggestions are provided later.
+  | Many suggestions are provided in the Server Security, PHP & Drupal sections.
 
 **Avoid writing custom code:**
   | Even large government departments find it difficult to invest properly in regular, ongoing code reviews.
@@ -64,7 +64,7 @@ B) Principles of Security
 
   | Keep track of your passwords in controlled, encrypted programs.
 
-  | Where possible use password-less approaches such as ssh key pairs which are more secure.
+  | Where possible use password-less approaches such as SSH key pairs which are more secure.
 
 .. image:: /_static/images/noun/noun_6482_cc.*
    :width: 150px

@@ -129,8 +129,8 @@ disable root logins. Furthermore, set up user accounts with sudo access and
 the commands listed here assume you are using sudo access and but we have
 chosen not to explicitly prefix them with sudo.
 
-Protect your ssh keys by ensuring that your private keys are `password
-protected and using 2048-bits`_. By disabling the use of passwords for ssh user
+Protect your SSH keys by ensuring that your private keys are `password
+protected and using 2048-bits`_. By disabling the use of passwords for SSH user
 logins a common server vulnerability is simply eliminated. When you turn off
 password logins "`script kiddies`_\ " simply cannot compromise your server
 with common dictionary or brute force attacks. There are explanations on how to
@@ -241,7 +241,7 @@ You can obscure your SSH port by reassigning it to other than the default (22).
 This might fool a lazy cracker who isn't using a port scanner first, but won't
 stop the serious folks.
 
-One of the best ways to limit ssh access to a server is to restrict access to a
+One of the best ways to limit SSH access to a server is to restrict access to a
 handful of known subnets (ie. 192.168.1.0/24) where administrators actually
 work. Don't be afraid to add to this list; make it easy for your people to work
 wherever they need to. Security is not the enemy.
