@@ -376,7 +376,31 @@ security triad`_: confidentiality, integrity and availability. It is worth
 watching the evolution of these distributions and installing them from time to
 time if only to have a comparison of modules and configuration options.
 
-9) Drupal Updates
+9) Choosing Modules & Themes
+----------------------------
+
+There are over 30,000 modules and 2,000 themes that have been contributed on 
+Drupal.org.  Unfortunately, not all of these modules are stable and secure 
+enough to install in a production environment. When choosing projects to 
+incorporate into your site consider:
+* How many reported installs are there?
+* What was the date of the last stable release?
+* When was the last code commit to the repository? 
+* How many open bugs are there vs the total number of bugs?
+* Do the maintainers also work on other projects? 
+* Is the project description useful and include screenshots?
+* What documentation is available?
+* Is there a Drupal 8 stable or development release?
+* How many maintainers are listed?
+* Are translations available?
+
+Note that these are just some issues to consider when choosing modules. 
+Ultimately, having an experienced Drupal developer involved in a project is
+important when reviewing which projects to adopt. 
+
+
+10) Drupal Updates
+------------------
 
 Eventually, all software will need an update if it is going to continue to be 
 useful. Most commonly they are feature releases and do not impact security. The 
@@ -405,8 +429,8 @@ unmaintained code is a security problem.
 Tools like `Drop Guard`_ are designed to make this easier for developers to keep 
 track of.
 
-10) Miscellaneous
-----------------
+11) Miscellaneous
+-----------------
 
 Review the discussion in Section K and decide if you are going to remove the
 :file:`CHANGELOG.txt` file. Ensure that you can keep up security upgrades on a
