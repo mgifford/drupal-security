@@ -383,6 +383,7 @@ There are over 30,000 modules and 2,000 themes that have been contributed on
 Drupal.org.  Unfortunately, not all of these modules are stable and secure 
 enough to install in a production environment. When choosing projects to 
 incorporate into your site consider:
+
 * How many reported installs are there?
 * What was the date of the last stable release?
 * When was the last code commit to the repository? 
