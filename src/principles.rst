@@ -42,7 +42,7 @@ B) Principles of Security
 
   | Make the code you use better and give it back to the community.
 
-  | If you do it it properly you won't have to rewrite your code with the next security release and you will get free peer review and ongoing maintenance.
+  | If you do it properly you won't have to rewrite your code with the next security release and you will get free peer review and ongoing maintenance.
 
 **Limit access:**
   | There needs to be clear, documented roles of who has access to what.
