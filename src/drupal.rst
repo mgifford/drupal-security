@@ -224,12 +224,13 @@ are security problems that are identified with the module. The Update module
 also allows you to get a weekly email if there are security upgrades that need 
 to be applied.
 
-Drupal's input filters are very powerful, but can provide a vulnerability. Don't
-enable the PHP filter which is available in Drupal core. Installing the
+Drupal's input filters are very powerful, but can provide a vulnerability. **Don't
+enable the PHP filter** which is available in Drupal 7 Core. Installing the
 `Paranoia`_ module can really help enforce this practice. The PHP filter makes
 debugging more difficult and exposes your site to a greater risk than it is
-worth. All PHP code should be written to the file system and not stored in the
-database. 
+worth. This module has been removed from Drupal 8, but is available as a 
+contributed module. All PHP code should be written to the file system and not 
+stored in the database. 
 
 Another input filter that is problematic is Full HTML which should
 only be granted to administrator roles. Anyone with the Full HTML filter can
@@ -430,7 +431,52 @@ unmaintained code is a security problem.
 Tools like `Drop Guard`_ are designed to make this easier for developers to keep 
 track of.
 
-11) Miscellaneous
+11) The settings.php
+--------------------
+
+After the initial install, make sure that there is not write permission on the 
+settings.php has been removed. 
+
+In Drupal 7 you can set the Base URL which can be useful to block some phishing 
+attempts:
+
+ $base_url = 'http://www.example.com';
+
+In Drupal 8, this is now defined in the Trusted hosts patern:
+
+ $settings['trusted_host_patterns'] = array('^www\.example\.com$');
+ 
+There should be a `salt`_ in the settings.php so that there is some extra random
+data used when generating strings like one-time login links. This is added by
+default in Drupal 7 and 8, but is stored in the the settings.php file. You can 
+store this value outside of the web root though for extra security:
+
+In Drupal 7:
+ 
+ $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
+
+and Drupal 8:
+
+ $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
+
+Drupal 8 has added a $config_directories array which specifies the location of 
+file system directories used for configuration data. 
+
+    On install, "active" and "staging" directories are created for configuration. 
+    The staging directory is used for configuration imports; the active directory 
+    is not used by default, since the default storage for active configuration 
+    is the database rather than the file system (this can be changed; see "Active configuration settings" below).
+
+By default this is done within a randomly-named directory, however for extra
+security, you can override these locations and put it outside of your document
+root.
+
+ $config_directories = array(
+    CONFIG_ACTIVE_DIRECTORY => '/some/directory/outside/webroot',
+    CONFIG_STAGING_DIRECTORY => '/another/directory/outside/webroot',
+ );
+
+12) Miscellaneous
 -----------------
 
 Review the discussion in Section K and decide if you are going to remove the
@@ -498,3 +544,4 @@ information on the site is public, this may not be necessary.
 .. _risk levels: https://www.drupal.org/security-team/risk-levels
 .. _`NIST Common Misuse Scoring System`: http://www.nist.gov/itl/csd/cmss-072512.cfm
 .. _`Drop Guard`: http://www.drop-guard.net/
+.. _salt: https://en.wikipedia.org/wiki/Salt_%28cryptography%29
