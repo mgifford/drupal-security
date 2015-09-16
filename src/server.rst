@@ -394,7 +394,7 @@ expect it to be easy to securely host several sites on the same server with
 direct shell access to different clients. If you need to do this, it is worth
 investigating `FastCGI`_ which when used in conjunction with `suexec`_ or
 `cgiwrap`_ to isolate individual processes on a shared server. We expect most
-government departments to have access to either a virtual (e.g. `VMware`_,
+medium to large organizations to have access to either a virtual (e.g. `VMware`_,
 `Xen`_, `OpenVZ`_ or `KVM`_) or cloud-based (e.g. `Amazon`_ or `Rackspace`_)
 servers. There is also `significant movement in the Drupal community`_ to use
 `Linux Containers`_ to more efficiently distribute processing power without

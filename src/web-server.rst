@@ -10,9 +10,9 @@ E) Web Servers
    :alt: A link from the noun project.
 
 All files and directories in your DocumentRoot should be editable by a non-root
-user (usually "www-data"), and should also not be writable by the Apache user, except the Drupal
-files/ directory. Please refer to Drupal's `Securing file permissions and
-ownership`_ for the complete discussion.
+user (usually "www-data"), and should also not be writable by the Apache user, 
+except the Drupal files/ directory. Please refer to Drupal's `Securing file 
+permissions and ownership`_ for the complete discussion.
 
 `PHP-FPM over FastCGI`_ allows your server to have `site-specific "pools" of
 PHP`_. By giving each site unique PHP permissions you can effectively "sandbox"
@@ -204,10 +204,10 @@ The `W3C`_ is developing a standard content security policy (CSP) to provide
 security controls which can mitigate attacks such as `Cross Site Scripting
 (XSS)`_.
 
-`Mozilla`_ has produced a good description of how to write a `CSP`_ and and
-there are many commonalities with the Australian Government report above. To
-allow content from a trusted domain and all its subdomains, you can add the
-following to your Apache configuration:
+`Mozilla`_ has produced a good description of how to write a `CSP`_ and there 
+are many commonalities with the Australian Government report above. To allow 
+content from a trusted domain and all its subdomains, you can add the following 
+to your Apache configuration:
 
 .. code-block:: apache
 

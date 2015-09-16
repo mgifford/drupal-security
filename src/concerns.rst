@@ -8,10 +8,10 @@ C) Security Concerns for Managers
    :alt: A woman manager from the noun project. 
    
 There are many assumptions about IT security that need to be fundamentally
-rethought in the era of the Internet. Government is struggling to come to terms
-with this at the same time as working to understand the implication of
+rethought in the era of the Internet. Organizations are struggling to come to 
+terms with this at the same time as working to understand the implication of
 cloud-based services. What we can be certain of is that this field is
-accelerating and government departments need to keep up.
+accelerating and organizations need to keep up.
 
 The first principle is to understand that time corrodes security and on the
 Internet time moves very fast. You can't assume that any service you buy or
@@ -19,11 +19,10 @@ develop is currently secure or will remain that way for long. It is critical to
 understand what investments have been made and how they are maintained.
 
 Web hosting and application development are different fields and one cannot
-simply outsource security upgrades to someone else to do. No government server
-platform or private web hosting company can "take care" of your server security
-in isolation of the application that is running on it. Ultimately, someone
-familiar with your website and its content needs to be involved in performing
-upgrades.
+simply outsource security upgrades to someone else to do. No web hosting company
+can "take care" of your server security in isolation of the application that is
+running on it. Ultimately, someone familiar with your website and its content 
+needs to be involved in performing upgrades.
 
 Third-party agencies are ultimately going to be involved in supporting your site. 
 The protocol for communicating with these agencies needs to be clear and well 
@@ -31,8 +30,8 @@ documented. This recently happened with a large Canadian municipal website that
 was redirected to an image of a `dancing banana`_ using an approach known as 
 `social engineering`_. By leveraging human vulnerability, crackers were able 
 to gain control of critical infrastructure. Properly documented procedures are 
-important, as third-party services can often be manipulated phony email or telephone 
-requests.
+important, as third-party services can often be manipulated phony email or 
+telephone requests.
 
 It is also important to remember that one person working in isolation cannot be
 expected to be an expert in all aspects of Internet security. This is a vast

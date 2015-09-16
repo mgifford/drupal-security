@@ -5,7 +5,7 @@
 Drupal Security Best Practices
 ==============================
 
-A Guide for Governments and Nonprofits
+A General Guide to Making your Drupal Site More Secure
 
 By: `OpenConcept Consulting Inc.`_, 
    :sub:`originally written for Public Safety Canada`

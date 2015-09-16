@@ -33,7 +33,7 @@ B) Principles of Security
   | Many suggestions are provided in the Server Security, PHP & Drupal sections.
 
 **Avoid writing custom code:**
-  | Even large government departments find it difficult to invest properly in regular, ongoing code reviews.
+  | Even large organizations find it difficult to invest properly in regular, ongoing code reviews.
 
   | Minimize the use of any custom code.
 

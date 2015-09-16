@@ -384,8 +384,8 @@ Review the discussion in Section K and decide if you are going to remove the
 weekly basis and **do not hack core**! If you plan to distribute your live site
 so that you can do testing or development outside of a controlled environment,
 consider building a `sanitized version of the database`_. This is especially
-important if you have user information stored in the database. For many
-government sites this may not be necessary.
+important if you have user information stored in the database. If absolutely all 
+information on the site is public, this may not be necessary.
 
 .. _Verify Drupal file permissions on the server: https://drupal.org/node/244924
 .. _ClamAV: https://drupal.org/project/clamav
