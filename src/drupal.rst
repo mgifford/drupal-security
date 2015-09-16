@@ -289,7 +289,7 @@ want to add more or less than those listed here.
   Disables the UI to set/change file permissions.
 
 `Security Review`_
-  Produces a quick review of your site's security configuration.
+  Produces a quick but useful review of your site's security configuration. 
 
 `Shield`_
   Protects your non-production environment from being accessed.

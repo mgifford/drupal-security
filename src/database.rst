@@ -69,6 +69,10 @@ server: There is little benefit if you have restricted which interfaces MySQL
 will listen on, as described above, but then allow control of the database from
 an Internet-facing web page.
 
+Drupal modules like `Security Review`_ can be useful to alert administrators if 
+there are a large number of database errors. This is an indication of a possible
+`SQL injection attack`_ (SQLi attempt).
+
 .. _MySQL: https://www.mysql.com/
 .. _SQLite: https://www.sqlite.org/
 .. _PostgreSQL: http://www.postgresql.org/
@@ -78,3 +82,5 @@ an Internet-facing web page.
 .. _access permissions for the Drupal user: https://drupal.org/documentation/install/create-database
 .. _review your databases, users and permissions: http://www.symantec.com/connect/articles/securing-mysql-step-step
 .. _phpMyAdmin: http://www.phpmyadmin.net/home_page/index.php
+.. _`Security Review`: https://www.drupal.org/project/security_review
+.. _`SQL injection attack`: https://en.wikipedia.org/wiki/SQL_injection
