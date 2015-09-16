@@ -376,7 +376,36 @@ security triad`_: confidentiality, integrity and availability. It is worth
 watching the evolution of these distributions and installing them from time to
 time if only to have a comparison of modules and configuration options.
 
-9) Miscellaneous
+9) Drupal Updates
+
+Eventually, all software will need an update if it is going to continue to be 
+useful. Most commonly they are feature releases and do not impact security. The 
+available updates report will show you these when the Update manager is enabled. 
+This report will also alert you when there are security updates available on 
+projects that are enabled and hosted on Drupal.org. The `risk levels`_ that 
+the Drupal community has adopted is now based on the `NIST Common Misuse Scoring System`_ 
+and converted into the following text descriptions: Not Critical, Less Critical, 
+Moderately Critical, Critical and Highly Critical.
+
+Sometimes a maintainer does not have the time to put out a full release, so will 
+produce a development release, or simply post the code to the Git repository on 
+Drupal.org.  For now the Update manager does not have a means to track anything 
+other than full stable releases. The Available update report will show you when 
+a new release is available, but is geared to stable releases. Using your site 
+uses modules hosted on GitHub or other repositories, you will not have the 
+benefit of the security alerts made by through Drupal.org.
+
+Sometimes a module simply doesn't have an active maintainer or the maintainer
+is focused on the next major version of the code base. For instance, Drupal 6 is
+still officially supported, but there are very few maintainers actively 
+addressing issues in this older code base. In these instances, a stable release 
+can be removed because officially nobody is maintaining it. By definition, 
+unmaintained code is a security problem. 
+
+Tools like `Drop Guard`_ are designed to make this easier for developers to keep 
+track of.
+
+10) Miscellaneous
 ----------------
 
 Review the discussion in Section K and decide if you are going to remove the
@@ -441,3 +470,6 @@ information on the site is public, this may not be necessary.
 .. _Hardened Drupal: https://drupal.org/project/hardened_drupal
 .. _CIA information security triad: https://en.wikipedia.org/wiki/Information_security
 .. _sanitized version of the database: http://drupalscout.com/knowledge-base/creating-sanitized-drupal-database-backup
+.. _risk levels: https://www.drupal.org/security-team/risk-levels
+.. _`NIST Common Misuse Scoring System`: http://www.nist.gov/itl/csd/cmss-072512.cfm
+.. _`Drop Guard`: http://www.drop-guard.net/
