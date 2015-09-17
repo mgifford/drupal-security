@@ -32,7 +32,8 @@ More information about reStructuredText is available from:
 
 However this is just another text based markup that it similar to MarkDown. The
 files should be easy enough to read that if you want to make a text change, you 
-really shouldn't need to learn anything. 
+really shouldn't need to learn anything. GitHub makes it pretty easy to sugest changes
+directly through their website too which is sweet. 
 
 How do I get a usable document?
 -------------------------------
@@ -58,5 +59,5 @@ reloads.
 Can I help?
 -----------
 
-**YES!**, we'd like to get your thoughts, concerns, comments. If you have an 
-improvements submit a comment, a pull request or a patch!
+**YES!** We'd like to get your thoughts, concerns, comments. If you have an 
+improvements submit a comment, a pull request or a patch! 
