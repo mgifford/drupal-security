@@ -2,7 +2,8 @@ Drupal Security
 ===============
 
 This document is meant to be a living guide for setting up and running secure
-Drupal websites.
+Drupal websites. You can find it in an ePub or PDF version from:
+  http://openconcept.ca/drupal-security-guide
 
 This represents many of the current best practices and "not to do"s for 
 administrating servers and specifically drupal website.
