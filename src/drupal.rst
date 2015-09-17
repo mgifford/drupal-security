@@ -476,7 +476,16 @@ root.
     CONFIG_STAGING_DIRECTORY => '/another/directory/outside/webroot',
  );
 
-12) Miscellaneous
+12) If You Find a Security Problem
+----------------------------------
+
+The Drupal community takes security issues very seriously.  If you do see 
+something you think might be a security problem, there is a `full explaination` 
+of what to do. The community needs to have these issues reported so that they 
+can be fixed. For those who are more visual, there is a great `infographic`_ here 
+describing the process of fixing security issues in Drupal projects. 
+
+13) Miscellaneous
 -----------------
 
 Review the discussion in Section K and decide if you are going to remove the
@@ -545,3 +554,5 @@ information on the site is public, this may not be necessary.
 .. _`NIST Common Misuse Scoring System`: http://www.nist.gov/itl/csd/cmss-072512.cfm
 .. _`Drop Guard`: http://www.drop-guard.net/
 .. _salt: https://en.wikipedia.org/wiki/Salt_%28cryptography%29
+.. _`full explaination`: https://www.drupal.org/node/101494
+.. _infographic: http://drupalsecurityreport.org/sites/g/files/g598426/f/Drupal-security-release_rgb-cc-by-nd.jpg
