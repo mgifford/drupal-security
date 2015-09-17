@@ -43,12 +43,14 @@ watching your server logs, particularly your Apache error log::
   $ egrep -i "denied|error|warn" /var/log/httpd/error_log
 
 Security best practices are constantly changing.  OWASP has released two `Top 10`_ 
-lists about the most critical web application security flaws.  The Top 10 
-for 2010 was leveraged to look at `how it applies to Drupal`_.  This needs to be 
-updated, and reviewed, particularly if you are writing any custom code.  It's a 
-simple idea, but it can be good to search `Google for test data`_ that might have 
-been left in development or exposed in an upgrade.  Anything in a draft mode should
-never be exposed to the Internet.
+lists about the most critical web application security flaws.  For a view of how
+the 2013 Top 10 `OWASP list applies to Drupal`_ there is also an older comparison with
+the `2010 Top 10`_ . 
+
+This needs to be updated, and reviewed, particularly if you are writing any 
+custom code.  It's a simple idea, but it can be good to search `Google for test data`_ 
+that might have been left in development or exposed in an upgrade.  Anything in 
+a draft mode should never be exposed to the Internet.
 
 `Acquia's Insights`_ provides a useful tool to get regular insights on how to
 improve your website.  Their security section will be able to do a quick review
@@ -67,7 +69,8 @@ risk assessment services.  These are included in Acquia's hosting.
 .. _Twitter: https://twitter.com/drupalsecurity
 .. _SELinux provides auditing services: http://drupalwatchdog.com/volume-2/issue-2/using-apache-and-selinux-together
 .. _Top 10: https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project
-.. _how it applies to Drupal: http://www.cameronandwilding.com/blog/pablo/10-most-critical-drupal-security-risks
+.. _`OWASP list applies to Drupal`: http://www.faichi.com/blog/drupal-security
+.. _`2010 Top 10`: http://www.cameronandwilding.com/blog/pablo/10-most-critical-drupal-security-risks
 .. _Google for test data: https://www.google.com/search?q=site:healthcare.gov%20intext:%22test%22
 .. _Acquia's Insights: https://www.acquia.com/products-services/acquia-network/cloud-services/insight
 .. _Acquia Network Connector: https://drupal.org/project/acquia_connector
