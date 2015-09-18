@@ -476,7 +476,46 @@ root.
     CONFIG_STAGING_DIRECTORY => '/another/directory/outside/webroot',
  );
 
-12) If You Find a Security Problem
+12) Advantages of Drupal 8
+--------------------------
+
+Acquia has provided a great list of `10 Ways Drupal 8 Will Be More Secure`_ some 
+of which are mentioned elsewhere in this document. The use of Twig_ is a big one 
+as it forces a harder separation between logic and presentation. It's not 
+terribly uncommon for an inexperienced developer to put a lot of PHP in the 
+theme which introduces a lot of security problems down the line. 
+
+Another important security feature is that Drupal 8 has replaced a lot of it's 
+custom code with sortware that was `Proudly-Found-Elsewhere`_ which means that 
+there is a broader pool of developers to look at to harden the code. Symfony_, 
+CKEditor_, Composer_, EasyRDF_, Guzzle_ & Doctrine_ are just examples of other 
+open-source projects that have been incorporated. 
+
+The Configuration Management Initiative (CMI) and introduction of YAML_ files 
+to control configuration will also allow administrators to have greater control 
+of changes that are introduced. Simply the ability to track changes in 
+configuration will help manage more secure, enterprise solutions. 
+
+The adoption of CKEditor into Core also comes with an improvement in that core 
+text filtering supports limiting the use of images local to the site. This helps 
+prevent cross-site request forgery (CSRF).
+
+Also mentioned in more detail in the Acquia article mentioned above, Drupal 8 
+also comes with:
+
+* Hardened user session and session ID handling
+* Automated CSRF token protection in route definitions
+* PDO MySQL limited to executing single statements
+* Clickjacking protection enabled by default
+* Core JavaScript API Compatible with `Content Security Policy W3C Standard`_ 
+
+This is the first time that a `cash bounty`_ has been provided in the release 
+cycle for discovering Drupal security issues. This is sure to motivate folks to 
+look for and report issues that may have been overlooked in the process of 
+building Drupal Core. 
+
+
+13) If You Find a Security Problem
 ----------------------------------
 
 The Drupal community takes security issues very seriously.  If you do see 
@@ -485,7 +524,7 @@ of what to do. The community needs to have these issues reported so that they
 can be fixed. For those who are more visual, there is a great `infographic`_ here 
 describing the process of fixing security issues in Drupal projects. 
 
-13) Miscellaneous
+14) Miscellaneous
 -----------------
 
 Review the discussion in Section K and decide if you are going to remove the
@@ -556,3 +595,15 @@ information on the site is public, this may not be necessary.
 .. _salt: https://en.wikipedia.org/wiki/Salt_%28cryptography%29
 .. _`full explaination`: https://www.drupal.org/node/101494
 .. _infographic: http://drupalsecurityreport.org/sites/g/files/g598426/f/Drupal-security-release_rgb-cc-by-nd.jpg
+.. _`10 Ways Drupal 8 Will Be More Secure`: https://dev.acquia.com/blog/drupal-8/10-ways-drupal-8-will-be-more-secure/2015/08/27/6621
+.. _Twig: http://twig.sensiolabs.org/documentation
+.. _`Proudly-Found-Elsewhere`: http://prague2013.drupal.org/session/not-invented-here-proudly-found-elsewhere-drupal-8-story.html
+.. _Symfony: http://symfony.com/
+.. _CKEditor: http://ckeditor.com/
+.. _Composer: https://getcomposer.org/
+.. _EasyRDF: http://www.easyrdf.org/
+.. _Guzzle: https://github.com/guzzle/guzzle
+.. _Doctrine: https://packagist.org/packages/doctrine/common
+.. _YAML: https://en.wikipedia.org/wiki/YAML
+.. _`Content Security Policy W3C Standard`: http://www.w3.org/TR/CSP/
+.. _`cash bounty`: https://www.drupal.org/drupal8-security-bounty
