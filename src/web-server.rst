@@ -276,6 +276,10 @@ not encrypted either (just base-64 encoded, which is trivial to decode), so do
 not re-use credentials used elsewhere (e.g.: each unique login should have it's 
 own unique password).
 
+It is strongly recommended to store the htpasswd file outside the document root 
+and to set it with read only permissions (444).
+
+
 5) Everything Else
 ------------------
 

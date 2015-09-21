@@ -319,10 +319,10 @@ distributed attacks, but could be used in conjunction with OSSEC.
 
 `Fail2ban is also an effective measure for flood control`_ and can stop most
 denial of service attacks. Drupal also has some built in flood control options,
-the `Flood Control module`_ provides a UI to control them.
-
-`Distributed Denial of Service (DDOS)`_ attacs are more difficult to address,
-but there's a great defence plan laid out on `StackOverflow`_.
+the `Flood Control module`_ provides a UI to control them. Note that some 
+crackers are throttling their dictionary attacks to avoid tools like Fail2ban, 
+so it will still be important to use a monitoring tool like Nagios to monitor if 
+someone is methodically trying to guess bad passwords on your server. 
 
 ::
 
@@ -331,6 +331,9 @@ but there's a great defence plan laid out on `StackOverflow`_.
 
   # CentOS
   $ yum install fail2ban
+
+`Distributed Denial of Service (DDOS)`_ attacs are more difficult to address,
+but there's a great defence plan laid out on `StackOverflow`_.
 
 Place the /etc directory under version control so that you can easily track
 which configurations have changed. The program `etckeeper`_ automates this
@@ -474,7 +477,10 @@ compressed so that space isn't a problem.
 Most Linux distributions also come with syslog built in, which is critical for
 doing security audits. You can also configure it to `send emergency messages to
 a remote machine`_, or even send a duplicate of all log messages to an external
-loghost. There is a discussion in the Drupal section later on about how to
+loghost. An experienced cracker will modify your log files to obscure their work,
+once they have compromised your server.
+
+There is a discussion in the Drupal section later on about how to
 direct Watchdog messages to syslog. There are many tools to help system
 administrators more effectively monitor their log files, and regular log
 reviews can be an important part of early breach detection.
