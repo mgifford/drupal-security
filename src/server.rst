@@ -178,7 +178,7 @@ by default uses firewalld.
 
 Using iptables, the port settings can be listed from the command line with::
 
-  $ iptables -L -v -n
+  $ iptables -L -vn
 
 You can load/save the iptables easily using the iptables-persistent package
 (installed on Debian/Ubuntu using ``apt-get install iptables-persistent``).
