@@ -64,6 +64,7 @@ Contents:
    environments
    maintenance
    debate
+   attacks
    resources
 
 .. _Mike Gifford: http://openconcept.ca/users/mike
