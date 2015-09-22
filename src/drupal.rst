@@ -265,37 +265,40 @@ want to add more or less than those listed here.
 `Password Policy`_
   Enforces your user password policy.
 
-`Session Limit`_
-  Limits the number of simultaneous sessions per user.
-
-`Settings Audit Log`_
-  Logs who did what, when.
-
-`Security Kit`_
-  Hardens various pieces of Drupal.
-
-`Secure Login`_
-  Provides secure HTTPS access, without mixed-mode capability.
-
 `HTTP Strict Transport Security`_
   To be used together with Secure Login, to prevent ssl strip attacks.
   Alternatively, directly `enforce it through web-server settings`_.
+
+`Restrict IP`_
+  Restrict access to an administrator defined set of IP addresses.
 
 `Secure Pages`_
   Manages mixed-mode (HTTPS and HTTP) authenticated sessions for enhanced
   security (note required core patches).
 
+`Secure Login`_
+  Provides secure HTTPS access, without mixed-mode capability.
+
 `Secure Permissions`_
   Disables the UI to set/change file permissions.
+
+`Security Kit`_
+  Hardens various pieces of Drupal.
 
 `Security Review`_
   Produces a quick but useful review of your site's security configuration. 
 
+`Session Limit`_
+  Limits the number of simultaneous sessions per user.
+
+`Settings Audit Log`_
+  Logs which users did what, when.
+
 `Shield`_
   Protects your non-production environment from being accessed.
 
-`Restrict IP`_
-  Restrict access to an administrator defined set of IP addresses.
+`Site Audit`_
+  A site analysis tool that generates reports with actionable best practice recommendations.
 
 `Username Enumeration Prevention`_
   Stop brute force attacks from leveraging discoverable usernames.
@@ -390,7 +393,7 @@ incorporate into your site consider:
 * When was the last code commit to the repository? 
 * How many open bugs are there vs the total number of bugs?
 * Do the maintainers also work on other projects? 
-* Is the project description useful and include screenshots?
+* Is the project description useful and include screen-shots?
 * What documentation is available?
 * Is there a Drupal 8 stable or development release?
 * How many maintainers are listed?
@@ -442,7 +445,7 @@ attempts:
 
  $base_url = 'http://www.example.com';
 
-In Drupal 8, this is now defined in the Trusted hosts patern:
+In Drupal 8, this is now defined in the Trusted hosts pattern:
 
  $settings['trusted_host_patterns'] = array('^www\.example\.com$');
  
@@ -486,7 +489,7 @@ terribly uncommon for an inexperienced developer to put a lot of PHP in the
 theme which introduces a lot of security problems down the line. 
 
 Another important security feature is that Drupal 8 has replaced a lot of it's 
-custom code with sortware that was `Proudly-Found-Elsewhere`_ which means that 
+custom code with software that was `Proudly-Found-Elsewhere`_ which means that 
 there is a broader pool of developers to look at to harden the code. Symfony_, 
 CKEditor_, Composer_, EasyRDF_, Guzzle_ & Doctrine_ are just examples of other 
 open-source projects that have been incorporated. 
@@ -519,7 +522,7 @@ building Drupal Core.
 ----------------------------------
 
 The Drupal community takes security issues very seriously.  If you do see 
-something you think might be a security problem, there is a `full explaination` 
+something you think might be a security problem, there is a `full explanation` 
 of what to do. The community needs to have these issues reported so that they 
 can be fixed. For those who are more visual, there is a great `infographic`_ here 
 describing the process of fixing security issues in Drupal projects. 
@@ -577,6 +580,7 @@ information on the site is public, this may not be necessary.
 .. _Secure Permissions: https://drupal.org/project/secure_permissions
 .. _Security Review: https://drupal.org/project/security_review
 .. _Shield: https://drupal.org/project/shield
+.. _`Site Audit`: https://www.drupal.org/project/site_audit
 .. _Restrict IP: https://drupal.org/project/restrict_ip
 .. _Username Enumeration Prevention: https://drupal.org/project/username_enumeration_prevention
 .. _Delete all: https://www.drupal.org/project/delete_all
