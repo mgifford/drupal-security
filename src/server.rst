@@ -129,7 +129,13 @@ the commands listed here assume you are using sudo access and but we have
 chosen not to explicitly prefix them with sudo.
 
 Protect your SSH keys by ensuring that your private keys are `password
-protected and using 2048-bits`_. By disabling the use of passwords for SSH user
+protected and using at least 2048-bits encryption`_. Some people now thing that 
+the default should be 4096-bits, while really paranoid people may choose to use
+8192-bits. Although theoretically there is nothing wrong with doing this, in 
+practice there are `limitations` to what browsers and hosting companies provide. 
+At the present time, 2048-bits seems sufficient for most use cases. 
+
+By disabling the use of passwords for SSH user
 logins a common server vulnerability is simply eliminated. When you turn off
 password logins, "`script kiddies`_\ " simply cannot compromise your server
 with common dictionary or brute force attacks. There are explanations on how to
@@ -557,7 +563,8 @@ simplify the process of searching all of your log files.
 .. _KeePass or KeePassX Password database: https://en.wikipedia.org/wiki/KeePass
 .. _point of vulnerability: http://drupalwatchdog.com/2/2/practical-security
 .. _use SSH keys: https://wiki.archlinux.org/index.php/SSH_Keys
-.. _password protected and using 2048-bits: https://www.ssllabs.com/downloads/SSL_TLS_Deployment_Best_Practices.pdf
+.. _`password protected and using at least 2048-bits encryption`: https://www.ssllabs.com/downloads/SSL_TLS_Deployment_Best_Practices.pdf
+.. _`limitations`: https://stackoverflow.com/questions/8453529/are-there-any-disadvantages-to-using-a-4096-bit-encrypted-ssl-certificate
 .. _script kiddies: https://en.wikipedia.org/wiki/Script_kiddie
 .. _Secure Hash Algorithm: https://en.wikipedia.org/wiki/Secure_Hash_Algorithm
 .. _effectively disable password logins: http://lani78.wordpress.com/2008/08/08/generate-a-ssh-key-and-disable-password-authentication-on-ubuntu-server/

@@ -407,6 +407,18 @@ application flaw fixing, but they can be bypassed. It is discouraged to rely
 solely on that technology to keep up with security: fixing flaw and applying
 patch on the back-end applications should not be replaced with WAF utilization.
 
+9) Managing the .htaccess file
+------------------------------
+
+Mike Carper has suggested a clean way of cleanly incorporating the `.htaccess file
+within the Apache config`. Using Apache includes to incorporate the .htaccess
+file provided by Drupal.org makes routine security upgrades much easier. When 
+the .htaccess file changes, this will automatically be included by Apache. 
+Unfortunately, Apache will need to be restarted before this will come into 
+effect. There will be performance improvements by not loading the .htaccess file
+with every page load.  You can also force some security rules right in the 
+configuration. 
+
 .. _PECL's uploadprogress: http://pecl.php.net/package/uploadprogress
 .. _Remy van Elst: https://raymii.org/s/tutorials/Strong_SSL_Security_On_Apache2.html
 .. _Qualys SSL Labs' Server Test: https://www.ssllabs.com/ssltest/
@@ -467,3 +479,4 @@ patch on the back-end applications should not be replaced with WAF utilization.
 .. _set up the base files in your Apache configuration: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#a-recommended-base-configuration
 .. _configuration of ModSecurity: https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended#L7
 .. _virtual patching: https://www.owasp.org/index.php/Virtual_Patching_Cheat_Sheet
+.. _`.htaccess file within the Apache config`: https://drupal.stackexchange.com/questions/108301/adding-htaccess-within-httpd-conf-correctly#answer-108346
