@@ -156,7 +156,7 @@ scan through hundreds of thousands of lines of code and find differences against
 known releases is a huge security advantage.
 
 You can also generate Drush make file from an existing Drupal site and then
-recreate a clean copy of the codebase which you can then diff (a command line
+recreate a clean copy of the code-base which you can then diff (a command line
 comparison tool) to determine if your site has been hacked.
 
 ::

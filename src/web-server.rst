@@ -262,7 +262,7 @@ configuration.
 4) HTTP Basic Authentication
 ----------------------------
 
-Most webservers provide a way to restict access to a site using `HTTP Basic
+Most webservers provide a way to restrict access to a site using `HTTP Basic
 Authentication`_ — for example, using Apache HTTP Server's `htpasswd files or
 Auth* directives`_, or nginx's `ngx_http_auth_basic_module`_ module.
 
@@ -405,7 +405,7 @@ within the Drupal site.
 At last but not least, WAFs are a great solution for `virtual patching`_ and
 application flaw fixing, but they can be bypassed. It is discouraged to rely
 solely on that technology to keep up with security: fixing flaw and applying
-patch on the backend applications should not be replaced with WAF utilization.
+patch on the back-end applications should not be replaced with WAF utilization.
 
 .. _PECL's uploadprogress: http://pecl.php.net/package/uploadprogress
 .. _Remy van Elst: https://raymii.org/s/tutorials/Strong_SSL_Security_On_Apache2.html
