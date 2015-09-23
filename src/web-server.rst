@@ -279,84 +279,7 @@ own unique password).
 It is strongly recommended to store the htpasswd file outside the document root 
 and to set it with read only permissions (444).
 
-
-5) Everything Else
-------------------
-
-Modify the web server configuration to `disable the TRACE/TRACK`_ methods either
-by employing the TraceEnable directive or by `adding the following lines`_ to
-your Apache configuration:
-
-.. code-block:: apache
-
-  RewriteEngine On
-  RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
-  RewriteRule .* - [F]
-
-You should keep your server up-to date. Security by obscurity may delay some
-crackers, but not prevent them from accessing your system. Looking at the logs
-for any popular site, you will notice thousands of fruitless attempts at
-exploits that may not even exist (or have existed) on your system. Broadcasting
-information about your server environment isn't likely to cause any harm, but if
-you choose to disable it you can simply add this to your Apache configuration:
-
-.. code-block:: apache
-
-  ServerSignature Off
-  ServerTokens ProductOnly
-
-One of the nice things about Ubuntu/Debian is that the Apache file structure is
-clean. By default it allows you to store a variety of different configurations for
-sites or modules that are stored in logical directories. That's not critical,
-but having a well defined Apache config file is. There should be inline comments
-about all changed variables explaining why they were added or modified.
-
-It is possible to restrict the outgoing access of the web server by leveraging
-iptables' "--uid-owner" option on the OUTPUT table. This can also be done using
-`containers and namespaces`_ on modern Linux kernels. In most cases, if you are
-using containers, the UID of Apache will be the same inside the container as
-outside of it.
-
-You should make note of the user/UID of your web server. This is dependent on
-the package installation order, but often this is "www-data" (uid 33) in
-Debian/Ubuntu and "nobody" (uid 65534) in CentOS. If you are using PHP-FPM, then
-you will need to search for the UID of that application rather than Apache's.
-Double check by viewing the output of::
-
-  # Ubuntu/Debian
-  $ ps aux grep apache
-
-  # CentOS
-  $ ps aux grep http
-
-In order to restrict Apache to connect only to https://drupal.org (with IP
-addresses 140.211.10.62 and 140.211.10.16 at the time of writing) insert the
-following firewall rules::
-
-  iptables -A OUTPUT -m owner --uid-owner ${APACHE_UID}
-  -p udp --dport 53 -j ACCEPT
-
-  iptables -A OUTPUT -d 140.211.10.62/32 -p tcp -m
-  owner --uid-owner ${APACHE_UID} -m tcp --dport 443 -j ACCEPT
-
-  iptables -A OUTPUT -d 140.211.10.16/32 -p tcp -m
-  owner --uid-owner ${APACHE_UID} -m tcp --dport 443 -j ACCEPT
-
-  iptables -A OUTPUT -m owner --uid-owner ${APACHE_UID}
-  -m state --state NEW -j DROP
-
-There are also Apache modules like `Project Honey Pot`_ that make it harder for
-people to hack your system. Honey Pot can also be `installed on Drupal`_, but
-Apache is often more efficient at addressing attacks like this before it hits
-PHP::
-
-  # Ubuntu/Debian
-  $ apt-get install mod_httpbl
-
-  # CentOS
-  $ yum install mod_httpbl
-
-8) Web Application Firewall
+5) Web Application Firewall
 ---------------------------
 
 Web Application Firewalls (WAFs) can be used to provide additional protection
@@ -407,7 +330,7 @@ application flaw fixing, but they can be bypassed. It is discouraged to rely
 solely on that technology to keep up with security: fixing flaw and applying
 patch on the back-end applications should not be replaced with WAF utilization.
 
-9) Managing the .htaccess file
+6) Managing the .htaccess file
 ------------------------------
 
 Mike Carper has suggested a clean way of cleanly incorporating the `.htaccess file
@@ -418,6 +341,86 @@ Unfortunately, Apache will need to be restarted before this will come into
 effect. There will be performance improvements by not loading the .htaccess file
 with every page load.  You can also force some security rules right in the 
 configuration. 
+
+7) Everything Else
+------------------
+
+Modify the web server configuration to `disable the TRACE/TRACK`_ methods either
+by employing the TraceEnable directive or by `adding the following lines`_ to
+your Apache configuration:
+
+.. code-block:: apache
+
+  RewriteEngine On
+  RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+  RewriteRule .* - [F]
+
+You should keep your server up-to date. Security by obscurity may delay some
+crackers, but not prevent them from accessing your system. Looking at the logs
+for any popular site, you will notice thousands of fruitless attempts at
+exploits that may not even exist (or have existed) on your system. Broadcasting
+information about your server environment isn't likely to cause any harm, but if
+you choose to disable it you can simply add this to your Apache configuration:
+
+.. code-block:: apache
+
+  ServerSignature Off
+  ServerTokens ProductOnly
+
+One of the nice things about Ubuntu/Debian is that the Apache file structure is
+clean. By default it allows you to store a variety of different configurations for
+sites or modules that are stored in logical directories. That's not critical,
+but having a well defined Apache config file is. There should be inline comments
+about all changed variables explaining why they were added or modified.
+
+It is possible to restrict the outgoing access of the web server by leveraging
+iptables' "--uid-owner" option on the OUTPUT table. This can also be done using
+`containers and namespaces`_ on modern Linux kernels. In most cases, if you are
+using containers, the UID of Apache will be the same inside the container as
+outside of it.
+
+You should make note of the user/UID of your web server. This is dependent on
+the package installation order, but often this is "www-data" (uid 33) in
+Debian/Ubuntu and "nobody" (uid 65534) in CentOS. If you are using PHP-FPM, then
+you will need to search for the UID of that application rather than Apache's. 
+Apache should never be run as your user login, although this is common in shared
+hosting environments. 
+
+Double check by viewing the output of::
+
+  # Ubuntu/Debian
+  $ ps aux grep apache
+
+  # CentOS
+  $ ps aux grep http
+
+In order to restrict Apache to connect only to https://drupal.org (with IP
+addresses 140.211.10.62 and 140.211.10.16 at the time of writing) insert the
+following firewall rules::
+
+  iptables -A OUTPUT -m owner --uid-owner ${APACHE_UID}
+  -p udp --dport 53 -j ACCEPT
+
+  iptables -A OUTPUT -d 140.211.10.62/32 -p tcp -m
+  owner --uid-owner ${APACHE_UID} -m tcp --dport 443 -j ACCEPT
+
+  iptables -A OUTPUT -d 140.211.10.16/32 -p tcp -m
+  owner --uid-owner ${APACHE_UID} -m tcp --dport 443 -j ACCEPT
+
+  iptables -A OUTPUT -m owner --uid-owner ${APACHE_UID}
+  -m state --state NEW -j DROP
+
+There are also Apache modules like `Project Honey Pot`_ that make it harder for
+people to hack your system. Honey Pot can also be `installed on Drupal`_, but
+Apache is often more efficient at addressing attacks like this before it hits
+PHP::
+
+  # Ubuntu/Debian
+  $ apt-get install mod_httpbl
+
+  # CentOS
+  $ yum install mod_httpbl
+
 
 .. _PECL's uploadprogress: http://pecl.php.net/package/uploadprogress
 .. _Remy van Elst: https://raymii.org/s/tutorials/Strong_SSL_Security_On_Apache2.html

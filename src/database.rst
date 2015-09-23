@@ -47,10 +47,22 @@ can add this to your my.conf file::
 
   bind-address=127.0.0.1
 
+Database Access
+---------------
+
 Be sure to `review your databases, users and permissions`_ to see that there are
 not any sample users or old databases still enabled on the server and that you
 are not giving greater access to a user than they need. You should also review
 the file system to see that the database files are restricted.
+
+Drupal 7 and 8 require that the database have GRANT SELECT, INSERT, UPDATE, 
+DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES permissions. This 
+gives more permission than is generally required, but does cover both new 
+installations and updates. There are a few options presented here for applying 
+more `fine grained permissions`_ . 
+
+PHPMyAdmin
+----------
 
 If you need a graphical tool like `phpMyAdmin`_, disable it after use. Web
 applications like this can also be tightened down by placing them on a different
@@ -81,6 +93,7 @@ there are a large number of database errors. This is an indication of a possible
 .. _secure your database: http://www.greensql.com/content/mysql-security-best-practices-hardening-mysql-tips
 .. _access permissions for the Drupal user: https://drupal.org/documentation/install/create-database
 .. _review your databases, users and permissions: http://www.symantec.com/connect/articles/securing-mysql-step-step
+.. _`fine grained permissions`: https://groups.drupal.org/node/465893
 .. _phpMyAdmin: http://www.phpmyadmin.net/home_page/index.php
 .. _`Security Review`: https://www.drupal.org/project/security_review
 .. _`SQL injection attack`: https://en.wikipedia.org/wiki/SQL_injection
