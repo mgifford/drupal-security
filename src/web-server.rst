@@ -301,7 +301,13 @@ Application Security Project's (OWASP) `ModSecurity Core Rule Set Project`_.
   $ yum install mod_evasive mod_security
 
 To engage ModSecurity in your Apache, you'll need to `set up the base files in
-your Apache configuration`_ and then restart Apache.
+your Apache configuration`_ and then restart Apache. To set the chroot for 
+Apache, using mod_security, make sure to define the directory you want to 
+restrict.
+
+.. code-block:: apache
+
+  SecChrootDir /chroot/apache
 
 Using default generic configurations such as the OWASP Core Rule Set can impact
 the normal behaviour of Drupal and must be tested extensively before deployment.
@@ -366,6 +372,21 @@ you choose to disable it you can simply add this to your Apache configuration:
 
   ServerSignature Off
   ServerTokens ProductOnly
+
+Denial of Service attacks can be mitigated by lowering the Timeout value from 
+the default 300 seconds.
+
+.. code-block:: apache
+
+  Timeout 45
+
+Likewise the LimitRequestBody, LimitRequestFields, LimitRequestFieldSize and 
+LimitRequestLine can be set to lower levels, however this can cause problems 
+with file uploads though, so be careful about setting this value.
+  
+.. code-block:: apache
+
+  LimitRequestBody 1048576
 
 One of the nice things about Ubuntu/Debian is that the Apache file structure is
 clean. By default it allows you to store a variety of different configurations for
