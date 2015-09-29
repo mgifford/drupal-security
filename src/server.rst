@@ -315,7 +315,7 @@ monitor the integrity of core files and will alert you to suspicious activity
 should make sure that secure IPs, such as your outgoing gateway is whitelisted.
 
 `Drupal monitoring can be set up to work with OSSEC`_ which would be more
-efficient than using Drupal's `Login Security`_ module as it would allow you to
+efficient than using Drupal's `Login Security`_ module (6/7/8) as it would allow you to
 use your existing HIDS infrastructure to alert you to these sorts of attacks.
 
 Crackers will often try to use a `brute force attack`_ to guess usernames and

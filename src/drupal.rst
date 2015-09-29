@@ -140,7 +140,7 @@ how to `send your logs to Syslog`_ with integrated logging.
 
 Before launching your site (and periodically afterwards) it is useful to run the
 `Hacked!`_ module to check what code differs from what was released on
-Drupal.org. Particularly when the `diff`_ module is enabled, this is a powerful
+Drupal.org. Particularly when the `diff`_ module (6/7/8) is enabled, this is a powerful
 tool to evaluate your code. There are millions of lines of code in a given
 Drupal site, so Hacked! is a really valuable analysis tool. If you need to apply
 patches against the stable released version of the code, the patch should be in
@@ -164,7 +164,7 @@ comparison tool) to determine if your site has been hacked.
  $ drush generate-makefile make-file.make
  $ drush make make-file.make -y
 
-It is recommended to run all modules you use through the `Coder`_ module, but
+It is recommended to run all modules you use through the `Coder`_ module (6/7/8), but
 especially any custom built modules and themes. This module `can give you
 suggestions`_ on how to follow the `Drupal communities coding standards`_.
 
@@ -244,10 +244,10 @@ Filtered HTML input format but be cautious.
 There are `a lot of Drupal security modules`_. Depending on your needs you will
 want to add more or less than those listed here.
 
-`AES Encryption`_
+`AES Encryption`_ (6/7/8)
   Simple and easy to use encryption API.
 
-`Automated Logout`_
+`Automated Logout`_ (6/7/8)
   Provides the ability to log users out after a specified time of inactivity.
 
 `Clear Password Field`_
@@ -262,13 +262,13 @@ want to add more or less than those listed here.
 `Local Image Input Filter`_
   Avoids CSRF attacks through external image references.
 
-`Login Security`_
+`Login Security`_ (6/7/8)
   Set access control to restrict access to login forms by IP address.
 
 `Paranoia`_
   Limits PHP functionality and other controls.
 
-`Password Policy`_
+`Password Policy`_ (6/7/8)
   Enforces your user password policy.
   
 `Password Strength`_
@@ -288,7 +288,7 @@ want to add more or less than those listed here.
   Manages mixed-mode (HTTPS and HTTP) authenticated sessions for enhanced
   security (note required core patches).
 
-`Secure Login`_
+`Secure Login`_ (6/7/8)
   Provides secure HTTPS access, without mixed-mode capability.
 
 `Secure Permissions`_
@@ -297,7 +297,7 @@ want to add more or less than those listed here.
 `Security Kit`_
   Hardens various pieces of Drupal.
 
-`Security Review`_
+`Security Review`_ (6/7/8)
   Produces a quick but useful review of your site's security configuration. 
 
 `Session Limit`_
@@ -309,13 +309,13 @@ want to add more or less than those listed here.
 `Shield`_
   Protects your non-production environment from being accessed.
 
-`Site Audit`_
+`Site Audit`_ (7/8)
   A site analysis tool that generates reports with actionable best practice recommendations.
   
 `Two-factor Authentication (TFA)`_
   Second-factor authentication for Drupal sites.
 
-`Username Enumeration Prevention`_
+`Username Enumeration Prevention`_ (6/7/8)
   Stop brute force attacks from leveraging discoverable usernames.
 
 7) Modules to Avoid on Shared Servers
@@ -345,7 +345,7 @@ website include:
   This module allows someone with sufficient privileges to delete all content
   and users on a site.
 
-`Devel`_
+`Devel`_ (6/7/8)
   Besides letting users run arbitrary PHP from any page, Devel can be configured
   to display backtraces, raw database queries and their results, display raw
   variables, and disable caching, among other things.
@@ -363,7 +363,7 @@ website include:
   particular section of the site, but it displays raw variables and slows down
   the site significantly.
 
-`Trace`_
+`Trace`_ (6)
   This module can be used to display backtraces and raw variables, among other
   things.
 
@@ -372,7 +372,7 @@ privileged access to Drupal. You should evaluate each new module you install to
 determine what it does and whether the features it brings are worth the risks.
 Some modules to take into special consideration are:
 
-`Backup and Migrate`_
+`Backup and Migrate`_ (6/7/8)
   This module allows you to download a copy of the site's database. If
   restrictions placed upon you by your hosting provider prevents you from being
   able to make backups, this module will allow you to do so; but a malicious
@@ -380,7 +380,7 @@ Some modules to take into special consideration are:
   Drupal database, including usernames, passwords, and depending on your site,
   access keys to the services you use.
 
-`Coder`_
+`Coder`_ (6/7/8)
   This module is very useful for ensuring your code conforms to coding standards
   but can be used to display the PHP that makes up modules.
 

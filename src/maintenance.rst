@@ -58,7 +58,7 @@ a draft mode should never be exposed to the Internet.
 improve your website.  Their security section will be able to do a quick review
 of your website to check on a number of security related issues.  They also
 address performance, best practices, SEO and code analysis.  With the `Acquia
-Network Connector`_ module, this can be easily and securely done on any website
+Network Connector`_ (6/7/8) module, this can be easily and securely done on any website
 accessible to the Internet.  Their dashboard provides an easy way for you to
 regularly monitor important elements of your site.
 
