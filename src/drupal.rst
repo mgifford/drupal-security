@@ -252,7 +252,7 @@ want to add more or less than those listed here.
 
 `Drupal Tiny-IDS`_
   An alternative to a server-based intrusion detection service.
-
+  
 `Local Image Input Filter`_
   Avoids CSRF attacks through external image references.
 
@@ -264,6 +264,12 @@ want to add more or less than those listed here.
 
 `Password Policy`_
   Enforces your user password policy.
+  
+`Password Strength`_
+  Provides realistic password strength measurement and server-side enforcement.
+
+`Permissions Lock`_
+  Provides more fine-grained control over what users with the permission 'administer permissions' can configure.
 
 `HTTP Strict Transport Security`_
   To be used together with Secure Login, to prevent ssl strip attacks.
@@ -299,6 +305,9 @@ want to add more or less than those listed here.
 
 `Site Audit`_
   A site analysis tool that generates reports with actionable best practice recommendations.
+  
+`Two-factor Authentication (TFA)`_
+  Second-factor authentication for Drupal sites.
 
 `Username Enumeration Prevention`_
   Stop brute force attacks from leveraging discoverable usernames.
@@ -411,10 +420,13 @@ Eventually, all software will need an update if it is going to continue to be
 useful. Most commonly they are feature releases and do not impact security. The 
 available updates report will show you these when the Update manager is enabled. 
 This report will also alert you when there are security updates available on 
-projects that are enabled and hosted on Drupal.org. The `risk levels`_ that 
-the Drupal community has adopted is now based on the `NIST Common Misuse Scoring System`_ 
-and converted into the following text descriptions: Not Critical, Less Critical, 
-Moderately Critical, Critical and Highly Critical.
+projects that are enabled and hosted on Drupal.org. Core updates tend to be 
+released on the 3rd week of the month.
+
+The `risk levels`_ that the Drupal community has adopted is now based on the 
+`NIST Common Misuse Scoring System`_ and converted into the following text 
+descriptions: Not Critical, Less Critical, Moderately Critical, Critical and 
+Highly Critical.
 
 Sometimes a maintainer does not have the time to put out a full release, so will 
 produce a development release, or simply post the code to the Git repository on 
@@ -499,6 +511,10 @@ to control configuration will also allow administrators to have greater control
 of changes that are introduced. Simply the ability to track changes in 
 configuration will help manage more secure, enterprise solutions. 
 
+By default in Drupal 8, PHP execution in subfolders is forbidden by the 
+.htaccess file. This is beneficial as it protects against random PHP files from 
+being executed deep within sub-folders. 
+
 The adoption of CKEditor into Core also comes with an improvement in that core 
 text filtering supports limiting the use of images local to the site. This helps 
 prevent cross-site request forgery (CSRF).
@@ -570,9 +586,12 @@ information on the site is public, this may not be necessary.
 .. _Local Image Input Filter: https://drupal.org/project/filter_html_image_secure
 .. _Login Security: https://drupal.org/project/login_security
 .. _Password Policy: https://drupal.org/project/password_policy
+.. _`Password Strength`: https://www.drupal.org/project/password_strength
+.. _`Permissions Lock`: https://www.drupal.org/project/permissions_lock
 .. _Session Limit: https://drupal.org/project/session_limit
 .. _Settings Audit Log: https://drupal.org/project/settings_audit_log
 .. _Security Kit: https://drupal.org/project/seckit
+.. _`Two-factor Authentication (TFA)`: https://www.drupal.org/project/tfa
 .. _Secure Login: https://drupal.org/project/securelogin
 .. _HTTP Strict Transport Security: https://www.drupal.org/project/hsts
 .. _enforce it through web-server settings: http://opentodo.net/2012/10/enable-http-strict-transport-security-in-apache-nginx/)
