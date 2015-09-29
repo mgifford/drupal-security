@@ -201,8 +201,8 @@ with HTTP headers, but it is good to have them addressed at the Apache layer
 where possible.
 
 The `W3C`_ is developing a standard content security policy (CSP) to provide
-security controls which can mitigate attacks such as `Cross Site Scripting
-(XSS)`_.
+security controls which can mitigate attacks such as 
+`Cross Site Scripting (XSS)`_.
 
 `Mozilla`_ has produced a good description of how to write a `CSP`_ and there 
 are many commonalities with the Australian Government report above. To allow 
