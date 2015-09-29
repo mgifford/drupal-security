@@ -85,6 +85,9 @@ dynamic scanning of Web sites. For complex Drupal sites they might have some
 difficulties but they can still be used as a intercepting web proxy in order to
 perform manual testing.
 
+There are a lot of resources available to help understand 
+cross-site scripting (XSS) but Acquia has written a nice `introduction to XSS`_
+
 .. _Drupal handbook page: https://drupal.org/writing-secure-code
 .. _PHP Security Cheat Sheet: https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet
 .. _Secure Coding: https://www.owasp.org/index.php/Secure_Coding_Cheat_Sheet
@@ -101,3 +104,4 @@ perform manual testing.
 .. _Application Security Verification Standard: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
 .. _OWASP ZAP: https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project
 .. _Subgraph Vega: http://www.subgraph.com/products.html
+.. ~`introduction to XSS`: https://docs.acquia.com/articles/introduction-cross-site-scripting-xss-and-drupal
