@@ -244,6 +244,9 @@ Filtered HTML input format but be cautious.
 There are `a lot of Drupal security modules`_. Depending on your needs you will
 want to add more or less than those listed here.
 
+`AES Encryption`_
+  Simple and easy to use encryption API.
+
 `Automated Logout`_
   Provides the ability to log users out after a specified time of inactivity.
 
@@ -252,7 +255,10 @@ want to add more or less than those listed here.
 
 `Drupal Tiny-IDS`_
   An alternative to a server-based intrusion detection service.
-  
+
+`Encrypt`_
+  An API for performing two-way data encryption. 
+
 `Local Image Input Filter`_
   Avoids CSRF attacks through external image references.
 
@@ -580,6 +586,8 @@ information on the site is public, this may not be necessary.
 .. _completely disable the account: https://www.drupal.org/node/947312#disable
 .. _Paranoia: https://drupal.org/project/paranoia
 .. _a lot of Drupal security modules: https://github.com/wet-boew/wet-boew-drupal/issues/248
+.. _`Encrypt`: https://www.drupal.org/project/encrypt
+.. _`AES encryption`: https://www.drupal.org/project/aes
 .. _Automated Logout: https://drupal.org/project/autologout
 .. _Clear Password Field: https://drupal.org/project/clear_password_field
 .. _Drupal Tiny-IDS: https://drupal.org/project/tinyids
