@@ -65,6 +65,7 @@ Contents:
    maintenance
    debate
    attacks
+   regulations
    resources
 
 .. _Mike Gifford: http://openconcept.ca/users/mike
