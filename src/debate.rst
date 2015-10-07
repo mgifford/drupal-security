@@ -9,8 +9,8 @@ L) Points of Debate
    :scale: 50%
    :alt: People sitting around the table from the noun project.
 
-1) Security by Obscurity
-------------------------
+Security by Obscurity
+---------------------
 
 There is a bit of a division within the security community as to whether one
 should expose information about what versions of software are being used.

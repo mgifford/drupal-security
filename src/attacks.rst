@@ -28,7 +28,7 @@ affecting the target site's Search Engine Optimizaiton.
 
 One of the challenges about this type of activity is that you may not know that
 your site is compromised for quite some time. You really don't want to find out
-that your site has been compromised by reading a `national newspaper`_.
+that your site has been compromised by reading a `national newspaper`_ .
 
 Pharma hacks will likely maintain a backdoor that allows the cracker to insert
 files and modify the database. They may modify the database, add files to your 
