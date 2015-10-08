@@ -101,7 +101,7 @@ Peter provides the following sample function:
   }
 
 Adding a .htaccess file in the public files directory to block a direct access 
-will ensure someone won't be able to navigate directly there:
+will ensure someone won't be able to navigate directly there::
 
   RewriteCond %{HTTP_HOST} ^www\. [NC]
   RewriteRule . - [F]
@@ -503,11 +503,11 @@ settings.php has been removed.
 
 In Drupal 7 you can set the Base URL which can be useful to block some phishing 
 attempts. You can protect your users against `HTTP HOST Header attacks`_ by 
-configuring the settings.php file:
+configuring the settings.php file::
 
  $base_url = 'http://www.example.com';
 
-In Drupal 8, this is now defined in the Trusted hosts pattern:
+In Drupal 8, this is now defined in the Trusted hosts pattern::
 
  $settings['trusted_host_patterns'] = array('^www\.example\.com$');
  
@@ -516,16 +516,16 @@ data used when generating strings like one-time login links. This is added by
 default in Drupal 7 and 8, but is stored in the the settings.php file. You can 
 store this value outside of the web root though for extra security:
 
-In Drupal 7:
+In Drupal 7::
  
  $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
 
-and Drupal 8:
+and Drupal 8::
 
  $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
 
 Drupal 8 has added a $config_directories array which specifies the location of 
-file system directories used for configuration data. 
+file system directories used for configuration data::
 
     On install, "active" and "staging" directories are created for configuration. 
     The staging directory is used for configuration imports; the active directory 
@@ -534,7 +534,7 @@ file system directories used for configuration data.
 
 By default this is done within a randomly-named directory, however for extra
 security, you can override these locations and put it outside of your document
-root.
+root::
 
  $config_directories = array(
     CONFIG_ACTIVE_DIRECTORY => '/some/directory/outside/webroot',

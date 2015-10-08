@@ -387,9 +387,7 @@ Unfortunately, `any allowed file upload`_ like a .jpg can actually be javascript
 content. This could contain an OBJECT tag on another domain which would enable 
 CSRF and data hijacking. 
 
-You can force downloads for uploaded files like 
-
-::
+You can force downloads for uploaded files like ::
 
   Header set Content-Disposition "attachment"
 
