@@ -30,6 +30,7 @@ Contributors
    * `Ben Hosmer <http://www.radarearth.com/>`__
    * `Ursula Pieper <http://upsitesweb.com/>`__
    * `Jonathan Marcil <https://blog.jonathanmarcil.ca/>`__
+   * `Peter Wolanin <https://www.drupal.org/u/pwolanin>`__
 
 Editors
 --------

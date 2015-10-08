@@ -348,7 +348,47 @@ effect. There will be performance improvements by not loading the .htaccess file
 with every page load.  You can also force some security rules right in the 
 configuration. 
 
-7) Everything Else
+7) MIME Problems
+----------------
+
+Some attacks are based on MIME-type confusion. You can help protect against this
+in some browsers if the server sends the response header 
+
+  X-Content-Type-Options: nosniff;
+
+In Chrome & Internet Explorer, script & stylesheet elements will reject 
+responses when this is sent in the page header. There is an existing issue for 
+this security feature in Firefox.
+
+This can be set in Varnish with:
+
+  set beresp.http.X-Content-Type-Options = "nosniff";
+
+"This reduces exposure to drive-by download attacks and sites serving user 
+uploaded content that, by clever naming, could be treated by MSIE as executable 
+or dynamic HTML files." - `OWASP List of Useful Headers`_
+
+You can get Apache to force the MIME types for documents using mod_mime. The 
+Apache MIME module maps file extensions to MIME-type (content-type) of documents.
+
+  # Ubuntu/Debian
+  $ a2enmod mime
+
+  # CentOS
+  $ yum install mod_mime
+
+Unfortunately, `any allowed file upload`_ like a .jpg can actually be javascript 
+content. This could contain an OBJECT tag on another domain which would enable 
+CSRF and data hijacking. 
+
+You can force downloads for uploaded files like 
+
+  Header set Content-Disposition "attachment"
+
+but in most cases it will be more user friendly simply to use a different domain 
+or a subdomain to avoid sending session cookies with uploaded files. 
+
+8) Everything Else
 ------------------
 
 Modify the web server configuration to `disable the TRACE/TRACK`_ methods either
@@ -437,11 +477,10 @@ Apache is often more efficient at addressing attacks like this before it hits
 PHP::
 
   # Ubuntu/Debian
-  $ apt-get install mod_httpbl
+  $ a2enmod httpbl
 
   # CentOS
   $ yum install mod_httpbl
-
 
 .. _PECL's uploadprogress: http://pecl.php.net/package/uploadprogress
 .. _Remy van Elst: https://raymii.org/s/tutorials/Strong_SSL_Security_On_Apache2.html
@@ -504,3 +543,5 @@ PHP::
 .. _configuration of ModSecurity: https://github.com/SpiderLabs/ModSecurity/blob/master/modsecurity.conf-recommended#L7
 .. _virtual patching: https://www.owasp.org/index.php/Virtual_Patching_Cheat_Sheet
 .. _`.htaccess file within the Apache config`: https://drupal.stackexchange.com/questions/108301/adding-htaccess-within-httpd-conf-correctly#answer-108346
+.. _`OWASP List of Useful Headers`: https://www.owasp.org/index.php/List_of_useful_HTTP_headers
+.. _`any allowed file upload`: https://soroush.secproject.com/blog/2014/05/even-uploading-a-jpg-file-can-lead-to-cross-domain-data-hijacking-client-side-attack/

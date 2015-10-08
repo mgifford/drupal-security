@@ -7,3 +7,7 @@ Build Reminders
 * Change the filenames to the format drupal_security_best_practices_v1.2_-_2015-10-7.epub
 * Convert to PDF
 * Add to http://openconcept.ca/drupal-security-guide & change links
+* Write newsletter in Mailchimp
+* Check for place-holder text that shouldn't be there, e.g. "Your text caption goes here"
+* Include images, & links to recent security stories
+* Send out

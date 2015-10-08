@@ -69,6 +69,46 @@ other malicious code.  Acquia recommends excluding the following file types:
 *flv*, *swf*, *exe*, *html*, *htm*, *php*, *phtml*, *py*, *js*, *vb*, *vbe*,
 *vbs*.
 
+As `Peter Wolanin`_ pointed out in his `Drupal New Jersey presentation`_ , 
+If you allow untrusted users to upload files there are additional issues you 
+should be concerned about. The browser security model - `same-origin policy`_ -  
+permits scripts contained in a first web page to access data in a second web 
+page, but only if both web pages have the same origin. This is dependent on 
+using session cookies to maintain authenticated user sessions.
+
+On the Webserver's chapter under MIME Problems, we recommend a separate domain
+or subdomain to avoid MIME confusion problems with user contributed (untrusted) 
+content. As Peter Wolanin notes, the `CDN`_ module or a small custom module could 
+be used to :
+
+* Serve uploaded files from a subdomain or different domain
+* Use sites dir or redirect to prevent Drupal on the files domains
+* Block public files on the Drupal domain
+
+The use of a Content Delivery Network should also improve the load times of the
+site and reduce the threat of DOS Attacks.
+
+Peter provides the following sample function:
+
+.. code-block:: php
+
+  function mymodule_file_url_alter(&$uri) {
+    if (file_uri_scheme($uri) == 'public') {
+      $wrapper = file_stream_wrapper_get_instance_by_scheme($scheme);
+      $path = $wrapper->getDirectoryPath() . '/' . file_uri_target($uri);
+      $uri = 'http://downloads.drupal-7.local:8083/' . $path;
+    }
+  }
+
+Adding a .htaccess file in the public files directory to block a direct access 
+will ensure someone won't be able to navigate directly there:
+
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule . - [F]
+
+In Drupal 8 you will be able to specify the Public file base URL so that this 
+will be easier to control. 
+
 2) Drush
 --------
 
@@ -176,7 +216,7 @@ developers to extend Drupal by forking existing projects and not provide
 enhancements back to the community. Doing this breaks assumptions within the
 Update module but more importantly makes upgrades much more difficult. Even with
 a properly documented patch, it is a lot of work to upgrade, patch and re-write
-a function in a live website.
+a function https://www.w3.org/Security/wiki/Same_Origin_Policyin a live website.
 
 By contributing the improved code upstream, you can avoid that often painful
 process. The peer review that comes with contributing your code back to the
@@ -252,6 +292,9 @@ want to add more or less than those listed here.
 
 `Clear Password Field`_
   Stops forms from pre-populating a password.
+
+`CDN Module`_
+  Provides easy Content Delivery Network integration for Drupal sites.
 
 `Drupal Tiny-IDS`_
   An alternative to a server-based intrusion detection service.
@@ -459,7 +502,8 @@ After the initial install, make sure that there is not write permission on the
 settings.php has been removed. 
 
 In Drupal 7 you can set the Base URL which can be useful to block some phishing 
-attempts:
+attempts. You can protect your users against `HTTP HOST Header attacks`_ by 
+configuring the settings.php file:
 
  $base_url = 'http://www.example.com';
 
@@ -497,6 +541,9 @@ root.
     CONFIG_STAGING_DIRECTORY => '/another/directory/outside/webroot',
  );
 
+Set the $cookie_domain in settings.php and if allow the "www" prefix for your
+domain then ensure that you don't use the bare domain. 
+
 12) Advantages of Drupal 8
 --------------------------
 
@@ -520,6 +567,13 @@ configuration will help manage more secure, enterprise solutions.
 By default in Drupal 8, PHP execution in subfolders is forbidden by the 
 .htaccess file. This is beneficial as it protects against random PHP files from 
 being executed deep within sub-folders. 
+
+You can set the public file base URL now making it easier to avoid MIME 
+confusion attacks by allowing public files to be more easily stored on another 
+domain or subdomain. 
+
+In Drupal 8 Cookie domains do not have www. striped by default in Drupal 8 to 
+stop session cookie authorization being to subdomains.
 
 The adoption of CKEditor into Core also comes with an improvement in that core 
 text filtering supports limiting the use of images local to the site. This helps 
@@ -562,6 +616,10 @@ information on the site is public, this may not be necessary.
 
 .. _Verify Drupal file permissions on the server: https://drupal.org/node/244924
 .. _ClamAV: https://drupal.org/project/clamav
+.. _`Drupal New Jersey presentation`: http://pwolanin.github.io/drupal-safe-files/
+.. _`same-origin policy`: https://www.w3.org/Security/wiki/Same_Origin_Policy
+.. _`Peter Wolanin`: http://pwolanin.github.io/drupal-safe-files
+.. _CDN: https://www.drupal.org/project/cdn
 .. _Drush: https://github.com/drush-ops/drush
 .. _PHP's PEAR: http://pear.php.net/
 .. _Composer: https://getcomposer.org/doc/00-intro.md#system-requirements
@@ -638,3 +696,4 @@ information on the site is public, this may not be necessary.
 .. _YAML: https://en.wikipedia.org/wiki/YAML
 .. _`Content Security Policy W3C Standard`: http://www.w3.org/TR/CSP/
 .. _`cash bounty`: https://www.drupal.org/drupal8-security-bounty
+.. _`HTTP HOST Header attacks`: https://www.drupal.org/node/1992030
