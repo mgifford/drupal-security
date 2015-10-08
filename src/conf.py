@@ -56,7 +56,7 @@ copyright = u'2014-2015, OpenConcept Consulting Inc.'
 # built documents.
 #
 # The short X.Y version.
-version = '1.1'
+version = '1.2.1'
 # The full version, including alpha/beta/rc tags.
 release = version
 

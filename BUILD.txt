@@ -1,0 +1,9 @@
+Build Reminders
+
+* Change the version in the conf.py
+* Spellcheck
+* Change the photo between point releases
+* make epub
+* Change the filenames to the format drupal_security_best_practices_v1.2_-_2015-10-7.epub
+* Convert to PDF
+* Add to http://openconcept.ca/drupal-security-guide & change links
