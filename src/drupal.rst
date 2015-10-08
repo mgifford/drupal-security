@@ -293,7 +293,7 @@ want to add more or less than those listed here.
 `Clear Password Field`_
   Stops forms from pre-populating a password.
 
-`CDN Module`_
+`CDN`_
   Provides easy Content Delivery Network integration for Drupal sites.
 
 `Drupal Tiny-IDS`_
