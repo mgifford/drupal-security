@@ -354,6 +354,8 @@ configuration.
 Some attacks are based on MIME-type confusion. You can help protect against this
 in some browsers if the server sends the response header 
 
+::
+
   X-Content-Type-Options: nosniff;
 
 In Chrome & Internet Explorer, script & stylesheet elements will reject 
@@ -361,6 +363,8 @@ responses when this is sent in the page header. There is an existing issue for
 this security feature in Firefox.
 
 This can be set in Varnish with:
+
+::
 
   set beresp.http.X-Content-Type-Options = "nosniff";
 
@@ -370,6 +374,8 @@ or dynamic HTML files." - `OWASP List of Useful Headers`_
 
 You can get Apache to force the MIME types for documents using mod_mime. The 
 Apache MIME module maps file extensions to MIME-type (content-type) of documents.
+
+::
 
   # Ubuntu/Debian
   $ a2enmod mime
@@ -382,6 +388,8 @@ content. This could contain an OBJECT tag on another domain which would enable
 CSRF and data hijacking. 
 
 You can force downloads for uploaded files like 
+
+::
 
   Header set Content-Disposition "attachment"
 
