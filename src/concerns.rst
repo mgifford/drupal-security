@@ -6,7 +6,7 @@ C) Security Concerns for Managers
    :align: right
    :scale: 50%
    :alt: A woman manager from the noun project. 
-   
+
 There are many assumptions about IT security that need to be fundamentally
 rethought in the era of the Internet. Organizations are struggling to come to 
 terms with this at the same time as working to understand the implication of
@@ -82,7 +82,7 @@ project like the `OpenSSL Software Foundation`_ which supports the security
 infrastructure your organization depends on. Likewise consider supporting
 organizations who contribute to `Drupal's security team`_.
 
-A great deal of security work begins before anything is installed. Properly
+Much security work should begin before anything is installed. Properly
 considering security before beginning a server implementation is important.
 Addressing security issues later in a project makes it impossible to do a
 security evaluation of the base system. When setup is rushed, bad practices are
@@ -109,6 +109,9 @@ which can become a major exploit. Sites as large as GitHub have been
 successfully targeted this way. As he says, The cost of (in)security is high
 and "investment in security review and penetration testing is a Good Thing".
 
+`IBM suggestes`_ that organizations should spend between 6 and 14% of their IT 
+budget on security. The less organizations spend on security, the greater the likelihood that there will be security breaches. How much of this should be spent on web security will depend on the relative number of assets and vulnerabilities which are contained in the website. Only with a good picture of your over-all risk can you determine where it is best to invest in skills, processes and technologies to mitigate it. Think about what percentage of your budget you presently spend on web security, and if that is sufficient to cover the risks to what has become mission critical for most organizations.
+
 .. _`dancing banana`: http://www.ottawasun.com/2014/11/24/mayor-says-imposter-managed-to-redirect-ottawaca-website
 .. _social engineering: https://en.wikipedia.org/wiki/Social_engineering_%28security%29
 .. _Threat and Risk Assessments: https://www.owasp.org/index.php/Threat_Risk_Modeling
@@ -125,3 +128,4 @@ and "investment in security review and penetration testing is a Good Thing".
 .. _UK's Government Service Design Manual: https://www.gov.uk/service-manual/
 .. _Security as enabler\: Using technological change to build secure services: https://www.gov.uk/service-manual/technology/security-as-enabler.html
 .. _Darren Mothersele: http://darrenmothersele.com/blog/2014/02/20/drupal-security/
+.. _`IBM suggestes`: http://www-03.ibm.com/industries/ca/en/healthcare/documents/IDC_Canada_Determining_How_Much_to_spend_on_Security_-_Canadian_Perspective_2015.pdf
