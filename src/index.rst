@@ -17,7 +17,7 @@ Contributors
 .. hlist::
    :columns: 2
 
-   * `Mike Mallet`_ :sup:`(OpenConcept)`
+   * `Mike Mallett`_ :sup:`(OpenConcept)`
    * `Xavier Landreville`_ :sup:`(OpenConcept)`
    * `Matt Parker <https://drupal.org/user/536298>`__
    * `Michael Richardson`_
@@ -77,7 +77,7 @@ Contents:
    resources
 
 .. _Mike Gifford: http://openconcept.ca/users/mike
-.. _Mike Mallet: http://openconcept.ca/users/mikem
+.. _Mike Mallett: http://openconcept.ca/users/mikem
 .. _Xavier Landreville: http://openconcept.ca/users/xavier
 .. _Michael Richardson: http://www.sandelman.ca/mcr/
 .. _OpenConcept Consulting Inc.: http://openconcept.ca/
