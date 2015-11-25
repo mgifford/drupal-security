@@ -8,15 +8,15 @@ M) Crackers
    :align: right
    :scale: 50%
    :alt: A link from the noun project.
-   
-There are a lot of reasons why someone might want to gain access to your website. 
-It's possible that they don't like you or your organization. It could be that 
-you are competition or even a disgruntled employee. Some do it just for the 
-challenge. 
 
-Unfortunately, there are also government and corporations who are engaging in
+There are a lot of reasons why someone might want to gain access to your
+website.  It's possible that they don't like you or your organization. It could
+be that you are competition or it could even be a disgruntled employee. Some do
+it just for the challenge.
+
+Unfortunately, there are also governments and corporations who are engaging in
 this type of activity. It is useful to highlight some of the actors who may
-want to compromise your site. 
+want to compromise your site.
 
 Pharma Attacks
 --------------
@@ -44,13 +44,13 @@ Illegal Botnets
 
 A compromised server could be used as part of a network of computers managed by
 the controller of the botnet who is then able to direct the activities of these
-compromised computers for various purposes. Criminals able to use these servers 
-as part of a lucrative `Cyber-arms industry`_ . 
+compromised computers for various purposes. Criminals are able to use these
+servers as part of a lucrative `Cyber-arms industry`_ .
 
 Private Information
 -------------------
 
-A compromised server could lead to an privacy disclosures revealing non-public 
+A compromised server could lead to privacy disclosures revealing non-public 
 information or information intended for another user. The `Ashley Madison Data 
 Breach`_ is an example of the type of exposure which can be devistating for all 
 involved. There is a growing list of organizations who have been compromised, 
@@ -60,7 +60,7 @@ to `Have I Been Pwned`_ .
 Information Disclosure
 ----------------------
 
-Sometimes what a cracker is after isn't the information on it's own but gives 
+Sometimes what a cracker is after isn't the information on its own but gives 
 the attacker more information to help find another vulnerability.
 
 
@@ -68,6 +68,5 @@ the attacker more information to help find another vulnerability.
 .. _`national newspaper`: http://news.nationalpost.com/news/canada/csis-websites-show-signs-of-spam-style-pharma-hack
 .. _`diagnose and clean a pharma attack`: http://www.drupalgeeks.com/drupal-blog/how-diagnose-and-remove-pharma-hack-drupal-7
 .. _`Cyber-arms industry`: https://en.wikipedia.org/wiki/Cyber-arms_industry
-.. _`Ashley Madison Data 
-Breach`: https://en.wikipedia.org/wiki/Ashley_Madison_data_breach
+.. _`Ashley Madison Data Breach`: https://en.wikipedia.org/wiki/Ashley_Madison_data_breach
 .. _`Have I Been Pwned`: https://haveibeenpwned.com/

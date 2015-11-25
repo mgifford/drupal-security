@@ -19,7 +19,7 @@ of any security advantages of one over the other.
 The database for Drupal can run on the same server, but for performance reasons
 it can be beneficial to set it up on another server. You want to ensure that
 your server environment is robust enough that it cannot be easily brought down
-by a Denial of Service (DOS) attack. There are a few server side tools to help
+by a Denial of Service (DoS) attack. There are a few server side tools to help
 with this, but mostly it's useful to have a buffer, even at your highest traffic
 times, so that your site is always responsive.
 

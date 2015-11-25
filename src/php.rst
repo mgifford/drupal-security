@@ -91,9 +91,9 @@ resources::
 
 By keeping up with security releases some will argue that there is no need to
 hide which version of PHP you are running. There is a broader discussion of this
-debate in Section L) Points of Debate under :ref:`debate-obscurity`. In the PHP setting you can also
-`limit information about PHP`_ which is exposed by adding this to your
-:file:`php.ini` file::
+debate in Section L) Points of Debate under :ref:`debate-obscurity`. In the PHP
+setting you can also `limit information about PHP`_ which is exposed by adding
+this to your :file:`php.ini` file::
 
   expose_php = Off
 
@@ -117,8 +117,8 @@ should decide whether or not you want to exclude that function in this list.
 You want to be able to limit what PHP has access to in the file system. Note
 that you may want to give slightly more access to PHP than just the Drupal root
 directory as it can be beneficial to put some files (like a salt.txt file)
-outside of the base directory. This can also be set in Apache, but I've tried to
-keep the PHP specific information inside the :file:`php.ini` file::
+outside of the base directory. This can also be set in Apache, but you may wish
+to keep the PHP specific information inside the :file:`php.ini` file::
 
   open_basedir = /var/www
 

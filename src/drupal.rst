@@ -100,11 +100,10 @@ Peter provides the following sample function:
     }
   }
 
-Adding a .htaccess file in the public files directory to block a direct access 
-will ensure someone won't be able to navigate directly there::
-
-  RewriteCond %{HTTP_HOST} ^www\. [NC]
-  RewriteRule . - [F]
+When you navigate to your site's File System settings page
+``/admin/config/media/file-system`` and save the settings, Drupal will write a
+restrictive .htaccess file into your Public Files Directory which will limit
+exposure of the files contained there.
 
 In Drupal 8 you will be able to specify the Public file base URL so that this 
 will be easier to control. 
@@ -120,9 +119,9 @@ with your OS is likely to be extremely out of date.
 It is recommended to install Drush with `Composer`_ (the dependency manager for 
 PHP) but other options and details on the `Drush git page`_.
 
-There is a `Security Check`_ module available for Drush which is a basic sanity
+There is a `Security Check`_ module available for Drupal which is a basic sanity
 test for your configuration. When the module is added, you can run this against
-your site from Apache's document root (docroot) on the command line using::
+your site from the site directory on the command line using::
 
  $ drush secchk
 
@@ -139,10 +138,10 @@ every 3 hours`_. The status page will tell you when the last time cron was run
 on the site. You may want to set up a Linux cron job using Drush if you
 have either a low traffic site or have special requirements.
 
-To run cron on all of your sites in /home/drupal - from the command line enter
-``crontab -e`` and then insert::
+To run cron on all of your sites in /home/drupal every half hour, from the
+command line enter ``crontab -e`` and then insert::
 
- 30 2,6,11,18 * * * cd /home/drupal && drush @sites core-cron -y > /dev/null
+ 0,30 * * * * cd /home/drupal && drush @sites core-cron -y > /dev/null
 
 You will need developer modules to help you build your site, but they are a
 security risk on your production site and need to be disabled. Many modules
@@ -180,20 +179,20 @@ how to `send your logs to Syslog`_ with integrated logging.
 
 Before launching your site (and periodically afterwards) it is useful to run the
 `Hacked!`_ module to check what code differs from what was released on
-Drupal.org. Particularly when the `diff`_ module (6/7/8) is enabled, this is a powerful
-tool to evaluate your code. There are millions of lines of code in a given
-Drupal site, so Hacked! is a really valuable analysis tool. If you need to apply
-patches against the stable released version of the code, the patch should be in
-a clearly documented directory. It is unfortunately a common practice for less
-experienced Drupal developers to cut corners and hack Drupal Core to provide some
-functionality that is required. There are lots of reasons why this is a bad idea
-and `why responsible developers don't hack core`_. For the purposes of this
-document it is sufficient to say it makes it harder to secure. The `same is true
-for contributed modules`_, you shouldn't have to alter the code to customize it
-most of the time. The Hacked! module is very useful in identifying when modules
-no longer are the same as their releases on Drupal.org. Being able to quickly
-scan through hundreds of thousands of lines of code and find differences against
-known releases is a huge security advantage.
+Drupal.org. Particularly when the `diff`_ module (6/7/8) is enabled, this is a
+powerful tool to evaluate your code. There are millions of lines of code in a
+given Drupal site, so Hacked! is a really valuable analysis tool. If you need to
+apply patches against the stable released version of the code, the patch should
+be in a clearly documented directory. It is unfortunately a common practice for
+less experienced Drupal developers to cut corners and hack Drupal Core to
+provide some functionality that is required. There are lots of reasons why this
+is a bad idea and `why responsible developers don't hack core`_. For the
+purposes of this document it is sufficient to say it makes it harder to
+secure. The `same is true for contributed modules`_, you shouldn't have to alter
+the code to customize it most of the time. The Hacked! module is very useful in
+identifying when modules are no longer the same as their releases on
+Drupal.org. Being able to quickly scan through hundreds of thousands of lines of
+code and find differences against known releases is a huge security advantage.
 
 You can also generate Drush make file from an existing Drupal site and then
 recreate a clean copy of the code-base which you can then diff (a command line
@@ -216,7 +215,7 @@ developers to extend Drupal by forking existing projects and not provide
 enhancements back to the community. Doing this breaks assumptions within the
 Update module but more importantly makes upgrades much more difficult. Even with
 a properly documented patch, it is a lot of work to upgrade, patch and re-write
-a function https://www.w3.org/Security/wiki/Same_Origin_Policyin a live website.
+a function in a live website.
 
 By contributing the improved code upstream, you can avoid that often painful
 process. The peer review that comes with contributing your code back to the
@@ -240,7 +239,7 @@ interface. It is useful to review the permissions after upgrades to verify if
 any new permissions have been added.
 
 Don't use *admin*, *root*, or simple variations of those as your user/1 admin
-name. It's the first ones that a cracker is going to try, so be a bit more
+name. They're the first ones that a cracker is going to try, so be a bit more
 unique. Obscurity isn't the same as security, but no need to give them their
 first guess when choosing user names. Another good practice with regards to
 user/1 is to `completely disable the account`_. With the advent of Drupal 7 and
@@ -321,7 +320,7 @@ want to add more or less than those listed here.
   Provides more fine-grained control over what users with the permission 'administer permissions' can configure.
 
 `HTTP Strict Transport Security`_
-  To be used together with Secure Login, to prevent ssl strip attacks.
+  To be used together with Secure Login, to prevent SSL strip attacks.
   Alternatively, directly `enforce it through web-server settings`_.
 
 `Restrict IP`_
@@ -365,7 +364,7 @@ want to add more or less than those listed here.
 -------------------------------------
 
 Many Drupal modules intended to help developers develop code also disclose
-sensitive information about Drupal and/or the web-server, or allow users to
+sensitive information about Drupal and/or the web server, or allow users to
 perform dangerous operations (e.g.: run arbitrary PHP code or trigger
 long-running operations that could be used to deny service). These modules can
 be used to debug locally (and many are essential tools for Drupal developers),
@@ -472,7 +471,7 @@ This report will also alert you when there are security updates available on
 projects that are enabled and hosted on Drupal.org. Core updates tend to be 
 released on the 3rd week of the month.
 
-The `risk levels`_ that the Drupal community has adopted is now based on the 
+The `risk levels`_ that the Drupal community has adopted are now based on the 
 `NIST Common Misuse Scoring System`_ and converted into the following text 
 descriptions: Not Critical, Less Critical, Moderately Critical, Critical and 
 Highly Critical.
@@ -481,7 +480,7 @@ Sometimes a maintainer does not have the time to put out a full release, so will
 produce a development release, or simply post the code to the Git repository on 
 Drupal.org.  For now the Update manager does not have a means to track anything 
 other than full stable releases. The Available update report will show you when 
-a new release is available, but is geared to stable releases. Using your site 
+a new release is available, but is geared to stable releases. If your site 
 uses modules hosted on GitHub or other repositories, you will not have the 
 benefit of the security alerts made by through Drupal.org.
 
@@ -498,8 +497,8 @@ track of.
 11) The settings.php
 --------------------
 
-After the initial install, make sure that there is not write permission on the 
-settings.php has been removed. 
+After the initial install, make sure that write permission on the ``settings.php``
+file has been removed.
 
 In Drupal 7 you can set the Base URL which can be useful to block some phishing 
 attempts. You can protect your users against `HTTP HOST Header attacks`_ by 
@@ -514,7 +513,7 @@ In Drupal 8, this is now defined in the Trusted hosts pattern::
 There should be a `salt`_ in the settings.php so that there is some extra random
 data used when generating strings like one-time login links. This is added by
 default in Drupal 7 and 8, but is stored in the the settings.php file. You can 
-store this value outside of the web root though for extra security:
+store this value outside of the web document root for extra security:
 
 In Drupal 7::
  
@@ -541,8 +540,8 @@ root::
     CONFIG_STAGING_DIRECTORY => '/another/directory/outside/webroot',
  );
 
-Set the $cookie_domain in settings.php and if allow the "www" prefix for your
-domain then ensure that you don't use the bare domain. 
+Set the $cookie_domain in settings.php, and if you allow the "www" prefix for
+your domain then ensure that you don't use the bare domain.
 
 12) Advantages of Drupal 8
 --------------------------
@@ -553,11 +552,11 @@ as it forces a harder separation between logic and presentation. It's not
 terribly uncommon for an inexperienced developer to put a lot of PHP in the 
 theme which introduces a lot of security problems down the line. 
 
-Another important security feature is that Drupal 8 has replaced a lot of it's 
-custom code with software that was `Proudly-Found-Elsewhere`_ which means that 
-there is a broader pool of developers to look at to harden the code. Symfony_, 
-CKEditor_, Composer_, EasyRDF_, Guzzle_ & Doctrine_ are just examples of other 
-open-source projects that have been incorporated. 
+Another important security feature is that Drupal 8 has replaced a lot of its
+custom code with software that was `Proudly-Found-Elsewhere`_ which means that
+there is a broader pool of developers to look at to harden the code. Symfony_,
+CKEditor_, Composer_, EasyRDF_, Guzzle_ & Doctrine_ are just some of the
+examples of other open-source projects that have been incorporated.
 
 The Configuration Management Initiative (CMI) and introduction of YAML_ files 
 to control configuration will also allow administrators to have greater control 
@@ -572,12 +571,12 @@ You can set the public file base URL now making it easier to avoid MIME
 confusion attacks by allowing public files to be more easily stored on another 
 domain or subdomain. 
 
-In Drupal 8 Cookie domains do not have www. striped by default in Drupal 8 to 
-stop session cookie authorization being to subdomains.
+In Drupal 8 Cookie domains do not have www. stripped by default to
+stop session cookie authorization being provided to subdomains.
 
 The adoption of CKEditor into Core also comes with an improvement in that core 
 text filtering supports limiting the use of images local to the site. This helps 
-prevent cross-site request forgery (CSRF).
+prevent Cross-Site Request Forgery (CSRF).
 
 Also mentioned in more detail in the Acquia article mentioned above, Drupal 8 
 also comes with:

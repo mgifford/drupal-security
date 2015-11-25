@@ -10,7 +10,7 @@ N) Regulations
    :alt: A link from the noun project.
 
 Be aware of the regulations in your environment. Your country & industry may 
-have it's own standards. Acquia has compiled a nice `list of regulations`_ to 
+have its own standards. Acquia has compiled a nice `list of regulations`_ to 
 to review as well.
 
 Global
@@ -36,7 +36,7 @@ Canada
 ------
 
 `Personal Information Protection and Electronic Documents Act`_ (PIPEDA)
-  
+
 Europe
 ------
 

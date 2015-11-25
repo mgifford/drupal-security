@@ -9,10 +9,10 @@ E) Web Servers
    :scale: 50%
    :alt: A link from the noun project.
 
-All files and directories in your DocumentRoot should be editable by a non-root
-user (usually "www-data"), and should also not be writable by the Apache user, 
-except the Drupal files/ directory. Please refer to Drupal's `Securing file 
-permissions and ownership`_ for the complete discussion.
+All files and directories in your DocumentRoot should be editable by a
+non-root user and should also not be writable by the Apache user,
+except the Drupal files/ directory. Please refer to Drupal's `Securing
+file permissions and ownership`_ for the complete discussion.
 
 `PHP-FPM over FastCGI`_ allows your server to have `site-specific "pools" of
 PHP`_. By giving each site unique PHP permissions you can effectively "sandbox"
@@ -31,7 +31,7 @@ Qualys SSL Labs also have a really `great tool to evaluate`_ if your server is
 still vulnerable.
 
 On your web server, it is good to ensure that SSL configuration permits only TLS
-version 1.2. unfortunately some common web browsers still do not support the
+version 1.2. Unfortunately some common web browsers still do not support the
 latest version of TLS. Fortunately, as of `September 2015`_, the latest version
 of all major web browsers support only secure TLS 1.0, 1.1, and 1.2 by
 default. Check if the `SSL services employ only AES`_ with key lengths 256 bits
@@ -94,7 +94,7 @@ To check a specific protocol using openssl::
   $ openssl s_client -connect SERVER:443 -ssl2
   $ openssl s_client -connect SERVER:443 -ssl3
 
-Note that SSL Certificate Authorities are depreciating the very popular SHA1
+Note that SSL Certificate Authorities are deprecating the very popular SHA1
 hashing function because of weakness in the algorithm. Qualys Labs recommends
 `renewing with SHA256`_ as soon as possible.
 
@@ -107,25 +107,21 @@ site is used just as a CMS with no user interaction. The example below is more
 appropriate for sites which would have broader user authentication, but where
 users are restricted from editing nodes - ``node/*/edit`` - this type of
 approach can also be used to restrict access to non-production environments. If
-you have a multi-lingual site using a language prefix, you may also want to 
+you have a multilingual site using a language prefix, you may also want to 
 check that sensitive paths are restricted with the language prefix. In Canada, 
 many sites would need to add ``/fr/user`` and ``/en/user`` . It is a best practice 
-to secure all pages on non-production environments from both search engines, but 
+to secure all pages on non-production environments from search engines, but 
 especially from crackers. The following are examples of how to do this with 
 ``mod_authz_host`` and also ``mod_rewrite``.
 
 Example Apache configuration using ``mod_authz_host``:
-
-.. todo::
-
-  change ips to the documentation range
 
 .. code-block:: apache
 
   <Location - "/node/.*/edit">
     Order Deny,Allow
     Deny from all
-    Allow from 206.47.13.64 174.142.104.53 99.241.125.191
+    Allow from 192.0.2.1 192.0.2.25
   </Location>
 
 Example Apache configuration using ``mod_rewrite``:
@@ -136,12 +132,12 @@ Example Apache configuration using ``mod_rewrite``:
     RewriteEngine on
     # Allow only internal access to admin
     RewriteCond %{REMOTE_ADDR}
-    !^(206\.47\.13\.64|174\.142\.104\.53|99\.241\.125\.191)$
+    !^(192\.0\.2\.1|192\.0\.2\.25)$
     RewriteRule ^admin/.* - [F]
   </IfModule>
 
 Drupal has a number of processes that can be triggered by URLs. You may wish to
-block some of these using Apache so that they simply cannot be loaded from the
+block some of these using Apache so that they cannot be loaded from the
 web browser. Common processes to secure are update, install and cron, tasks
 which can all be triggered using Drush:
 
@@ -175,8 +171,8 @@ discussions`_ on drupal.org about which modules are necessary and which are not.
   # CentOS
   $ apachectl -t -D DUMP_MODULES
 
-If you are using ``mod_php`` with apache, it can be useful to enable
-``php5-dev`` for Drupal so that you can enable tools like `PECL's
+If you are using ``mod_php`` with Apache, it can be useful to install
+``php5-dev`` so that you can build tools like `PECL's
 uploadprogress`_. However, after you've done that you will want to remove the
 php5-dev module that you used to build it::
 
@@ -216,12 +212,13 @@ to your Apache configuration:
 Your website and its visitors are going to be more secure if you use HTTPS to
 ensure that all information passing between the web server and the browser is
 encrypted. There is a `growing movement encrypt all web traffic`_, even to
-brochure sites. Google announced in 2014 that HTTPS would be a `ranking signal`_. 
-Doing so will have minor performance implications as it does
-take some additional processing power. You certainly want to ensure that all
+brochure sites. Google announced in 2014 that HTTPS would be a `ranking
+signal`_.  Doing so will have minor performance implications as it does take
+some additional processing power. You certainly want to ensure that all
 authentication happens through a secure HTTPS connection so that usernames and
-passwords cannot be intercepted. Do ensure that all of your files are being
-served from a HTTPS environment as mixed traffic introduces security problems.
+passwords cannot be intercepted. Do ensure that all of your files are also being
+served from a HTTPS environment, as mixed-mode (HTTP and HTTPS) traffic
+introduces usability problems.
 
 .. code-block:: apache
 
@@ -252,7 +249,7 @@ use iframes in your site you can disable it by modifying the Force X-Frame
 options in the Apache configuration. As usual, `OWASP`_ has an `extremely useful
 guide on avoiding Clickjacking`_. You must have the mod-headers module enabled
 before adding this string to your Apache configuration but this is easy to add
-through the command line -a2enmod headers - afterwards you can add this to your
+through the command line - a2enmod headers - afterwards you can add this to your
 configuration.
 
 .. code-block:: apache
@@ -268,23 +265,24 @@ Auth* directives`_, or nginx's `ngx_http_auth_basic_module`_ module.
 
 While HTTP Basic Authentication is a good way to prevent search engines from
 indexing your testing and staging sites, it is inherently insecure: traffic
-between browsers and your site is not encrypted, and in fact, anyone can gain
-access to the site simply by copying the "Authorization" HTTP header.
+between browsers and your site is not encrypted, and in fact if an attacker has
+the ability to sniff network traffic, this person can gain access to the
+site simply by copying the "Authorization" HTTP header sent by the browser.
 
 Furthermore, the username and password used for HTTP Basic Authentication are
 not encrypted either (just base-64 encoded, which is trivial to decode), so do
-not re-use credentials used elsewhere (e.g.: each unique login should have it's 
+not re-use credentials used elsewhere (e.g.: each unique login should have its 
 own unique password).
 
 It is strongly recommended to store the htpasswd file outside the document root 
-and to set it with read only permissions (444).
+and to set it with read only permissions (440).
 
 5) Web Application Firewall
 ---------------------------
 
 Web Application Firewalls (WAFs) can be used to provide additional protection
-over the Web server. It can be a standalone server that act as a reverse proxy
-or a Web server modules.
+over the Web server. It can be a standalone server that acts as a reverse proxy
+or installed as Web server modules.
 
 Apache has a number of modules that can be installed to tighten security of the
 web server. We recommend installing `ModSecurity and mod_evasive`_ as a `Web
@@ -313,7 +311,7 @@ Using default generic configurations such as the OWASP Core Rule Set can impact
 the normal behaviour of Drupal and must be tested extensively before deployment.
 Usually some rules are breaking rich content edition or modules that behave
 differently than Drupal core. It is recommended to run the rules in a passive
-manner in order to identify false positive when in production. Default
+manner in order to identify false positives when in production. Default
 `configuration of ModSecurity`_ should do it with:
 
 .. code-block:: apache
@@ -322,24 +320,24 @@ manner in order to identify false positive when in production. Default
 
 You can then set it to "On" whenever you are ready. A server restart is needed
 for changes to be effective. In that case the WAF will behave as a passive Web
-application intrusion detection system and you can chose to never set it to "On"
-if you wish to use it only for that purpose. In any cases, you'll want to
+application intrusion detection system and you can choose to never set it to "On"
+if you wish to use it only for that purpose. In any case, you'll want to
 monitor the log files for alerts in order to detect malicious attempts and
 potential false positives.
 
 WAF software needs maintenance as well and rules should be updated periodically.
-Tests for false positive should be made after each change of functionality
+Tests for false positives should be made after each change of functionality
 within the Drupal site.
 
-At last but not least, WAFs are a great solution for `virtual patching`_ and
-application flaw fixing, but they can be bypassed. It is discouraged to rely
-solely on that technology to keep up with security: fixing flaw and applying
-patch on the back-end applications should not be replaced with WAF utilization.
+WAFs are a great solution for `virtual patching`_ and application flaw fixing,
+but they can be bypassed. It is discouraged to rely solely on that technology to
+keep up with security: fixing flaws and applying patches on the back-end
+applications should not be replaced with WAF utilization.
 
 6) Managing the .htaccess file
 ------------------------------
 
-Mike Carper has suggested a clean way of cleanly incorporating the `.htaccess file
+Mike Carper has suggested a clean way of incorporating the `.htaccess file
 within the Apache config`. Using Apache includes to incorporate the .htaccess
 file provided by Drupal.org makes routine security upgrades much easier. When 
 the .htaccess file changes, this will automatically be included by Apache. 
@@ -456,10 +454,10 @@ hosting environments.
 Double check by viewing the output of::
 
   # Ubuntu/Debian
-  $ ps aux grep apache
+  $ ps aux | grep apache
 
   # CentOS
-  $ ps aux grep http
+  $ ps aux | grep http
 
 In order to restrict Apache to connect only to https://drupal.org (with IP
 addresses 140.211.10.62 and 140.211.10.16 at the time of writing) insert the

@@ -23,21 +23,24 @@ are often technical details and notes about who to contact when things go
 wrong.
 
 It is important to determine that there is a strong security community behind
-the Operating System (OS) distribution you choose, and that you have the 
-necessary human resources in your department to maintain it. Both Debian/Ubuntu 
-and Red Hat Enterprise Linux(RHEL)/CentOS/Fedora can be considered solid. The 
-advantage of a Debian or Red Hat based solution is that there is extensive documentation and large communities of users who've shared their experiences through forums, issue trackers, and blog posts. Ubuntu is based on Debian. CentOS is almost a copy of RHEL and Fedora is the community edition of RHEL. The Fedora edition often 
-releases updates before RHEL which can be an advantage for some security fixes.
-Most references to one of these two groups of distributions should be
-interchangeable. Note that Ubuntu and Debian have a different development cycle
-and are not identical.
+the Operating System (OS) distribution you choose, and that you have the
+necessary human resources in your department to maintain it. Both Debian/Ubuntu
+and Red Hat Enterprise Linux (RHEL)/CentOS/Fedora can be considered solid. The
+advantage of a Debian or Red Hat based solution is that there is extensive
+documentation and large communities of users who've shared their experiences
+through forums, issue trackers, and blog posts. Ubuntu is based on
+Debian. CentOS is almost a copy of RHEL and Fedora is the community edition of
+RHEL. The Fedora edition often releases updates before RHEL which can be an
+advantage for some security fixes.  Most references to one of these two groups
+of distributions should be interchangeable. Note that Ubuntu and Debian have a
+different development cycle and are not identical.
 
 If you use a Red Hat Enterprise Linux (RHEL) system, you will need to subscribe
 to their service in order to apply security upgrades and install the additional
 packages mentioned in this document. Before procuring a Red Hat server, check
 that your package includes a subscription.
 
-In our opinion, distributions of Linux like SUSE simply do not have a critical
+In our opinion, distributions of Linux like SuSE simply do not have a critical
 mass of users and developers (in the web server space) to maintain the code and
 documentation required for a secure environment. Microsoft Windows is not a
 standard platform for hosting Drupal and is generally not recommended since
@@ -55,7 +58,7 @@ Special consideration should be taken when enabling HTTPS for encrypted traffic
 on "shared host"-type environments (any server hosting more than 1 domain).
 Typically, due to the nature of the protocol, only one HTTPS website (domain
 name) could be hosted per IP. However, with `Server Name Indication`_ (SNI), it is
-now possible to host multiple HTTPS domains with distinct `TLS certificates` on
+now possible to host multiple HTTPS domains with distinct `TLS certificates`_ on
 the same IP. It must be noted that SNI is dependent on both the client and the
 server supporting the TLS extension, but most do nowadays. Another option,
 which might be useful if your servers or clients do not support SNI, is using
@@ -63,21 +66,20 @@ which might be useful if your servers or clients do not support SNI, is using
 Communications Certificates). These certificates contain extra fields that list
 other common names (domain names) for which that certificate is valid.
 
-Finally, don't get a server that comes with a server admin control panel. It 
-promises to make managing your site easier but present security problems. There
+Finally, don't get a server that comes with a server admin control panel. It
+promises to make managing your site easier but presents security problems. There
 are a number of commercial packages, like cPanel or PLESK, that do make it
 easier to change settings on your server. This seems particularly attractive if
 less technical users are responsible for server administration. In our recent
 experience with cPanel, it introduced many difficulties in applying many of the
-suggestions and recommendations described here. Because you can't simply
-disable cPanel, we had to reinstall the site on a new server. If you choose a
-server with one, you will need to experiment with which of the following
-suggestions you are able to implement. Some control panels are also known to
-overwrite settings when manual changes are made to configuration files. It is
-important to work to minimize the attack surface and since these dashboards are
-managed through the web, it is yet another point where your server can be
-compromised. Ultimately a control panel could prove convenient both for an 
-administrator and for someone looking to hack into your system.
+suggestions and recommendations described here. If you choose a server with one,
+you will need to experiment with which of the following suggestions you are able
+to implement. Some control panels are also known to overwrite settings when
+manual changes are made to configuration files. It is important to work to
+minimize the attack surface and since these dashboards are managed through the
+web, it is yet another point where your server can be compromised. Ultimately a
+control panel could prove convenient both for an administrator and for someone
+looking to hack into your system.
 
 2) Immediately After Receiving Root Access
 ------------------------------------------
@@ -86,12 +88,13 @@ Hopefully the root password wasn't sent via an unencrypted email with the other
 login credentials. Very few people use `GPG to encrypt emails`_ because it is
 cumbersome, but confidential documents should be encoded/decoded with this type
 of protection. You can request that the password not be sent using the same
-medium so it will be difficult to intercept. At the very minimum, try to ensure 
-passwords are sent separately from the rest of the authentication data. This provides  
-a slightly more obscure means to stop this information from being intercepted. 
-Ideally credentials would be sent with a tool similar to NoteShred_ which can 
-delete a password after it is viewed without leaving an email archive of the 
-information. However it is sent, change your password immediately after receiving it.
+medium so it will be difficult to intercept. At the very minimum, try to ensure
+passwords are sent separately from the rest of the authentication data. This
+provides a slightly more obscure means to stop this information from being
+intercepted.  Ideally credentials would be sent with a tool similar to
+NoteShred_ which can delete a password after it is viewed without leaving an
+email archive of the information. However it is sent, change your password
+immediately after receiving it.
 
 Most web hosts send all of the credentials together, therefore, the first step
 after getting access is to log in and change the root password. Unencrypted
@@ -99,11 +102,11 @@ email communications offers no security on the Internet and thus you must
 address this vulnerability immediately.
 
 Update the list of available software and perform system software upgrades.
-Most web hosts will use a pre-packaged distribution and there will frequently
-be updates that need to be applied immediately. Make sure you've got the updates 
-and that the new packages are running. If you update the Linux kernel you will 
-have to reboot the server for it to be applied. If you update Apache, you will also
-need to restart it. Debian-style systems often restart the main daemon
+Most web hosts will use a pre-packaged distribution and there will frequently be
+updates that need to be applied immediately. Make sure you've got the updates
+and that the new packages are running. If you update the Linux kernel you will
+have to reboot the server for it to be applied. If you update Apache, you will
+also need to restart it. Debian-style systems often restart the main daemon
 instances on package updates automatically, where RHEL-style systems treat
 daemon restarts as an administrator's responsibility.
 
@@ -123,21 +126,21 @@ passwords supplied via email, reset them immediately. Remember that your email
 address is also a `point of vulnerability`_.
 
 The most common account that crackers try to compromise is the root user, so
-disable root logins. Furthermore, set up user accounts with sudo access and
-`use SSH keys`_ so that nobody accessing the site is using a password. Note:
-the commands listed here assume you are using sudo access and but we have
-chosen not to explicitly prefix them with sudo.
+disable root logins. Furthermore, set up user accounts with sudo access and `use
+SSH keys`_ so that nobody accessing the server is using a password. Note: the
+commands listed here assume you are using sudo access and but we have chosen not
+to explicitly prefix them with sudo.
 
 Protect your SSH keys by ensuring that your private keys are `password
-protected and using at least 2048-bits encryption`_. Some people now thing that 
+protected and using at least 2048-bits encryption`_. Some people now think that 
 the default should be 4096-bits, while really paranoid people may choose to use
 8192-bits. Although theoretically there is nothing wrong with doing this, in 
 practice there are `limitations` to what browsers and hosting companies provide. 
 At the present time, 2048-bits seems sufficient for most use cases. 
 
 By disabling the use of passwords for SSH user
-logins a common server vulnerability is simply eliminated. When you turn off
-password logins, "`script kiddies`_\ " simply cannot compromise your server
+logins, a common server vulnerability is simply eliminated. When you turn off
+password logins, "`script kiddies`_\ " cannot compromise your server
 with common dictionary or brute force attacks. There are explanations on how to
 `effectively disable password logins`_ but check that
 :file:`/etc/ssh/sshd_config` has the text
@@ -146,11 +149,11 @@ with common dictionary or brute force attacks. There are explanations on how to
 
   PasswordAuthentication no
 
-Remember that when downloading important files that there is a possibility that
+Remember that when downloading important files there is a possibility that
 they have been tampered with. Important security documents often come with a
 `MD5`_ or `Secure Hash Algorithm`_ (SHA) code which allows a user to verify that
-the file on a server is identical to the file that they have downloaded.You can
-generate a `checksum`_ to locally to determine equivalence using one of these::
+the file on a server is identical to the file that they have downloaded. You can
+generate a `checksum`_ locally to determine equivalence using one of these::
 
   $ shasum -a 256 -/DrupalSecurity.epub
   $ md5sum -/DrupalSecurity.epub
@@ -223,7 +226,7 @@ from an external machine::
 
 We recommend running `periodic TCP port scans`_ on your server. `MXToolbox`_
 offers an option to do this through their site, but you can also use tools like
-nmap which offers you more fine-grained controls.
+nmap which offer more fine-grained controls.
 
 Many servers come with `BIND`_ on UDP port 53. This program can probably be
 removed in most instances or should be restricted with a firewall if required.
@@ -306,17 +309,18 @@ as its rules were initially developed to meet NSA policies.
   # Debian (not Ubuntu)
   $ apt-get install perl-tk bastille selinux-basics selinux-policy-default auditd
 
-Using an Host Based Intrusion Detection System (HIDS) such as the `OSSEC`_
+Using a Host Based Intrusion Detection System (HIDS) such as the `OSSEC`_
 HIDS is a good practice. You can find more information on the
 projects, including tutorials and how-tos at `OSSEC's documentation`_. 
-`Tripwire`_ and `Snort`_ are other IDS's which
+`Tripwire`_ and `Snort`_ are other IDSes which
 monitor the integrity of core files and will alert you to suspicious activity
-(see `Tripwire on CentOS`_ and `Tripwire on Debian`_). With any HIDS, you
-should make sure that secure IPs, such as your outgoing gateway is whitelisted.
+(see `Tripwire on CentOS`_ and `Tripwire on Debian`_). With any HIDS you
+should make sure that secure IPs, such as your outgoing gateway, are whitelisted.
 
 `Drupal monitoring can be set up to work with OSSEC`_ which would be more
-efficient than using Drupal's `Login Security`_ module (6/7/8) as it would allow you to
-use your existing HIDS infrastructure to alert you to these sorts of attacks.
+efficient than using Drupal's `Login Security`_ module (6/7/8) as it would allow
+you to use your existing HIDS infrastructure to alert you to these sorts of
+attacks.
 
 Crackers will often try to use a `brute force attack`_ to guess usernames and
 passwords. Using a service like `Fail2ban`_ that can block IP addresses that 
@@ -324,11 +328,11 @@ are making an unreasonable number of login attempts. This won't prevent
 distributed attacks, but could be used in conjunction with OSSEC.
 
 `Fail2ban is also an effective measure for flood control`_ and can stop most
-denial of service attacks. Drupal also has some built in flood control options,
-the `Flood Control module`_ provides a UI to control them. Note that some 
-crackers are throttling their dictionary attacks to avoid tools like Fail2ban, 
-so it will still be important to use a monitoring tool like Nagios to monitor if 
-someone is methodically trying to guess bad passwords on your server. 
+denial of service (DoS) attacks. Drupal also has some built in flood control
+options; The `Flood Control module`_ provides a UI to control them. Note that
+some crackers are throttling their dictionary attacks to avoid tools like
+Fail2ban, so it will still be important to use a monitoring tool like Nagios to
+monitor if someone is methodically trying to guess bad passwords on your server.
 
 ::
 
@@ -338,7 +342,7 @@ someone is methodically trying to guess bad passwords on your server.
   # CentOS
   $ yum install fail2ban
 
-`Distributed Denial of Service (DDOS)`_ attacs are more difficult to address,
+`Distributed Denial of Service (DDoS)`_ attacks are more difficult to address,
 but there's a great defence plan laid out on `StackOverflow`_.
 
 Place the /etc directory under version control so that you can easily track
@@ -384,9 +388,9 @@ There are a number of ways to cache the public display, including leveraging
 Memcache and `Nginx`_ to extend Drupal's internal page cache. One of the most
 powerful tools is `Varnish`_ which can provide incredible performance
 enhancements. It can also be used effectively to deny all logins on your public
-site by being configured to denying cookies on port 80. This is a line that can
-be added to your Varnish vcl file to remove the cookies so that it becomes 
-impossible to login to Drupal directly:
+site by being configured to deny cookies on port 80. This is a line that can be
+added to your Varnish vcl file in the `vcl_recv` subroutine to remove the
+cookies so that it becomes impossible to login to Drupal directly:
 
 .. code-block:: varnish
 
@@ -395,7 +399,7 @@ impossible to login to Drupal directly:
 If you have a site which has only a few users and doesn't have any online forms
 for anonymous users then you can configure Varnish to simply reject all HTTP
 POST requests. Then in Apache you can whitelist the IP address you want to have
-access to login into Drupal. Matt Korostoff documented this approach in his
+access to login to Drupal. Matt Korostoff documented this approach in his
 `breakdown of the Drupalgeddon attacks`_ that affected many Drupal 7 sites.
 
 Shared server environments provide a number of security challenges. Do not
@@ -403,7 +407,7 @@ expect it to be easy to securely host several sites on the same server with
 direct shell access to different clients. If you need to do this, it is worth
 investigating `FastCGI`_ which when used in conjunction with `suexec`_ or
 `cgiwrap`_ to isolate individual processes on a shared server. We expect most
-medium to large organizations to have access to either a virtual (e.g. `VMware`_,
+medium to large organizations to have access to either virtual (e.g. `VMware`_,
 `Xen`_, `OpenVZ`_ or `KVM`_) or cloud-based (e.g. `Amazon`_ or `Rackspace`_)
 servers. There is also `significant movement in the Drupal community`_ to use
 `Linux Containers`_ to more efficiently distribute processing power without
@@ -433,12 +437,12 @@ Upgrades can be done with the following commands::
 
 It is very useful to have a service like `Nagios`_ monitoring your production
 server to alert you if any problems arise. The configuration of Nagios can be
-quite complex, but you can set it up easily enough on your staging server. You
-will need to grant access on your production environment to this server and you
-must enable CGI access on this server. Remember that if you enable this, you
-will also need to consider the `security implications`_ that it presents. To
-get the server installed in your staging environment, execute the following
-from the command line::
+quite complex, but it can be setup alongside your web application or on a
+dedicated monitoring server. You will need to grant access on your production
+environment to this server and you must enable CGI access on this
+server. Remember that if you enable this, you will also need to consider the
+`security implications`_ that it presents. To get the server installed in your
+environment, execute the following from the command line::
 
   # Ubuntu/Debian
   $ apt-get install nagios3 nagios-nrpe-plugin
@@ -466,7 +470,7 @@ software`_ like `Puppet`_ or `Chef`_. Initially, it will take you a lot more
 time to configure it this way, but it will make it much easier to restore your
 server when something does happen and and see you are back online quickly. It
 also codifies the process to ensure that you don't miss critical setup steps.
-This approach also makes it trivial to have essentially duplicate development,
+This approach also makes it trivial to have essentially identical development,
 staging and production environments.
 
 7) Managing Server Logs
@@ -492,27 +496,26 @@ administrators more effectively monitor their log files, and regular log
 reviews can be an important part of early breach detection.
 
 If your server is configured with a caching reverse proxy server or a load
-balancer such as Varnish, Nginx or haproxy then you should ensure that Drupal
-is made aware of the actual ``REMOTE_IP``. The common solution requires
-configuring the ``X-Forwarded-For`` in both Varnish and Apache, but as
-`Jonathan Marcil's blog post points out`_, "X-Forwarded-For is actually a list
-that can be a chain of multiples proxies and not just a single IP address". To
-that effect, ensure that all IP addresses for your reverse proxies are
-identified in your settings.php file (`configuration`_). Another solution
-would be to create a custom HTTP header such as ``HTTP_X_FORWARDED_FOR`` and
-use it in your architecture and tell Drupal to use it using the configuration
-variable "reverse_proxy_header" in :file:`settings.php` under "Reverse Proxy
-Configuration". Drupal itself will manage correctly a list of trusted reverse
-proxy with the standard ``X-Forwarded-For`` header, but this is useful if you
-want to correctly logs IP at a Web server, proxy or load balancer level. Note
-that the front facing proxy should ignore if the custom header exists and
-replace it with its own.
+balancer such as Varnish, Nginx or haproxy then you should ensure that Drupal is
+made aware of the actual ``REMOTE_IP``. The common solution requires configuring
+the ``X-Forwarded-For`` header in both Varnish and Apache, but as `Jonathan
+Marcil's blog post points out`_, "X-Forwarded-For is actually a list that can be
+a chain of multiples proxies and not just a single IP address". To that effect,
+ensure that all IP addresses for your reverse proxies are identified in your
+settings.php file (`configuration`_). Another solution would be to create a
+custom HTTP header such as ``X-Remote-IP`` and tell Drupal to use it using the
+configuration variable "reverse_proxy_header" in :file:`settings.php` under
+"Reverse Proxy Configuration". Drupal itself will correctly manage a list of
+trusted reverse proxies with this header. This is useful if you want to
+correctly log IPs at a Web server, proxy or load balancer level. Note that the
+reverse proxy should append the IP address of the client issuing the request
+to this header.
 
 .. code-block:: php
 
   $conf['reverse_proxy'] = TRUE;
   $conf['reverse_proxy_addresses'] = array('127.0.0.1','192.168.0.2');
-  $conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
+  $conf['reverse_proxy_header'] = 'HTTP_X_REMOTE_IP';
 
 Another approach to dealing with this is to simply use Apache's Reverse Proxy
 Add Forward (RPAF) module. As Khalid Baheyeldin `writes in his blog`_, this
@@ -524,9 +527,9 @@ Network (CDN).
   # Ubuntu/Debian
   $ apt-get install libapache2-mod-rpaf
 
-By editing the :file:`/etc/apache2/mods-enabled/rpaf.conf`, set your proxy IP
-and restarting Apache your access.log will show the real client IP rather than
-that of your proxy.
+After editing :file:`/etc/apache2/mods-enabled/rpaf.conf` and setting your proxy
+IP and restarting Apache, your access.log will show the real client IP rather
+than that of your proxy.
 
 The most important server logs to monitor are Apache's. If there is more than
 one site on a given server, it is normal for each site to have its own log file

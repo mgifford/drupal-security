@@ -14,7 +14,7 @@ practices defined by this community.
 With Drupal 8, Twig has been adopted as the template engine, partly to make it 
 harder for insecure code to be used in a site's theme. With prior versions of
 Drupal it is important to remember that the themes all have PHP in them and
-that this is a potential place of a security breach. It isn't uncommon for
+that this is a potential source of a security breach. It isn't uncommon for
 themers to put a lot of PHP inside of a theme rather than in a separate module.
 It's also more difficult to keep up with security releases in themes, as they
 are by their very nature customized.
@@ -29,7 +29,7 @@ highlighting general approaches to PHP coding.
 Code review can be used in order to find flaws in existing code and discover
 potential bugs.  OWASP offer a `free book`_ that can guide you on that process.
 Basically, you can do it manually using the same guidelines as when writing
-secure code, but you can as well use automated tools. Theses can be `installed
+secure code, but you can also use automated tools. These can be `installed
 in a continuous integration system such as Jenkins`_ in order to periodically
 checks for flaws. Common clarity and code style rules can spot weak code that is
 not directly tied to security but can be an indicator on code quality, thus
@@ -47,7 +47,7 @@ Common Drupal secure coding practices are:
   Drupal to clean strings on output. Any variable in a template or HTML output
   should pass through one of these.
 
-* Protect yourself from SQL Injection through leverage Drupal's
+* Protect yourself from SQL Injection through leveraging Drupal's
   `database abstraction layer`_.
 
 * Use :phpdoc:`preg_replace_callback` rather than :phpdoc:`preg_replace` as the
@@ -80,13 +80,13 @@ the process. OWASP publishes a very complete `Testing Guide`_ as well as an
 `Application Security Verification Standard`_ that goes deep into details. The
 verification standard could also be used as a complete security requirement list
 when designing new modules for your Drupal site. Open-source tools such as
-`OWASP ZAP`_ and `Subgraph Vega`_ provide graphical user interface to perform
+`OWASP ZAP`_ and `Subgraph Vega`_ provide graphical user interfaces to perform
 dynamic scanning of Web sites. For complex Drupal sites they might have some
-difficulties but they can still be used as a intercepting web proxy in order to
+difficulties but they can still be used as an intercepting web proxy in order to
 perform manual testing.
 
 There are a lot of resources available to help understand 
-cross-site scripting (XSS) but Acquia has written a nice `introduction to XSS`_
+Cross-Site Scripting (XSS) but Acquia has written a nice `introduction to XSS`_
 
 .. _Drupal handbook page: https://drupal.org/writing-secure-code
 .. _PHP Security Cheat Sheet: https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet

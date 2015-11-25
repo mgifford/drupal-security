@@ -36,6 +36,7 @@ Editors
 --------
    * `Lee Hunter <http://streamoflight.com/>`__
    * `Xavier Landreville`_
+   * `Mike Mallett`_
 
 Version
 --------

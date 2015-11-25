@@ -30,7 +30,7 @@ B) Principles of Security
 **Use well known security tools:**
   | There are well supported libraries that limit exposure, and check for intrusion.
 
-  | Many suggestions are provided in the Server Security, PHP & Drupal sections.
+  | Many suggestions are provided in the :doc:`server`, :doc:`php` & :doc:`drupal` sections.
 
 **Avoid writing custom code:**
   | Even large organizations find it difficult to invest properly in regular, ongoing code reviews.
