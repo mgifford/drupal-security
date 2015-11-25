@@ -41,10 +41,13 @@ How do I get a usable document?
 You will need to get a few things before being able to generate the documents:
 
 * First, install sphinx, pygments, and alabaster. You can grab them through pip
-  or, if available, your distro's repositories. http://sphinx-doc.org/install.html
+  or, if available, your distro's repositories:
+    http://sphinx-doc.org/install.html
+    https://pypi.python.org/pypi/pip
+    `sudo pip install alabaster`
 * When it is all installed you can use sphinx to generate the ePub by running the
   following command from the root of the repository:
-		make epub
+    `make epub`
 * Look for the results within the /build/epub directory and view the .epub results 
   with your favourite ePub reader.
 * ePubs are just just encapsulated HTML, so the HTML files are available in that 
