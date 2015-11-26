@@ -40,7 +40,7 @@ to their service in order to apply security upgrades and install the additional
 packages mentioned in this document. Before procuring a Red Hat server, check
 that your package includes a subscription.
 
-In our opinion, distributions of Linux like SuSE simply do not have a critical
+In our opinion, distributions of Linux like SUSE simply do not have a critical
 mass of users and developers (in the web server space) to maintain the code and
 documentation required for a secure environment. Microsoft Windows is not a
 standard platform for hosting Drupal and is generally not recommended since
