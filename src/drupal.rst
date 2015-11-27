@@ -680,7 +680,7 @@ information on the site is public, this may not be necessary.
 .. _risk levels: https://www.drupal.org/security-team/risk-levels
 .. _`NIST Common Misuse Scoring System`: http://www.nist.gov/itl/csd/cmss-072512.cfm
 .. _`Drop Guard`: http://www.drop-guard.net/
-.. _salt: https://en.wikipedia.org/wiki/Salt_%28cryptography%29
+.. _salt: https://en.wikipedia.org/wiki/Salt_(cryptography)
 .. _`full explaination`: https://www.drupal.org/node/101494
 .. _infographic: http://drupalsecurityreport.org/sites/g/files/g598426/f/Drupal-security-release_rgb-cc-by-nd.jpg
 .. _`10 Ways Drupal 8 Will Be More Secure`: https://dev.acquia.com/blog/drupal-8/10-ways-drupal-8-will-be-more-secure/2015/08/27/6621

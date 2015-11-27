@@ -138,6 +138,6 @@ php.ini file::
 .. _secure cookie attribute: https://en.wikipedia.org/wiki/HTTP_cookie#Secure_cookie
 .. _hash algorithm: http://www.php.net/manual/en/session.configuration.php#ini.session.hash-function
 .. _SHA-2: https://en.wikipedia.org/wiki/SHA-1
-.. _whirlpool: https://en.wikipedia.org/wiki/Whirlpool_%28cryptography%29
+.. _whirlpool: https://en.wikipedia.org/wiki/Whirlpool_(cryptography)
 .. _limit information about PHP: http://simonholywell.com/post/2013/04/three-things-i-set-on-new-servers.html
 .. _disable PHP functions: http://www.cyberciti.biz/faq/linux-unix-apache-lighttpd-phpini-disable-functions/

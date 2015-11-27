@@ -519,7 +519,7 @@ PHP::
 .. _Information Security Advice for All Levels of Government: http://www.dsd.gov.au/publications/csocprotect/protecting_web_apps.htm
 .. _Security Kit: https://drupal.org/project/seckit
 .. _W3C: http://www.w3.org/TR/CSP/
-.. _Cross Site Scripting (XSS): https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29
+.. _Cross Site Scripting (XSS): https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 .. _Mozilla: https://developer.mozilla.org/en-US/docs/Security/CSP/Using_Content_Security_Policy
 .. _CSP: https://www.owasp.org/index.php/Content_Security_Policy
 .. _growing movement encrypt all web traffic: http://chapterthree.com/blog/why-your-site-should-be-using-https

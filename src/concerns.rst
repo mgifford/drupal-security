@@ -122,13 +122,13 @@ budget you presently spend on web security, and if that is sufficient to cover
 the risks to what has become mission critical for most organizations.
 
 .. _`dancing banana`: http://www.ottawasun.com/2014/11/24/mayor-says-imposter-managed-to-redirect-ottawaca-website
-.. _social engineering: https://en.wikipedia.org/wiki/Social_engineering_%28security%29
+.. _social engineering: https://en.wikipedia.org/wiki/Social_engineering_(security)
 .. _Threat and Risk Assessments: https://www.owasp.org/index.php/Threat_Risk_Modeling
 .. _Healthcare.gov: https://www.healthcare.gov/
 .. _Application Threat Modeling: https://www.owasp.org/index.php/Application_Threat_Modeling
 .. _Threat Risk Modeling: https://www.owasp.org/index.php/Threat_Risk_Modeling
-.. _`STRIDE or DREAD`: https://en.wikipedia.org/wiki/STRIDE_%28security%29
-.. _Shellshock: https://en.wikipedia.org/wiki/Shellshock_%28software_bug%29
+.. _`STRIDE or DREAD`: https://en.wikipedia.org/wiki/STRIDE_(security)
+.. _Shellshock: https://en.wikipedia.org/wiki/Shellshock_(software_bug)
 .. _identifying and classifying an organization's assets: http://www.networkmagazineindia.com/200212/security2.shtml
 .. _Heartbleed bug: http://heartbleed.com/
 .. _OpenSSL Software Foundation: https://www.openssl.org/support/index.html
