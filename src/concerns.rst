@@ -116,7 +116,7 @@ budget on security. The less organizations spend on security, the greater the
 likelihood that there will be security breaches. How much of this should be
 spent on web security will depend on the relative number of assets and
 vulnerabilities which are contained in the website. Only with a good picture of
-your over-all risk can you determine where it is best to invest in skills,
+your overall risk can you determine where it is best to invest in skills,
 processes and technologies to mitigate it. Think about what percentage of your
 budget you presently spend on web security, and if that is sufficient to cover
 the risks to what has become mission critical for most organizations.
