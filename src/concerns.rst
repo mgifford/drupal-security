@@ -30,8 +30,8 @@ documented. This recently happened with a large Canadian municipal website that
 was redirected to an image of a `dancing banana`_ using an approach known as 
 `social engineering`_. By leveraging human vulnerability, crackers were able 
 to gain control of critical infrastructure. Properly documented procedures are 
-important, as third-party services can often be manipulated by phony email or 
-telephone requests.
+important, as third-party services can often be manipulated by fraudulent email 
+or telephone requests.
 
 It is also important to remember that one person working in isolation cannot be
 expected to be an expert in all aspects of Internet security. This is a vast
