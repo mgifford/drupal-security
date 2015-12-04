@@ -1,13 +1,13 @@
 L) Points of Debate
 ===================
 
-.. _debate-obscurity:
-
 .. image:: /_static/images/noun/noun_43498_cc.*
    :width: 150px
    :align: right
    :scale: 50%
    :alt: People sitting around the table from the noun project.
+
+.. _debate-obscurity:
 
 Security by Obscurity
 ---------------------

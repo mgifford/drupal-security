@@ -699,7 +699,6 @@ information on the site is public, this may not be necessary.
 .. _`Proudly-Found-Elsewhere`: http://prague2013.drupal.org/session/not-invented-here-proudly-found-elsewhere-drupal-8-story.html
 .. _Symfony: http://symfony.com/
 .. _CKEditor: http://ckeditor.com/
-.. _Composer: https://getcomposer.org/
 .. _EasyRDF: http://www.easyrdf.org/
 .. _Guzzle: https://github.com/guzzle/guzzle
 .. _Doctrine: https://packagist.org/packages/doctrine/common

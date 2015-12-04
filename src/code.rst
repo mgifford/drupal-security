@@ -104,4 +104,4 @@ Cross-Site Scripting (XSS) but Acquia has written a nice `introduction to XSS`_
 .. _Application Security Verification Standard: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
 .. _OWASP ZAP: https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project
 .. _Subgraph Vega: http://www.subgraph.com/products.html
-.. ~`introduction to XSS`: https://docs.acquia.com/articles/introduction-cross-site-scripting-xss-and-drupal
+.. _`introduction to XSS`: https://docs.acquia.com/articles/introduction-cross-site-scripting-xss-and-drupal

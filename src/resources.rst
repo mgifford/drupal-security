@@ -41,7 +41,7 @@ Videos
 
 - `DrupalCon Barcelona: Drupal and Security: what you need to know <https://events.drupal.org/barcelona2015/sessions/drupal-and-security-what-you-need-know>`_
 - `DrupalCon Denver: Building and Securing Government Drupal Sites in the Cloud <http://denver2012.drupal.org/program/sessions/building-and-securing-government-drupal-sites-cloud>`_
-- `DrupalCon London: Doing Drupal Security Right<http://london2011.drupal.org/conference/sessions/doing-drupal-security-right>`_
+- `DrupalCon London: Doing Drupal Security Right <http://london2011.drupal.org/conference/sessions/doing-drupal-security-right>`_
 - `Securing Drupal Sites for Government Agencies - Acquia <https://www.acquia.com/resources/acquia-tv/conference/securing-drupal-sites-government-agencies-september-5-2012>`_
 - `Drupal Videos About Security on Archive.org <http://archive.org/search.php?query=drupal%20security%20AND%20mediatype%3Amovies&sort=-date>`_
 - `Semantic Forgeries in Drupal's Form API - Greg Knaddison <https://vimeo.com/8741925>`_
