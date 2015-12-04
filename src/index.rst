@@ -1,5 +1,4 @@
-.. Drupal Security Best Practices documentation master file, created by
-   sphinx-quickstart on Sat Mar 28 22:02:16 2015.
+.. Drupal Security Best Practices master file.
 
 ==============================
 Drupal Security Best Practices
@@ -47,9 +46,15 @@ Version
 Like this guide?
 ----------------
 
-There are lots of ways to contribute to it's further development. This is a community effort, but even if you aren't a security guru there are plenty of ways to help. If you have editing skills, know that this guide could use your help. 
+There are lots of ways to contribute to its further development. This is a
+community effort, but even if you aren't a security guru there are plenty of
+ways to help. If you have editing skills, know that this guide could use your
+help.
 
-We need people to spread the word about what you've found in this guide. It's available under an open Creative Commons license so please share it with people who you think would benefit. If this guide has been useful to you, please spread the word on your favourite social media platform. 
+We need people to spread the word about what you've found in this guide. It's
+available under an open Creative Commons license so please share it with people
+who you think would benefit. If this guide has been useful to you, please
+spread the word on your favourite social media platform.
 
 ==========
 Contents:
