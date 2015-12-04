@@ -128,8 +128,8 @@ the risks to what has become mission critical for most organizations.
 .. _Application Threat Modeling: https://www.owasp.org/index.php/Application_Threat_Modeling
 .. _Threat Risk Modeling: https://www.owasp.org/index.php/Threat_Risk_Modeling
 .. _`STRIDE or DREAD`: https://en.wikipedia.org/wiki/STRIDE_(security)
-.. _Shellshock: https://en.wikipedia.org/wiki/Shellshock_(software_bug)
 .. _identifying and classifying an organization's assets: http://www.networkmagazineindia.com/200212/security2.shtml
+.. _Shellshock: https://en.wikipedia.org/wiki/Shellshock_(software_bug)
 .. _Heartbleed bug: http://heartbleed.com/
 .. _OpenSSL Software Foundation: https://www.openssl.org/support/index.html
 .. _Drupal's security team: https://www.drupal.org/security-team
