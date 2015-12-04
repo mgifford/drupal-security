@@ -251,6 +251,17 @@ As with other server user accounts, you will want to restrict who has access to
 servers. Make sure to delete any test or developer accounts on the production
 server.
 
+Another good practice concerning administative users within drupal is to
+automatically disable their account once a certain period of time has passed.
+Unused accounts are often a prime target for brute-forcing, as their password is
+most likely not being rotated, and their legitimate owner might not be watching
+for login attempts. It is also a PCI requirement that inactive administative
+accounts be locked-out after 90 days of inactivity. A login attempt does not
+count as activity, whereas a successful login or another active action does.
+Modules like the `User Expire`_ module can help meet that requirement by
+automatically expiring accounts with specific roles once they reach a certain
+inactivity limit.
+
 Don't run Drupal without enabling the Update module that comes with core. Drupal
 core and contributed modules use a structured release process that allows your
 administrators to be proactively alerted when one of those modules has a
@@ -696,3 +707,4 @@ information on the site is public, this may not be necessary.
 .. _`Content Security Policy W3C Standard`: http://www.w3.org/TR/CSP/
 .. _`cash bounty`: https://www.drupal.org/drupal8-security-bounty
 .. _`HTTP HOST Header attacks`: https://www.drupal.org/node/1992030
+.. _`User Expire`: https://www.drupal.org/project/user_expire
