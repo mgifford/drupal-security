@@ -113,7 +113,7 @@ daemon restarts as an administrator's responsibility.
 ::
 
   # Ubuntu/Debian
-  $ apt-get update && apt-get upgrade
+  $ apt-get update && apt-get dist-upgrade
 
   # CentOS
   $ yum upgrade
@@ -435,6 +435,10 @@ Upgrades can be done with the following commands::
   # CentOS
   $ yum upgrade
 
+Note that this for Ubuntu/Debian you may want to manually use apt-get dist-upgrade 
+from time to time. It is `more disruptive`_ than apt-get upgrade because it may 
+install or remove packages. 
+
 It is very useful to have a service like `Nagios`_ monitoring your production
 server to alert you if any problems arise. The configuration of Nagios can be
 quite complex, but it can be setup alongside your web application or on a
@@ -631,6 +635,7 @@ simplify the process of searching all of your log files.
 .. _Ubuntu: http://www.ubuntu.com/usn/
 .. _CentOS: https://www.centos.org/modules/tinycontent/index.php?id=16
 .. _Nagios: http://www.nagios.org/documentation
+.. _`more disruptive` http://askubuntu.com/questions/81585/what-is-dist-upgrade-and-why-does-it-upgrade-more-than-upgrade
 .. _security implications: http://nagios.sourceforge.net/docs/3_0/security.html
 .. _Munin: http://munin-monitoring.org/
 .. _ensure that this data is not publicly available: http://www.howtoforge.com/server_monitoring_monit_munin
