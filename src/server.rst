@@ -435,9 +435,11 @@ Upgrades can be done with the following commands::
   # CentOS
   $ yum upgrade
 
-Note that this for Ubuntu/Debian you may want to manually use apt-get dist-upgrade 
-from time to time. It is `more disruptive`_ than apt-get upgrade because it may 
-install or remove packages. 
+Note that this for Ubuntu/Debian you will want to manually use apt-get dist-upgrade
+to address kernel updates. It is `more disruptive`_ than apt-get upgrade because 
+it performs kernel upgrades, and may also install or remove packages. Important 
+security fixes often occur in the kernel, and the server will require a reboot 
+to take effect.  
 
 It is very useful to have a service like `Nagios`_ monitoring your production
 server to alert you if any problems arise. The configuration of Nagios can be
