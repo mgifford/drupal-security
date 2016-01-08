@@ -328,7 +328,8 @@ want to add more or less than those listed here.
   Provides realistic password strength measurement and server-side enforcement.
 
 `Permissions Lock`_
-  Provides more fine-grained control over what users with the permission 'administer permissions' can configure.
+  Provides more fine-grained control over what users with the permission 
+  'administer permissions' can configure.
 
 `HTTP Strict Transport Security`_
   To be used together with Secure Login, to prevent SSL strip attacks.
@@ -363,13 +364,18 @@ want to add more or less than those listed here.
   Protects your non-production environment from being accessed.
 
 `Site Audit`_ (7/8)
-  A site analysis tool that generates reports with actionable best practice recommendations.
+  A site analysis tool that generates reports with actionable best practice 
+  recommendations.
   
 `Two-factor Authentication (TFA)`_
   Second-factor authentication for Drupal sites.
 
 `Username Enumeration Prevention`_ (6/7/8)
   Stop brute force attacks from leveraging discoverable usernames.
+  
+`User protect`_ (6/7/8)
+   fine-grained access control of user administrators. Protections can be 
+   specific to a user, or applied to all users in a role.
 
 7) Modules to Avoid on Shared Servers
 -------------------------------------
@@ -678,6 +684,7 @@ information on the site is public, this may not be necessary.
 .. _`Site Audit`: https://www.drupal.org/project/site_audit
 .. _Restrict IP: https://drupal.org/project/restrict_ip
 .. _Username Enumeration Prevention: https://drupal.org/project/username_enumeration_prevention
+.. _`User protect`: https://www.drupal.org/project/userprotect
 .. _Delete all: https://www.drupal.org/project/delete_all
 .. _Devel: https://www.drupal.org/project/devel
 .. _Drupal for Firebug: https://www.drupal.org/project/drupalforfirebug
