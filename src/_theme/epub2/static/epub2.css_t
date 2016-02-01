@@ -46,12 +46,21 @@ p{text-align: justify;}
 a{
 	cursor: pointer; 
 	text-align: left;
-	color: #16A9E1
+	color: #0F7096;
 }
-a:link{color: #16A9E1;}
-a:visited{color: #0F6F93;}
-a:hover, a:focus{color: #985300;}
-a:active{color: #3D3D3D;}
+a:link{color: #0F7096;}
+a:visited{color: #216783;}
+a:hover, a:focus{color: #275496;}
+a:active{color: #334696;}
+
+/* Improving colour contrast */
+
+.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs { color: #356977; } 
+
+.highlight .s, .highlight .na, .highlight .sb, .highlight .sc, .highlight .sd, 
+.highlight .s2, .highlight .se, .highlight .sh, .highlight .s1 { color: #365E87; } 
+
+.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi { color: #8F49A3; } 
 
 /* remove bullets in tables like list of authors */
 td li {
