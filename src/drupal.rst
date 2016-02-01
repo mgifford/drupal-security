@@ -294,10 +294,10 @@ Filtered HTML input format but be cautious.
 There are `a lot of Drupal security modules`_. Depending on your needs you will
 want to add more or less than those listed here.
 
-`AES Encryption`_ (6/7/8)
+`AES Encryption`_ (7/8)
   Simple and easy to use encryption API.
 
-`Automated Logout`_ (6/7/8)
+`Automated Logout`_ (7/8)
   Provides the ability to log users out after a specified time of inactivity.
 
 `Clear Password Field`_
@@ -312,22 +312,25 @@ want to add more or less than those listed here.
 `Encrypt`_
   An API for performing two-way data encryption. 
 
+`Key`_ (7/8)
+  A key manager which can be employed by other modules. 
+
 `Local Image Input Filter`_
   Avoids CSRF attacks through external image references.
 
-`Login Security`_ (6/7/8)
+`Login Security`_ (7/8)
   Set access control to restrict access to login forms by IP address.
 
 `Paranoia`_
   Limits PHP functionality and other controls.
 
-`Password Policy`_ (6/7/8)
+`Password Policy`_ (7/8)
   Enforces your user password policy.
   
-`Password Strength`_
+`Password Strength`_ (7/8)
   Provides realistic password strength measurement and server-side enforcement.
 
-`Permissions Lock`_
+`Permissions Lock`_ (7/8)
   Provides more fine-grained control over what users with the permission 
   'administer permissions' can configure.
 
@@ -342,7 +345,7 @@ want to add more or less than those listed here.
   Manages mixed-mode (HTTPS and HTTP) authenticated sessions for enhanced
   security (note required core patches).
 
-`Secure Login`_ (6/7/8)
+`Secure Login`_ (7/8)
   Provides secure HTTPS access, without mixed-mode capability.
 
 `Secure Permissions`_
@@ -351,7 +354,7 @@ want to add more or less than those listed here.
 `Security Kit`_
   Hardens various pieces of Drupal.
 
-`Security Review`_ (6/7/8)
+`Security Review`_ (7/8-dev)
   Produces a quick but useful review of your site's security configuration. 
 
 `Session Limit`_
@@ -370,10 +373,10 @@ want to add more or less than those listed here.
 `Two-factor Authentication (TFA)`_
   Second-factor authentication for Drupal sites.
 
-`Username Enumeration Prevention`_ (6/7/8)
+`Username Enumeration Prevention`_ (7/8-dev)
   Stop brute force attacks from leveraging discoverable usernames.
   
-`User protect`_ (6/7/8)
+`User protect`_ (7/8)
    fine-grained access control of user administrators. Protections can be 
    specific to a user, or applied to all users in a role.
 
@@ -661,6 +664,7 @@ information on the site is public, this may not be necessary.
 .. _Paranoia: https://drupal.org/project/paranoia
 .. _a lot of Drupal security modules: https://github.com/wet-boew/wet-boew-drupal/issues/248
 .. _`Encrypt`: https://www.drupal.org/project/encrypt
+.. _`Key`: https://www.drupal.org/project/key
 .. _`AES encryption`: https://www.drupal.org/project/aes
 .. _Automated Logout: https://drupal.org/project/autologout
 .. _Clear Password Field: https://drupal.org/project/clear_password_field
