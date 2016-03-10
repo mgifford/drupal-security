@@ -63,10 +63,22 @@ Information Disclosure
 Sometimes what a cracker is after isn't the information on its own but gives 
 the attacker more information to help find another vulnerability.
 
+Targeting Site Visitors
+-----------------------
 
+If compromised, your website could also be used to target site visitors. By 
+adding malicious Javascript code to your site, browsers can be compromised on 
+both `mobile phones`_ and `desktop computers`_ . Exposing your users to this
+type of attack could be a publicity nightmare, and may also come with
+litigation if it becomes known. If a cracker is specifically targeting your 
+business, compromising your public website might be just the first step in
+gaining control of a laptop or mobile device that has already been configured
+with full access to your network and local file system. 
 
 .. _`national newspaper`: http://news.nationalpost.com/news/canada/csis-websites-show-signs-of-spam-style-pharma-hack
 .. _`diagnose and clean a pharma attack`: http://www.drupalgeeks.com/drupal-blog/how-diagnose-and-remove-pharma-hack-drupal-7
 .. _`Cyber-arms industry`: https://en.wikipedia.org/wiki/Cyber-arms_industry
 .. _`Ashley Madison Data Breach`: https://en.wikipedia.org/wiki/Ashley_Madison_data_breach
 .. _`Have I Been Pwned`: https://haveibeenpwned.com/
+.. _`mobile phones`: http://www.securityweek.com/researcher-hijacks-android-phone-chrome-vulnerability
+.. _`desktop computers`: http://www.securityweek.com/mozilla-patches-firefox-zero-day-exploited-wild
