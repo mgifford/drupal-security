@@ -44,8 +44,11 @@ Illegal Botnets
 
 A compromised server could be used as part of a network of computers managed by
 the controller of the botnet who is then able to direct the activities of these
-compromised computers for various purposes. Criminals are able to use these
-servers as part of a lucrative `Cyber-arms industry`_ .
+compromised computers for various purposes. Bonnets can be used for Distributed 
+Denial-of-Service (DDOS) Attacks, for distributing spam emails, for spreading 
+new malware on other servers, or even mass identity theft. If compromised, your 
+server could even be used to mining crypto currency (Bitcoin) for the attacker. 
+Criminals are able to use these servers as part of a lucrative `Cyber-arms industry`_ .
 
 Private Information
 -------------------
@@ -74,6 +77,10 @@ litigation if it becomes known. If a cracker is specifically targeting your
 business, compromising your public website might be just the first step in
 gaining control of a laptop or mobile device that has already been configured
 with full access to your network and local file system. 
+
+If your server isn’t under your control it could be used to install Ransomware 
+on your visitor’s computers, compromising their data and providing warning 
+messages demanding money restore your computer or filesystem.
 
 .. _`national newspaper`: http://news.nationalpost.com/news/canada/csis-websites-show-signs-of-spam-style-pharma-hack
 .. _`diagnose and clean a pharma attack`: http://www.drupalgeeks.com/drupal-blog/how-diagnose-and-remove-pharma-hack-drupal-7
