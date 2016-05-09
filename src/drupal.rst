@@ -312,6 +312,9 @@ want to add more or less than those listed here.
 `Encrypt`_
   An API for performing two-way data encryption. 
 
+`Honeypot`_
+  Module that uses honeypot and timestamp methods of deterring spam bots from completing forms.
+
 `Key`_ (7/8)
   A key manager which can be employed by other modules. 
 
@@ -337,6 +340,9 @@ want to add more or less than those listed here.
 `HTTP Strict Transport Security`_
   To be used together with Secure Login, to prevent SSL strip attacks.
   Alternatively, directly `enforce it through web-server settings`_.
+
+`reCAPTCHA`
+  Leverages Googles reCAPTCHA web service to improve the CAPTCHA system and protect email addresses.
 
 `Restrict IP`_
   Restrict access to an administrator defined set of IP addresses.
@@ -664,6 +670,7 @@ information on the site is public, this may not be necessary.
 .. _Paranoia: https://drupal.org/project/paranoia
 .. _a lot of Drupal security modules: https://github.com/wet-boew/wet-boew-drupal/issues/248
 .. _`Encrypt`: https://www.drupal.org/project/encrypt
+.. _`Honeypot`: https://www.drupal.org/project/honeypot
 .. _`Key`: https://www.drupal.org/project/key
 .. _`AES encryption`: https://www.drupal.org/project/aes
 .. _Automated Logout: https://drupal.org/project/autologout
@@ -687,6 +694,7 @@ information on the site is public, this may not be necessary.
 .. _Shield: https://drupal.org/project/shield
 .. _`Site Audit`: https://www.drupal.org/project/site_audit
 .. _Restrict IP: https://drupal.org/project/restrict_ip
+.. _`reCAPTCHA`: https://drupal.org/project/recaptcha
 .. _Username Enumeration Prevention: https://drupal.org/project/username_enumeration_prevention
 .. _`User protect`: https://www.drupal.org/project/userprotect
 .. _Delete all: https://www.drupal.org/project/delete_all
