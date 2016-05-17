@@ -82,6 +82,11 @@ If your server isn’t under your control it could be used to install Ransomware
 on your visitor’s computers, compromising their data and providing warning 
 messages demanding money restore your computer or filesystem.
 
+External JavaScript Inclusion
+-----------------------------
+
+You can build a site to DoD security standards, but if an external site hosting the JavaScript that you are are including gets hacked, then whatever access the intended JavaScript had to your data becomes available to the cracker. For example, the external JavaScript can send AJAX requests for data from your user and it can steal `document.cookie`. If you do include JavaScript, be certain that the links ae secure (HTTPS) and your sources are trusted. As some people say, `you are what you include`_.
+
 .. _`national newspaper`: http://news.nationalpost.com/news/canada/csis-websites-show-signs-of-spam-style-pharma-hack
 .. _`diagnose and clean a pharma attack`: http://www.drupalgeeks.com/drupal-blog/how-diagnose-and-remove-pharma-hack-drupal-7
 .. _`Cyber-arms industry`: https://en.wikipedia.org/wiki/Cyber-arms_industry
@@ -89,3 +94,4 @@ messages demanding money restore your computer or filesystem.
 .. _`Have I Been Pwned`: https://haveibeenpwned.com/
 .. _`mobile phones`: http://www.securityweek.com/researcher-hijacks-android-phone-chrome-vulnerability
 .. _`desktop computers`: http://www.securityweek.com/mozilla-patches-firefox-zero-day-exploited-wild
+.. _`you are what you include`: https://blog.securitee.org/?p=255
