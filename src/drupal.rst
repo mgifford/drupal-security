@@ -179,7 +179,7 @@ how to `send your logs to Syslog`_ with integrated logging.
 
 Before launching your site (and periodically afterwards) it is useful to run the
 `Hacked!`_ module to check what code differs from what was released on
-Drupal.org. Particularly when the `diff`_ module (6/7/8) is enabled, this is a
+Drupal.org. Particularly when the `diff`_ module (7/8) is enabled, this is a
 powerful tool to evaluate your code. There are millions of lines of code in a
 given Drupal site, so Hacked! is a really valuable analysis tool. If you need to
 apply patches against the stable released version of the code, the patch should
@@ -203,7 +203,7 @@ comparison tool) to determine if your site has been hacked.
  $ drush generate-makefile make-file.make
  $ drush make make-file.make -y
 
-It is recommended to run all modules you use through the `Coder`_ module (6/7/8), but
+It is recommended to run all modules you use through the `Coder`_ module (7/8), but
 especially any custom built modules and themes. This module `can give you
 suggestions`_ on how to follow the `Drupal communities coding standards`_.
 
@@ -406,14 +406,17 @@ automatically enforce that these modules are not deployed to shared systems:
 developers need to understand why they should not commit these modules and take
 care to double-check what they're about to deploy.
 
-Some popular development modules which should not be present on any shared
-website include:
+Some popular development modules which should only be used for testing and not available on any public facing websites:
+
+`Coder`_ (7/8)
+  This module is very useful for ensuring your code conforms to coding standards
+  but can be used to display the PHP that makes up modules.
 
 `Delete all`_
   This module allows someone with sufficient privileges to delete all content
   and users on a site.
 
-`Devel`_ (6/7/8)
+`Devel`_ (7/8)
   Besides letting users run arbitrary PHP from any page, Devel can be configured
   to display backtraces, raw database queries and their results, display raw
   variables, and disable caching, among other things.
@@ -431,16 +434,9 @@ website include:
   particular section of the site, but it displays raw variables and slows down
   the site significantly.
 
-`Trace`_ (6)
-  This module can be used to display backtraces and raw variables, among other
-  things.
+If you don't have an automated off-site backup solution you may need to use modules like Backup and Migrate, but make sure you need it:
 
-Note that most "normal" modules can be dangerous if a malicious user gains
-privileged access to Drupal. You should evaluate each new module you install to
-determine what it does and whether the features it brings are worth the risks.
-Some modules to take into special consideration are:
-
-`Backup and Migrate`_ (6/7/8)
+`Backup and Migrate`_ (7/8)
   This module allows you to download a copy of the site's database. If
   restrictions placed upon you by your hosting provider prevents you from being
   able to make backups, this module will allow you to do so; but a malicious
@@ -448,9 +444,10 @@ Some modules to take into special consideration are:
   Drupal database, including usernames, passwords, and depending on your site,
   access keys to the services you use.
 
-`Coder`_ (6/7/8)
-  This module is very useful for ensuring your code conforms to coding standards
-  but can be used to display the PHP that makes up modules.
+**Note** all modules can become dangerous if a malicious user gains privileged 
+access to Drupal. You should evaluate each new module you install to
+determine what it does and whether the features it brings are worth the risks.
+
 
 8) Drupal Distributions
 -----------------------
@@ -701,7 +698,6 @@ information on the site is public, this may not be necessary.
 .. _Devel: https://www.drupal.org/project/devel
 .. _Drupal for Firebug: https://www.drupal.org/project/drupalforfirebug
 .. _Theme Developer: https://www.drupal.org/project/devel_themer
-.. _Trace: https://www.drupal.org/project/trace
 .. _Backup and Migrate: https://www.drupal.org/project/backup_migrate
 .. _Guardr: https://drupal.org/project/guardr
 .. _Hardened Drupal: https://drupal.org/project/hardened_drupal
