@@ -394,17 +394,18 @@ sensitive information about Drupal and/or the web server, or allow users to
 perform dangerous operations (e.g.: run arbitrary PHP code or trigger
 long-running operations that could be used to deny service). These modules can
 be used to debug locally (and many are essential tools for Drupal developers),
-but should never be installed on a shared environment (e.g.: a production,
-staging, or testing server).
+but should never be installed on a shared environment (e.g.: a production or
+staging server).
 
 To limit the damage a malicious user can do if they gain privileged access to
 Drupal, it's not sufficient for a development module to be simply disabled: the
 files that make up the module should be removed from the file-system altogether.
 Doing so prevents a malicious user from enabling it and gaining more data about
-the system than they would be able to otherwise. Note that it is difficult to
-automatically enforce that these modules are not deployed to shared systems:
-developers need to understand why they should not commit these modules and take
-care to double-check what they're about to deploy.
+the system than they would be able to otherwise. 
+
+**Note** that it is difficult to automatically enforce that these modules are not 
+deployed to shared systems: developers need to understand why they should not 
+commit these modules and take care to double-check what they're about to deploy.
 
 Some popular development modules which should only be used for testing and not available on any public facing websites:
 
