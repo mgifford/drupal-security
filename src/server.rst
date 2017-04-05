@@ -554,7 +554,39 @@ simplify the process of searching all of your log files.
 
    \newpage
 
-8) Rough Server Ecosystem Image
+8) DNSSEC
+-------------------------------
+
+Domain Name System Security Extensions ( `DNSSEC`_ ) can be used to provide an 
+independent public/private key pair to ensure the DNS information isn't 
+corrupted. Without this layer of protection is possible for an attacker to tamper 
+with a DNS response or poison the DNS cache and direct users to different server, 
+while having the legitimate domain name in their address bar. This is often 
+referred to as DNS spoofing or as a man-in-the-middle attack.
+
+A DNS resolver verifies the zone record using the public key and the digital 
+signature. The browser will not display the URL if the DNS cannot be authenticated. 
+Verisign has a service which allows you to `validate DNSSEC`_.
+
+9) SSL For Everything
+-------------------------------
+
+There are a lot of independent `Certificate Authorities (CA)`_ for SSL encryption. There
+are a variety of services that are bundled with these. It is fairly simple to 
+create `self-signed SSL certificates`_, but browsers only trust certificates that 
+come from their list of trusted CA's.  There are a number of CA's that all major
+browsers have listed and which have a good reputation. Ultimately it comes down
+to finding a supplier that you trust. 
+
+We are moving to using `Let’s Encrypt`_, which is a free, automated, and open CA. 
+Setting up and CA's a very annoying process. Before Let’s Encrypt was supported,
+every year there is an opportunity for this multi-stage process run into trouble.
+
+A lot of organizations, including the USA Federal Government are calling on an
+adoption of an `The HTTPS-Only Standard` for all web traffic. This needs to 
+become a routine piece of web infrastructure. 
+
+10) Rough Server Ecosystem Image
 -------------------------------
 
    .. image:: _static/images/ServerEcosystem.*
@@ -650,3 +682,9 @@ simplify the process of searching all of your log files.
 .. _configuration: https://github.com/drupal/drupal/blob/7.x/sites/default/default.settings.php#L358
 .. _writes in his blog: http://2bits.com/articles/correct-client-ip-address-reverse-proxy-or-content-delivery-network-cdn.html
 .. _logstash: http://logstash.net/
+.. _DNSSEC: https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions
+.. _validate DNSSEC: https://dnssec-debugger.verisignlabs.com/
+.. _`Certificate Authorities (CA)`: https://en.wikipedia.org/wiki/Certificate_authority
+.. _`self-signed SSL certificates`: https://en.wikipedia.org/wiki/Self-signed_certificate
+.. _`Let’s Encrypt`: https://letsencrypt.org/
+.. _`The HTTPS-Only Standard`: https://https.cio.gov/everything/
