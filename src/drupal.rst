@@ -276,7 +276,7 @@ to be applied.
 
 Drupal's input filters are very powerful, but can provide a vulnerability. **Don't
 enable the PHP filter** which is available in Drupal 7 Core. Installing the
-`Paranoia`_ module can really help enforce this practice. The PHP filter makes
+`Paranoia`_ (7) module can really help enforce this practice. The PHP filter makes
 debugging more difficult and exposes your site to a greater risk than it is
 worth. This module has been removed from Drupal 8, but is available as a 
 contributed module. All PHP code should be written to the file system and not 
@@ -294,37 +294,34 @@ Filtered HTML input format but be cautious.
 There are `a lot of Drupal security modules`_. Depending on your needs you will
 want to add more or less than those listed here.
 
-`AES Encryption`_ (7/8)
-  Simple and easy to use encryption API.
-
 `Automated Logout`_ (7/8)
   Provides the ability to log users out after a specified time of inactivity.
 
-`Clear Password Field`_
+`Clear Password Field`_ (7)
   Stops forms from pre-populating a password.
 
-`CDN`_
+`CDN`_ (7/8)
   Provides easy Content Delivery Network integration for Drupal sites.
 
-`Drupal Tiny-IDS`_
-  An alternative to a server-based intrusion detection service.
+`Drupal Tiny-IDS`_ (7) 
+  An alternative to a server-based intrusion detection service. **[Not covered by security advisory policy]**
 
-`Encrypt`_
+`Encrypt`_ (7/8)
   An API for performing two-way data encryption. 
 
-`Honeypot`_
+`Honeypot`_ (7/8)
   Module that uses honeypot and timestamp methods of deterring spam bots from completing forms.
 
 `Key`_ (7/8)
   A key manager which can be employed by other modules. 
 
-`Local Image Input Filter`_
+`Local Image Input Filter`_ (7)
   Avoids CSRF attacks through external image references.
 
 `Login Security`_ (7/8)
   Set access control to restrict access to login forms by IP address.
 
-`Paranoia`_
+`Paranoia`_ (7)
   Limits PHP functionality and other controls.
 
 `Password Policy`_ (7/8)
@@ -337,49 +334,49 @@ want to add more or less than those listed here.
   Provides more fine-grained control over what users with the permission 
   'administer permissions' can configure.
 
-`HTTP Strict Transport Security`_
+`HTTP Strict Transport Security`_ (7)
   To be used together with Secure Login, to prevent SSL strip attacks.
   Alternatively, directly `enforce it through web-server settings`_.
 
-`reCAPTCHA`
+`reCAPTCHA`_ (7/8)
   Leverages Googles reCAPTCHA web service to improve the CAPTCHA system and protect email addresses.
 
-`Restrict IP`_
+`Restrict IP`_ (7/8)
   Restrict access to an administrator defined set of IP addresses.
 
-`Secure Pages`_
+`Secure Pages`_ (7) 
   Manages mixed-mode (HTTPS and HTTP) authenticated sessions for enhanced
-  security (note required core patches).
+  security (note required core patches). **[Not covered by security advisory policy]**
 
 `Secure Login`_ (7/8)
   Provides secure HTTPS access, without mixed-mode capability.
 
-`Secure Permissions`_
+`Secure Permissions`_ (7)
   Disables the UI to set/change file permissions.
 
-`Security Kit`_
+`Security Kit`_ (7/8)
   Hardens various pieces of Drupal.
 
 `Security Review`_ (7/8-dev)
   Produces a quick but useful review of your site's security configuration. 
 
-`Session Limit`_
+`Session Limit`_ (7/8)
   Limits the number of simultaneous sessions per user.
 
-`Settings Audit Log`_
+`Settings Audit Log`_ (7)
   Logs which users did what, when.
 
-`Shield`_
+`Shield`_ (7/8)
   Protects your non-production environment from being accessed.
 
 `Site Audit`_ (7/8)
   A site analysis tool that generates reports with actionable best practice 
   recommendations.
   
-`Two-factor Authentication (TFA)`_
+`Two-factor Authentication (TFA)`_ (7)
   Second-factor authentication for Drupal sites.
 
-`Username Enumeration Prevention`_ (7/8-dev)
+`Username Enumeration Prevention`_ (7/8)
   Stop brute force attacks from leveraging discoverable usernames.
   
 `User protect`_ (7/8)
@@ -413,7 +410,7 @@ Some popular development modules which should only be used for testing and not a
   This module is very useful for ensuring your code conforms to coding standards
   but can be used to display the PHP that makes up modules.
 
-`Delete all`_
+`Delete all`_ (7/8)
   This module allows someone with sufficient privileges to delete all content
   and users on a site.
 
@@ -422,18 +419,18 @@ Some popular development modules which should only be used for testing and not a
   to display backtraces, raw database queries and their results, display raw
   variables, and disable caching, among other things.
 
-`Drupal for Firebug`_
+`Drupal for Firebug`_ (7)
   Drupal for Firebug outputs the contents of most variables, raw database
   queries and their results, display PHP source code, and can be used to run
   arbitrary PHP. Furthermore, it does all this by interfacing with browser
   developer tools, making it difficult to determine if this module is enabled by
   glancing at the site.
 
-`Theme Developer`_
+`Theme Developer`_ (7)
   This module, which depends on the Devel module mentioned earlier, is very
   useful for determining which theme files / functions are used to output a
   particular section of the site, but it displays raw variables and slows down
-  the site significantly.
+  the site significantly. **[Not covered by security advisory policy]**
 
 If you don't have an automated off-site backup solution you may need to use modules like Backup and Migrate, but make sure you need it:
 
@@ -515,7 +512,7 @@ addressing issues in this older code base. In these instances, a stable release
 can be removed because officially nobody is maintaining it. By definition, 
 unmaintained code is a security problem. 
 
-Tools like `Drop Guard`_ are designed to make this easier for developers to keep 
+Services like `Drop Guard`_ are designed to make this easier for developers to keep 
 track of.
 
 11) The settings.php
