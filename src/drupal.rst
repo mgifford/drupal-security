@@ -251,7 +251,7 @@ As with other server user accounts, you will want to restrict who has access to
 servers. Make sure to delete any test or developer accounts on the production
 server.
 
-Another good practice concerning administative users within drupal is to
+Another good practice concerning administative users within Drupal is to
 automatically disable their account once a certain period of time has passed.
 Unused accounts are often a prime target for brute-forcing, as their password is
 most likely not being rotated, and their legitimate owner might not be watching
@@ -288,7 +288,30 @@ craft malicious JavaScript and gain full admin access to any website on the same
 domain as the Drupal website. If needed, you can add some additional tags to the
 Filtered HTML input format but be cautious.
 
-6) Modules to Consider
+6) Passwords
+------------
+
+United States National Institute for Standards and Technology (NIST) has created 
+`Digital Identity Guidelines`_ which includes new best practices for password 
+management. This Acquia article on `Password Policies and Drupal`_ lays this out
+nicely. 
+
+Drupal's password fields currently support a default maximum characters length of 
+128 characters (twice the 64 characters which is what NIST sees as the minimum 
+maximum size). 
+
+Both Drupal 7 & 8 now support all UNICODE characters, if the server and database 
+support it. Drupal has allowed all printable ASCII characters, including spaces,
+for a long time. Fairly recently the support for emojis and other multi-byte UTF-8
+characters have been added.  There are notes on `Multi-byte UTF-8 support in Drupal 7`_
+available and you will need to be able to modify the my.cnf file. Since MySQL 
+5.5.3 with the "utf8mb4" encoding, MySQL can handle 4 bytes characters. 
+
+There are a number of modules listed below which can help improve password policies.
+The `Password Policy`_ module allows for a blacklist of known-bad passwords to be 
+stored to allow you to avoid the most easily guessed options.
+
+7) Modules to Consider
 ----------------------
 
 There are `a lot of Drupal security modules`_. Depending on your needs you will
@@ -309,6 +332,13 @@ want to add more or less than those listed here.
 `Encrypt`_ (7/8)
   An API for performing two-way data encryption. 
 
+`Fail2ban Firewall Integration`_ (7)
+  Drupal integration with the Fail2ban log scanner to help bans IPs that show 
+  malicious signs.
+
+`Flood control`_ (7)
+  Expose hidden flood control variables in Drupal.
+
 `Honeypot`_ (7/8)
   Module that uses honeypot and timestamp methods of deterring spam bots from completing forms.
 
@@ -325,10 +355,15 @@ want to add more or less than those listed here.
   Limits PHP functionality and other controls.
 
 `Password Policy`_ (7/8)
-  Enforces your user password policy.
+  Enforces your user password policy. **Note: According to NIST & others, overly 
+  complex composition rules often do more harm than good.**
   
 `Password Strength`_ (7/8)
   Provides realistic password strength measurement and server-side enforcement.
+
+`Passwordless`_ (7/8)
+  Replaces the Drupal login form with a password-request form, to avoid needing
+  a password to login.  
 
 `Permissions Lock`_ (7/8)
   Provides more fine-grained control over what users with the permission 
@@ -357,6 +392,10 @@ want to add more or less than those listed here.
 `Security Kit`_ (7/8)
   Hardens various pieces of Drupal.
 
+`Security Questions`_ (7)
+  Provides administrator configurable challenge questions for use during the 
+  log in and password reset processes. **[Not recommended by NIST guidelines]**
+
 `Security Review`_ (7/8-dev)
   Produces a quick but useful review of your site's security configuration. 
 
@@ -373,7 +412,7 @@ want to add more or less than those listed here.
   A site analysis tool that generates reports with actionable best practice 
   recommendations.
   
-`Two-factor Authentication (TFA)`_ (7)
+`Two-factor Authentication (TFA)`_ (7/8-dev)
   Second-factor authentication for Drupal sites.
 
 `Username Enumeration Prevention`_ (7/8)
@@ -383,7 +422,7 @@ want to add more or less than those listed here.
    fine-grained access control of user administrators. Protections can be 
    specific to a user, or applied to all users in a role.
 
-7) Modules to Avoid on Shared Servers
+8) Modules to Avoid on Shared Servers
 -------------------------------------
 
 Many Drupal modules intended to help developers develop code also disclose
@@ -447,7 +486,7 @@ access to Drupal. You should evaluate each new module you install to
 determine what it does and whether the features it brings are worth the risks.
 
 
-8) Drupal Distributions
+9) Drupal Distributions
 -----------------------
 
 Drupal distributions provide turnkey installations that have been optimized for
@@ -458,8 +497,8 @@ security triad`_: confidentiality, integrity and availability. It is worth
 watching the evolution of these distributions and installing them from time to
 time if only to have a comparison of modules and configuration options.
 
-9) Choosing Modules & Themes
-----------------------------
+10) Choosing Modules & Themes
+-----------------------------
 
 There are over 30,000 modules and 2,000 themes that have been contributed on 
 Drupal.org.  Unfortunately, not all of these modules are stable and secure 
@@ -482,7 +521,7 @@ Ultimately, having an experienced Drupal developer involved in a project is
 important when reviewing which projects to adopt. 
 
 
-10) Drupal Updates
+11) Drupal Updates
 ------------------
 
 Eventually, all software will need an update if it is going to continue to be 
@@ -506,16 +545,41 @@ uses modules hosted on GitHub or other repositories, you will not have the
 benefit of the security alerts made by through Drupal.org.
 
 Sometimes a module simply doesn't have an active maintainer or the maintainer
-is focused on the next major version of the code base. For instance, Drupal 6 is
-still officially supported, but there are very few maintainers actively 
-addressing issues in this older code base. In these instances, a stable release 
-can be removed because officially nobody is maintaining it. By definition, 
-unmaintained code is a security problem. 
+is focused on the next major version of the code base. For instance, Drupal 7 is
+still officially supported, but fewer maintainers are actively addressing issues 
+in this older code base. In these instances, a stable release can be removed 
+because officially nobody is maintaining it. By definition, unmaintained code is 
+a security problem. 
 
 Services like `Drop Guard`_ are designed to make this easier for developers to keep 
 track of.
 
-11) The settings.php
+12) Security Advisories
+-----------------------
+
+The Drupal security team now only monitors modules which have chosen to "Opt into 
+security advisory coverage". Historically, it was assumed that all modules on 
+Drupal.org would be covered by some reviews by the security team. 
+
+It is a policy of the security team that there will be "no security advisories 
+for development releases (-dev), ALPHAs, BETAs or RCs." Unfortunately, many module 
+developers are still in the habit of not providing full releases on a regular 
+basis, and so users are not benefitting from the oversite from the security team.
+
+Fortunately, the Drupal community is now clearly indicating when a project is 
+"not covered by Drupal’s security advisory policy" or if it is "unsupported due 
+to a security issue the maintainer didn’t fix."
+
+Often these occur because the maintainers do not have a direct reason to maintain
+the module that they produced. Developer guilt only goes so far, unfortunately. 
+
+If security is important to your organization, you may need to "`Hire someone`_ to 
+fix the security bug so the module can be re-published". It would also be good 
+support module maintainers to release full releases so that you can benefit from 
+security advisories. 
+
+
+13) The settings.php
 --------------------
 
 After the initial install, make sure that write permission on the ``settings.php``
@@ -564,7 +628,7 @@ root::
 Set the $cookie_domain in settings.php, and if you allow the "www" prefix for
 your domain then ensure that you don't use the bare domain.
 
-12) Advantages of Drupal 8
+14) Advantages of Drupal 8
 --------------------------
 
 Acquia has provided a great list of `10 Ways Drupal 8 Will Be More Secure`_ some 
@@ -614,7 +678,7 @@ look for and report issues that may have been overlooked in the process of
 building Drupal Core. 
 
 
-13) If You Find a Security Problem
+15) If You Find a Security Problem
 ----------------------------------
 
 The Drupal community takes security issues very seriously.  If you do see 
@@ -623,7 +687,7 @@ of what to do. The community needs to have these issues reported so that they
 can be fixed. For those who are more visual, there is a great `infographic`_ here 
 describing the process of fixing security issues in Drupal projects. 
 
-14) Miscellaneous
+16) Miscellaneous
 -----------------
 
 Review the discussion in Section K and decide if you are going to remove the
@@ -665,8 +729,12 @@ information on the site is public, this may not be necessary.
 .. _Paranoia: https://drupal.org/project/paranoia
 .. _a lot of Drupal security modules: https://github.com/wet-boew/wet-boew-drupal/issues/248
 .. _`Encrypt`: https://www.drupal.org/project/encrypt
+.. _`Fail2ban Firewall Integration`: https://www.drupal.org/project/fail2ban
+.. _`Flood control`: https://www.drupal.org/project/flood_control
 .. _`Honeypot`: https://www.drupal.org/project/honeypot
 .. _`Key`: https://www.drupal.org/project/key
+.. _`Digital Identity Guidelines`: https://pages.nist.gov/800-63-3/sp800-63-3.html
+.. _`Multi-byte UTF-8 support in Drupal 7`: https://www.drupal.org/node/2754539
 .. _`AES encryption`: https://www.drupal.org/project/aes
 .. _Automated Logout: https://drupal.org/project/autologout
 .. _Clear Password Field: https://drupal.org/project/clear_password_field
@@ -675,6 +743,7 @@ information on the site is public, this may not be necessary.
 .. _Login Security: https://drupal.org/project/login_security
 .. _Password Policy: https://drupal.org/project/password_policy
 .. _`Password Strength`: https://www.drupal.org/project/password_strength
+.. _Passwordless: https://www.drupal.org/project/passwordless
 .. _`Permissions Lock`: https://www.drupal.org/project/permissions_lock
 .. _Session Limit: https://drupal.org/project/session_limit
 .. _Settings Audit Log: https://drupal.org/project/settings_audit_log
@@ -718,5 +787,6 @@ information on the site is public, this may not be necessary.
 .. _YAML: https://en.wikipedia.org/wiki/YAML
 .. _`Content Security Policy W3C Standard`: http://www.w3.org/TR/CSP/
 .. _`cash bounty`: https://www.drupal.org/drupal8-security-bounty
+.. _`Hire someone`: https://www.drupal.org/drupal-services
 .. _`HTTP HOST Header attacks`: https://www.drupal.org/node/1992030
 .. _`User Expire`: https://www.drupal.org/project/user_expire
