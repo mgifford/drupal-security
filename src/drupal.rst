@@ -564,7 +564,7 @@ Drupal.org would be covered by some reviews by the security team.
 It is a policy of the security team that there will be "no security advisories 
 for development releases (-dev), ALPHAs, BETAs or RCs." Unfortunately, many module 
 developers are still in the habit of not providing full releases on a regular 
-basis, and so users are not benefitting from the oversite from the security team.
+basis, and so users are not benefitting from the oversight from the security team.
 
 Fortunately, the Drupal community is now clearly indicating when a project is 
 "not covered by Drupal’s security advisory policy" or if it is "unsupported due 
