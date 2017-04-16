@@ -538,8 +538,8 @@ Highly Critical.
 
 Sometimes a maintainer does not have the time to put out a full release, so will 
 produce a development release, or simply post the code to the Git repository on 
-Drupal.org.  For now the Update manager does not have a means to track anything 
-other than full stable releases. The Available update report will show you when 
+Drupal.org.  There is more info in the next section, but Update manager only 
+tracks full stable releases. The Available update report will show you when 
 a new release is available, but is geared to stable releases. If your site 
 uses modules hosted on GitHub or other repositories, you will not have the 
 benefit of the security alerts made by through Drupal.org.
@@ -557,24 +557,25 @@ track of.
 12) Security Advisories
 -----------------------
 
-The Drupal security team now only monitors modules which have chosen to "Opt into 
-security advisory coverage". Historically, it was assumed that all modules on 
-Drupal.org would be covered by some reviews by the security team. 
+Security advisory coverage for contributed projects is now *only* available for 
+projects that have *both* opted in to receive coverage *and* made a stable release.
+Historically, many assumed that all non-dev or git code on Drupal.org would have 
+some coverage by the security team. This has now changed.
 
-It is a policy of the security team that there will be "no security advisories 
+It is now a policy of the security team that there will be "no security advisories 
 for development releases (-dev), ALPHAs, BETAs or RCs." Unfortunately, many module 
 developers are still in the habit of not providing full releases on a regular 
 basis, and so users are not benefitting from the oversight from the security team.
 
 Fortunately, the Drupal community is now clearly indicating when a project is 
 "not covered by Drupal’s security advisory policy" or if it is "unsupported due 
-to a security issue the maintainer didn’t fix."
+to a security issue the maintainer didn’t fix." 
 
 Often these occur because the maintainers do not have a direct reason to maintain
-the module that they produced. Developer guilt only goes so far, unfortunately. 
+the module that they produced. Developer guilt only goes so far. 
 
 If security is important to your organization, you may need to "`Hire someone`_ to 
-fix the security bug so the module can be re-published". It would also be good 
+fix the security bug so the module can be re-published". It is also good to
 support module maintainers to release full releases so that you can benefit from 
 security advisories. 
 
