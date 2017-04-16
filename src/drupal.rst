@@ -558,7 +558,7 @@ track of.
 -----------------------
 
 Security advisory coverage for contributed projects is now *only* available for 
-projects that have *both* opted in to receive coverage *and* made a stable release.
+projects that have *both* `opted in to receive coverage`_ *and* made a stable release.
 Historically, many assumed that all non-dev or git code on Drupal.org would have 
 some coverage by the security team. This has now changed.
 
@@ -774,6 +774,7 @@ information on the site is public, this may not be necessary.
 .. _risk levels: https://www.drupal.org/security-team/risk-levels
 .. _`NIST Common Misuse Scoring System`: http://www.nist.gov/itl/csd/cmss-072512.cfm
 .. _`Drop Guard`: http://www.drop-guard.net/
+.. _`opted in to receive coverage`: https://www.drupal.org/node/1011698
 .. _salt: https://en.wikipedia.org/wiki/Salt_(cryptography)
 .. _`full explaination`: https://www.drupal.org/node/101494
 .. _infographic: http://drupalsecurityreport.org/sites/g/files/g598426/f/Drupal-security-release_rgb-cc-by-nd.jpg
