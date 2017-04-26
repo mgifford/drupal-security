@@ -353,6 +353,10 @@ want to add more or less than those listed here.
 `Login Security`_ (7/8)
   Set access control to restrict access to login forms by IP address.
 
+`OneAll Social Login`_ (7/8)
+  Allows your users to register and login to your Drupal website with their 
+  existing accounts from 30+ social networks.
+
 `Paranoia`_ (7)
   Limits PHP functionality and other controls.
 
@@ -415,9 +419,9 @@ want to add more or less than those listed here.
   A site analysis tool that generates reports with actionable best practice 
   recommendations.
   
-`OneAll Social Login`_ (7/8)
-  Allows your users to register and login to your Drupal website with their 
-  existing accounts from 30+ social networks.
+`Social Auth`_ (8)
+  Provides a common interface for creating modules related to user 
+  registration/login through social networks' accounts.
   
 `Two-factor Authentication (TFA)`_ (7/8-dev)
   Second-factor authentication for Drupal sites.
@@ -734,6 +738,7 @@ information on the site is public, this may not be necessary.
 .. _Cross Site Request Forgery (CSRF): http://drupalscout.com/knowledge-base/introduction-cross-site-request-forgery-csrf
 .. _bus factor: http://www.thesalesengineer.com/2011/06/20/whats-your-se-bus-count/
 .. _completely disable the account: https://www.drupal.org/node/947312#disable
+.. _`OneAll Social Login`: https://www.drupal.org/project/social_login
 .. _Paranoia: https://drupal.org/project/paranoia
 .. _a lot of Drupal security modules: https://github.com/wet-boew/wet-boew-drupal/issues/248
 .. _`Encrypt`: https://www.drupal.org/project/encrypt
@@ -756,6 +761,7 @@ information on the site is public, this may not be necessary.
 .. _Session Limit: https://drupal.org/project/session_limit
 .. _Settings Audit Log: https://drupal.org/project/settings_audit_log
 .. _Security Kit: https://drupal.org/project/seckit
+.. _`Social Auth`: https://www.drupal.org/project/social_auth
 .. _`Two-factor Authentication (TFA)`: https://www.drupal.org/project/tfa
 .. _Secure Login: https://drupal.org/project/securelogin
 .. _HTTP Strict Transport Security: https://www.drupal.org/project/hsts
