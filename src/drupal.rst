@@ -327,7 +327,8 @@ want to add more or less than those listed here.
   Provides easy Content Delivery Network integration for Drupal sites.
 
 `Drupal Tiny-IDS`_ (7) 
-  An alternative to a server-based intrusion detection service. **[Not covered by security advisory policy]**
+  An alternative to a server-based intrusion detection service. **[Not covered 
+  by security advisory policy]**
 
 `Encrypt`_ (7/8)
   An API for performing two-way data encryption. 
@@ -340,7 +341,8 @@ want to add more or less than those listed here.
   Expose hidden flood control variables in Drupal.
 
 `Honeypot`_ (7/8)
-  Module that uses honeypot and timestamp methods of deterring spam bots from completing forms.
+  Module that uses honeypot and timestamp methods of deterring spam bots from 
+  completing forms.
 
 `Key`_ (7/8)
   A key manager which can be employed by other modules. 
@@ -374,7 +376,8 @@ want to add more or less than those listed here.
   Alternatively, directly `enforce it through web-server settings`_.
 
 `reCAPTCHA`_ (7/8)
-  Leverages Googles reCAPTCHA web service to improve the CAPTCHA system and protect email addresses.
+  Leverages Googles reCAPTCHA web service to improve the CAPTCHA system and 
+  protect email addresses.
 
 `Restrict IP`_ (7/8)
   Restrict access to an administrator defined set of IP addresses.
@@ -411,6 +414,10 @@ want to add more or less than those listed here.
 `Site Audit`_ (7/8)
   A site analysis tool that generates reports with actionable best practice 
   recommendations.
+  
+`OneAll Social Login`_ (7/8)
+  Allows your users to register and login to your Drupal website with their 
+  existing accounts from 30+ social networks.
   
 `Two-factor Authentication (TFA)`_ (7/8-dev)
   Second-factor authentication for Drupal sites.
