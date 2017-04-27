@@ -55,7 +55,7 @@ Private Information
 
 A compromised server could lead to privacy disclosures revealing non-public 
 information or information intended for another user. The `Ashley Madison Data 
-Breach`_ is an example of the type of exposure which can be devistating for all 
+Breach`_ is an example of the type of exposure which can be devastating for all 
 involved. There is a growing list of organizations who have been compromised, 
 if you want to track if your email is included in one of these breaches, sign up 
 to `Have I Been Pwned`_ .

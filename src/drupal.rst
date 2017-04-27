@@ -251,11 +251,11 @@ As with other server user accounts, you will want to restrict who has access to
 servers. Make sure to delete any test or developer accounts on the production
 server.
 
-Another good practice concerning administative users within Drupal is to
+Another good practice concerning administrative users within Drupal is to
 automatically disable their account once a certain period of time has passed.
 Unused accounts are often a prime target for brute-forcing, as their password is
 most likely not being rotated, and their legitimate owner might not be watching
-for login attempts. It is also a PCI requirement that inactive administative
+for login attempts. It is also a PCI requirement that inactive administrative
 accounts be locked-out after 90 days of inactivity. A login attempt does not
 count as activity, whereas a successful login or another active action does.
 Modules like the `User Expire`_ module can help meet that requirement by
