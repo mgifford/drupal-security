@@ -379,6 +379,10 @@ want to add more or less than those listed here.
   To be used together with Secure Login, to prevent SSL strip attacks.
   Alternatively, directly `enforce it through web-server settings`_.
 
+`Real AES`_ (7/8)
+  Real AES provides an encryption method plugin for the Encrypt module. 
+  This plugin offers authenticated encryption based on AES-128 CBC with a HMAC.
+
 `reCAPTCHA`_ (7/8)
   Leverages Googles reCAPTCHA web service to improve the CAPTCHA system and 
   protect email addresses.
@@ -748,7 +752,7 @@ information on the site is public, this may not be necessary.
 .. _`Key`: https://www.drupal.org/project/key
 .. _`Digital Identity Guidelines`: https://pages.nist.gov/800-63-3/sp800-63-3.html
 .. _`Multi-byte UTF-8 support in Drupal 7`: https://www.drupal.org/node/2754539
-.. _`AES encryption`: https://www.drupal.org/project/aes
+.. _`Real AES`: https://www.drupal.org/project/real_aes
 .. _Automated Logout: https://drupal.org/project/autologout
 .. _Clear Password Field: https://drupal.org/project/clear_password_field
 .. _Drupal Tiny-IDS: https://drupal.org/project/tinyids
