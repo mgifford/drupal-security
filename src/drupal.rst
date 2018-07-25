@@ -357,7 +357,7 @@ want to add more or less than those listed here.
   Allows your users to register and login to your Drupal website with their 
   existing accounts from 30+ social networks.
 
-`Paranoia`_ (7)
+`Paranoia`_ (7/8)
   Limits PHP functionality and other controls.
 
 `Password Policy`_ (7/8)
